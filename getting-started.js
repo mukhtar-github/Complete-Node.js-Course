@@ -9,3 +9,14 @@
 //when performing the calculations to serve one client, other clients have to wait, and that,s why
 //Node should not be used for CPU-intensive applications. It should only be used for building data
 //intensive and real-time applications.
+
+// function sayHello(name) {
+//     console.log('Hello ' + name);
+// }
+// sayHello('Mukhtar');
+
+
+// Node Module System
+
+// 2 -Global Object
+
