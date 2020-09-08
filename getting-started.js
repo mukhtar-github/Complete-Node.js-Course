@@ -1,4 +1,7 @@
-// How Node Works
+
+// Getting Started
+
+// 4 - How Node Works
 
 //Node's architecture makes it ideal for building applications that include alot of disk
 //or network access. We can serve more clients without the need to throw in more hardware.
@@ -18,5 +21,14 @@
 
 // Node Module System
 
-// 2 -Global Object
+// 3 - Global Object
+
+//So let's just log this module object and see what we see in the console.log. Back in the terminal.
+//So you can see that we an object module that's a json object. So in Node, every file is a module,
+//and the variables and functions defined in that file are a scope to that module, they are not available
+//outside of that module.
+//**console.log(module);
+
+// 4 - Creating a Module
+
 
