@@ -31,4 +31,23 @@
 
 // 4 - Creating a Module
 
+//Inside logger.js
+// var url = 'http://mylogger.io/log';
+
+// function log(message){
+//     //send an HTTP request
+//     console.log(message);
+// }
+
+// module.export.log = log;
+
+// 5 - Loading a Module
+
+var logger = require('./logger');
+
+console.log(logger);
+
+
+
+
 
