@@ -43,9 +43,12 @@
 
 // 5 - Loading a Module
 
-var logger = require('./logger');
+// const log = require('./logger');
 
-console.log(logger);
+// log('message');
+
+
+//6 - Module Wrapper Function
 
 
 
