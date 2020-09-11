@@ -50,9 +50,32 @@
 
 //6 - Module Wrapper Function
 
-const log = require('./logger');
+// const log = require('./logger');
 
-log('message');
+// log('message');
+
+//Inside logger.js
+// console.log(__filename);
+// console.log(__dirname);
+
+// var url = 'http://mylogger.io/log';
+
+// function log(message){
+//     //send an HTTP request
+//     console.log(message);
+// }
+
+// module.exports = log;
+
+
+// 7 - Path Module
+
+const path = require('path');
+
+var pathObj = path.parse(__filename);
+
+console.log(pathObj);
+
 
 
 
