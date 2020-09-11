@@ -70,12 +70,48 @@
 
 // 7 - Path Module
 
-const path = require('path');
+// const path = require('path');
 
-var pathObj = path.parse(__filename);
+// var pathObj = path.parse(__filename);
 
-console.log(pathObj);
+// console.log(pathObj); // => inside terminal, call node getting- started.js
+//{
+//     root: '/',
+//     dir: '/home/mukhtar/Documents/Complete-Node.js-Course',
+//     base: 'getting-started.js',
+//     ext: '.js',
+//     name: 'getting-started'
+//   }
 
+
+// 8 - OS Module
+
+// const os = require('os');
+
+
+// var totalMemory = os.totalmem();
+// var freeMemory = os.freemem();
+
+// console.log(`Total Memory: ${totalMemory}`);
+// console.log(`Free Memory: ${freeMemory}`);
+
+
+// 9 - File System Module
+//If you're using node to build a backend of your application you might have sevaral
+//hundreds or thousands of clients connecting to the backend. if you keep that single thread
+//busy, you won't be able to serve many clients. So always use asynchronous methods.
+
+const fs = require('fs');
+
+const files = fs.readdirSync('./');
+console.log(files); // => inside terminal, call node getting- started.js
+//[
+//     '.git',
+//     'Getting-Started-Recap.pdf',
+//     'Node Core Recap.pdf',
+//     'getting-started.js',
+//     'logger.js'
+//   ]
 
 
 
