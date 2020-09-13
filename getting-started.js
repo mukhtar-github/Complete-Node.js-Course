@@ -126,13 +126,27 @@
 //and properties.
 //Emit basically means making a noise, or produce something. In this case, you're  making a noise
 //in your application, you are singnalling that an event has happened.
+//Because we have raised an event, but nowhere in our application we've registered a Listener that
+//is interested in that event. A Listener is a function that would be called when an event is raised.
+// The order of arrangement of registering a listener and raising an event is important. Registering
+//a listener must come first. Because, when we call the emit method, the emitter iterates over all
+//the registered listeners and calls them synchronously.
 
-const EventEmitter = require('events');
+// const EventEmitter = require('events');
 
-const emitter = new EventEmitter();
+// const emitter = new EventEmitter();
 
-//Raise an event
-emitter.emit('messageLogged');
+// //Register a Listener
+// emitter.on('messageLogged', function() {
+//     console.log('Listener called');
+// }); // on() or addListner(). Former mostly used.
+// // node getting-started.js => Listener called
+
+// //Raise an event
+// emitter.emit('messageLogged');
+
+
+// 11 - Event Arguments
 
 
 
