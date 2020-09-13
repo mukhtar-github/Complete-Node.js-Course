@@ -101,10 +101,10 @@
 //hundreds or thousands of clients connecting to the backend. if you keep that single thread
 //busy, you won't be able to serve many clients. So always use asynchronous methods.
 
-const fs = require('fs');
+// const fs = require('fs');
 
-const files = fs.readdirSync('./');
-console.log(files); // => inside terminal, call node getting- started.js
+// const files = fs.readdirSync('./');
+// console.log(files); // => inside terminal, call node getting- started.js
 //[
 //     '.git',
 //     'Getting-Started-Recap.pdf',
@@ -112,6 +112,30 @@ console.log(files); // => inside terminal, call node getting- started.js
 //     'getting-started.js',
 //     'logger.js'
 //   ]
+
+
+// 10 - Events Module
+
+//An Event is basically a singnal that indicates that something has happened in
+//our application. For example, in Node, we have a class called HTTP that we can use 
+//to build a web server. So we listen on a given port, and every time we recieve a request
+//on that port, that HTTP class raises an event. Now our job is to respond to that event
+//which basically involves reading that request and returning the right response. So as you
+//go through Node's documentation, you can see that several classes in Node raises different
+//kind of events. EventEmitter is a class. A class is a container, for a bunch of related methods
+//and properties.
+//Emit basically means making a noise, or produce something. In this case, you're  making a noise
+//in your application, you are singnalling that an event has happened.
+
+const EventEmitter = require('events');
+
+const emitter = new EventEmitter();
+
+//Raise an event
+emitter.emit('messageLogged');
+
+
+
 
 
 
