@@ -148,17 +148,41 @@
 
 // 11 - Event Arguments
 
-const EventEmitter = require('events');
+// const EventEmitter = require('events');
 
+// const emitter = new EventEmitter();
+
+// //Register a Listener
+// emitter.on('messageLogged', (arg) => {
+//     console.log('Listener called', arg);
+// }); // node getting-started.js => Listener called { id: 1, url: 'http://' } 
+
+// //Raise an event
+// emitter.emit('messageLogged', { id: 1, url: 'http://' });
+
+
+// 12 - Extending EventEmitter
+
+//In a real world application, it's rear that we would work with this EventEmitter object
+//directly. Instead we would want to create a class that has all the capabilities of the
+//EventEmitter, and then we would use that class in our code. So let's copy the EventEmitter
+//code from the getting-started module to the logger module. And also, to move the raising an event
+//code to the logger module as well, because it's the logger module that emits or signal an event,
+//saying the message is logged. We need to load the logger module and call the log function that is
+//in the logger module with a message. When we run this application in the terminal,
+
+
+const EventEmitter = require('events');
 const emitter = new EventEmitter();
+
 
 //Register a Listener
 emitter.on('messageLogged', (arg) => {
     console.log('Listener called', arg);
 });
 
-//Raise an event
-emitter.emit('messageLogged', { id: 1, url: 'http://'});
+const log = require('./logger');
+log('message');
 
 
 
