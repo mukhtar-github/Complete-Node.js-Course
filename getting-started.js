@@ -174,7 +174,10 @@
 //is because we are working with two different EventEmitter objects, one in getting-started module and the
 //other in logger module. In logger module we are using the emitter object to emit an event, where as in the
 //getting-started module, we are using another event emitter object to handle the event. So they are completely
-//different
+//different. So when we register a listener in the getting-started module, it is only registered with the EventEmitter
+//in the module, which is completely different from the EventEmitter in the order module. So, it's rare that you would
+//work with the EventEmitter in the logger module directly. Instead, you would want to create a class that has all the
+//capabilities of the EventEmitter
 
 
 const EventEmitter = require('events');
