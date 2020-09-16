@@ -169,7 +169,8 @@
 //code from the getting-started module to the logger module. And also, to move the raising an event
 //code to the logger module as well, because it's the logger module that emits or signal an event,
 //saying the message is logged. We need to load the logger module and call the log function that is
-//in the logger module with a message. When we run this application in the terminal,
+//in the logger module with a message. When we run this application in the terminal, we are only going
+//to see the 'message' on the console, that is the event listener will not be called.
 
 
 const EventEmitter = require('events');
