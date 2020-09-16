@@ -170,7 +170,11 @@
 //code to the logger module as well, because it's the logger module that emits or signal an event,
 //saying the message is logged. We need to load the logger module and call the log function that is
 //in the logger module with a message. When we run this application in the terminal, we are only going
-//to see the 'message' on the console, that is the event listener will not be called.
+//to see the 'message' on the console, that is the event listener will not be called. The reason for this
+//is because we are working with two different EventEmitter objects, one in getting-started module and the
+//other in logger module. In logger module we are using the emitter object to emit an event, where as in the
+//getting-started module, we are using another event emitter object to handle the event. So they are completely
+//different
 
 
 const EventEmitter = require('events');
