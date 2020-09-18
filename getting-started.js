@@ -177,7 +177,8 @@
 //different. So when we register a listener in the getting-started module, it is only registered with the EventEmitter
 //in the module, which is completely different from the EventEmitter in the order module. So, it's rare that you would
 //work with the EventEmitter in the logger module directly. Instead, you would want to create a class that has all the
-//capabilities of the EventEmitter
+//capabilities of the EventEmitter, and has additional capabilities. In this case, we want to create a class called
+//logger, that has the additional method log. 
 
 
 const EventEmitter = require('events');
