@@ -177,11 +177,15 @@
 //different. So when we register a listener in the getting-started module, it is only registered with the EventEmitter
 //in that module, which is completely different from the EventEmitter in the logger module. So, it's rare that you would
 //work with the EventEmitter in the logger module directly. Instead, you would want to create a class that has all the
-//capabilities of the EventEmitter, and has additional capabilities. In this case, we want to create a class called
+//capabilities of the EventEmitter, and has other additional capabilities. In this case, we want to create a class called
 //Logger, that has the additional method log. So, we have  the Logger class, and the log function moved into the Logger
 //class, now becomes a method. Now instead of exporting the log function, we now export the Logger class. We also want
 //the Logger class to have all the capabilities of the the EventEmitter in the logger module. The way we do that is to
-//use the Extends keyword that comes in ES6.
+//use the Extends keyword that comes in ES6. So, we add the name of the parent or the base class, that's EventEmitter.
+//And with this simple change, the Logger class will have all the functionality that is defined in the EventEmitter.
+// So, inside the Logger class, instead of using the emitter object to raise an event, we use THIS keyword. So, we can
+//directly emit or raise an event from the Logger class. Now, we no longer need the emitter object created from the
+//EventEmitter class in the logger module, so we delete it.
 
 
 const EventEmitter = require('events');
