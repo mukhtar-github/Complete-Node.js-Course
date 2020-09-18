@@ -175,10 +175,13 @@
 //other in logger module. In logger module we are using the emitter object to emit an event, where as in the
 //getting-started module, we are using another event emitter object to handle the event. So they are completely
 //different. So when we register a listener in the getting-started module, it is only registered with the EventEmitter
-//in the module, which is completely different from the EventEmitter in the order module. So, it's rare that you would
+//in that module, which is completely different from the EventEmitter in the logger module. So, it's rare that you would
 //work with the EventEmitter in the logger module directly. Instead, you would want to create a class that has all the
 //capabilities of the EventEmitter, and has additional capabilities. In this case, we want to create a class called
-//logger, that has the additional method log. 
+//Logger, that has the additional method log. So, we have  the Logger class, and the log function moved into the Logger
+//class, now becomes a method. Now instead of exporting the log function, we now export the Logger class. We also want
+//the Logger class to have all the capabilities of the the EventEmitter in the logger module. The way we do that is to
+//use the Extends keyword that comes in ES6.
 
 
 const EventEmitter = require('events');
