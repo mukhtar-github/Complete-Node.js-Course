@@ -185,20 +185,24 @@
 //And with this simple change, the Logger class will have all the functionality that is defined in the EventEmitter.
 // So, inside the Logger class, instead of using the emitter object to raise an event, we use THIS keyword. So, we can
 //directly emit or raise an event from the Logger class. Now, we no longer need the emitter object created from the
-//EventEmitter class in the logger module, so we delete it.
+//EventEmitter class in the logger module, so we delete it. So, in the getting-started module when requiring a logger
+//module, we get a class, so we rename it.
+//Similar to the change we made in the logger module, we no longer need the EventEmitter in this module as well. We
+//want to work directly with the logger object. So we're going to register the listener on the logger object, we 
+//move the listener after the created logger object.
 
 
 const EventEmitter = require('events');
-const emitter = new EventEmitter();
 
+const Logger = require('./logger');
+const logger = new Logger();
 
 //Register a Listener
 emitter.on('messageLogged', (arg) => {
     console.log('Listener called', arg);
 });
 
-const log = require('./logger');
-log('message');
+logger.log('message');
 
 
 
