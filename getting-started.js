@@ -196,18 +196,27 @@
 //class, when ever you want to raise an event, you use THIS.emit, because THIS references the Logger class wich extends
 // EventEmitter
 
-const EventEmitter = require('events');
+// const EventEmitter = require('events');
 
-const Logger = require('./logger');
-const logger = new Logger();
+// const Logger = require('./logger');
+// const logger = new Logger();
 
-//Register a Listener
-logger.on('messageLogged', (arg) => {
-    console.log('Listener called', arg);
-});
+// //Register a Listener
+// logger.on('messageLogged', (arg) => {
+//     console.log('Listener called', arg);
+// });
 
-logger.log('message');
+// logger.log('message');
 
 
 // 13 - HTTP Module
+
+//One of the powerful building blocks of Node is the HTTP module that we use for creating network applications.
+//For example, we can create a web server that listensfor http request on a given port. And with this, we can easily
+//create a backend service for our client applications. We can call http.createServer. And with this, we can
+//a web server. What is interesting is that
+
+const http = require('http');
+
+const server = http.createServer();
 
