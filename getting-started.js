@@ -190,11 +190,15 @@
 //Similar to the change we made in the logger module, we no longer need the EventEmitter in this module as well. We
 //want to work directly with the logger object. So we're going to register the listener on the logger object, we 
 //move the listener after the created logger object.
+<<<<<<< HEAD
 //So, to recap, if you want to raise events in your application to signal that something has happened, you need to create
 //a class that extends EventEmitter. With this, that class will have all the functionality defined in EventEmitter. And
 //you can also have additional functionality, in this case, we have the ability to log a message. And then, inside that
 //class, when ever you want to raise an event, you use THIS.emit, because THIS references the Logger class wich extends
 // EventEmitter
+=======
+
+>>>>>>> master
 
 const EventEmitter = require('events');
 
@@ -207,6 +211,11 @@ logger.on('messageLogged', (arg) => {
 });
 
 logger.log('message');
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> master
 
 
 // 13 - HTTP Module
