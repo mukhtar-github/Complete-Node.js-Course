@@ -214,9 +214,20 @@
 //One of the powerful building blocks of Node is the HTTP module that we use for creating network applications.
 //For example, we can create a web server that listensfor http request on a given port. And with this, we can easily
 //create a backend service for our client applications. We can call http.createServer. And with this, we can
-//a web server. What is interesting is that
+//a web server. What is interesting is that this server is an EventEmitter. It has all the capabilities of the EventEmitter.
+//So, that's why I said a bunch of Node's core functionality is based on EventEmitter. So, back to our server object, 
+//we can now call server.listen and give in a port of say 3000. As I told you before, everytime there's a new connection
+//or request, the server raises an event. So we can use the ON method to handle that event. So, before listening, we have
+//to registera listener or a handler.
 
 const http = require('http');
 
 const server = http.createServer();
 
+server.on('connection', (socket) => {
+    console.log('New connection...');
+});
+
+server.listen(3000);
+
+console.log('Listening on port 3000...');
