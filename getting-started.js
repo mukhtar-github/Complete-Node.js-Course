@@ -219,13 +219,32 @@
 //we can now call server.listen and give in a port of say 3000. As I told you before, everytime there's a new connection
 //or request, the server raises an event. So we can use the ON method to handle that event. So, before listening, we have
 //to registera listener or a handler.
+//In real world applications, we're not going to respond to the connection event to build an http service. This is very
+//low level.
+
+// const http = require('http');
+
+// const server = http.createServer();
+
+// server.on('connection', (socket) => {
+//     console.log('New connection...');
+// });
+
+// server.listen(3000);
+
+// console.log('Listening on port 3000...');
+
+//What we commonly do, is we pass a callback function to the creatServer method. Inthis function, instead of working with
+//a socket, we can work with an actual request or response object.
 
 const http = require('http');
+const { url } = require('inspector');
 
-const server = http.createServer();
-
-server.on('connection', (socket) => {
-    console.log('New connection...');
+const server = http.createServer((req, res) => {
+    if (req.url === '/') {
+        res.write('Hello World');
+        res.end();
+    }
 });
 
 server.listen(3000);
