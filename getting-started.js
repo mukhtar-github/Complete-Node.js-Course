@@ -234,8 +234,10 @@
 
 // console.log('Listening on port 3000...');
 
-//What we commonly do, is we pass a callback function to the creatServer method. Inthis function, instead of working with
-//a socket, we can work with an actual request or response object.
+//What we commonly do, is we pass a callback function to the creatServer method. In this function, instead of working with
+//a socket, we can work with an actual request or response object. If we want to build a backend service for our web or
+//mobile applications, we need to handle various routes in the server object. For example, we can have another if block.
+//Perhaps we want to return the list of courses from the database. So, we can return the array of objects using JSON.
 
 const http = require('http');
 const { url } = require('inspector');
@@ -245,6 +247,11 @@ const server = http.createServer((req, res) => {
         res.write('Hello World');
         res.end();
     }
+
+    if (req.url === '/api/courses') {
+        res.write(JSON.stringify([1, 2, 3]));
+    }
+    res.end();
 });
 
 server.listen(3000);
