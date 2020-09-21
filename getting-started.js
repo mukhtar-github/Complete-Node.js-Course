@@ -238,6 +238,9 @@
 //a socket, we can work with an actual request or response object. If we want to build a backend service for our web or
 //mobile applications, we need to handle various routes in the server object. For example, we can have another if block.
 //Perhaps we want to return the list of courses from the database. So, we can return the array of objects using JSON.
+//In real world, we're not going to use the http module to build a backend service for our application. Because as we add
+//more routes, the code gets more complex. So instead, we use a Framework called Express, wich gives our application a
+//clean structure to handle various routes. Internally, the express framework is build on top of the http module in Node.
 
 const http = require('http');
 const { url } = require('inspector');
