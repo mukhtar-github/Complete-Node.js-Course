@@ -18,6 +18,9 @@ const { contains } = require('underscore');
 
 // 4 - Using a Package
 
+//Let's create a new file in the root of this project, and call it npm.js.
+//We're going to usse our require function to load the underscore module. 
+
 var _ = require('underscore');
 
 var result = _.contains([1, 2, 3], 2);
