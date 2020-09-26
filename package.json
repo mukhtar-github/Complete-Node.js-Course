@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/mukhtar-github/Complete-Node.js-Course/issues"
   },
-  "homepage": "https://github.com/mukhtar-github/Complete-Node.js-Course#readme"
+  "homepage": "https://github.com/mukhtar-github/Complete-Node.js-Course#readme",
+  "dependencies": {
+    "underscore": "^1.11.0"
+  }
 }
