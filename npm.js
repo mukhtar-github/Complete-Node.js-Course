@@ -1,3 +1,4 @@
+const { contains } = require('underscore');
 // 2 - Package.json
 
 //Before you add any Node packages to your application, you need to create a file that is called package.json
@@ -13,6 +14,15 @@
 
 //In this lecture, I'm going to show you how to add a third party library, or a third party Node package to your
 //Node application. So, we're going to install a popular Javascript library called underscore.
+
+
+// 4 - Using a Package
+
+var _ = require('underscore');
+
+var result = _.contains([1, 2, 3], 2);
+
+console.log(result);
 
 
 
