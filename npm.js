@@ -19,7 +19,9 @@ const { contains } = require('underscore');
 // 4 - Using a Package
 
 //Let's create a new file in the root of this project, and call it npm.js.
-//We're going to usse our require function to load the underscore module. 
+//We're going to use our require function to load the underscore module. By convention, we use
+//an underscore for referring to the underscore library. We use the require function, and as
+//the argument, we supply underscore. This is how the require function works.
 
 var _ = require('underscore');
 
