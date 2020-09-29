@@ -40,3 +40,12 @@ const { contains } = require('underscore');
 
 // 5 - Package Dependencies
 
+//I want you to install a Node package called Mongoose. We use this to store our data in MongoDB. Now, let's take a look at
+//what we have inside of the Node Module folder with this (ls node_modules). Look, we have lots of folder here. We didn't
+//install any of these libraries, we only install Mongoose and Underscore. So, these other libraries you see here, these are
+//other Node Packages that Mongoose is dependent upon. In the previous version of npm, we had a different behavior. So, all
+//the dependencies of a given package were stored inside that package folder. However, this created a mess, because we ended
+//up with the same package being installed multiple times, and also in some situations, it would end up with a very deeply
+//nested structure. So, in recent versions of npm, this behavior changed, and now all dependencies are stored under our Node
+//Module's folder. Now, there is an exception here. If one of these packages uses a different version on one of these
+//dependencies, then that version would be stored locally with that package.
