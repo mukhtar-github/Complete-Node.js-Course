@@ -28,13 +28,15 @@ const { contains } = require('underscore');
 //in the same folder. If not, it would assume underscore is a folder, and inside this folder we have a file called index.js.
 //But in this case, we neither have a file or folder called underscore inside this project. So, the require function moves
 //onto the third step. It assumes that this module we've specified here exists inside the Node module's folder. So, this is
-//how the require function resolves a module. So, you have loaded the module now let's use it
+//how the require function resolves a module. So, you have loaded the module now let's use it. See result below. So, this is
+//how you use third party node modules in your applications.
 
-var _ = require('underscore');
+//var _ = require('underscore');
 
-var result = _.contains([1, 2, 3], 2);
+//var result = _.contains([1, 2, 3], 2);
 
-console.log(result);
+//console.log(result);// => true.
 
 
+// 5 - Package Dependencies
 
