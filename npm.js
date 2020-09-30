@@ -58,7 +58,10 @@ const { contains } = require('underscore');
 //say you want to give the application codes to a friend to work on it via email or dropbox. You don't want to send all the
 //contents of the module's folder. You might ask, what about the application dependencies? That our application may not work.
 //The good news is that our dependencies are stored in the package.json. We can restore all these dependencies by running
-//npm install or i.
+//npm install or i. If we want to exclude the Node module folder, we add a new file in the root
+//of our folder with the extention of .gitignore. Then, we can list all the files and folders
+//that should be excluded from our git repository. In this case, node_modules with a slash to
+//indicate that it is a folder.
 
 
 
