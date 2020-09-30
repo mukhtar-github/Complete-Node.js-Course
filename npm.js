@@ -51,4 +51,12 @@ const { contains } = require('underscore');
 //dependencies, then that version would be stored locally with that package.
 
 
-// 6 - 
+// 6 - NPM Packages and Source Control
+
+//We have quite a few folders inside the Node modules. Now this is a very small application. In a real world application, we
+//are going to have lots of folders in the Node modules folder, and the size of te folder will grow siginificantly. Let's
+//say you want to give the application codes to a friend to work on it via email or dropbox. You don't want to send all the
+//contents of the module's folder. You might ask, what about the application dependencies 
+
+
+
