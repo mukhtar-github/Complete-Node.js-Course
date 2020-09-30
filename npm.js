@@ -56,7 +56,9 @@ const { contains } = require('underscore');
 //We have quite a few folders inside the Node modules. Now this is a very small application. In a real world application, we
 //are going to have lots of folders in the Node modules folder, and the size of te folder will grow siginificantly. Let's
 //say you want to give the application codes to a friend to work on it via email or dropbox. You don't want to send all the
-//contents of the module's folder. You might ask, what about the application dependencies 
+//contents of the module's folder. You might ask, what about the application dependencies? That our application may not work.
+//The good news is that our dependencies are stored in the package.json. We can restore all these dependencies by running
+//npm install or i.
 
 
 
