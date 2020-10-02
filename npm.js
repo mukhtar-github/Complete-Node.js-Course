@@ -67,7 +67,8 @@ const { contains } = require('underscore');
 // 7 - Semantic Versioning
 
 //So earlier in this section, I mentioned the Caret character. What does this mean? Well, in order to understand this, first
-//we need to understand Semantic Versioning 
+//we need to understand Semantic Versioning. Which is also called Samver. In Semanti versioning, the version of a Node package
+//has three components. 
 
 
 
