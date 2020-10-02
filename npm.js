@@ -66,7 +66,8 @@ const { contains } = require('underscore');
 
 // 7 - Semantic Versioning
 
-//So earlier in this section, I mentioned the Caret character.
+//So earlier in this section, I mentioned the Caret character. What does this mean? Well, in order to understand this, first
+//we need to understand Semantic Versioning 
 
 
 
