@@ -85,5 +85,24 @@ const { contains } = require('underscore');
 //you run npm install you'll get this exact version. So this is how Semantic versioning, Caret and Tilde characters work.
 
 
+// 8 - Listing the Installed Packages
+
+//If you want to see the list of all the installed dependencies and their exact version, you can simply run npm list. So,
+//in the list tree, you can see all the dependencies and their dependencies. Now, the tree is a little bit polluted with 
+//too much detail. Maybe you're only interested in the dependencies of your application, not the dependencies of other 
+//packages. If that's the case, when you run npm list, you supply a flag  that is --depth=0.
+
+
+// 9 - Viewing Registry Info for a Package
+
+//Earlier in this section, I told you that if you want to learn about an npm package, you can simply head over to npmjs.com
+//and search for that package. But there is a faster way to find all the metadata about a given library. We can run npm view
+//and specify a package like Mongoose. If your interested only on the dependencies, you can run npm view mongoose dependencies.
+//Another useful property is versions. If you want to see all the versions of Mongoose that have been released so far, you
+//can run npm view mongoose versions. This is useful, because sometimes, you may want to downgrade to an earlier version or
+//you may want to upgrade to a newer version, in this case you can see the history.
+
+
+
 
 
