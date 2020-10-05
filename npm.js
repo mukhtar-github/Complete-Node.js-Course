@@ -69,8 +69,20 @@ const { contains } = require('underscore');
 //So earlier in this section, I mentioned the Caret character. What does this mean? Well, in order to understand this, first
 //we need to understand Semantic Versioning. Which is also called Samver. In Semanti versioning, the version of a Node package
 //has three components (Numbers). The first number is what we call the major version. The second one is what we call the minor
-//version. And the one is what we call the patch version, or patch release, which is used for bug fixes. The Caret character
-//tells npm that we're interested in any version of Mongoose as long as the major version remains the same.
+//version. And the third one is what we call the patch version, or patch release, which is used for bug fixes. 
+//The Caret character tells npm that we're interested in any version of Mongoose as long as the major version remains the 
+//same.So if there is a newer minor or patch version available, we will be interested in that package as well. Another way
+//or another syntax to specify a version without using a caret character is by writing the major version dot x. For example,
+//4.x. Sometimes, in some real world applications instead of the Caret character, you may see Tilde (~). And this means you
+//are interested in any versions, as long as the major version and the minor version remains the same. So the alternative
+//syntax to specify a version without using the Tilde character is by writing the major version and the minor version dot x.
+//For example, 1.8.x. So we can see that the Caret and the Tilde character help you keep your applications up to date with
+//the latest releases of these dependencies. However, sometimes this can cause issues in the real world. For example, let's
+//say Underscore releases a new version that is 1.8.4. They may fix a bug, but they may break something else, and that may
+//interfere with your application. In that case, you want to make sure that you're using the exact same version. So if 
+//someone checks out your code from the repository three months later. You want to make sure they have exact same version
+//of Underscore that was used on day one. In other to do that, you simply remove the Caret or Tilde character. So next time
+//you run npm install you'll get this exact version. So this is how Semantic versioning, Caret and Tilde characters work.
 
 
 
