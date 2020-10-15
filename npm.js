@@ -131,6 +131,13 @@ const { contains } = require('underscore');
 //to install a dependency, a node package called jshint. Which is a static analysis tool for JavaScript code. It basically
 //analyzes our JavaScript code, and look for potential problems or syntactical errors. So, we run npm install jshint. Now
 //in order to specify that this is a developement dependency, we supply a flag --save-dev.
+//All dependencies, whether they are application dependencies or developement dependecies, they are stored inside of the 
+//Node modules folder. They are segregated in package.json
+
+
+// 13 - Uninstalling a Package
+
+// Run npm uninstall package name or npm un.
 
 
 
