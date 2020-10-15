@@ -128,7 +128,9 @@ const { contains } = require('underscore');
 //during developement. For example, we have tools for running unit tests, we have tools for doing static analysis on our 
 //code, we have tools for bundling our JavaScript code and soon. These dependencies are developement dependencies, and they
 //should not go into production environment where we deploy our application. So in this lecture, I'm going to show you how
-//to install a dependency, a node package called jshint. Which is a static analysis tool
+//to install a dependency, a node package called jshint. Which is a static analysis tool for JavaScript code. It basically
+//analyzes our JavaScript code, and look for potential problems or syntactical errors. So, we run npm install jshint. Now
+//in order to specify that this is a developement dependency, we supply a flag --save-dev.
 
 
 
