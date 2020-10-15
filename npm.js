@@ -106,7 +106,17 @@ const { contains } = require('underscore');
 // 10 - Installing a Specific Version of a Package
 
 //Sometimes you may need to install a specific version, not necessarily the latest version. So to do that, you run npm install
-//then you put an @ sign and then set the version, let's say 2.4.2. Now, we can see that our package.json is updated
+//then you put an @ sign and then set the version, let's say 2.4.2. Now, we can see that our package.json is updated.
+
+
+// 11 - Updating Local Packages
+
+//In the real world, as you build your application, there might be newer versions of the dependencies you have installed.
+//So, you want to find out what packages have been outdated and what are the new versions. To find this information you run
+//npm outdated. So, with npm oudated, you can see all the outdated packages. Now, if you want to update them, you run 
+//npm update. However, this only works for updating minor and patches releases.
+
+
 
 
 
