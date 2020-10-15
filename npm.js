@@ -114,7 +114,11 @@ const { contains } = require('underscore');
 //In the real world, as you build your application, there might be newer versions of the dependencies you have installed.
 //So, you want to find out what packages have been outdated and what are the new versions. To find this information you run
 //npm outdated. So, with npm oudated, you can see all the outdated packages. Now, if you want to update them, you run 
-//npm update. However, this only works for updating minor and patches releases.
+//npm update. However, this only works for updating minor and patches releases. If you want to update these dependencies to
+//their very latest version. For that, we need a different command line tool. So, run npm install -g, which stands for 
+//global, and the name of the package we're going to install is npm-check-updates. Now, if you are on Mac or Linux, you 
+//prefix this with sudo and enter your password.
+
 
 
 
