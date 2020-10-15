@@ -121,6 +121,17 @@ const { contains } = require('underscore');
 //this, you can see all the outdated packages and thier new versions.
 
 
+// 12 - DevDependencies
+
+//So far, all the dependencies we have installed are application dependencies, like mongoose and underscore. So our 
+//application needs these dependencies in order to function properly, but sometimes we use dependencies that are only used
+//during developement. For example, we have tools for running unit tests, we have tools for doing static analysis on our 
+//code, we have tools for bundling our JavaScript code and soon. These dependencies are developement dependencies, and they
+//should not go into production environment where we deploy our application. So in this lecture, I'm going to show you how
+//to install a dependency, a node package called jshint. Which is a static analysis tool
+
+
+
 
 
 
