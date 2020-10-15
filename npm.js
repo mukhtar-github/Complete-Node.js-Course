@@ -105,9 +105,8 @@ const { contains } = require('underscore');
 
 // 10 - Installing a Specific Version of a Package
 
-
-
-
+//Sometimes you may need to install a specific version, not necessarily the latest version. So to do that, you run npm install
+//then you put an @ sign and then set the version, let's say 2.4.2. Now, we can see that our package.json is updated
 
 
 
