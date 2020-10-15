@@ -117,7 +117,8 @@ const { contains } = require('underscore');
 //npm update. However, this only works for updating minor and patches releases. If you want to update these dependencies to
 //their very latest version. For that, we need a different command line tool. So, run npm install -g, which stands for 
 //global, and the name of the package we're going to install is npm-check-updates. Now, if you are on Mac or Linux, you 
-//prefix this with sudo and enter your password.
+//prefix this with sudo and enter your password. Okay, now we a new command line tool called npm-check-updates. If you run
+//this, you can see all the outdated packages and thier new versions.
 
 
 
