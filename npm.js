@@ -166,7 +166,10 @@ const { contains } = require('underscore');
 //solve this issue, go back to package.json and use a unique name for your package(lion-lib-mtg). So, I publish this package
 //on npm, now we can use it in another Node application. So, let's go out of this folder(cd ..). Create another folder like
 //node app. So, we start with (npm init --yes), we get a basic package.json. And, we can install this package that we just 
-//published, using (npm install lion-lib-mtg).
+//published, using (npm install lion-lib-mtg). Now let's open it. So inside of node_modules, you can see we have lion-lib-mtg,
+//we have index.js, which is where we're exporting our add function. And we have our package.json. Now the package.json that
+//you see here, has more metadata than what we provided, because once you publish, npm adds it's own properties to the 
+//package.json
 
 
 
