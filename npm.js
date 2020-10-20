@@ -159,7 +159,10 @@ const { contains } = require('underscore');
 //it, index.js, because that's our entry point to our package. Now, here we can export one or more functions. I'm going to
 //export a very simple function, (module.exports.add). We set this to a function that takes two parameters and simply
 //returns their sum. Very simple function, we just want to focus on how to publish a Node package. Now, back in the terminal.
-//If you don't have an account on npm.js, you need to create an account first.
+//If you don't have an account on npm.js, you need to create an account first. You can do that by running (npm adduser). If
+//you already have an account, you then run (npm login). Either way, you're going to get these thre questions. First is your
+//user name, then your password, and finally your email address.
+
 
 
 
