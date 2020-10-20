@@ -137,10 +137,12 @@ const { contains } = require('underscore');
 
 // 13 - Uninstalling a Package
 
-// Run npm uninstall package name or npm un.
+// Run npm uninstall package name or npm un package name.
 
 
+// 14 - Working with Global Packages
 
+//
 
 
 
