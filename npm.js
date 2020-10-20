@@ -161,7 +161,9 @@ const { contains } = require('underscore');
 //returns their sum. Very simple function, we just want to focus on how to publish a Node package. Now, back in the terminal.
 //If you don't have an account on npm.js, you need to create an account first. You can do that by running (npm adduser). If
 //you already have an account, you then run (npm login). Either way, you're going to get these thre questions. First is your
-//user name, then your password, and finally your email address.
+//user name, then your password, and finally your email address. In order to publish this package, we run npm publish. So,
+//when you try to publish, you're going to get an error because you don't have the permission to modify that package. So to
+//solve this issue, go back to package.json and use a unique name for your package(lion-lion-lib-mtg).
 
 
 
