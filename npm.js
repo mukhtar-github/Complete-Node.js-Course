@@ -163,7 +163,10 @@ const { contains } = require('underscore');
 //you already have an account, you then run (npm login). Either way, you're going to get these thre questions. First is your
 //user name, then your password, and finally your email address. In order to publish this package, we run npm publish. So,
 //when you try to publish, you're going to get an error because you don't have the permission to modify that package. So to
-//solve this issue, go back to package.json and use a unique name for your package(lion-lion-lib-mtg).
+//solve this issue, go back to package.json and use a unique name for your package(lion-lib-mtg). So, I publish this package
+//on npm, now we can use it in another Node application. So, let's go out of this folder(cd ..). Create another folder like
+//node app. So, we start with (npm init --yes), we get a basic package.json. And, we can install this package that we just 
+//published, using (npm install lion-lib-mtg).
 
 
 
