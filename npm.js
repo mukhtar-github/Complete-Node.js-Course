@@ -142,7 +142,21 @@ const { contains } = require('underscore');
 
 // 14 - Working with Global Packages
 
-//
+//All these packages we have install so far, like underscore and jshint, these are particular to this node project in this 
+//folder. But there are node packages on npm registry that are not specific to an application. These are often command line
+//tools that you want to access from everywhere. They're not tied to a specific folder, or a specific project. Npm is an 
+//example of one of these global packages.It's a command line tool, we can run it from any folder. It's not specific to a
+//given project. Another popular command line tool is Angular CLI. We use this to create a new angular project. If you want
+//to install a Node package globally, you use the -g flag.
+
+
+// 15 - Publishing a Package
+
+//In this lecture, I'm going to show you how to create your own Node packages and publish them on npm registry. First let's
+//create a new folder. We're going to create a new Node project, let's call this Lion-lib(mkdir lion-lib). So, we're going
+//to create a library called lion. Just like how we have a  library called underscore. Now let's go to lion(cd lion-lib/).
+//Here we need to create a package.json file
+
 
 
 
