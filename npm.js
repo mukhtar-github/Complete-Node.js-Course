@@ -156,7 +156,11 @@ const { contains } = require('underscore');
 //create a new folder. We're going to create a new Node project, let's call this Lion-lib(mkdir lion-lib). So, we're going
 //to create a library called lion. Just like how we have a  library called underscore. Now let's go to lion(cd lion-lib/).
 //Here we need to create a package.json file. So (npm init --yes). Let's open the folder in vs-code and add a new file to
-//it, index.js, because that's our entry point to it.
+//it, index.js, because that's our entry point to our package. Now, here we can export one or more functions. I'm going to
+//export a very simple function, (module.exports.add). We set this to a function that takes two parameters and simply
+//returns their sum. Very simple function, we just want to focus on how to publish a Node package. Now, back in the terminal.
+//If you don't have an account on npm.js, you need to create an account first.
+
 
 
 
