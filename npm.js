@@ -155,7 +155,9 @@ const { contains } = require('underscore');
 //In this lecture, I'm going to show you how to create your own Node packages and publish them on npm registry. First let's
 //create a new folder. We're going to create a new Node project, let's call this Lion-lib(mkdir lion-lib). So, we're going
 //to create a library called lion. Just like how we have a  library called underscore. Now let's go to lion(cd lion-lib/).
-//Here we need to create a package.json file
+//Here we need to create a package.json file. So (npm init --yes). Let's open the folder in vs-code and add a new file to
+//it, index.js, because that's our entry point to it.
+
 
 
 
