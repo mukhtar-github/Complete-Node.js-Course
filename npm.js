@@ -181,8 +181,13 @@ const { contains } = require('underscore');
 //So, back to our lion-lib-mtg project, I'm going to export a new multply function. Now, we want to publish this new version.
 //So, in our lion-lib-mtg folder, if we run npm publish, we get an error. 'You cannot publish over the previously published 
 //versions: 1.0.0.'. So, depending on kind of change we've made, we need to update the version number. Now in this case, we
-//made a simple change. It was not a bug fix, it was not a new feature, but it was a major
-
+//made a simple change. It was not a bug fix, it was a new feature, but it was not a major new feature with breaking changes
+//to the API. So, we kept the add function API, it's exactly like before. Any applications that were dependent upon the add
+//function would continue to work. We can go to package.json and update the version number manually by hand, or we can use
+//npm. So back in the terminal, we run 'npm version', we can add 'major', if we want to update a major version, or 'minor',
+//or 'patch'. In this case, we're going to update the minor version number. So, we can see npm updated our version to 1.1.0
+//(v1.1.0). And then we can run run 'npm publish', and it published the newer version on npm (lion-lib-mtg@1.1.0).
+//So, this is all about installing, updating, uninstalling and publishin Node packages on npm registry.
 
 
 
