@@ -170,9 +170,10 @@ const { contains } = require('underscore');
 //you see here, has more metadata than what we provided, because once you publish, npm adds it's own properties to the 
 //package.json. Also you can see, this package is listed under dependencies. The current version is version 1.0.0. Now we 
 //can use this as another Node module is this application. So, in the root of this folder I'm going to create a new file,
-//index.js. And load our Node module. So we use the require and name of our module is lion-lib-mtg. We store it in a variable,
+//index1.js. And load our Node module. So we use the require and name of our module is lion-lib-mtg. We store it in a variable,
 //lion, and simply call lion. Look, we have the Add function. We give it two arguments, and store the out come in the result 
-//variable, then console.log(result). Now back in the terminal
+//variable, then console.log(result). Now back in the terminal, we can run index1.js, and we get 3. So we publish and use 
+//the package on npm.
 
 
 
