@@ -58,10 +58,9 @@ const { contains } = require('underscore');
 //say you want to give the application codes to a friend to work on it via email or dropbox. You don't want to send all the
 //contents of the module's folder. You might ask, what about the application dependencies? That our application may not work.
 //The good news is that our dependencies are stored in the package.json. We can restore all these dependencies by running
-//npm install or i. If we want to exclude the Node module folder, we add a new file in the root
-//of our folder with the extention of .gitignore. Then, we can list all the files and folders
-//that should be excluded from our git repository. In this case, node_modules with a slash to
-//indicate that it is a folder.
+//npm install or i. If we want to exclude the Node module folder, we add a new file in the root of our folder with the 
+//extention of .gitignore. Then, we can list all the files and folders that should be excluded from our git repository. 
+//In this case, node_modules with a slash to indicate that it is a folder.
 
 
 // 7 - Semantic Versioning
@@ -171,7 +170,9 @@ const { contains } = require('underscore');
 //you see here, has more metadata than what we provided, because once you publish, npm adds it's own properties to the 
 //package.json. Also you can see, this package is listed under dependencies. The current version is version 1.0.0. Now we 
 //can use this as another Node module is this application. So, in the root of this folder I'm going to create a new file,
-//index.js.
+//index.js. And load our Node module. So we use the require and name of our module is lion-lib-mtg. We store it in a variable,
+//lion, and simply call lion. Look, we have the Add function. We give it two arguments, and store the out come in the result 
+//variable, then console.log(result). Now back in the terminal
 
 
 

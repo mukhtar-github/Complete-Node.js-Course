@@ -1,2 +1,2 @@
 
-module.exports.add = function(a, d) { return a + b };
+module.exports.add = function(a, b) {return a + b};
