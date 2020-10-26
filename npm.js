@@ -178,6 +178,12 @@ const { contains } = require('underscore');
 
 // 16 - Updating a Published Package
 
+//So, back to our lion-lib-mtg project, I'm going to export a new multply function. Now, we want to publish this new version.
+//So, in our lion-lib-mtg folder, if we run npm publish, we get an error. 'You cannot publish over the previously published 
+//versions: 1.0.0.'. So, depending on kind of change we've made, we need to update the version number. Now in this case, we
+//made a simple change. It was not a bug fix, it was not a new feature, but it was a major
+
+
 
 
 
