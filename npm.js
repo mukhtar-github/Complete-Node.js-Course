@@ -169,7 +169,9 @@ const { contains } = require('underscore');
 //published, using (npm install lion-lib-mtg). Now let's open it. So inside of node_modules, you can see we have lion-lib-mtg,
 //we have index.js, which is where we're exporting our add function. And we have our package.json. Now the package.json that
 //you see here, has more metadata than what we provided, because once you publish, npm adds it's own properties to the 
-//package.json
+//package.json. Also you can see, this package is listed under dependencies. The current version is version 1.0.0. Now we 
+//can use this as another Node module is this application. So, in the root of this folder I'm going to create a new file,
+//index.js.
 
 
 
