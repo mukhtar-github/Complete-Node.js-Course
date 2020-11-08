@@ -17,4 +17,7 @@
 //powers our web. So on the server, we expose a bunch of services that are accessible via the http protocol. The client can
 //then directly call these services by sending http requests. Now, this is where Rest comes into the picture. REST is short
 //for Representational State Transfer. It may probably doesn't make any sence to you, because it was introduced by a PhD 
-//student as part of his thesis.
+//student as part of his thesis. But the theory aside, REST is baiscally a convention for building these http services. So,
+//we use simple http protocol principles to provide suport to 'create, read, update, and delete date'. We refer to these
+//operations as CRUD operations. Now let's explore this convention using a real world example. Let's say we have a company
+//called Vidly for renting out Movies.
