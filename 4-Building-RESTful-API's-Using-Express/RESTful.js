@@ -13,4 +13,8 @@
 //Let's start this section by a brief introduction to 'RESTful services'. Also called "RESTful API's". So earlier, at the
 //beginning of this course, I introduced you to the client server architecture. So most, if not all applications we use these
 //days follow this architecture. The app itself is the client or the frontend part. Under the hood, it needs to talk to the
-//server or the backend.
+//server or the backend, to get or save the data. This communication happens using the http protocol. The same protocol that
+//powers our web. So on the server, we expose a bunch of services that are accessible via the http protocol. The client can
+//then directly call these services by sending http requests. Now, this is where Rest comes into the picture. REST is short
+//for Representational State Transfer. It may probably doesn't make any sence to you, because it was introduced by a PhD 
+//student as part of his thesis.
