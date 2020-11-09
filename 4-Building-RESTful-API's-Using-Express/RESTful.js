@@ -27,4 +27,8 @@
 //a secure channel, you would use https. After that we have the domain of the application. Next we have /api. This is not
 //compulsory, but you see alot of companies follow this convention to expose their RESTful services. They include the word
 //API somewhere in the address. It can be after the domain or it can be a subdomain like 'api.vidly.com'. There is no hard
-//and fast rule. After that, we have
+//and fast rule. After that, we have /customers which refers to the collection of customers in our application. In the REST
+//world, we refer to this part as a resource. We can expose our resources such as customers, movies, rentals, and various 
+//endpoints. So this is our endpoint to work with the customers. All the operations around customers, such as creating a 
+//customer, or updating a customer, would be done be sending an http request to this endpoint. The type of the http request
+//determines the kind of the operation.
