@@ -31,4 +31,8 @@
 //world, we refer to this part as a resource. We can expose our resources such as customers, movies, rentals, and various 
 //endpoints. So this is our endpoint to work with the customers. All the operations around customers, such as creating a 
 //customer, or updating a customer, would be done be sending an http request to this endpoint. The type of the http request
-//determines the kind of the operation.
+//determines the kind of the operation. So every http request has what we call a verb or a method that determines it's type 
+//or intension. Here are the standard http methods. We have 'GET' for getting data, 'POST' for creating data, 'PUT' for 
+//updating data, 'DELETE' for deleting data. Now let's explore each of these using our customers example. To get the list of
+//all customers, we should send an http 'GET' request to this address: GET /api/customers. Note the plural name of customers
+//here, it indicates a list of customers
