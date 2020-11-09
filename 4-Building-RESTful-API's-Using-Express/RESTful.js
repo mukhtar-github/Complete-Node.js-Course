@@ -20,4 +20,7 @@
 //student as part of his thesis. But the theory aside, REST is baiscally a convention for building these http services. So,
 //we use simple http protocol principles to provide suport to 'create, read, update, and delete date'. We refer to these
 //operations as CRUD operations. Now let's explore this convention using a real world example. Let's say we have a company
-//called Vidly for renting out Movies.
+//called Vidly for renting out Movies. We have a client app where we manage the lists of our customers. On the server, we 
+//should expose a service and endpoint like this: http//vidly.com/api/customers. So the client can send http requests to this
+//endpoint to talk to our service. Now a few things about this endpoint you need to know. First of all, the address can 
+//start with http, or without
