@@ -42,6 +42,12 @@
 //  { id: 2, name: '' },
 //  ...  
 //]
-//So we have an array of customer object. If we want a single customer, we should include the 'id' (Request =>
-//GET /api/customers/1) of that cuustomer in the address. Then our server would respond to the customer object like this:
-//Response => { id: 1, name: '' }.
+//So we have an array of customer object. If we want a single customer, we should include the id (1) of that cuustomer in 
+//the address: Request => GET /api/customers/1. Then our server would respond to the customer object like this:
+//Response => { id: 1, name: '' }. 
+//Now to update a customer, we should send an http 'PUT' request to this endpoint: 
+//Request => PUT /api/customers/1. 
+//           { name: '' }
+//And note that again here, we are specifying the id (1) of the customer to be updated. But also we should include the 
+//customer object in the body of the request as indicated above. So this is a complete representation of the customer object
+//with updated properties. We send this to the server, and the server updates the customer with the giving id
