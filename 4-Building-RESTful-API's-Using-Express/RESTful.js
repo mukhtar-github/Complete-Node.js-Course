@@ -50,4 +50,12 @@
 //           { name: '' }
 //And note that again here, we are specifying the id (1) of the customer to be updated. But also we should include the 
 //customer object in the body of the request as indicated above. So this is a complete representation of the customer object
-//with updated properties. We send this to the server, and the server updates the customer with the giving id
+//with updated properties. We send this to the server, and the server updates the customer with a given id according to these
+//values: Response => { id: 1, name: '' }. 
+//Similarly, to delete a customer, we should send an http 'DELETE' request to this endpoint:
+//Request => DELETE /api/customers/1. But here, we don't need to include the customer object in the body of the request,
+//because all we need to delete a customer an id.
+//And finally to create a customer, we need to send an http 'POST' request to this endpoint: Request => POST /api/customers.
+//Note that here because we are adding a new customer, we not dealing with a specific customer, so we don't have an id in
+//the address. We are working with the
+
