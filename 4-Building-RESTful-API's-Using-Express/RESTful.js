@@ -23,4 +23,8 @@
 //called Vidly for renting out Movies. We have a client app where we manage the lists of our customers. On the server, we 
 //should expose a service and endpoint like this: http//vidly.com/api/customers. So the client can send http requests to this
 //endpoint to talk to our service. Now a few things about this endpoint you need to know. First of all, the address can 
-//start with http, or without
+//start with http, or https. That depends on the application and it's requirements. If you want the data to be exchanged on
+//a secure channel, you would use https. After that we have the domain of the application. Next we have /api. This is not
+//compulsory, but you see alot of companies follow this convention to expose their RESTful services. They include the word
+//API somewhere in the address. It can be after the domain or it can be a subdomain like 'api.vidly.com'. There is no hard
+//and fast rule. After that, we have
