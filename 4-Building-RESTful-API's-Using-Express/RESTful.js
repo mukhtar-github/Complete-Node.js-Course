@@ -34,5 +34,14 @@
 //determines the kind of the operation. So every http request has what we call a verb or a method that determines it's type 
 //or intension. Here are the standard http methods. We have 'GET' for getting data, 'POST' for creating data, 'PUT' for 
 //updating data, 'DELETE' for deleting data. Now let's explore each of these using our customers example. To get the list of
-//all customers, we should send an http 'GET' request to this address: GET /api/customers. Note the plural name of customers
-//here, it indicates a list of customers
+//all customers, we should send an http 'GET' request to this address: Request => GET /api/customers. Note the plural name 
+//of customers here, it indicates a list of customers. So we send an http get request to this endpoint, our service should 
+//sent us something like this: Response =>
+//[
+//  { id: 1, name: '' },
+//  { id: 2, name: '' },
+//  ...  
+//]
+//So we have an array of customer object. If we want a single customer, we should include the 'id' (Request =>
+//GET /api/customers/1) of that cuustomer in the address. Then our server would respond to the customer object like this:
+//Response => { id: 1, name: '' }.
