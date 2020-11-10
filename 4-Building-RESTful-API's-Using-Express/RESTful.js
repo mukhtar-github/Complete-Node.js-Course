@@ -96,4 +96,9 @@ server.listen(3000);
 
 console.log('Listening on port 3000...');
 
+//So here's the code that we wrote in the section about Node core, where I introduced you to the http module. So we can see,
+//with http module we can create a web server. Here we have a call back function that takes two parameters, requests and
+//response. And with this request object, we can check the URL of the incoming request. So with this, we can define various
+//routes for our application. 
+
 
