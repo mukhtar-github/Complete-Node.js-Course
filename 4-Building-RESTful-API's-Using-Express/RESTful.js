@@ -97,8 +97,14 @@ server.listen(3000);
 console.log('Listening on port 3000...');
 
 //So here's the code that we wrote in the section about Node core, where I introduced you to the http module. So we can see,
-//with http module we can create a web server. Here we have a call back function that takes two parameters, requests and
+//with http module we can create a web server. Here we have a callback function that takes two parameters, requests and
 //response. And with this request object, we can check the URL of the incoming request. So with this, we can define various
-//routes for our application. 
+//routes for our application. So if we have a request for let's say (req.url === '/api/courses'), this is how we're going
+//to respond to the client { res.write(JSON.stringify([1, 2, 3])); }. Now, while this approach certainly works, it's not
+//very maintainable, because as we define more routes for our application, we need to add more 'if' blocks in the callback
+//function. So that's when a framework comes into the picture. A framework gives our application a proper structure, so we
+//can easily add more routes, while keeping our application code maintainable. There are various frameworks out there for
+//building web applications and web servers on top of Node.
+
 
 
