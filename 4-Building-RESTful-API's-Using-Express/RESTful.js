@@ -116,6 +116,8 @@ console.log('Listening on port 3000...');
 //file, first we want to load the express module. So we use our require function, give it the name of our module, which is
 //express. Now this returns a function, we call that express. Now we need to call this function (see index.js). As you can 
 //see, this returns an object of type express. By covention, we call this object, app. So we store the result in a constant
-//called app. So this represents our application.
+//called app. So this represents our application. This app object has a bunch of useful methods. We have methods like, GET,
+//POST, PUT and DELETE. All these methods correspond with http verbs, or http methods that I told about earlier in this 
+//section
 
 
