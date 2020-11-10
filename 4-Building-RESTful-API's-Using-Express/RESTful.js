@@ -106,7 +106,13 @@ console.log('Listening on port 3000...');
 //can easily add more routes, while keeping our application code maintainable. There are various frameworks out there for
 //building web applications and web servers on top of Node. The most popular one is Express. So if you head over to npmjs.com,
 //and search for express. So back in the terminal, let's create a folder and call it 'express-demo'. Let's run npm init 
-//with --yes flag inside the folder. So now, we have a package.json file and finally we can install express.
+//with --yes flag inside the folder. So now, we have a package.json file and finally we can install express. In the next 
+//lecture I'm going to show you how to build your first web server using express.
+
+
+// 4 - Building Your First Web Server
+
+//
 
 
 
