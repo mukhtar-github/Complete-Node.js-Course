@@ -221,21 +221,21 @@
 //more routes, the code gets more complex. So instead, we use a Framework called Express, wich gives our application a
 //clean structure to handle various routes. Internally, the express framework is build on top of the http module in Node.
 
-const http = require('http');
-const { url } = require('inspector');
+// const http = require('http');
+// const { url } = require('inspector');
 
-const server = http.createServer((req, res) => {
-    if (req.url === '/') {
-        res.write('Hello World');
-        res.end();
-    }
+// const server = http.createServer((req, res) => {
+//     if (req.url === '/') {
+//         res.write('Hello World');
+//         res.end();
+//     }
 
-    if (req.url === '/api/courses') {
-        res.write(JSON.stringify([1, 2, 3]));
-    }
-    res.end();
-});
+//     if (req.url === '/api/courses') {
+//         res.write(JSON.stringify([1, 2, 3]));
+//     }
+//     res.end();
+// });
 
-server.listen(3000);
+// server.listen(3000);
 
-console.log('Listening on port 3000...');
+// console.log('Listening on port 3000...');

@@ -72,5 +72,28 @@
 //So, through out this you're going to learn how to use the Express framework to build a RESTful service for managing the
 //list of customers. However, in this section, we won't be doing any database work, because that will bring additional 
 //complexity. Our focus will be purely on build http services and we will use a simple array in memory to keep the list of 
-//our customers. Later in the course, we'll look at using a database. 
+//our customers. Later in the course, we'll look at using a database.
+
+
+// 3 - Introducing Express
+
+const http = require('http');
+const { url } = require('inspector');
+
+const server = http.createServer((req, res) => {
+    if (req.url === '/') {
+        res.write('Hello World');
+        res.end();
+    }
+
+    if (req.url === '/api/courses') {
+        res.write(JSON.stringify([1, 2, 3]));
+    }
+    res.end();
+});
+
+server.listen(3000);
+
+console.log('Listening on port 3000...');
+
 
