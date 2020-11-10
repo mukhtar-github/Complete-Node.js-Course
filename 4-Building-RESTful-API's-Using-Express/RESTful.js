@@ -112,7 +112,8 @@ console.log('Listening on port 3000...');
 
 // 4 - Building Your First Web Server
 
-//
-
+//Alright, let's add a new file and name it index.js. You could also call it app.js, it doesn't really matter. So in this 
+//file, first we want to load the express module. So we use our require function, give it the name of our module, which is
+//express. Now this returns a function
 
 
