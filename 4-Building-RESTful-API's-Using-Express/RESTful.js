@@ -55,7 +55,12 @@
 //Similarly, to delete a customer, we should send an http 'DELETE' request to this endpoint:
 //Request => DELETE /api/customers/1. But here, we don't need to include the customer object in the body of the request,
 //because all we need to delete a customer an id.
-//And finally to create a customer, we need to send an http 'POST' request to this endpoint: Request => POST /api/customers.
-//Note that here because we are adding a new customer, we not dealing with a specific customer, so we don't have an id in
-//the address. We are working with the
+//And finally to create a customer, we need to send an http 'POST' request to this endpoint: 
+//Request => POST /api/customers
+//           { name: '' }
+//Note that here because we are adding a new customer, we are not dealing with a specific customer, so we don't have the id
+//in the address. We are working with the collection of customers, so we are posting a new customer to this collection. And
+//that's why we should include the customer object in the body of the request.
+//The server gets this object and creates the customer for us: Response => { id: 1, name: '' }.
+//So this is the RESTful convention
 
