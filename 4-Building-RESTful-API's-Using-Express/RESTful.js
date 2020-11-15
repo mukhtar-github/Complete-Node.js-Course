@@ -118,6 +118,7 @@ console.log('Listening on port 3000...');
 //see, this returns an object of type express. By covention, we call this object, app. So we store the result in a constant
 //called app. So this represents our application. This app object has a bunch of useful methods. We have methods like, GET,
 //POST, PUT and DELETE. All these methods correspond with http verbs, or http methods that I told about earlier in this 
-//section
+//section. So if you want to handle an http Post request and endpoint, you would use app.post(). In this lecture we just 
+//want to use app.get().
 
 
