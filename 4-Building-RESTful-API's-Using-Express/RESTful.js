@@ -119,6 +119,7 @@ console.log('Listening on port 3000...');
 //called app. So this represents our application. This app object has a bunch of useful methods. We have methods like, GET,
 //POST, PUT and DELETE. All these methods correspond with http verbs, or http methods that I told about earlier in this 
 //section. So if you want to handle an http Post request and endpoint, you would use app.post(). In this lecture we just 
-//want to use app.get(). We want to impliment a coulple of end-points thar respond with http request
+//want to use app.get(). We want to impliment a coulple of end-points that respond with http get requests. So this method 
+//takes two arguments.
 
 
