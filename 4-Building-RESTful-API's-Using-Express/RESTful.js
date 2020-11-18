@@ -121,6 +121,8 @@ console.log('Listening on port 3000...');
 //section. So if you want to handle an http Post request and endpoint, you would use app.post(). In this lecture we just 
 //want to use app.get(). We want to impliment a coulple of end-points that respond to an http get requests. So this method 
 //takes two arguments. The first argument is the path or the url. So here I'm going to use slash (/) to represent the root
-//of the website.
+//of the website. Now the second argument is a callback function. This is the function that would called when we have an 
+//http 'get' request to this endpoint. So this callback function should have two arguments, Request and Respond.
+
 
 
