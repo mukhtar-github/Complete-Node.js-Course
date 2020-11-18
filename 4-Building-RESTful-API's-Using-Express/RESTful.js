@@ -123,6 +123,11 @@ console.log('Listening on port 3000...');
 //takes two arguments. The first argument is the path or the url. So here I'm going to use slash (/) to represent the root
 //of the website. Now the second argument is a callback function. This is the function that would called when we have an 
 //http 'get' request to this endpoint. So this callback function should have two arguments, Request and Respond.
+//This request object has a bunch of useful properties that gives us information about the in-coming requests. If you want
+//to learn about all these properties, its best to look at the Express Documentation, because in this course we're going use
+//only a handful of these properties. So, head over to Expressjs.com. Onthe top, look at the API reference, version 4. Now
+//here we can see the request object, and below you can see all the properties that are available to you.
+
 
 
 
