@@ -129,7 +129,9 @@ console.log('Listening on port 3000...');
 //here we can see the request object, and below you can see all the properties that are available to you. We have 'baseUrl',
 //we 'body' to read the body of the request, 'cookies', 'fresh', 'hostname', 'ip', and so on. So back to our code, when we 
 //get an http request to the root of our website, we're going to respond in 'Hello World' message.
-//So response.send('Hello World'). So this is how we define a route. We 
+//So response.send('Hello World'). So this is how we define a route. We specify the path or the Url, and a callback function
+//which is also called a route handler. Now finally, we need to listen on a given port. So we call app.listen. We give it a
+//port number like 3000, and optionally we can pass a function that will be called when the application starts
 
 
 
