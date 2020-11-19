@@ -131,7 +131,8 @@ console.log('Listening on port 3000...');
 //get an http request to the root of our website, we're going to respond in 'Hello World' message.
 //So response.send('Hello World'). So this is how we define a route. We specify the path or the Url, and a callback function
 //which is also called a route handler. Now finally, we need to listen on a given port. So we call app.listen. We give it a
-//port number like 3000, and optionally we can pass a function that will be called when the application starts
+//port number like 3000, and optionally we can pass a function that will be called when the application starts listening on
+//the given port. So once again we use the arrow function syntax to display something on the console. So back in the terminal.
 
 
 
