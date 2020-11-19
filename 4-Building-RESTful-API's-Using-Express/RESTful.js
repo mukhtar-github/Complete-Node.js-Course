@@ -127,7 +127,9 @@ console.log('Listening on port 3000...');
 //to learn about all these properties, its best to look at the Express Documentation, because in this course we're going use
 //only a handful of these properties. So, head over to Expressjs.com. On the top, look at the API reference, version 4. Now
 //here we can see the request object, and below you can see all the properties that are available to you. We have 'baseUrl',
-//we 'body' to read the body of the request, 'cookies', 'fresh', 'hostname', 'ip', and so on.
+//we 'body' to read the body of the request, 'cookies', 'fresh', 'hostname', 'ip', and so on. So back to our code, when we 
+//get an http request to the root of our website, we're going to respond in 'Hello World' message.
+//So response.send('Hello World'). So this is how we define a route. We 
 
 
 
