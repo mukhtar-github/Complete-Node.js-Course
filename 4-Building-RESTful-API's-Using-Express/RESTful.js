@@ -125,8 +125,9 @@ console.log('Listening on port 3000...');
 //http 'get' request to this endpoint. So this callback function should have two arguments, Request and Respond.
 //This request object has a bunch of useful properties that gives us information about the in-coming requests. If you want
 //to learn about all these properties, its best to look at the Express Documentation, because in this course we're going use
-//only a handful of these properties. So, head over to Expressjs.com. Onthe top, look at the API reference, version 4. Now
-//here we can see the request object, and below you can see all the properties that are available to you.
+//only a handful of these properties. So, head over to Expressjs.com. On the top, look at the API reference, version 4. Now
+//here we can see the request object, and below you can see all the properties that are available to you. We have 'baseUrl',
+//we 'body' to read the body of the request, 'cookies', 'fresh', 'hostname', 'ip', and so on.
 
 
 
