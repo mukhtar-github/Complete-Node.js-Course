@@ -134,7 +134,8 @@ console.log('Listening on port 3000...');
 //port number like 3000, and optionally we can pass a function that will be called when the application starts listening on
 //the given port. So once again we use the arrow function syntax to display something on the console. So back in the terminal,
 //'node index.js'. Okay we're listening on port 3000. Now let's switch over to Chrome and go 'localhost:3000'. So here's Our
-//'Hello World' message.
+//'Hello World' message. Now let's define another route. Once again, we're going to call app.get, this one is going to be
+//api/courses.
 
 
 
