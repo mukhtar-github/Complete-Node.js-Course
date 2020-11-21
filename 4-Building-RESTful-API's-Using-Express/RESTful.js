@@ -148,5 +148,18 @@ console.log('Listening on port 3000...');
 //file, like 'courses.js'. So Express gives our application a skeleton, a structure.
 
 
+// 5 - Nodemon
+
+//So far you've notice that every time we make a change to this code, we have to go back in terminal and stop this process
+//and start it again. This is very tedious. So I'm going to you a better way.
+//We're going to install a node package called Nodemon, which is short for Node Monitor. So in the terminal 'npm install -g'
+//because we want to install this globally so we can run it anywhere. And te name of the package is Nodemon.
+//Alright nodemon is installed. So with this, instead of running our application using node, we use use nodemon. Now we can
+//see nodemon is watching all the files in this folder. Any files with any extensions. So, if we go back to our code and
+//make a simple change and then save the file, now look in the terminal, nodemon restarted our application or our process
+//due to changes.
+
+
+
 
 
