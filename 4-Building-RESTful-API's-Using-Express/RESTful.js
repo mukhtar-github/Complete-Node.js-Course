@@ -140,6 +140,12 @@ console.log('Listening on port 3000...');
 //get the list of courses from the database and return them. But as I told you before, in this section our focus is purely
 //on building these endpoints, we're not going to do any database work. So I'm going to simply return an array of numbers.
 //So response.send, we pass an array of 3 numbers. In the future we can replace these numbers with actual course objects.
+//So save. Now back in the terminal, we have to stop the earlier process and start it again. So, press control and C to 
+//cancel. Okay, one more time, 'node index.js'. Now back in Chrome, let's head over to '/api/courses'. Look we have an array of
+//3 numbers, beautiful. So this is what I want you to pay attention to here, in this implementation, we don't have those
+//'if (?)' blocks. We define new route, like calling 'app.get', and with this structure, as our application grows, we can
+//move some of these routes to different files. For example, we can move all the routes related to courses to a separate
+//file, like 'courses.js'. So Express gives our application a skeleton, a structure.
 
 
 
