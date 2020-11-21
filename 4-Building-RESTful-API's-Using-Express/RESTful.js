@@ -157,7 +157,13 @@ console.log('Listening on port 3000...');
 //Alright nodemon is installed. So with this, instead of running our application using node, we use use nodemon. Now we can
 //see nodemon is watching all the files in this folder. Any files with any extensions. So, if we go back to our code and
 //make a simple change and then save the file, now look in the terminal, nodemon restarted our application or our process
-//due to changes.
+//due to changes. So we don't have to do this manually anymore. Now back in the browser, if we send a request to the root
+//of the website, we can see our new message displayed there.
+
+
+// 6 - Environment Variables
+
+//Now one thing we need to improve to improve in this code is this hard coded value (3000) for the ports.
 
 
 
