@@ -134,8 +134,12 @@ console.log('Listening on port 3000...');
 //port number like 3000, and optionally we can pass a function that will be called when the application starts listening on
 //the given port. So once again we use the arrow function syntax to display something on the console. So back in the terminal,
 //'node index.js'. Okay we're listening on port 3000. Now let's switch over to Chrome and go 'localhost:3000'. So here's Our
-//'Hello World' message. Now let's define another route. Once again, we're going to call app.get, this one is going to be
-//api/courses.
+//'Hello World' message. Now let's define another route.
+//Once again, we're going to call 'app.get', this one is going to be /api/courses. Once again you pass a function with two
+//arguments, that is request and response, and this goes to a code block. Now in a real-world scenario, here you want to
+//get the list of courses from the database and return them. But as I told you before, in this section our focus is purely
+//on building these endpoints, we're not going to do any database work. So I'm going to simply return an array of numbers.
+//So response.send, we pass an array of 3 numbers. In the future we can replace these numbers with actual course objects.
 
 
 
