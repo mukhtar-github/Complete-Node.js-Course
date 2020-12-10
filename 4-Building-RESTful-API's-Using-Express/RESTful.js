@@ -163,7 +163,8 @@ console.log('Listening on port 3000...');
 
 // 6 - Environment Variables
 
-//Now one thing we need to improve to improve in this code is this hard coded value (3000) for the ports.
+//Now one thing we need to improve to in this code, is this hard coded value (3000) for the ports. So, we have 3000 as an
+//anbitrary number, while this may work on your developement machine. It's unlikely
 
 
 
