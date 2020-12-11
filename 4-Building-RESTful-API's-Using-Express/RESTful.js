@@ -172,7 +172,8 @@ console.log('Listening on port 3000...');
 //It's value is set outside this application. I'm going to show you how that works in a second. So, in this application, we
 //need to read the value of this port environment variable. And the way we do that is by using the process object. So, we 
 //have this global object called 'Process'. This object has a property called 'env', which is short for environment 
-//variables.
+//variables. And after that, we add the name of our environment variable, in this case 'PORT'. So, if this is set, we're 
+//going to use this, otherwise, we're going to use 3000.
 
 
 
