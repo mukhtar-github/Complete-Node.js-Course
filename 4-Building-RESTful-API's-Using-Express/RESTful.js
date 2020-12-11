@@ -163,8 +163,11 @@ console.log('Listening on port 3000...');
 
 // 6 - Environment Variables
 
-//Now one thing we need to improve to in this code, is this hard coded value (3000) for the ports. So, we have 3000 as an
-//anbitrary number, while this may work on your developement machine. It's unlikely
+//Now, one thing we need to improve in this code, is this hard coded value (3000) for the ports. So, we have used 3000 as
+//an anbitrary number, while this may work on your developement machine. It's unlikely that this is going to work in the
+//production environment. Because when you deploy this application to a hosting environment, the port is dynamically
+//assigned by the hosting environment.
+
 
 
 
