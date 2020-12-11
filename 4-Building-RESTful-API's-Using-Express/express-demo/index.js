@@ -10,4 +10,5 @@ app.get('/api/courses', (req, res) => {
 });
 
 //PORT
+process.env()
 app.listen(3000, () => console.log('Listening on port 3000...'));

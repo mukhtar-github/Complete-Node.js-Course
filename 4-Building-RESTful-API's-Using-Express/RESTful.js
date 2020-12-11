@@ -169,6 +169,11 @@ console.log('Listening on port 3000...');
 //assigned by the hosting environment. So we can't rely on 3000 to be available. So, the way to fix this is by using an 
 //environment variable. So, typically in hosting environments for Node applications, we have this environment variable
 //called ports. An environment variable is basically a variable that is part of the environment in which a process runs.
+//It's value is set outside this application. I'm going to show you how that works in a second. So, in this application, we
+//need to read the value of this port environment variable. And the way we do that is by using the process object. So, we 
+//have this global object called 'Process'. This object has a property called 'env', which is short for environment 
+//variables.
+
 
 
 
