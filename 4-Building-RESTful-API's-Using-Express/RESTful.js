@@ -189,7 +189,11 @@ console.log('Listening on port 3000...');
 
 // 7 - Route Parameters
 
-//
+//Alright, so currently we have a route for getting the list of courses. Now, in this section, I'm going to show you how to 
+//create a route, to get a single course. So, earlier in one of the sections, where I talked about RESTful servises. You
+//learn that in order to get a single course, we should include the ID of the course in the URL. So, our endpoint should be
+//like this, '/api/courses/1', assuming that '1' is the ID of the course. So, let's see how we can impliment a route like
+//this.
 
 
 
