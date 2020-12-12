@@ -176,7 +176,9 @@ console.log('Listening on port 3000...');
 //going to use this, otherwise, we're going to use 3000. Now, we can store the result in a constant called port. And finally,
 //we need to replace 3000 with port, and also change our message accordingly. So, I'm going to replace thne single code with
 //back tick. So, we can use a template string. And we're going to 3000 with a dynamic value. So, we add doller sign, curly
-//braces, and then add our constant, in ths case 'port'. Now, back in the terminal,
+//braces, and then add our constant, in ths case 'port'. Now, back in the terminal, let'srun this application using nodemon.
+//So, on this machine you can see, I don't have an environment variable called 'port', that's why 3000 is used as the port
+//for this web server. Now, I'm going to set an environment variable. So, let's stop this process.
 
 
 
