@@ -178,7 +178,18 @@ console.log('Listening on port 3000...');
 //back tick. So, we can use a template string. And we're going to 3000 with a dynamic value. So, we add doller sign, curly
 //braces, and then add our constant, in ths case 'port'. Now, back in the terminal, let'srun this application using nodemon.
 //So, on this machine you can see, I don't have an environment variable called 'port', that's why 3000 is used as the port
-//for this web server. Now, I'm going to set an environment variable. So, let's stop this process.
+//for this web server. Now, I'm going to set an environment variable. So, let's stop this process.  On Mac we can set an 
+//environment variable by executing the 'export' command. If you're on Windows, you should use 'set'. So, 'export' or 'set',
+//we add the name of the environment variable, in this case 'PORT'. And set it's value. I'm going to use 5000. So, now we
+//have this environment variable called 'PORT', with the value of 5000. With these, when we run this application, 
+//'nodemon index.js', we can see that now, we are listening on port 5000. So, this is the proper way to assign a port to
+//your Node applications. You should attempt to read the value of an environment variable called port. If there is a value,
+//you should use that. Otherwise, use an arbitrary number through a developement machine.
+
+
+// 7 - Route Parameters
+
+//
 
 
 
