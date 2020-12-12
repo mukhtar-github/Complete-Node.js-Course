@@ -173,7 +173,10 @@ console.log('Listening on port 3000...');
 //need to read the value of this port environment variable. And the way we do that is by using the process object. So, we 
 //have this global object called 'Process'. This object has a property called 'env', which is short for environment 
 //variables. And after that, we add the name of our environment variable, in this case 'PORT'. So, if this is set, we're 
-//going to use this, otherwise, we're going to use 3000. Now, we can store the result in a constant called port.
+//going to use this, otherwise, we're going to use 3000. Now, we can store the result in a constant called port. And finally,
+//we need to replace 3000 with port, and also change our message accordingly. So, I'm going to replace thne single code with
+//back tick. So, we can use a template string. And we're going to 3000 with a dynamic value. So, we add doller sign, curly
+//braces, and then add our constant, in ths case 'port'. Now, back in the terminal,
 
 
 
