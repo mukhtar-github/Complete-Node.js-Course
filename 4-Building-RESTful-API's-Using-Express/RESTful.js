@@ -193,7 +193,10 @@ console.log('Listening on port 3000...');
 //create a route, to get a single course. So, earlier in one of the sections, where I talked about RESTful servises. You
 //learn that in order to get a single course, we should include the ID of the course in the URL. So, our endpoint should be
 //like this, '/api/courses/1', assuming that '1' is the ID of the course. So, let's see how we can impliment a route like
-//this.
+//this. So app.get, we add the path, tat is api/courses, now here we need to define a paramter, so we add colon(:) and id. 
+//So, id is the name of our parameter here, you can use anything here, it doesn't have to be id, it could be course id. But
+//id is shorter, and more conventiontional. Now we add our route handler function. So request and response goes to, now in 
+//order to read this parameter, we use request.params. 
 
 
 

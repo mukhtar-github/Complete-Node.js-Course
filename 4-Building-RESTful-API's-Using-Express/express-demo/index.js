@@ -9,7 +9,9 @@ app.get('/api/courses', (req, res) => {
     res.send([1, 2, 3]);
 });
 
-// /api/courses/1
+app.get('/api/courses/:id', (req, res) => {
+    req.params.id;
+});
 
 //PORT
 const port = process.env.PORT || 3000;
