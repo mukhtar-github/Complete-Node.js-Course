@@ -9,7 +9,7 @@ app.get('/api/courses', (req, res) => {
     res.send([1, 2, 3]);
 });
 
-app.get('/api/courses/:id', (req, res) => {
+app.get('/api/posts/:year/:month', (req, res) => {
     res.send(req.params.id);
 });
 
