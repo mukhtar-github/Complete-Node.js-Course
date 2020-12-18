@@ -10,7 +10,7 @@ app.get('/api/courses', (req, res) => {
 });
 
 app.get('/api/courses/:id', (req, res) => {
-    req.params.id;
+    res.send(req.params.id);
 });
 
 //PORT

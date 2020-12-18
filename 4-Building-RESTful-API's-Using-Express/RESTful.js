@@ -196,7 +196,8 @@ console.log('Listening on port 3000...');
 //this. So app.get, we add the path, tat is api/courses, now here we need to define a paramter, so we add colon(:) and id. 
 //So, id is the name of our parameter here, you can use anything here, it doesn't have to be id, it could be course id. But
 //id is shorter, and more conventiontional. Now we add our route handler function. So request and response goes to, now in 
-//order to read this parameter, we use request.params. 
+//order to read this parameter, we use request.params.id. So for now, let's just send this to the client. So resource.send.
+//Back in the browser, let's 
 
 
 
