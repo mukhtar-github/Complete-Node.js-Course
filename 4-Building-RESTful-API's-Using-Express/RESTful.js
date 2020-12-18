@@ -223,10 +223,12 @@ console.log('Listening on port 3000...');
 // {
 //     sortBy: "name"
 // }
-//
+//So query parameters are stored in an object with a bunch of key value pairs.
 
 
+// 8 - Handling HTTP GET Requests
 
+//Alright, now let's impliment a new endpoint, to get a single course from the server.
 
 
 
