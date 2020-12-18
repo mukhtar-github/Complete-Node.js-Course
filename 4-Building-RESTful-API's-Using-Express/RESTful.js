@@ -218,7 +218,12 @@ console.log('Listening on port 3000...');
 //for example, we can get all the posts in January 2018, and sort them by their name. So we add a question mark, sortBy,
 //set this to name. => http://localhost:3000/api/posts/2018/1?sortBy=name. This is a Query string parameter. We use Query
 //string parameters to provide additional data for our backend services. So we use route parameters for essential or required
-//values, whereas we use query string parameters for anything that is optional. 
+//values, whereas we use query string parameters for anything that is optional. Now let me show you how to read query parameters.
+//So, back in VS code, instead of requested params, we use request.query. Back in Chrome, and this is what we get. =>
+// {
+//     sortBy: "name"
+// }
+//
 
 
 
