@@ -203,7 +203,8 @@ console.log('Listening on port 3000...');
 //Back in the browser, now let's head over to /api/courses/1. So you can see, we successfully read the value of this parameter.
 //Also it is possible to have multiple parameters in a route. For example, imagine you're building a service for powering a
 //block. So you could have a route like this, posts, year, month. So we have two parameters. And with this, we can get all 
-//the posts for the given months and the given year.
+//the posts for the given months and the given year. Now we can read this parameters just like before. So request.params.year
+//or month. For this demo, let me show you this request.params object.
 
 
 
