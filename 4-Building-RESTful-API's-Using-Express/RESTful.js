@@ -174,7 +174,7 @@ console.log('Listening on port 3000...');
 //have this global object called 'Process'. This object has a property called 'env', which is short for environment 
 //variables. And after that, we add the name of our environment variable, in this case 'PORT'. So, if this is set, we're 
 //going to use this, otherwise, we're going to use 3000. Now, we can store the result in a constant called port. And finally,
-//we need to replace 3000 with port, and also change our message accordingly. So, I'm going to replace thne single code with
+//we need to replace 3000 with port, and also change our message accordingly. So, I'm going to replace the single code with
 //back tick. So, we can use a template string. And we're going to 3000 with a dynamic value. So, we add doller sign, curly
 //braces, and then add our constant, in ths case 'port'. Now, back in the terminal, let'srun this application using nodemon.
 //So, on this machine you can see, I don't have an environment variable called 'port', that's why 3000 is used as the port
@@ -185,6 +185,9 @@ console.log('Listening on port 3000...');
 //'nodemon index.js', we can see that now, we are listening on port 5000. So, this is the proper way to assign a port to
 //your Node applications. You should attempt to read the value of an environment variable called port. If there is a value,
 //you should use that. Otherwise, use an arbitrary number through a developement machine.
+// //PORT
+// const port = process.env.PORT || 3000;
+// app.listen(port, () => console.log(`Listening on port ${port}...`));
 
 
 // 7 - Route Parameters
@@ -197,7 +200,8 @@ console.log('Listening on port 3000...');
 //So, id is the name of our parameter here, you can use anything here, it doesn't have to be id, it could be course id. But
 //id is shorter, and more conventiontional. Now we add our route handler function. So request and response goes to, now in 
 //order to read this parameter, we use request.params.id. So for now, let's just send this to the client. So resource.send.
-//Back in the browser, let's 
+//Back in the browser, now let's head over to /api/courses/1. So you can see, we successfully read the value of this 
+//parameter.
 
 
 
