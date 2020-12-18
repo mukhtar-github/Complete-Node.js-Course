@@ -204,8 +204,21 @@ console.log('Listening on port 3000...');
 //Also it is possible to have multiple parameters in a route. For example, imagine you're building a service for powering a
 //block. So you could have a route like this, posts, year, month. So we have two parameters. And with this, we can get all 
 //the posts for the given months and the given year. Now we can read this parameters just like before. So request.params.year
-//or month. For this demo, let me show you this request.params object. So let's delete this, save, back in browser, let's
-//head over to api/posts/2018/1
+//or month. For this demo, let me show you this request.params object. So let's delete year, save. =>
+// app.get('/api/posts/:year/:month', (req, res) => {
+//     res.send(req.params);
+// });
+//Back in browser, let's head over to api/posts/2018/1 => 
+// {
+// year: "2018",
+// month: "1"
+// }
+//So this is our request params object. We have two properties, year and month, and their name based on our route parameters
+//With Express we can also get Query string parameters. These are parameters that we add in the Url after question mark(?),
+//for example, we can get all the posts in January 2018, and sort them by their name. So we add a question mark, sortBy,
+//set this to name. => http://localhost:3000/api/posts/2018/1?sortBy=name. This is a Query string parameter. We use Query
+//string parameters to provide additional data for our backend services. So we use route parameters for essential or required
+//values, whereas we use query string parameters for anything that is optional. 
 
 
 
