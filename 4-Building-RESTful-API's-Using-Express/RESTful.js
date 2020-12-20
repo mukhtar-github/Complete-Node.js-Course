@@ -257,4 +257,19 @@
 //status code of '404'. That means object not found. So this is one of the conventions of RESTful api's. If the client asks
 //for a resource, but that resource does not exist on the server, we should return a response with the status code of '404'.
 //So, here we call 'res.status(404)'. And optionally, we can send a message as well.
+//So, 'send("The course with the given ID was not found")'. Otherwise if we do have a course without an 'id', we are simply
+//going to return that to the client. So, 'res.send(course)'. Now let's test this. So back in the browser. Let's head over 
+//to 'http://localhost:3000/api/courses/1'. So we have the course with the id '1', and that's why we get this json object in
+//the response. However, if I change this to '10', we get this message 'The course with the given ID was not found'. And to
+//ensure that the status code of this response is '404', we can open up Chrome developer tools, so right click on the page,
+//go to 'inspect', and then on the network tab, make sure you don't have a filter here, so select all, and then refresh the
+//page by pressing 'ctrl R' on Windows or 'Cmd R' on Mac. So here is the request that we sent to the server, you can see the
+//status is '404', which means not found.
+
+
+// 9 - Handling HTTP POST Requests
+
+//So far we have created two routes, that respond to http requests, and we use these routes to get all the courses as well
+//as a single course.
+
 
