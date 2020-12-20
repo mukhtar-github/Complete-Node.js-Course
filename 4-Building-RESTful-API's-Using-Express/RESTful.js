@@ -245,4 +245,16 @@
 // brackets first. We're going to call 'courses.find', this is a method that is available on every array in Javascript, as
 //an argument to this method, we need to pass a function. This function will be used to find a course that matches a given
 //criteria. So, we use the arrow function syntax, 'c =>', and here we write some logic that returns a boolean value. This
-//boolean value determines if this course is the one we're looking for or not. So, 'c.id' should equal 'req.params.id'.
+//boolean value determines if this course is the one we're looking for or not. So, 'c.id' should equal 'req.params.id', 
+//however, this returns a string. So in order for this comparison to work properly, we need to parse this string into an 
+//integer. So we call 'parseInt', which is one of the global functions available in Javascript, and then get the result and 
+//store it in a constant called course. Now you might be asking why I didn't use 'var' here. Well that would be perfectly 
+//fine and that's how most Javascript code out there is written. But going forward, it's best to drop  'var' and either use 
+//'let' or 'const'. We use 'let' if we want to define a variable that we can reset later and use 'const' if we want to define
+//a constant. In this case, I don't want to reset the course later in this function. But again, it's perfectly fine to use
+//'let' here as well, its just personal preference. So, we get the course object. Now, if this course doesn't have a value,
+//in other words, if you don't find a course with the given id, by convention we should return a response with the http 
+//status code of '404'. That means object not found. So this is one of the conventions of RESTful api's. If the client asks
+//for a resource, but that resource does not exist on the server, we should return a response with the status code of '404'.
+//So, here we call 'res.status(404)'. And optionally, we can send a message as well.
+
