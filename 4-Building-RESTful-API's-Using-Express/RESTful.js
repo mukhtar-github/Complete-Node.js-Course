@@ -42,7 +42,7 @@
 //  { id: 2, name: '' },
 //  ...  
 //]
-//So we have an array of customer object. If we want a single customer, we should include the id (1) of that cuustomer in 
+//So we have an array of customer object. If we want a single customer, we should include the id (1) of that customer in 
 //the address: Request => GET /api/customers/1. Then our server would respond to the customer object like this:
 //Response => { id: 1, name: '' }. 
 //Now to update a customer, we should send an http 'PUT' request to this endpoint: 
@@ -241,6 +241,8 @@
 //'id' and 'name'. And ofcourse we can have more, but for simplicity I'm just going to stick to two properties. Okay, now
 //let's duplicate the line and change the id's as well as the name, 2 and 3. So we have two endpoints. One to get all the 
 //courses and the other to get a single course. In the first one, we're going to return our courses array. Now in the second
-//one, we should write some logic
-
-
+//one, we should write some logic to look for the course with the given id. So, let's delete that which is inside our curly
+// brackets first. We're going to call 'courses.find', this is a method that is available on every array in Javascript, as
+//an argument to this method, we need to pass a function. This function will be used to find a course that matches a given
+//criteria. So, we use the arrow function syntax, 'c =>', and here we write some logic that returns a boolean value. This
+//boolean value determines if this course is the one we're looking for or not. So, 'c.id' should equal 'req.params.id'.

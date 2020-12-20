@@ -18,7 +18,7 @@ app.get('/api/courses', (req, res) => {
 
 //Get a single course
 app.get('/api/courses/:id', (req, res) => {
-    res.send(req.query);
+    courses.find(c => c.id === req.params.id);
 });
 
 //PORT
