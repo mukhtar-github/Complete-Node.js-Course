@@ -77,24 +77,24 @@
 
 // 3 - Introducing Express
 
-const http = require('http');
-const { url } = require('inspector');
+// const http = require('http');
+// const { url } = require('inspector');
 
-const server = http.createServer((req, res) => {
-    if (req.url === '/') {
-        res.write('Hello World');
-        res.end();
-    }
+// const server = http.createServer((req, res) => {
+//     if (req.url === '/') {
+//         res.write('Hello World');
+//         res.end();
+//     }
 
-    if (req.url === '/api/courses') {
-        res.write(JSON.stringify([1, 2, 3]));
-    }
-    res.end();
-});
+//     if (req.url === '/api/courses') {
+//         res.write(JSON.stringify([1, 2, 3]));
+//     }
+//     res.end();
+// });
 
-server.listen(3000);
+// server.listen(3000);
 
-console.log('Listening on port 3000...');
+// console.log('Listening on port 3000...');
 
 //So here's the code that we wrote in the section about Node core, where I introduced you to the http module. So we can see,
 //with http module we can create a web server. Here we have a callback function that takes two parameters, requests and
@@ -228,8 +228,19 @@ console.log('Listening on port 3000...');
 
 // 8 - Handling HTTP GET Requests
 
-//Alright, now let's impliment a new endpoint, to get a single course from the server.
-
-
+//Alright, now let's impliment a new endpoint, to get a single course from the server. So, first of all let's change =>
+// app.get('/api/posts/:year/:month', (req, res) => {
+//     res.send(req.params);
+// });
+//Back to =>
+// app.get('/api/courses/:id', (req, res) => {
+//     res.send(req.params);
+// });
+//Wen put the courses and the id parameter. Now, on the top, let's define an array called courses, so constant, we set it to
+//an array, and in this array we're going to have 3 course objects. So each object should have a couple of properties, like 
+//'id' and 'name'. And ofcourse we can have more, but for simplicity I'm just going to stick to two properties. Okay, now
+//let's duplicate the line and change the id's as well as the name, 2 and 3. So we have two endpoints. One to get all the 
+//courses and the other to get a single course. In the first one, we're going to return our courses array. Now in the second
+//one, we should write some logic
 
 
