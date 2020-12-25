@@ -274,4 +274,13 @@
 //request to create a new course. So, 'app.post' instead of the 'get' method, we use the post method. Now similar to the 
 //'get' method, we need to specify a path. So that should be '/api/courses'. Because we're going to post to the collection 
 //of courses, that's why we use the plural name. Then we add our route handler. So request and response goes to code block.
-//Alright, so, in this route handler, we need to read the course
+//Alright, so, in this route handler, we need to read the course object that should be in the body of the request, use these
+//properties to create a new course object, and then add that course object to our courses array. So, let's create a new 
+//course object, 'const course'. Again, I'm using a 'const' here, because we're not going to reset this couse object later.
+//So let's set this to a new object. Now, here because we're not working with a database, we need to manually assign an 'id'.
+//So, 'id', we get the number of elements in our courses array. So 'courses.length', and simply add '1' to it. In the future,
+//when we work with a database, the 'id' will be assigned by the database. Next, is the name property. Now, we need to read
+//this from the body of the request. So 'req.body.name'. So here I'm assuming that in the request body, we have an object 
+//and that object has a name property. Now, in order for this line to work, we need to enable parsing up JSON objects in
+//body of the request. Because by default, this feature is not enabled in 'Express'. So on the top, after we get the app 
+//object, we need to call 'app.use', and here we call 'express.json'.

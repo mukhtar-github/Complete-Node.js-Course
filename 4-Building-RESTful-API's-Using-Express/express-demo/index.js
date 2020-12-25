@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 
+app.use(express.json());
+
 const courses = [
     { id: 1, name: 'course1'},
     { id: 2, name: 'course2'},
@@ -17,7 +19,10 @@ app.get('/api/courses', (req, res) => {
 });
 
 app.post('/api/courses', (req, res) => {
-
+    const course = {
+        id: courses.length + 1,
+        name: req.body.name
+    };
 });
 
 //Get a single course
