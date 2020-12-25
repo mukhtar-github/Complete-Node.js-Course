@@ -283,4 +283,13 @@
 //this from the body of the request. So 'req.body.name'. So here I'm assuming that in the request body, we have an object 
 //and that object has a name property. Now, in order for this line to work, we need to enable parsing up JSON objects in
 //body of the request. Because by default, this feature is not enabled in 'Express'. So on the top, after we get the app 
-//object, we need to call 'app.use', and here we call 'express.json'.
+//object, we need to call 'app.use', and here we call 'express.json'. Now this may look a little bit strange or unfamiliar
+//to you, but don't worry, later in this section we're going to explore this in detail. Basically what we're doing here is 
+//adding a piece of middle ware. So when we call 'express.json' method, this method returns a piece of middle ware and then 
+//we call 'app.use' to use that middle ware in the request processing pipeline. Again we're going to explore that in detail 
+//later in the section. So, back to our new route handler. We have a course object, next we push it in an array, so 
+//'courses.push'. And finally, by convention when we post an object to the server, when the server creates a new object or 
+//a new resource, it should return that object in the body of the response. So ' res.send(course)'. The reason for this, is 
+//because we're assigning this 'id: courses.length + 1' on the server. So we need to return this course object to the client, 
+//because chances are the client needs to know the 'id' of this new object or this new resource. So this is how we handle
+//http post requests. In the next lecture, I'm going to show you how to test this endpoint.

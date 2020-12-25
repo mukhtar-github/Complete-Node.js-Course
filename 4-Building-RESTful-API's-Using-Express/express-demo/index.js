@@ -23,6 +23,8 @@ app.post('/api/courses', (req, res) => {
         id: courses.length + 1,
         name: req.body.name
     };
+    courses.push(courses);
+    res.send(course);
 });
 
 //Get a single course
