@@ -293,3 +293,11 @@
 //because we're assigning this 'id: courses.length + 1' on the server. So we need to return this course object to the client, 
 //because chances are the client needs to know the 'id' of this new object or this new resource. So this is how we handle
 //http post requests. In the next lecture, I'm going to show you how to test this endpoint.
+
+
+// 10 - Calling Endpoints Using Postman
+
+//To call http services, we use a Chrome extention called 'Postman'. So if you haven't installed Postman before, search for
+//'Chrome Postman'. Here is Postman. Simply add it to chrome. Now you can open this from the apps menu. Now here it is asking
+//to sign up, but you don't have to do this. There is a link taking you straight to the app. Now on this page we can create
+//a new http request. So, from this dropdown list, we set the type to a post request, we put the url 
