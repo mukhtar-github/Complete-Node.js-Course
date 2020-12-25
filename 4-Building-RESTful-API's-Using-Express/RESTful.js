@@ -270,6 +270,8 @@
 // 9 - Handling HTTP POST Requests
 
 //So far we have created two routes, that respond to http requests, and we use these routes to get all the courses as well
-//as a single course.
-
-
+//as a single course. In this lecture, I'm going to teach you how to respond to http post requests. So we use an http post 
+//request to create a new course. So, 'app.post' instead of the 'get' method, we use the post method. Now similar to the 
+//'get' method, we need to specify a path. So that should be '/api/courses'. Because we're going to post to the collection 
+//of courses, that's why we use the plural name. Then we add our route handler. So request and response goes to code block.
+//Alright, so, in this route handler, we need to read the course

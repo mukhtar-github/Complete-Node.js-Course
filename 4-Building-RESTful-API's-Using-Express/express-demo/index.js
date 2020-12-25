@@ -16,6 +16,10 @@ app.get('/api/courses', (req, res) => {
     res.send(courses);
 });
 
+app.post('/api/courses', (req, res) => {
+
+});
+
 //Get a single course
 app.get('/api/courses/:id', (req, res) => {
     const course = courses.find(c => c.id === parseInt(req.params.id));
