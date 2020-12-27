@@ -300,4 +300,8 @@
 //To call http services, we use a Chrome extention called 'Postman'. So if you haven't installed Postman before, search for
 //'Chrome Postman'. Here is Postman. Simply add it to chrome. Now you can open this from the apps menu. Now here it is asking
 //to sign up, but you don't have to do this. There is a link taking you straight to the app. Now on this page we can create
-//a new http request. So, from this dropdown list, we set the type to a post request, we put the url 
+//a new http request. So, from this dropdown list, we set the type to a post request, we put the url, in this case that's
+//'http://localhost:3000/api/courses', on my machine I'm using port 3000 to host this application. Now we need to set the 
+//body of this request. From this list, select raw, and then json. So with this, we can put a json object in the body of the 
+//request. So let's add an object here, and give it a name property. So 'name', we set this to 'new course'. And then finally
+//
