@@ -303,5 +303,7 @@
 //a new http request. So, from this dropdown list, we set the type to a post request, we put the url, in this case that's
 //'http://localhost:3000/api/courses', on my machine I'm using port 3000 to host this application. Now we need to set the 
 //body of this request. From this list, select raw, and then json. So with this, we can put a json object in the body of the 
-//request. So let's add an object here, and give it a name property. So 'name', we set this to 'new course'. And then finally
-//
+//request. So let's add an object here, and give it a name property. So 'name', we set this to 'new course'. And then finally,
+//send. Okay, if you scroll down you can see the status of the request is 200, which means the request was handled successfully,
+//and here's the body of the response. So id is 4, because now we have 4 courses in our array, and this is the same name that
+//we sent to the server. So this is how we test http services, using Postman. Now in this implementation we have 
