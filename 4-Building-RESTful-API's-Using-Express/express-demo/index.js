@@ -19,6 +19,7 @@ app.get('/api/courses', (req, res) => {
 });
 
 app.post('/api/courses', (req, res) => {
+    if(!req.body.name)
     const course = {
         id: courses.length + 1,
         name: req.body.name

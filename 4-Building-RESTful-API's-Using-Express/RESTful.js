@@ -314,4 +314,7 @@
 
 // 11 - Input Validation
 
-//In this
+//In this lecture, I'm going to show you how to do Input Validation. So as a security best practice, you should never ever,
+//ever, trust what the client sends you. You should always validate the input. So in this particular example, because we're
+//dealing with a simple object with only one property, that is 'name', we can write some validation logic like this; So, 
+//'if(!req.body.name)' doen't exist.
