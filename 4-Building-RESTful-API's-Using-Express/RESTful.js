@@ -330,5 +330,8 @@
 //with i, look here's the first link, so here you can see joi has been downloaded over 250 thousand times over the past day,
 //and over 3 million times over the past month. It's a very popular package. Also here on the page, you can see some sample
 //code and link to their official documentation. Now let me show you how to replace this validation logic with 'joi'. So first
-//back in the terminal, let's install joi.
+//back in the terminal, let's install joi. So you can see at the time of recording this video, the the latest version is version 
+//13.1.0. If you want to make sure that you have exact same experience as what I'm going to show you in this video, then install
+//this exact version. So 'npm i joi@13.1.0'. Now back in code. On the top, we need to load this module. So 'require ('joi'),
+//get the result and store it in a constant called 'Joi' with a capital 'J'.
 
