@@ -327,5 +327,7 @@
 //application, it's more likely that you'll be working with a complex object, something more complex than this course object.
 //You don't want to write a complex validation logic like this at the beginning of your route handler. So let me introduce 
 //you to a Node package that makes it really easy for you to validate the input. So on Google, if you search for 'npm joi'
-//with i
+//with i, look here's the first link, so here you can see joi has been downloaded over 250 thousand times over the past day,
+//and over 3 million times over the past month. It's a very popular package. Also here on the page, you can see some sample
+//code and link to their official documentation. Now let me show you how to replace this validation logic with 'joi'.
 
