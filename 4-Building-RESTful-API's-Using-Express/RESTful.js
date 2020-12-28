@@ -306,4 +306,12 @@
 //request. So let's add an object here, and give it a name property. So 'name', we set this to 'new course'. And then finally,
 //send. Okay, if you scroll down you can see the status of the request is 200, which means the request was handled successfully,
 //and here's the body of the response. So id is 4, because now we have 4 courses in our array, and this is the same name that
-//we sent to the server. So this is how we test http services, using Postman. Now in this implementation we have 
+//we sent to the server. So this is how we test http services, using Postman. Now in this implementation, we have assumed that
+//there is an object with the name property in the body of the request. What if the client forgets to send this property or
+//sends an invalid name, perhaps a name that is too short? That's where input validation comes into the picture, and that's 
+//the topic for the next lecture.
+
+
+// 11 - Input Validation
+
+//In this
