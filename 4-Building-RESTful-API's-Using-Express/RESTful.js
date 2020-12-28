@@ -325,5 +325,7 @@
 //but the name was not long enough, you could send a different error message. And then finally, we return the error message
 //because, we don't want the rest of the function to be executed. So this is the basic idea. However, in a real world 
 //application, it's more likely that you'll be working with a complex object, something more complex than this course object.
-//You don't want to write a complex validation logic like this in the beginning of your route. 
+//You don't want to write a complex validation logic like this at the beginning of your route handler. So let me introduce 
+//you to a Node package that makes it really easy for you to validate the input. So on Google, if you search for 'npm joi'
+//with i
 
