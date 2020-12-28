@@ -276,7 +276,7 @@
 //of courses, that's why we use the plural name. Then we add our route handler. So request and response goes to code block.
 //Alright, so, in this route handler, we need to read the course object that should be in the body of the request, use these
 //properties to create a new course object, and then add that course object to our courses array. So, let's create a new 
-//course object, 'const course'. Again, I'm using a 'const' here, because we're not going to reset this couse object later.
+//course object, 'const course'. Again, I'm using a 'const' here, because we're not going to reset this course object later.
 //So let's set this to a new object. Now, here because we're not working with a database, we need to manually assign an 'id'.
 //So, 'id', we get the number of elements in our courses array. So 'courses.length', and simply add '1' to it. In the future,
 //when we work with a database, the 'id' will be assigned by the database. Next, is the name property. Now, we need to read
@@ -320,5 +320,10 @@
 //'if(!req.body.name || req.body.name.length < 3)', then we're going to return an error to the client. The RESTful convention
 //is to return a response with the http status code of '400', that means bad request. So to do this, we call 'res.status(400)',
 //and then we can send an error message. In this case, we can write a generic error message like; 'Name is required and should
-//should be minimum 3 characters'.
+//should be minimum 3 characters'. Now in your implementation, you may want to differentiate the errors. For example, if the
+//client didn't send the name property, perhaps you would just respond with 'Name is required'. Or, if they did send the name
+//but the name was not long enough, you could send a different error message. And then finally, we return the error message
+//because, we don't want the rest of the function to be executed. So this is the basic idea. However, in a real world 
+//application, it's more likely that you'll be working with a complex object, something more complex than this course object.
+//You don't want to write a complex validation logic like this in the beginning of your route. 
 
