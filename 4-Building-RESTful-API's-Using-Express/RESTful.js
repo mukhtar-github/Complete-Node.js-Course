@@ -317,4 +317,8 @@
 //In this lecture, I'm going to show you how to do Input Validation. So as a security best practice, you should never ever,
 //ever, trust what the client sends you. You should always validate the input. So in this particular example, because we're
 //dealing with a simple object with only one property, that is 'name', we can write some validation logic like this; So, 
-//'if(!req.body.name)' doen't exist.
+//'if(!req.body.name || req.body.name.length < 3)', then we're going to return an error to the client. The RESTful convention
+//is to return a response with the http status code of '400', that means bad request. So to do this, we call 'res.status(400)',
+//and then we can send an error message. In this case, we can write a generic error message like; 'Name is required and should
+//should be minimum 3 characters'.
+
