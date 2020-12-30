@@ -78,6 +78,12 @@ Alright, let's add a new file and name it *index.js*. You could also call it *ap
 All these methods correspond with *http* verbs, or *http* methods that I told you about earlier in this section. So if you want to handle an *http Post request* and *endpoint*, you would use *app.post()*. In this lecture we just want to use *app.get()*. We want to impliment a coulple of end-points that respond to an *http get requests*. So this method takes two arguments. The first argument is the path or the url. So here I'm going to use slash (/) to represent the root of the website. Now the second argument is a callback function. This is the function that would be called when we have an http *get* request to this endpoint. So this callback function should have two arguments, *Request* and *Respond*.
 This request object has a bunch of useful properties that gives us information about the in-coming requests.
 
+```javascript
+app.get('/', (req, res) => {
+    res.send('Hello World!!!');
+});
+```
+
 If you want to learn about all these properties, its best to look at the Express Documentation, because in this course we're going use only a handful of these properties. So, head over to *Expressjs.com*. On the top, look at the *API* reference, version 4. Now here we can see the request object, and below you can see all the properties that are available to you. We have *baseUrl*, we have *body* to read the body of the request, *cookies*, *fresh*, *hostname*, *ip*, and so on.
 
 So back to our code, when we get an http request to the root of our website, we're going to respond in *Hello World* message. So response.send('Hello World'). So this is how we define a route. We specify the path or the Url, and a callback function which is also called a route handler. Now finally, we need to listen on a given port. So we call app.listen. We give it a port number like 3000, and optionally we can pass a function that will be called when the application starts listening on the given port. So once again we use the arrow function syntax to display something on the console. So back in the terminal, 'node index.js'. Okay we're listening on port 3000. Now let's switch over to Chrome and go 'localhost:3000'. So here's Our 'Hello World' message.
