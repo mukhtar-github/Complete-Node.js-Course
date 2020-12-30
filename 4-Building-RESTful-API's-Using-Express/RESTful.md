@@ -4,6 +4,7 @@
 
 So, earlier in section 2, were we talked about Node's Module System. You learned about *HTTP Module*. We use it to create a web server that listens on *port 3000* and responds to requests to the end-points. So the root or */api/courses*. Now, while this approach is perfectly fine, it's not ideal for building a complex application. Because in a large complex application, we might have various endpoints and we don't want to hard code all these *if* statements in the function. So in this section, we're going to look at *Express* which is a fast and light weight framework forb building web applications. So  next we're going to look at *RESTful services*.
 
+
 ## 2 - RESTful Services
 
 Let's start this section by a brief introduction to *RESTful services*. Also called *RESTful API's*. So earlier, at the beginning of this course, I introduced you to the client server architecture. So most, if not all applications we use these
@@ -36,6 +37,7 @@ So this is the RESTful convention, we expose our resources such as customers usi
 
 > So this is the RESTful convention, we expose our resources such as customers using a simple, meaningful address, and support various operations around them, such as creating or updating them, using standard http methods. *GET /api/customers*, *GET /api/customers/1*, *PUT /api/customers/1*, *DELETE /api/customers/1*, *POST /api/customers*.
 
+
 ## 3 - Introducing Express
 
 ```javascript
@@ -65,9 +67,12 @@ response. And with this request object, we can check the *URL* of the incoming r
 routes for our application. So if we have a request for let's say *(req.url === '/api/courses')*, this is how we're going
 to respond to the client *{ res.write(JSON.stringify([1, 2, 3])); }*. Now, while this approach certainly works, it's not
 very maintainable, because as we define more routes for our application, we need to add more *if* blocks in the callback
-function. So that's when a framework comes into the picture. A framework gives our application a proper structure, so we
-can easily add more routes, while keeping our application code maintainable. There are various frameworks out there for
-building web applications and web servers on top of Node. The most popular one is *Express*. So if you head over to *npmjs.com*, and search for express. So back in the terminal, let's create a folder and call it *express-demo*. Let's run *npm init* with *--yes* flag inside the folder. So now, we have a package.json file and finally we can install express. In the next lecture I'm going to show you how to build your first web server using express.
+function. So that's when a framework comes into the picture.
+
+A framework gives our application a proper structure, so we can easily add more routes, while keeping our application code maintainable. There are various frameworks out there for building web applications and web servers on top of Node. The most popular one is *Express*. So if you head over to *npmjs.com*, and search for express. So back in the terminal, let's create a folder and call it *express-demo*. Let's run *npm init* with *--yes* flag inside the folder. So now, we have a package.json file and finally we can install express. In the next lecture I'm going to show you how to build your first web server using express.
+
+> A framework gives our application a proper structure, so we can easily add more routes, while keeping our application code maintainable. There are various frameworks out there for building web applications and web servers on top of Node. The most popular one is *Express*.
+
 
 ## 4 - Building Your First Web Server
 
