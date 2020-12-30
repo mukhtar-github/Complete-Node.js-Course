@@ -34,6 +34,8 @@ And finally to create a customer, we need to send an http *POST* request to this
 
 So this is the RESTful convention, we expose our resources such as customers using a simple, meaningful address, and support various operations around them, such as creating or updating them, using standard http methods. *GET /api/customers*, *GET /api/customers/1*, *PUT /api/customers/1*, *DELETE /api/customers/1*, *POST /api/customers*. So, through out this section, you're going to learn how to use the Express framework to build a *RESTful* service for managing the list of customers. However, in this section, we won't be doing any database work, because that will bring additional complexity. Our focus will be purely on building http services and we will use a simple array in memory to keep the list of our customers. Later in the course, we'll look at using a database.
 
+> So this is the RESTful convention, we expose our resources such as customers using a simple, meaningful address, and support various operations around them, such as creating or updating them, using standard http methods. *GET /api/customers*, *GET /api/customers/1*, *PUT /api/customers/1*, *DELETE /api/customers/1*, *POST /api/customers*.
+
 ## 3 - Introducing Express
 
 ```javascript
