@@ -80,8 +80,6 @@ const express = require('express');
 const app = express();
 ```
 
->By covention, we call this object, *app*. So we store the result in a constant called *app*. So this represents our application. This *app* object has a bunch of useful methods. We have methods like, *GET*, *POST*, *PUT* and *DELETE*.
-
 All these methods correspond with *http* verbs, or *http* methods that I told you about earlier in this section. So if you want to handle an *http Post request* and *endpoint*, you would use *app.post()*. In this lecture we just want to use *app.get()*. We want to impliment a coulple of end-points that respond to an *http get requests*. So this method takes two arguments. The first argument is the path or the url. So here I'm going to use slash (/) to represent the root of the website. Now the second argument is a callback function. This is the function that would be called when we have an http *get* request to this endpoint. So this callback function should have two arguments, *Request* and *Respond*.
 This request object has a bunch of useful properties that gives us information about the in-coming requests.
 
@@ -108,3 +106,5 @@ app.get('/api/courses', (req, res) => {
 ```
 
 So this is what I want you to pay attention to here, in this implementation, we don't have those *if (?)* blocks. We define new route, like calling *app.get*, and with this structure, as our application grows, we can move some of these routes to different files. For example, we can move all the routes related to courses to a separate file, like *courses.js*. So *Express* gives our application a skeleton, a structure.
+
+>By covention, we call this object, *app*. So we store the result in a constant called *app*. So this represents our application. This *app* object has a bunch of useful methods. We have methods like, *GET*, *POST*, *PUT* and *DELETE*.
