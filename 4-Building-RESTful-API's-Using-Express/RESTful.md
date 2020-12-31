@@ -120,4 +120,22 @@ const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Listening on port ${port}...`));
 ```
 
-Now, back in the terminal, let's run this application using *nodemon*. So, on this machine you can see, I don't have an *environment variable* called *port*, that's why *3000* is used as the port for this web server. Now, I'm going to set an *environment variable*. So, let's stop the process. On Mac we can set an *environment variable* by executing the *export* command. If you're on Windows, you should use *set*. So, *export* or *set*, we add the name of the *environment variable*, in this case *PORT*. And set it's value. I'm going to use *5000*, i.e. *export PORT=5000*. So, now we have this environment variable called *PORT*, with the value of *5000*. With these, when we run this application, *nodemon index.js*, we can see that now, we are listening on port *5000*. So, this is the proper way to assign a *port* to your Node applications. You should attempt to read the value of an *environment variable* called *port*. If there is a value, you should use that,otherwise, use an arbitrary number through a developement machine.
+Now, back in the terminal, let's run this application using *nodemon*. So, on this machine you can see, I don't have an *environment variable* called *port*, that's why *3000* is used as the port for this web server. Now, I'm going to set an *environment variable*. So, let's stop the process. On Mac we can set an *environment variable* by executing the *export* command. If you're on Windows, you should use *set*. So, *export* or *set*, we add the name of the *environment variable*, in this case *PORT*. And set it's value. I'm going to use *5000*, i.e. *export PORT=5000*. So, now we have this environment variable called *PORT*, with the value of *5000*. With these, when we run the application, *nodemon index.js*, we can see that now, we are listening on port *5000*. So, this is the proper way to assign a *port* to your Node applications. You should attempt to read the value of an *environment variable* called *port*. If there is a value, you should use that, otherwise, use an arbitrary number through a developement machine.
+
+## 7 - Route Parameters
+
+Alright, so currently we have a *route* for getting the list of courses.
+
+```javascript
+app.get('/api/courses',... 
+```
+
+Now, in this section, I'm going to show you how to create a *route*, to get a single course. So, earlier in one of the sections, where I talked about *RESTful* servises. You learn that in order to get a single course, we should include the *id* of the course in the *URL*. So, our *endpoint* should be like this, *'/api/courses/1'*, assuming that *'1'* is the *id* of the course. So, let's see how we can impliment a *route* like this. So *app.get*, we add the path, that is *api/courses*, now here we need to define a paramter, so we add colon and *id*. So, *id* is the name of our parameter here, you can use anything here, it doesn't have to be *id*, it could be *course id*. But *id* is shorter, and more conventiontional. Now we add our *route handler* function.
+
+```javascript
+app.get('/api/courses:id', (req, res) => {
+
+});
+```
+
+So *request* and *response* goes to, now in order to read this parameter, we use request.params.id. So for now, let's just send this to the client. So resource.send. Back in the browser, now let's head over to /api/courses/1. So you can see, we successfully read the value of this parameter. Also it is possible to have multiple parameters in a route. For example, imagine you're building a service for powering a block. So you could have a route like this, posts, year, month. So we have two parameters. And with this, we can get all the posts for the given months and the given year. Now we can read this parameters just like before. So request.params.year or month. For this demo, let me show you this request.params object. So let's delete year, save.
