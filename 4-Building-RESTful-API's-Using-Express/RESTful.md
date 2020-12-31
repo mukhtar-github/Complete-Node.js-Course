@@ -100,3 +100,8 @@ app.get('/api/courses', (req, res) => {
 So this is what I want you to pay attention to here, in this implementation, we don't have those *if (?)* blocks. We define new route, like calling *app.get*, and with this structure, as our application grows, we can move some of these routes to different files. For example, we can move all the routes related to courses to a separate file, like *courses.js*. So *Express* gives our application a skeleton, a structure.
 
 >By covention, we call this object, *app*. So we store the result in a constant called *app*. So this represents our application. This *app* object has a bunch of useful methods. We have methods like, *GET*, *POST*, *PUT* and *DELETE*.
+
+## 5 - Nodemon
+
+So far you've notice that every time we make a change to this code, we have to go back in terminal and stop this process
+and start it again. This is very tedious. So I'm going to show you a better way. We're going to install a node package called *Nodemon*, which is short for *Node Monitor*. So in the terminal, *npm install -g*, because we want to install this globally so we can run it anywhere. And the name of the package is *Nodemon*. Alright *nodemon* is installed. So with this, instead of running our application using node, we use *nodemon*. Now we can see *nodemon* is watching all the files in the folder. Any files with any extensions. So, if we go back to our code and make a simple change and then save the file, now look in the terminal, nodemon restarted our application or our process due to changes. So we don't have to do this manually anymore. Now back in the browser, if we send a request to the root of the website, we can see our new message displayed there.
