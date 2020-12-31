@@ -108,10 +108,10 @@ and start it again. This is very tedious. So I'm going to show you a better way.
 
 ## 6 - Environment Variables
 
-> An environment variable is basically a variable that is part of the environment in which a process runs.
-
 Now, one thing we need to improve in this code, is this hard coded value *3000* for the ports. So, we have used *3000* as an anbitrary number, while this may work on your developement machine. It's unlikely that this is going to work in the production environment. Because when you deploy this application to a hosting environment, the port is dynamically assigned by the hosting environment. So we can't rely on *3000* to be available. So, the way to fix this is by using an *environment variable*. So, typically in hosting environments for Node applications, we have this environment variable
 called *ports*.
+
+> An environment variable is basically a variable that is part of the environment in which a process runs.
 
 An environment variable is basically a variable that is part of the environment in which a process runs. It's value is set outside this application. I'm going to show you how that works in a second. So, in this application, we need to read the value of this *port environment variable*. And the way we do that is by using the *process object*. So, we have this global object called *Process*. This object has a property called *env*, which is short for *environment variables*. And after that, we add the name of our *environment variable*, in this case *PORT*. So, if this is set, we're going to use it, otherwise, we're going to use *3000*. Now, we can store the result in a constant called *port*. And finally, we need to replace *3000* with *port*, and also change our message accordingly. So, I'm going to replace the *single qoute* with *back tick*, so, we can use a template string. And we're going to replace *3000* with a dynamic value. So, we add doller sign, curly braces, and then add our constant, in ths case *port*.
 
