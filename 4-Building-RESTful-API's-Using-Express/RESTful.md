@@ -138,4 +138,14 @@ app.get('/api/courses:id', (req, res) => {
 });
 ```
 
-So *request* and *response* goes to, now in order to read this parameter, we use request.params.id. So for now, let's just send this to the client. So resource.send. Back in the browser, now let's head over to /api/courses/1. So you can see, we successfully read the value of this parameter. Also it is possible to have multiple parameters in a route. For example, imagine you're building a service for powering a block. So you could have a route like this, posts, year, month. So we have two parameters. And with this, we can get all the posts for the given months and the given year. Now we can read this parameters just like before. So request.params.year or month. For this demo, let me show you this request.params object. So let's delete year, save.
+So *request* and *response* goes to, now in order to read this parameter, we use *request.params.id*. So for now, let's just send this to the client. So *resource.send*.
+
+```javascript
+app.get('/api/courses:id', (req, res) => {
+    res.send(req.params.id);
+});
+```
+
+Back in the browser, now let's head over to *'http://localhost:3000/api/courses/1'*. So you can see, we successfully read the value of this parameter, which is *1*.
+
+Also it is possible to have multiple parameters in a *route*. For example, imagine you're building a service for powering a block. So you could have a route like this, posts, year, month. So we have two parameters. And with this, we can get all the posts for the given months and the given year. Now we can read this parameters just like before. So request.params.year or month. For this demo, let me show you this request.params object. So let's delete year, save.
