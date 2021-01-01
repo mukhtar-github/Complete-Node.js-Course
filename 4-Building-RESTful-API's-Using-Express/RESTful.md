@@ -211,3 +211,41 @@ app.get('/api/courses/:id', (req, res) => {
     res.send(req.params);
 });
 ```
+
+Now, on the top of our file, let's define an array called *courses*.
+
+```javascript
+const courses = [
+    { id: 1, name: 'course1'},
+    { id: 2, name: 'course2'},
+    { id: 3, name: 'course3'}
+];
+```
+
+So, we set constant to an array, and in this array we're going to have 3 course objects. So each object should have a couple of properties, like 'id' and 'name'. And ofcourse we can have more, but for simplicity I'm just going to stick to two properties. Okay, now
+let's duplicate the line and change the id's as well as the name, 2 and 3. So we have two endpoints. One to get all the 
+courses and the other to get a single course. In the first one, we're going to return our courses array. Now in the second
+one, we should write some logic to look for the course with the given id. So, let's delete that which is inside our curly
+brackets first. We're going to call 'courses.find', this is a method that is available on every array in Javascript, as
+an argument to this method, we need to pass a function. This function will be used to find a course that matches a given
+criteria. So, we use the arrow function syntax, 'c =>', and here we write some logic that returns a boolean value. This
+boolean value determines if this course is the one we're looking for or not. So, 'c.id' should equal 'req.params.id', 
+however, this returns a string. So in order for this comparison to work properly, we need to parse this string into an 
+integer. So we call 'parseInt', which is one of the global functions available in Javascript, and then get the result and 
+store it in a constant called course. Now you might be asking why I didn't use 'var' here. Well that would be perfectly 
+fine and that's how most Javascript code out there is written. But going forward, it's best to drop  'var' and either use 
+'let' or 'const'. We use 'let' if we want to define a variable that we can reset later and use 'const' if we want to define
+a constant. In this case, I don't want to reset the course later in this function. But again, it's perfectly fine to use
+'let' here as well, its just personal preference. So, we get the course object. Now, if this course doesn't have a value,
+in other words, if you don't find a course with the given id, by convention we should return a response with the http 
+status code of '404'. That means object not found. So this is one of the conventions of RESTful api's. If the client asks
+for a resource, but that resource does not exist on the server, we should return a response with the status code of '404'.
+So, here we call 'res.status(404)'. And optionally, we can send a message as well.
+So, 'send("The course with the given ID was not found")'. Otherwise if we do have a course without an 'id', we are simply
+going to return that to the client. So, 'res.send(course)'. Now let's test this. So back in the browser. Let's head over 
+to 'http://localhost:3000/api/courses/1'. So we have the course with the id '1', and that's why we get this json object in
+the response. However, if I change this to '10', we get this message 'The course with the given ID was not found'. And to
+ensure that the status code of this response is '404', we can open up Chrome developer tools, so right click on the page,
+go to 'inspect', and then on the network tab, make sure you don't have a filter here, so select all, and then refresh the
+page by pressing 'ctrl R' on Windows or 'Cmd R' on Mac. So here is the request that we sent to the server, you can see the
+status is '404', which means not found.
