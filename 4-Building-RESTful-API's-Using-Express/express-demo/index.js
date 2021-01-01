@@ -46,5 +46,5 @@ app.listen(port, () => console.log(`Listening on port ${port}...`));
 
 //Testing
 app.get('/api/posts/:year/:month', (req, res) => {
-    res.send(req.params);
+    res.send(req.query);
 });
