@@ -192,4 +192,8 @@ Back in Chrome, and this is what we get.
 ```
 
 So *query* parameters are stored in an object with a bunch of key value pairs.
-> With Express we can also get *Query string* parameters. These are parameters that we add in the *Url* after a *question mark*. We use *Query string* parameters to provide additional data for our backend services.
+> With *Express* we can also get *Query string* parameters. These are parameters that we add in the *Url* after a *question mark*. We use *Query string* parameters to provide additional data for our backend services.
+
+## 8 - Handling HTTP GET Requests
+
+Alright, now let's impliment a new endpoint, to get a single course from the server. So, first of all let's change
