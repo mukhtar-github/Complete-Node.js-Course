@@ -43,3 +43,8 @@ app.get('/api/courses/:id', (req, res) => {
 //PORT
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Listening on port ${port}...`));
+
+//Testing
+app.get('/api/posts/:year/:month', (req, res) => {
+    res.send(req.params);
+});

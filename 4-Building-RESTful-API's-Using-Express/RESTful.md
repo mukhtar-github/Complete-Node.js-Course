@@ -156,7 +156,7 @@ app.get('/api/posts/:year/:month', (req, res) => {
 });
 ```
 
-And with this, we can get all the posts for the given months and the given year. Now we can read this parameters just like before. So *request.params.year* or *month*. For this demo, let me show you the *request.params* object looks like.
+And with this, we can get all the posts for the given months and the given year. Now we can read this parameters just like before. So *request.params.year* or *month*. For this demo, let me show you how the *request.params* object looks like.
 
 ```javascript
 app.get('/api/posts/:year/:month', (req, res) => {
@@ -164,7 +164,7 @@ app.get('/api/posts/:year/:month', (req, res) => {
 });
 ```
 
-So, save and back in the browser, and head over to *'http://localhost:3000/api/posts/2018/1'*.
+So save, and back in the browser, head over to *'http://localhost:3000/api/posts/2018/1'*.
 
 ```javascript
 {
@@ -173,4 +173,9 @@ So, save and back in the browser, and head over to *'http://localhost:3000/api/p
 }
 ```
 
-This is how our *request.params* object looks like.
+This is how our *request.params* object looks like. We have two properties, *year* and *month*, and they are named based on our *route* parameters.
+
+With Express we can also get *Query string* parameters. These are parameters that we add in the *Url* after a *question mark*. For example, we can get all the posts in January 2018, and sort them by their name. So we add a *question mark*, followed by *sortBy*, set it to *name*, like this; *'http://localhost:3000/api/posts/2018/1?sortBy=name'*. This is a *Query string* parameter. We use *Query string* parameters to provide additional data for our backend services. So we use *route* parameters for *essential* or *required* values, whereas we use *Query string* parameters for anything that is optional. Now let me show you how to read *Query string* parameters. So, back in VS code, instead of requested params, we use request.query. Back in Chrome, and this is what we get.
+
+> With Express we can also get *Query string* parameters. These are parameters that we add in the *Url* after a *question mark*.
+> We use *Query string* parameters to provide additional data for our backend services.
