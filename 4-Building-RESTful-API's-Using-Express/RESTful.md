@@ -197,3 +197,17 @@ So *query* parameters are stored in an object with a bunch of key value pairs.
 ## 8 - Handling HTTP GET Requests
 
 Alright, now let's impliment a new endpoint, to get a single course from the server. So, first of all let's change
+
+```javascript
+app.get('/api/posts/:year/:month', (req, res) => {
+    res.send(req.params);
+});
+```
+
+Back to
+
+```javascript
+app.get('/api/courses/:id', (req, res) => {
+    res.send(req.params);
+});
+```
