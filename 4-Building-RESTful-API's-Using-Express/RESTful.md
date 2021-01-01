@@ -103,7 +103,7 @@ So this is what I want you to pay attention to here, in this implementation, we 
 
 ## 5 - Nodemon
 
-So far you've notice that every time we make a change to this code, we have to go back in terminal and stop this process
+So far you've notice that every time we make a change to the code, we have to go back in terminal and stop this process
 and start it again. This is very tedious. So I'm going to show you a better way. We're going to install a node package called *Nodemon*, which is short for *Node Monitor*. So in the terminal, *npm install -g*, because we want to install this globally so we can run it anywhere. And the name of the package is *Nodemon*. Alright *nodemon* is installed. So with this, instead of running our application using node, we use *nodemon*. Now we can see *nodemon* is watching all the files in the folder. Any files with any extensions. So, if we go back to our code and make a simple change and then save the file, now look in the terminal, nodemon restarted our application or our process due to changes. So we don't have to do this manually anymore. Now back in the browser, if we send a request to the root of the website, we can see our new message displayed there.
 
 ## 6 - Environment Variables
@@ -148,4 +148,29 @@ app.get('/api/courses:id', (req, res) => {
 
 Back in the browser, now let's head over to *'http://localhost:3000/api/courses/1'*. So you can see, we successfully read the value of this parameter, which is *1*.
 
-Also it is possible to have multiple parameters in a *route*. For example, imagine you're building a service for powering a block. So you could have a route like this, posts, year, month. So we have two parameters. And with this, we can get all the posts for the given months and the given year. Now we can read this parameters just like before. So request.params.year or month. For this demo, let me show you this request.params object. So let's delete year, save.
+Also it is possible to have multiple parameters in a *route*. For example, imagine you're building a service for powering a *blog*. So you could have a *route* with, *posts*, *year*, *month*. So we have two parameters.
+
+```javascript
+app.get('/api/posts/:year/:month', (req, res) => {
+
+});
+```
+
+And with this, we can get all the posts for the given months and the given year. Now we can read this parameters just like before. So *request.params.year* or *month*. For this demo, let me show you the *request.params* object looks like.
+
+```javascript
+app.get('/api/posts/:year/:month', (req, res) => {
+    res.send(req.params);
+});
+```
+
+So, save and back in the browser, and head over to *'http://localhost:3000/api/posts/2018/1'*.
+
+```javascript
+{
+    year: "2018",
+    month: "1"
+}
+```
+
+This is how our *request.params* object looks like.
