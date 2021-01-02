@@ -95,9 +95,9 @@ app.get('/api/courses', (req, res) => {
 });
 ```
 
-So this is what I want you to pay attention to here, in this implementation, we don't have those *if (?)* blocks. We define new route, like calling *app.get*, and with this structure, as our application grows, we can move some of these routes to different files. For example, we can move all the routes related to courses to a separate file, like *courses.js*. So *Express* gives our application a skeleton, a structure.
+So this is what I want you to pay attention to here, in this implementation, we don't have those *if (?)* blocks. We define the new route, like calling *app.get*, and with this structure, as our application grows, we can move some of these routes to different files. For example, we can move all the routes related to courses to a separate file, like *courses.js*. So *Express* gives our application a skeleton, a structure.
 
->By covention, we call this object, *app*. So we store the result in a constant called *app*. So this represents our application. This *app* object has a bunch of useful methods. We have methods like, *GET*, *POST*, *PUT* and *DELETE*.
+>By convention, we call this object, *app*. So we store the result in a constant called *app*. So this represents our application. This *app* object has a bunch of useful methods. We have methods like *GET*, *POST*, *PUT*, and *DELETE*.
 
 ## 5 - Nodemon
 
