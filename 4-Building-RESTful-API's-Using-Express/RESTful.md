@@ -134,7 +134,7 @@ app.get('/api/courses:id', (req, res) => {
 });
 ```
 
-So *request* and *response* goes to, now in order to read this parameter, we use *request.params.id*. So for now, let's just send this to the client. So *resource.send*.
+So *request* and *response*. Now to read this parameter, we use *request.params.id*. So now, let's send this to the client. So *resource.send*.
 
 ```javascript
 app.get('/api/courses:id', (req, res) => {
@@ -142,9 +142,9 @@ app.get('/api/courses:id', (req, res) => {
 });
 ```
 
-Back in the browser, now let's head over to *'http://localhost:3000/api/courses/1'*. So you can see, we successfully read the value of this parameter, which is *1*.
+Back in the browser, now let's head over to *'http://localhost:3000/api/courses/1'*. So you can see that we successfully read the value of this parameter, which is *1*.
 
-Also it is possible to have multiple parameters in a *route*. For example, imagine you're building a service for powering a *blog*. So you could have a *route* with, *posts*, *year*, *month*. So we have two parameters.
+Also, it is possible to have multiple parameters in a *route*. For example, imagine you're building a service for powering a *blog*. So you could have a *route* with, *posts*, *year*, *month*. So we have two parameters.
 
 ```javascript
 app.get('/api/posts/:year/:month', (req, res) => {
@@ -152,7 +152,7 @@ app.get('/api/posts/:year/:month', (req, res) => {
 });
 ```
 
-And with this, we can get all the posts for the given months and the given year. Now we can read this parameters just like before. So *request.params.year* or *month*. For this demo, let me show you how the *request.params* object looks like.
+And with this, we can get all the posts for the given months and the given year. Now we can read these parameters just like before. So *request.params.year* or *month*. For this demo, let me show you how the *request.params* object looks like;
 
 ```javascript
 app.get('/api/posts/:year/:month', (req, res) => {
@@ -169,9 +169,9 @@ So save, and back in the browser, head over to *'http://localhost:3000/api/posts
 }
 ```
 
-This is how our *request.params* object looks like. We have two properties, *year* and *month*, and they are named based on our *route* parameters.
+That is how our *request.params* object looks. We have two properties, *year* and *month*, and they are named based on our *route* parameters.
 
-With *Express* we can also get *Query string* parameters. These are parameters that we add in the *Url* after a *question mark*. For example, we can get all the posts in January 2018, and sort them by their name. So we add a *question mark*, followed by *sortBy*, set it to *name*, like this; *'http://localhost:3000/api/posts/2018/1?sortBy=name'*. This is a *Query string* parameter. We use *Query string* parameters to provide additional data for our backend services. So we use *route* parameters for *essential* or *required* values, whereas we use *Query string* parameters for anything optional. Now let me show you how to read *Query string* parameters. So, back in the *VS code*, instead of *request.params*, we use *request.query*.
+With *Express*, we can also get *Query string* parameters. These are parameters that we add in the *Url* after a *question mark*. For example, we can get all the posts in January 2018 and sort them by their name. So we add a *question mark*, followed by *sortBy*, set it to *name*, like this; *'http://localhost:3000/api/posts/2018/1?sortBy=name'*. That is a *Query string* parameter. We use *Query string* parameters to provide additional data for our backend services. So we use *route* parameters for *essential* or *required* values, whereas we use *Query string* parameters for anything optional. Now let me show you how to read *Query string* parameters. So, back in the *VS code*, instead of *request.params*, we use *request.query*.
 
 ```javascript
 app.get('/api/posts/:year/:month', (req, res) => {
