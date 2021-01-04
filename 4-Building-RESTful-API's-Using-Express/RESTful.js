@@ -150,41 +150,41 @@
 
 // 5 - Nodemon
 
-//So far you've notice that every time we make a change to this code, we have to go back in terminal and stop this process
-//and start it again. This is very tedious. So I'm going to you a better way.
-//We're going to install a node package called Nodemon, which is short for Node Monitor. So in the terminal 'npm install -g'
-//because we want to install this globally so we can run it anywhere. And te name of the package is Nodemon.
-//Alright nodemon is installed. So with this, instead of running our application using node, we use use nodemon. Now we can
-//see nodemon is watching all the files in this folder. Any files with any extensions. So, if we go back to our code and
-//make a simple change and then save the file, now look in the terminal, nodemon restarted our application or our process
-//due to changes. So we don't have to do this manually anymore. Now back in the browser, if we send a request to the root
-//of the website, we can see our new message displayed there.
+// So far you've notice that every time we make a change to this code, we have to go back in terminal and stop this process
+// and start it again. This is very tedious. So I'm going to you a better way.
+// We're going to install a node package called Nodemon, which is short for Node Monitor. So in the terminal 'npm install -g'
+// because we want to install this globally so we can run it anywhere. And te name of the package is Nodemon.
+// Alright nodemon is installed. So with this, instead of running our application using node, we use use nodemon. Now we can
+// see nodemon is watching all the files in this folder. Any files with any extensions. So, if we go back to our code and
+// make a simple change and then save the file, now look in the terminal, nodemon restarted our application or our process
+// due to changes. So we don't have to do this manually anymore. Now back in the browser, if we send a request to the root
+// of the website, we can see our new message displayed there.
 
 
 // 6 - Environment Variables
 
-//Now, one thing we need to improve in this code, is this hard coded value (3000) for the ports. So, we have used 3000 as
-//an anbitrary number, while this may work on your developement machine. It's unlikely that this is going to work in the
-//production environment. Because when you deploy this application to a hosting environment, the port is dynamically
-//assigned by the hosting environment. So we can't rely on 3000 to be available. So, the way to fix this is by using an 
-//environment variable. So, typically in hosting environments for Node applications, we have this environment variable
-//called ports. An environment variable is basically a variable that is part of the environment in which a process runs.
-//It's value is set outside this application. I'm going to show you how that works in a second. So, in this application, we
-//need to read the value of this port environment variable. And the way we do that is by using the process object. So, we 
-//have this global object called 'Process'. This object has a property called 'env', which is short for environment 
-//variables. And after that, we add the name of our environment variable, in this case 'PORT'. So, if this is set, we're 
-//going to use this, otherwise, we're going to use 3000. Now, we can store the result in a constant called port. And finally,
-//we need to replace 3000 with port, and also change our message accordingly. So, I'm going to replace the single code with
-//back tick. So, we can use a template string. And we're going to 3000 with a dynamic value. So, we add doller sign, curly
-//braces, and then add our constant, in ths case 'port'. Now, back in the terminal, let'srun this application using nodemon.
-//So, on this machine you can see, I don't have an environment variable called 'port', that's why 3000 is used as the port
-//for this web server. Now, I'm going to set an environment variable. So, let's stop this process.  On Mac we can set an 
-//environment variable by executing the 'export' command. If you're on Windows, you should use 'set'. So, 'export' or 'set',
-//we add the name of the environment variable, in this case 'PORT'. And set it's value. I'm going to use 5000. So, now we
-//have this environment variable called 'PORT', with the value of 5000. With these, when we run this application, 
-//'nodemon index.js', we can see that now, we are listening on port 5000. So, this is the proper way to assign a port to
-//your Node applications. You should attempt to read the value of an environment variable called port. If there is a value,
-//you should use that. Otherwise, use an arbitrary number through a developement machine.
+// Now, one thing we need to improve in this code, is this hard coded value (3000) for the ports. So, we have used 3000 as
+// an anbitrary number, while this may work on your developement machine. It's unlikely that this is going to work in the
+// production environment. Because when you deploy this application to a hosting environment, the port is dynamically
+// assigned by the hosting environment. So we can't rely on 3000 to be available. So, the way to fix this is by using an 
+// environment variable. So, typically in hosting environments for Node applications, we have this environment variable
+// called ports. An environment variable is basically a variable that is part of the environment in which a process runs.
+// It's value is set outside this application. I'm going to show you how that works in a second. So, in this application, we
+// need to read the value of this port environment variable. And the way we do that is by using the process object. So, we 
+// have this global object called 'Process'. This object has a property called 'env', which is short for environment 
+// variables. And after that, we add the name of our environment variable, in this case 'PORT'. So, if this is set, we're 
+// going to use this, otherwise, we're going to use 3000. Now, we can store the result in a constant called port. And finally,
+// we need to replace 3000 with port, and also change our message accordingly. So, I'm going to replace the single code with
+// back tick. So, we can use a template string. And we're going to 3000 with a dynamic value. So, we add doller sign, curly
+// braces, and then add our constant, in ths case 'port'. Now, back in the terminal, let'srun this application using nodemon.
+// So, on this machine you can see, I don't have an environment variable called 'port', that's why 3000 is used as the port
+// for this web server. Now, I'm going to set an environment variable. So, let's stop this process.  On Mac we can set an 
+// environment variable by executing the 'export' command. If you're on Windows, you should use 'set'. So, 'export' or 'set',
+// we add the name of the environment variable, in this case 'PORT'. And set it's value. I'm going to use 5000. So, now we
+// have this environment variable called 'PORT', with the value of 5000. With these, when we run this application, 
+// 'nodemon index.js', we can see that now, we are listening on port 5000. So, this is the proper way to assign a port to
+// your Node applications. You should attempt to read the value of an environment variable called port. If there is a value,
+// you should use that. Otherwise, use an arbitrary number through a developement machine.
 // //PORT
 // const port = process.env.PORT || 3000;
 // app.listen(port, () => console.log(`Listening on port ${port}...`));
@@ -192,19 +192,19 @@
 
 // 7 - Route Parameters
 
-//Alright, so currently we have a route for getting the list of courses. Now, in this section, I'm going to show you how to 
-//create a route, to get a single course. So, earlier in one of the sections, where I talked about RESTful servises. You
-//learn that in order to get a single course, we should include the ID of the course in the URL. So, our endpoint should be
-//like this, '/api/courses/1', assuming that '1' is the ID of the course. So, let's see how we can impliment a route like
-//this. So app.get, we add the path, tat is api/courses, now here we need to define a paramter, so we add colon(:) and id. 
-//So, id is the name of our parameter here, you can use anything here, it doesn't have to be id, it could be course id. But
-//id is shorter, and more conventiontional. Now we add our route handler function. So request and response goes to, now in 
-//order to read this parameter, we use request.params.id. So for now, let's just send this to the client. So resource.send.
-//Back in the browser, now let's head over to /api/courses/1. So you can see, we successfully read the value of this parameter.
-//Also it is possible to have multiple parameters in a route. For example, imagine you're building a service for powering a
-//block. So you could have a route like this, posts, year, month. So we have two parameters. And with this, we can get all 
-//the posts for the given months and the given year. Now we can read this parameters just like before. So request.params.year
-//or month. For this demo, let me show you this request.params object. So let's delete year, save. =>
+// Alright, so currently we have a route for getting the list of courses. Now, in this section, I'm going to show you how to 
+// create a route, to get a single course. So, earlier in one of the sections, where I talked about RESTful servises. You
+// learn that in order to get a single course, we should include the ID of the course in the URL. So, our endpoint should be
+// like this, '/api/courses/1', assuming that '1' is the ID of the course. So, let's see how we can impliment a route like
+// this. So app.get, we add the path, tat is api/courses, now here we need to define a paramter, so we add colon(:) and id. 
+// So, id is the name of our parameter here, you can use anything here, it doesn't have to be id, it could be course id. But
+// id is shorter, and more conventiontional. Now we add our route handler function. So request and response goes to, now in 
+// order to read this parameter, we use request.params.id. So for now, let's just send this to the client. So resource.send.
+// Back in the browser, now let's head over to /api/courses/1. So you can see, we successfully read the value of this parameter.
+// Also it is possible to have multiple parameters in a route. For example, imagine you're building a service for powering a
+// block. So you could have a route like this, posts, year, month. So we have two parameters. And with this, we can get all 
+// the posts for the given months and the given year. Now we can read this parameters just like before. So request.params.year
+// or month. For this demo, let me show you this request.params object. So let's delete year, save. =>
 // app.get('/api/posts/:year/:month', (req, res) => {
 //     res.send(req.params);
 // });
@@ -213,13 +213,13 @@
 // year: "2018",
 // month: "1"
 // }
-//So this is our request params object. We have two properties, year and month, and their name based on our route parameters
-//With Express we can also get Query string parameters. These are parameters that we add in the Url after question mark(?),
-//for example, we can get all the posts in January 2018, and sort them by their name. So we add a question mark, sortBy,
-//set this to name. => http://localhost:3000/api/posts/2018/1?sortBy=name. This is a Query string parameter. We use Query
-//string parameters to provide additional data for our backend services. So we use route parameters for essential or required
-//values, whereas we use query string parameters for anything that is optional. Now let me show you how to read query parameters.
-//So, back in VS code, instead of requested params, we use request.query. Back in Chrome, and this is what we get. =>
+// So this is our request params object. We have two properties, year and month, and their name based on our route parameters.
+// With Express we can also get Query string parameters. These are parameters that we add in the Url after question mark(?),
+// for example, we can get all the posts in January 2018, and sort them by their name. So we add a question mark, sortBy,
+// set this to name. => http://localhost:3000/api/posts/2018/1?sortBy=name. This is a Query string parameter. We use Query
+// string parameters to provide additional data for our backend services. So we use route parameters for essential or required
+// values, whereas we use query string parameters for anything that is optional. Now let me show you how to read query parameters.
+// So, back in VS code, instead of requested params, we use request.query. Back in Chrome, and this is what we get. =>
 // {
 //     sortBy: "name"
 // }
@@ -232,39 +232,39 @@
 // app.get('/api/posts/:year/:month', (req, res) => {
 //     res.send(req.params);
 // });
-//Back to =>
+// Back to =>
 // app.get('/api/courses/:id', (req, res) => {
 //     res.send(req.params);
 // });
-//Wen put the courses and the id parameter. Now, on the top, let's define an array called courses, so constant, we set it to
-//an array, and in this array we're going to have 3 course objects. So each object should have a couple of properties, like 
-//'id' and 'name'. And ofcourse we can have more, but for simplicity I'm just going to stick to two properties. Okay, now
-//let's duplicate the line and change the id's as well as the name, 2 and 3. So we have two endpoints. One to get all the 
-//courses and the other to get a single course. In the first one, we're going to return our courses array. Now in the second
-//one, we should write some logic to look for the course with the given id. So, let's delete that which is inside our curly
+// Wen put the courses and the id parameter. Now, on the top, let's define an array called courses, so constant, we set it to
+// an array, and in this array we're going to have 3 course objects. So each object should have a couple of properties, like 
+// 'id' and 'name'. And ofcourse we can have more, but for simplicity I'm just going to stick to two properties. Okay, now
+// let's duplicate the line and change the id's as well as the name, 2 and 3. So we have two endpoints. One to get all the 
+// courses and the other to get a single course. In the first one, we're going to return our courses array. Now in the second
+// one, we should write some logic to look for the course with the given id. So, let's delete that which is inside our curly
 // brackets first. We're going to call 'courses.find', this is a method that is available on every array in Javascript, as
-//an argument to this method, we need to pass a function. This function will be used to find a course that matches a given
-//criteria. So, we use the arrow function syntax, 'c =>', and here we write some logic that returns a boolean value. This
-//boolean value determines if this course is the one we're looking for or not. So, 'c.id' should equal 'req.params.id', 
-//however, this returns a string. So in order for this comparison to work properly, we need to parse this string into an 
-//integer. So we call 'parseInt', which is one of the global functions available in Javascript, and then get the result and 
-//store it in a constant called course. Now you might be asking why I didn't use 'var' here. Well that would be perfectly 
-//fine and that's how most Javascript code out there is written. But going forward, it's best to drop  'var' and either use 
-//'let' or 'const'. We use 'let' if we want to define a variable that we can reset later and use 'const' if we want to define
-//a constant. In this case, I don't want to reset the course later in this function. But again, it's perfectly fine to use
-//'let' here as well, its just personal preference. So, we get the course object. Now, if this course doesn't have a value,
-//in other words, if you don't find a course with the given id, by convention we should return a response with the http 
-//status code of '404'. That means object not found. So this is one of the conventions of RESTful api's. If the client asks
-//for a resource, but that resource does not exist on the server, we should return a response with the status code of '404'.
-//So, here we call 'res.status(404)'. And optionally, we can send a message as well.
-//So, 'send("The course with the given ID was not found")'. Otherwise if we do have a course without an 'id', we are simply
-//going to return that to the client. So, 'res.send(course)'. Now let's test this. So back in the browser. Let's head over 
-//to 'http://localhost:3000/api/courses/1'. So we have the course with the id '1', and that's why we get this json object in
-//the response. However, if I change this to '10', we get this message 'The course with the given ID was not found'. And to
-//ensure that the status code of this response is '404', we can open up Chrome developer tools, so right click on the page,
-//go to 'inspect', and then on the network tab, make sure you don't have a filter here, so select all, and then refresh the
-//page by pressing 'ctrl R' on Windows or 'Cmd R' on Mac. So here is the request that we sent to the server, you can see the
-//status is '404', which means not found.
+// an argument to this method, we need to pass a function. This function will be used to find a course that matches a given
+// criteria. So, we use the arrow function syntax, 'c =>', and here we write some logic that returns a boolean value. This
+// boolean value determines if this course is the one we're looking for or not. So, 'c.id' should equal 'req.params.id', 
+// however, this returns a string. So in order for this comparison to work properly, we need to parse this string into an 
+// integer. So we call 'parseInt', which is one of the global functions available in Javascript, and then get the result and 
+// store it in a constant called course. Now you might be asking why I didn't use 'var' here. Well that would be perfectly 
+// fine and that's how most Javascript code out there is written. But going forward, it's best to drop  'var' and either use 
+// 'let' or 'const'. We use 'let' if we want to define a variable that we can reset later and use 'const' if we want to define
+// a constant. In this case, I don't want to reset the course later in this function. But again, it's perfectly fine to use
+// 'let' here as well, its just personal preference. So, we get the course object. Now, if this course doesn't have a value,
+// in other words, if you don't find a course with the given id, by convention we should return a response with the http 
+// status code of '404'. That means object not found. So this is one of the conventions of RESTful api's. If the client asks
+// for a resource, but that resource does not exist on the server, we should return a response with the status code of '404'.
+// So, here we call 'res.status(404)'. And optionally, we can send a message as well.
+// So, 'send("The course with the given ID was not found")'. Otherwise if we do have a course without an 'id', we are simply
+// going to return that to the client. So, 'res.send(course)'. Now let's test this. So back in the browser. Let's head over 
+// to 'http://localhost:3000/api/courses/1'. So we have the course with the id '1', and that's why we get this json object in
+// the response. However, if I change this to '10', we get this message 'The course with the given ID was not found'. And to
+// ensure that the status code of this response is '404', we can open up Chrome developer tools, so right click on the page,
+// go to 'inspect', and then on the network tab, make sure you don't have a filter here, so select all, and then refresh the
+// page by pressing 'ctrl R' on Windows or 'Cmd R' on Mac. So here is the request that we sent to the server, you can see the
+// status is '404', which means not found.
 
 
 // 9 - Handling HTTP POST Requests
