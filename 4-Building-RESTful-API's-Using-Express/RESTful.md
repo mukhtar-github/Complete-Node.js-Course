@@ -272,4 +272,15 @@ app.use(express.json());
 
 That may look a little bit strange or unfamiliar to you, but don't worry, we're going to explore that in detail later in the section. What we're doing here is adding a piece of * middleware*. So when we call the *express.json* method, the method returns a piece of *middleware* and then we call *app.use* to use that * middleware* in the request processing pipeline.
 
- So, back to our new route handler. We have a course object, next we push it in an array, so 'courses.push'. And finally, by convention when we post an object to the server, when the server creates a new object or a new resource, it should return that object in the body of the response. So ' res.send(course)'. The reason for this, is because we're assigning this 'id: courses.length + 1' on the server. So we need to return this course object to the client, because chances are the client needs to know the 'id' of this new object or this new resource. So this is how we handle http post requests. In the next lecture, I'm going to show you how to test this endpoint.
+So, back to our new *route handler*. We have a course object, next we push it in an array, so we use *courses.push*. And finally, by convention, when we *post* an object to the server when the server creates a new object or a new resource, it should return that object in the *body* of the *response*. So *res.send(course)*. The reason for this is because we're assigning this *id: courses.length + 1* on the server. So we need to return this course object to the client because chances are, the client needs to know the *id* of the new object or the new resource. So this is how we handle *HTTP post requests*. In the next lecture, we're going to learn how to test this endpoint.
+
+```javascript
+app.post('/api/courses', (req, res) => {
+    const course = {
+        id: courses.length + 1,
+        name: req.body.name
+    };
+    courses.push(courses);
+    res.send(course);
+});
+```
