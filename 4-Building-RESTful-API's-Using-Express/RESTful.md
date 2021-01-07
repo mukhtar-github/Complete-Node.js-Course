@@ -334,4 +334,10 @@ You don't want to write a complex validation logic like this at the beginning of
 
 Now let me show you how to replace this validation logic with *joi*. So first, back in the terminal, let's install *joi*. So you can see at the time of writing this course, the latest version is version 13.1.0. If you want to make sure that you have the same experience as what I'm going to show you, then install this exact version. So *npm i joi@13.1.0*.
 
-Inside the code file, on the top, we need to load the *joi* module. So *require ('joi')*, get the result and store it in a constant, called *Joi* with a capital *J*. Because what returns from the module is a *Class*. And as I told you before, in JavaScript, we use the *Pascal* naming convention to name our Classes. So the first letter of every word should be uppercase. Also, as a best practice, put all your required calls on top of the file. This way, you can easily see the dependencies of this module. The *index module* is dependent upon two modules. One is *joi*, and the other is *express*. So we have this *Joi class*, now, back in our route handler. Now with joi, fisrt we need
+Inside the code file, on the top, we need to load the *joi* module.
+
+```javascript
+    const Joi = require('joi');
+```
+
+Because what returns from the module is a *Class*. And as I told you before, in JavaScript, we use the *Pascal* naming convention to name our Classes. So the first letter of every word should be uppercase. Also, as a best practice, put all your required calls on top of the file. This way, you can easily see the dependencies of this module. The *index module* is dependent upon two modules. One is *joi*, and the other is *express*. So we have this *Joi class*, now, back in our route handler. Now with joi, fisrt we need
