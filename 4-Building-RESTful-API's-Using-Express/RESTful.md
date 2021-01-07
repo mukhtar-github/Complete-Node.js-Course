@@ -270,7 +270,7 @@ For that line of code to work, we need to enable parsing up *JSON* objects in th
 app.use(express.json());
 ```
 
-That may look a little bit strange or unfamiliar to you, but don't worry, we're going to explore that in detail later in the section. What we're doing here is adding a piece of * middleware*. So when we call the *express.json* method, the method returns a piece of *middleware* and then we call *app.use* to use that * middleware* in the request processing pipeline.
+That may look a little bit strange or unfamiliar to you, but don't worry, we're going to explore that in detail later in the section. What we're doing here is adding a piece of *middleware*. So when we call the *express.json* method, the method returns a piece of *middleware* and then we call *app.use* to use that *middleware* in the request processing pipeline.
 
 So, back to our new *route handler*. We have a course object, next we push it in an array, so we use *courses.push*. And finally, by convention, when we *post* an object to the server when the server creates a new object or a new resource, it should return that object in the *body* of the *response*. So *res.send(course)*. The reason for this is because we're assigning this *id: courses.length + 1* on the server. So we need to return this course object to the client because chances are, the client needs to know the *id* of the new object or the new resource. So this is how we handle *HTTP post requests*. In the next lecture, we're going to learn how to test this endpoint.
 
@@ -287,14 +287,12 @@ app.post('/api/courses', (req, res) => {
 
 ## 10 - Calling Endpoints Using Postman
 
-To call *HTTP* services, we use a Chrome extension called *Postman*. So if you haven't installed *Postman* before, search for *Chrome Postman* and add it to your Chrome Extensions. It will direct you to sign up, but you don't have to do that. There is a link taking you straight to the app. On the app's page, we can create a new HTTP request. So, from the dropdown list, we set the type to a *Post* request, we put the url, in this case, *'http://localhost:3000/api/courses'*. On my machine, I'm using port 3000 to host the application. We need to set the *body* of the request. Select *raw* from the list, and then select JSON from the Text dropdown list. So with this, we can put a JSON object in the *body* of the request. So, let's add an *Object* in the code editor and give it the *name* property.
+To call *HTTP* services, we use a Chrome extension called *Postman*. So if you haven't installed *Postman* before, search for *Chrome Postman* and add it to your Chrome Extensions. It will direct you to sign up, but you don't have to do that. There is a link taking you straight to the app. On the app's page, we can create a new HTTP request. So, from the dropdown list, we set the type to a *Post* request, we put the url, in this case, *'http://localhost:3000/api/courses'*. On my machine, I'm using port 3000 to host the application. Therefore, we need to set the *body* of the request. We should select *raw* from the list and then select JSON from the Text dropdown list. So with this, we can put a JSON object in the *body* of the request. So, let's add an *Object* in the code editor and give it the *name* property, we set it to *new course*, then finally, we send.
 
 ```javascript
 {
     "name": "new course"
 }
 ```
-
-So *name*, we set this to *new course*. And then finally, send.
 
 Okay, if you scroll down you can see the status of the request is *200*, which means the request was handled successfully, and here's the body of the response. So *id* is *4* because now we have *4* courses in our array, and this is the same name that we sent to the server. So this is how we test HTTP services, using *Postman*. Now in this implementation, we have assumed that there is an object with the name property in the body of the request. What if the client forgets to send this property or sends an invalid name, perhaps a name that is too short? That's where *input validation* comes into the picture, and that's the topic for the next lecture.
