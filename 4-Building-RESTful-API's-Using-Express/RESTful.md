@@ -287,7 +287,7 @@ app.post('/api/courses', (req, res) => {
 
 ## 10 - Calling Endpoints Using Postman
 
-To call *HTTP* services, we use a Chrome extension called *Postman*. So if you haven't installed *Postman* before, search for *Chrome Postman* and add it to your Chrome Extensions. It will direct you to sign up, but you don't have to do that. There is a link taking you straight to the app. On the app's page, we can create a new HTTP request. So, from the dropdown list, we set the type to a *Post* request, we put the url, in this case, *'http://localhost:3000/api/courses'*. On my machine, I'm using port 3000 to host the application. Therefore, we need to set the *body* of the request. We should select *raw* from the list and then select JSON from the Text dropdown list. So with this, we can put a JSON object in the *body* of the request. So, let's add an *Object* in the code editor and give it the *name* property, we set it to *new course*, then finally, we send.
+To call *HTTP* services, we use a Chrome extension called *Postman*. So if you haven't installed *Postman* before, search for *Chrome Postman* and add it to your Chrome Extensions. It will direct you to sign up, but you don't have to do that. There is a link taking you straight to the app. On the app's page, we can create a new HTTP *request*. So, from the dropdown list, we set the type to a *Post* request, we put the url, in this case, *'http://localhost:3000/api/courses'*. On my machine, I'm using port 3000 to host the application. Then, we need to set the *body* of the request. We should select *raw* from the list and then select JSON from the Text dropdown list. So with this, we can put a JSON object in the *body* of the *request*. So, let's add an *Object* in the code editor and give it the *name* property, we set it to *new course*, then finally, we send.
 
 ```javascript
 {
@@ -295,4 +295,13 @@ To call *HTTP* services, we use a Chrome extension called *Postman*. So if you h
 }
 ```
 
-Okay, if you scroll down you can see the status of the request is *200*, which means the request was handled successfully, and here's the body of the response. So *id* is *4* because now we have *4* courses in our array, and this is the same name that we sent to the server. So this is how we test HTTP services, using *Postman*. Now in this implementation, we have assumed that there is an object with the name property in the body of the request. What if the client forgets to send this property or sends an invalid name, perhaps a name that is too short? That's where *input validation* comes into the picture, and that's the topic for the next lecture.
+Okay, if you scroll down the app's page, you can see the *Status* of the *request* is *200*, which means the *request* was handled successfully, and here's the body of the *response*.
+
+```javascript
+{
+    "id": 4,
+    "name": "new course"
+}
+```
+
+So *id* is *4* because we now have *4* courses in our array, and this is the same *name* that we sent to the server. So this is how we test HTTP services, using *Postman*. In this implementation, we have assumed that there is an *object* with the *name* property in the body of the request. What if the client forgets to send this property or sends an invalid *name*, perhaps a *name* that is too short? That's where *input validation* comes into the picture, and that's the topic for the next lecture.
