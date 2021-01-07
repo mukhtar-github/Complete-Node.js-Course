@@ -25,11 +25,17 @@ app.get('/api/courses/:id', (req, res) => {
     if(!course) res.status(404).send('The course with the given ID was not found');
     res.send(course);
 });
-
 app.post('/api/courses', (req, res) => {
+    const shema = {
+        name: Joi.string().min(3).required()
+    };
+
+    const result = Joi.validate(req.body, schema);
+    console.log(result);
+
     if(!req.body.name || req.body.name.length < 3) {
         // 400 Bad request
-        res.status(400).send('Name is required and should be minimum 3 characters');
+        res.status(400).send('Name is required and should be a minimum of 3 characters');
         return;
     }
     const course = {
