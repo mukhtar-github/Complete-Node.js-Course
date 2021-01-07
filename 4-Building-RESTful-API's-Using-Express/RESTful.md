@@ -287,7 +287,7 @@ app.post('/api/courses', (req, res) => {
 
 ## 10 - Calling Endpoints Using Postman
 
-To call *HTTP* services, we use a Chrome extension called *Postman*. So if you haven't installed *Postman* before, search for *Chrome Postman* and add it to chrome Extensions. It is directing you to sign up, but you don't have to do that. There is a link taking you straight to the app. On the app's page, we can create a new HTTP request. So, from the dropdown list, we set the type to a *Post* request, we put the url, in this case, *'http://localhost:3000/api/courses'*. On my machine, I'm using port 3000 to host the application. We need to set the *body* of the request. Select *raw* from the list, and then select JSON from the Text dropdown list. So with this, we can put a JSON object in the *body* of the request. So, let's add an *Object* in the code editor and give it the *name* property.
+To call *HTTP* services, we use a Chrome extension called *Postman*. So if you haven't installed *Postman* before, search for *Chrome Postman* and add it to your Chrome Extensions. It will direct you to sign up, but you don't have to do that. There is a link taking you straight to the app. On the app's page, we can create a new HTTP request. So, from the dropdown list, we set the type to a *Post* request, we put the url, in this case, *'http://localhost:3000/api/courses'*. On my machine, I'm using port 3000 to host the application. We need to set the *body* of the request. Select *raw* from the list, and then select JSON from the Text dropdown list. So with this, we can put a JSON object in the *body* of the request. So, let's add an *Object* in the code editor and give it the *name* property.
 
 ```javascript
 {
