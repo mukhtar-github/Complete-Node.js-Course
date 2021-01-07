@@ -304,4 +304,24 @@ Okay, if you scroll down the app's page, you can see the *Status* of the *reques
 }
 ```
 
-So *id* is *4* because we now have *4* courses in our array, and this is the same *name* that we sent to the server. So this is how we test HTTP services, using *Postman*. In this implementation, we have assumed that there is an *object* with the *name* property in the body of the request. What if the client forgets to send this property or sends an invalid *name*, perhaps a *name* that is too short? That's where *input validation* comes into the picture, and that's the topic for the next lecture.
+So *id* is *4* because we now have *4* courses in our array, and this is the same *name* that we sent to the server. So this is how we test HTTP services, using *Postman*. In this implementation, we have assumed that there is an *object* with the *name* property in the *body* of the *request*. What if the client forgets to send this property or sends an invalid *name*, perhaps a *name* that is too short? That's where *input validation* comes into the picture, and that's the topic for the next lecture.
+
+## 11 - Input Validation
+
+In this lecture, I'm going to show you how to do *Input Validation*. So as a security best practice, you should never, ever trust what the client sends you. You should always validate the input. So in this particular example, because we're dealing with a simple object with only one property, that is *name*, we can write some validation logic like this;
+
+```javascript
+app.post('/api/courses', (req, res) => {
+    if(!req.body.name || req.body.name.length < 3) {
+        // 400 Bad request
+        res.status(400).send('Name is required and should be minimum 3 characters');
+        return;
+    }
+});
+```
+
+We're going to return an error to the client if the validation logic is *True*. The RESTful convention returns a response with the HTTP status code of *400*, which means *bad-request*. And to do so, we call *res.status(400)*, and then we can send an error message. In this case, we can write a generic error message, *Name is required and should be a minimum of 3 characters*. Now in your implementation, you may want to differentiate the errors. For example, if the client didn't send the *name* property, perhaps you would respond with *Name is required*. Or, if they did send the name, but the name was not long enough, you could send a different error message. We finally return the error message because we don't want the rest of the function to get executed. So this is the basic idea. However, in a real-world application, it's more likely that you'll be working with a complex object, something more complex than this course object.
+
+> So as a security best practice, you should never, ever trust what the client sends you. You should always validate the input.
+
+You don't want to write a complex validation logic like this at the beginning of your route handler. So let me introduce you to a Node package that makes it really easy for you to validate the input. So on Google, if you search for 'npm joi' with i, look here's the first link, so here you can see joi has been downloaded over 250 thousand times over the past day, and over 3 million times over the past month. It's a very popular package. Also here on the page, you can see some sample code and link to their official documentation. Now let me show you how to replace this validation logic with 'joi'. So first back in the terminal, let's install joi. So you can see at the time of recording this video, the the latest version is version 13.1.0. If you want to make sure that you have exact same experience as what I'm going to show you in this video, then install this exact version. So 'npm i joi@13.1.0'. Now back in code. On the top, we need to load this module. So 'require ('joi'), get the result and store it in a constant called 'Joi' with a capital 'J'. Because what is returned from this module is a class. And as I told you before, in JavaScript, we use pascal naming convention to name our classes. So the first letter of every word should be uppercase. Also as a best practice, put all your required calls on top of the file. This way you can easily see what are the dependencies of this module. So this module, 'index module', is dependent upon two modules, one is 'joi', the other is 'express'. So we have this Joi class, now, back in our route handler. Now with joi, fisrt we need
