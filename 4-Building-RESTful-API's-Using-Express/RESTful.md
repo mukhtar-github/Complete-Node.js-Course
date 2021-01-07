@@ -348,7 +348,7 @@ First, we're going to define a *schema* inside the *route handler* function. So,
 
 ```javascript
 app.post('/api/courses', (req, res) => {
-    const shema = {
+    const schema = {
         name: Joi.string().min(3).required()
     };
 

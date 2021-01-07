@@ -26,7 +26,7 @@ app.get('/api/courses/:id', (req, res) => {
     res.send(course);
 });
 app.post('/api/courses', (req, res) => {
-    const shema = {
+    const schema = {
         name: Joi.string().min(3).required()
     };
 
