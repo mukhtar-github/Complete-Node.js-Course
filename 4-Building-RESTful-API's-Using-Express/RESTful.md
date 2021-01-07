@@ -344,7 +344,7 @@ Because what returns from the module is a *Class*. And as I told you before, in 
 
 Now we have the *Joi class*, so back to our route handler. With *joi*, first, we need to define a *Schema*. A *Schema* defined the shape of our *Objects*. What properties do we have in that *Object*, what is the type of each property, do we have an *email*, do we have a string? What is the minimum or the maximum number of characters? Do we have a number? What range should that number be? So that is the job of a *schema*.
 
-First, we're going to define a *schema* inside the *route handler* function. So, *const schema*, we set it to an *Object*, this is shape of our *course object*. So here we want to have a *name* property, and we set it to *Joi.string*, so we're telling *Joi* that this is a string and it should have a minimum of three characters, and it should be required. So it has a very fluent *api*. Again, you can look at the documentation to see all the methods that are available to you. So, here's Our *schema*. Now we call *Joi.validate* and we give it *request.body* as wellas our *schema*. Now, this validate method returns an *Object*. Let's store that in a constant called *result*. For this demo, I'm going to log this result on the console. So, before we go any further, let's save this, and let's go back to the *Postman*. Let's create another *course*. Now back to the terminal,
+First, we're going to define a *schema* inside the *route handler* function. So, *const schema*, we set it to an *Object*, this is shape of our *course object*. So here we want to have a *name* property, and we set it to *Joi.string*, so we're telling *Joi* that this is a string and it should have a minimum of three characters, and it should be required. So it has a very fluent *api*. Again, you can look at the documentation to see all the methods that are available to you. So, here's Our *schema*. Now we call *Joi.validate* and we give it *request.body* as wellas our *schema*. Now, this validate method returns an *Object*. Let's store that in a constant called *result*.
 
 ```javascript
 app.post('/api/courses', (req, res) => {
@@ -366,5 +366,17 @@ app.post('/api/courses', (req, res) => {
     };
     courses.push(courses);
     res.send(course);
+});
+```
+
+For this demo, I'm going to log this result on the console. So, before we go any further, let's save this, and let's go back to the *Postman*. Let's create another *course* by tapping on the *send* button to get a *response*. Now back to the terminal, so this our *result* object. It has two properties, *error* and *value*. Only one of these can have a value. So in this case, since we sent a valid *course* object, we have that object here as the value of the *value* property. And you can see *error* is *null*.
+
+```javascript
+{
+  error: null,
+  value: { name: 'new course' },
+  then: [Function: then],
+  catch: [Function: catch]
+}
 });
 ```
