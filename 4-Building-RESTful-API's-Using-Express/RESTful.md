@@ -342,4 +342,6 @@ On the top of the code file, we need to load the *joi* module.
 
 Because what returns from the module is a *Class*. And as I told you before, in JavaScript, we use the *Pascal* naming convention to name our Classes. So the first letter of every word should be uppercase. Also, as a best practice, put all your required calls on top of the file. This way, you can easily see the *dependencies* of the module. The *index.js module* is dependent upon two modules. One is *joi*, and the other is *express*.
 
-Now we have the *Joi class*, so, back to our route handler. With *joi*, first we need to define a *Schema*. A *Schema* is defines the shape of our *Objects*. What properties do we have in that *Object*, what is the type of each property, do we have an *email*, do we have a string? What are the minimum or maximum number of characters? Do we have a number? What range should that number be? So that is the work of the *Schema*.
+Now we have the *Joi class*, so back to our route handler. With *joi*, first, we need to define a *Schema*. A *Schema* defined the shape of our *Objects*. What properties do we have in that *Object*, what is the type of each property, do we have an *email*, do we have a string? What is the minimum or the maximum number of characters? Do we have a number? What range should that number be? So that is the job of a *schema*.
+
+First, we're going to define a *schema* inside the *route handler* function, *const schema*, we set it to an *Object*, this is shape of our *course object*.
