@@ -340,4 +340,4 @@ Inside the code file, on the top, we need to load the *joi* module.
     const Joi = require('joi');
 ```
 
-Because what returns from the module is a *Class*. And as I told you before, in JavaScript, we use the *Pascal* naming convention to name our Classes. So the first letter of every word should be uppercase. Also, as a best practice, put all your required calls on top of the file. This way, you can easily see the dependencies of this module. The *index module* is dependent upon two modules. One is *joi*, and the other is *express*. So we have this *Joi class*, now, back in our route handler. Now with joi, fisrt we need
+Because what returns from the module is a *Class*. And as I told you before, in JavaScript, we use the *Pascal* naming convention to name our Classes. So the first letter of every word should be uppercase. Also, as a best practice, put all your required calls on top of the file. This way, you can easily see the *dependencies* of the module. The *index.js module* is dependent upon two modules. One is *joi*, and the other is *express*. So we have this *Joi class*, now, back in our route handler. Now with joi, fisrt we need
