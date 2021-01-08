@@ -380,7 +380,7 @@ For this demo, I'm going to log this result on the console. So, before we go any
 }
 ```
 
-If we send an invalid object *value* will be *null*, and *error* will be set. Let me show you, so, back in *Postman*. Let's remove the *name* property, then send again. Back in the terminal, look, here is the *result* object, this is the *error* property, it's set to an object that has validation error,
+If we send an invalid object *value* will be *null*, and *error* will be set. Let me show you, so, back in *Postman*. Let's remove the *name* property, then send again. Back in the terminal, look, here is the *result* object, this is the *error* property, it's set to an object that has validation error; *Child name fails because name is required*.
 
 ```javascript
 {
@@ -396,3 +396,72 @@ If we send an invalid object *value* will be *null*, and *error* will be set. Le
   catch: [Function: catch]
 }
 ```
+
+So back to our *route handler*, instead of the manual validation logic, we can check the value of *result.error* property.
+
+```javascript
+app.post('/api/courses', (req, res) => {
+    const schema = {
+        name: Joi.string().min(3).required()
+    };
+
+    const result = Joi.validate(req.body, schema);
+    if(result.error) {
+        res.status(400).send(result.error);
+        return;
+    }
+    const course = {
+        id: courses.length + 1,
+        name: req.body.name
+    };
+    courses.push(courses);
+    res.send(course);
+});
+```
+
+So, if *result.error*. Then we're going to send a response with status code of *400*, and in the body of th response, for now we can simply add *result.error*. And we don't need the *console.log* anymore. So save, now back in *Postman*, one more time, I'm going to send the empty object, now look at the result;
+
+```javascript
+{
+    "isJoi": true,
+    "name": "ValidationError",
+    "details": [
+        {
+            "message": "\"name\" is required",
+            "path": [
+                "name"
+            ],
+            "type": "any.required",
+            "context": {
+                "key": "name",
+                "label": "name"
+            }
+        }
+    ],
+    "_object": {}
+}
+```
+
+So this is what we get, an object with these properties; *isJoi*, *name*, *details*, which is an array of error messages. So here is the first message; *name is required*. Now, this object is too complex to send to the client, perhaps you want to simplify it. So, back in the code.
+
+```javascript
+app.post('/api/courses', (req, res) => {
+    const schema = {
+        name: Joi.string().min(3).required()
+    };
+
+    const result = Joi.validate(req.body, schema);
+    if(result.error) {
+        res.status(400).send(result.error.details[0].message);
+        return;
+    }
+    const course = {
+        id: courses.length + 1,
+        name: req.body.name
+    };
+    courses.push(courses);
+    res.send(course);
+});
+```
+
+One simple solution, is to go to the *details array*, get the first element, and then access the *message* property.
