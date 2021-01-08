@@ -480,3 +480,13 @@ So, we can see that *Joi* makes it really easy to validate input and return prop
 
 ## 12 - Handling HTTP PUT Requests
 
+Alright, now let's see how we can update a *course*. So let's add a new *route handler*;
+
+```javascript
+    app.put('/api/courses/:id', (req, res) => {
+        // Look up the course
+        // If not existing we
+    })
+```
+
+So *app.put*, we use the *Put* method for updating resources. Now the path should be *'/api/courses/'*. And here, we need a route parameter, because we're dealing with a specific course. So *id*. Now our *route handler function*, *request* and *response* goes to a code block. Alright, now here is the logic we need impliment. First we need to look-up this course with this given *id*. So *look up the course*, if the course doesn't exist, *If not existing*
