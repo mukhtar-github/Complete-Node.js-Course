@@ -508,7 +508,7 @@ So, we already have some code that we can re-use here. So, I'm not going to type
     })
 ```
 
-The second part is all about validation, for that, I'm going to go to our *Post* end-point. So, here we need to copy the *schema*, as well as the line for validating the *request body* using *Joi*. Now there is a problem with this approach, the problem is, in this case we have a very simple *schema*, what if you're dealing with a complex object, with quite a few properties? Then our validation logic would be duplicated in two different route handlers. So let's just copy the code for now, and then we'll come back and refactor it, to make it better. So copy the few lines and paste it in th
+The second part is all about validation, for that, I'm going to go to our *Post* end-point. So, here we need to copy the *schema*, as well as the line for validating the *request body* using *Joi*. Now there is a problem with this approach, the problem is, in this case we have a very simple *schema*, what if you're dealing with a complex object, with quite a few properties? Then our validation logic would be duplicated in two different route handlers. So let's just copy the code for now, and then we'll come back and refactor it, to make it better. So copy the few lines and paste in the *route handler function* under *Validation*. So, we're validating, and if it's invalid, we need to return the *400* error
 
 ```javascript
     app.put('/api/courses/:id', (req, res) => {
@@ -519,5 +519,9 @@ The second part is all about validation, for that, I'm going to go to our *Post*
     };
 
     const result = Joi.validate(req.body, schema);
+    if(result.error) {
+        res.status(400).send(result.error.details[0].message);
+        return;
+    }
     });
 ```
