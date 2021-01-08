@@ -577,7 +577,7 @@ app.put('/api/courses/:id', (req, res) => {
 });
 ```
 
-So, let me duplicate the *result* code line and show you how *object destructuring* works. With *object destructuring*, when declaring a variable or a constant, we add curly braces, and then, we add the *property of the target object* inside the curly braces. So, in this case, the target object that is returned from our *validateCourse* method has two properties, *error* and *value*. In this case, we just want the *error* property, so we put that between the curly braces. So, this is equivalent to getting *result.error*. But, instead of using the *result.error* notation, we used the *error* notation. And with this, we don't have to repeat *result.error* in two different places.
+So, let me duplicate the *result* code line and show you how *object destructuring* works. With *object destructuring*, when declaring a variable or a constant, we add curly braces, and then, we add the *property of the target object* inside the curly braces. So, in this case, the target object that is returned from our *validateCourse* method has two properties, *error* and *value*. In this case, we just want the *error* property, so we put that between the curly braces. So, this is equivalent to getting *result.error*. But, instead of using the *result.error* notation, we used the *error* notation. And with this, we don't have to repeat *result.error* in two different places. So, this is *object destructuring*. Now, we don't need the first line anymore.
 
 ```javascript
 app.put('/api/courses/:id', (req, res) => {
@@ -597,4 +597,34 @@ app.put('/api/courses/:id', (req, res) => {
 });
 ```
 
-So, this is *object destructuring*. Now, we don't need the first line anymore.
+And finally, before we finish this lecture, we need to make one more change in the code. So, we need to use this new way of validating a *course* in the *route handler*, for handling our HTTP *post* requests. So copy, this is our handler for creating a new course. Now, we don't need to use the *schema* in the code anymore, we moved all that logic to our *validateCourse* function. So all the few lines of code for validating the *request body* and sending *400* error, are no more useful, so we're going to delete them and paste the copied code from the other method. So we call *validateCourse*, use the *object destructuring* syntax, and if you have an *error*, you return the *400* response to the client.
+
+```javascript
+app.post('/api/courses', (req, res) => {
+    /*const schema = {
+        name: Joi.string().min(3).required()
+    };
+
+    const result = Joi.validate(req.body, schema);
+    if(result.error) {
+        res.status(400).send(result.error.details[0].message);
+        return;
+    }*/
+
+    const { errror } = validateCourse(req.body);
+    if(error) {
+        res.status(400).send(error.details[0].message);
+        return;
+    }
+
+    const course = {
+        id: courses.length + 1,
+        name: req.body.name
+    };
+
+    courses.push(courses);
+    res.send(course);
+});
+```
+
+Now finally, let's test our new endpoint for updating a course. So, back in *Postman*, we need to change the type of the HTTP request to *put*. Change the URL, and add a valid course *id*, like *1*. 
