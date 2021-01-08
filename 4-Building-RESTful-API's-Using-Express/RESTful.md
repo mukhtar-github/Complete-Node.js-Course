@@ -516,13 +516,13 @@ The second part is all about validation, for that, I'm going to go to our *Post*
         // If invalid, return 400 - Bad request
         const schema = {
         name: Joi.string().min(3).required()
-    };
+        };
 
-    const result = Joi.validate(req.body, schema);
-    if(result.error) {
+        const result = Joi.validate(req.body, schema);
+        if(result.error) {
         res.status(400).send(result.error.details[0].message);
         return;
-    }
+        }
     });
 ```
 
@@ -537,4 +537,24 @@ Now the third part. So at this point, we have a *course* object, we can update i
     });
 ```
 
-Now, I told you that we have duplicated the validation logic. So, I'm going to extract these few lines into a seperate function that we can reuse, both
+Now, I told you that we have duplicated the validation logic.
+
+```javascript
+    const schema = {
+        name: Joi.string().min(3).required()
+    };
+
+    const result = Joi.validate(req.body, schema);
+```
+
+So, I'm going to extract these few lines into a seperate function that we can reuse, both in this *route handler*, for handling our HTTP *Put* request, as well as the other one we wrote in the last lecture for creating a *course*. So, let's define a function, and call it *Validate course*. We give it a *course* object. Now, in this function, we should have the *schema* as well as the line for validating the *course*. So, copy and paste these few lines into the  function. Now, instead of validating *req.body*, we're going to validate the argument that is passed to this method. So that would be the *course* object. Now, finally
+
+```javascript
+function validateCourse(course) {
+    const schema = {
+        name: Joi.string().min(3).required()
+    };
+
+    const result = Joi.validate(req.body, schema);
+}
+```
