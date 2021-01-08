@@ -559,14 +559,13 @@ function validateCourse(course) {
 }
 ```
 
-So, with this new implementation, we have all the validation logic in one place. Now, we can reuse this. So, in our *put* method, we define a constant called *result* and set it to *validateCourse()*, and as an argument we pass *req.body*. Now, we can make this code a little bit cleaner and shorter, by using *object destructuring* feature in modern Javascript. So, look here, we get this *result* object and we're accessing *result.error* property in two different places. Since all we're interested in, is this *error* property, we can get it using *object destructuring*. So, let me duplicate the *result* code line and show you how *object destructuring* works.
+So, with this new implementation, we have all the validation logic in one place. Now, we can reuse this. So, in our *put* method, we define a constant called *result* and set it to *validateCourse()*, and as an argument we pass *req.body*. Now, we can make this code a little bit cleaner and shorter, by using *object destructuring* feature in modern Javascript. So, look here, we get this *result* object and we're accessing *result.error* property in two different places. Since all we're interested in, is this *error* property, we can get it using *object destructuring*.
 
 ```javascript
 app.put('/api/courses/:id', (req, res) => {
     const course = courses.find(c => c.id === parseInt(req.params.id));
     if(!course) res.status(404).send('The course with the given ID was not found');
 
-    const result = validateCourse(req.body);
     const result = validateCourse(req.body);
     if(result.error) {
         res.status(400).send(result.error.details[0].message);
@@ -577,3 +576,25 @@ app.put('/api/courses/:id', (req, res) => {
     res.send(course);
 });
 ```
+
+So, let me duplicate the *result* code line and show you how *object destructuring* works. With *object destructuring*, when declaring a variable or a constant, we add curly braces, and then, we add the *property of the target object* inside the curly braces. So, in this case, the target object that is returned from our *validateCourse* method has two properties, *error* and *value*. In this case, we just want the *error* property, so we put that between the curly braces. So, this is equivalent to getting *result.error*. But, instead of using the *result.error* notation, we used the *error* notation. And with this, we don't have to repeat *result.error* in two different places.
+
+```javascript
+app.put('/api/courses/:id', (req, res) => {
+    const course = courses.find(c => c.id === parseInt(req.params.id));
+    if(!course) res.status(404).send('The course with the given ID was not found');
+
+    // Object Destructuring
+    // const result = validateCourse(req.body);
+    const { errror } = validateCourse(req.body); // => result.error
+    if(error) {
+        res.status(400).send(error.details[0].message);
+        return;
+    }
+
+    course.name = req.body.name;
+    res.send(course);
+});
+```
+
+So, this is *object destructuring*. Now, we don't need the first line anymore.
