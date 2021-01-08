@@ -508,7 +508,7 @@ So, we already have some code that we can re-use here. So, I'm not going to type
     })
 ```
 
-The second part is all about validation, for that, I'm going to go to our *Post* end-point. So, here we need to copy the *schema*, as well as the line for validating the *request body* using *Joi*.
+The second part is all about validation, for that, I'm going to go to our *Post* end-point. So, here we need to copy the *schema*, as well as the line for validating the *request body* using *Joi*. Now there is a problem with this approach, the problem is, in this case we have a very simple *schema*, what if you're dealing with a complex object, with quite a few properties? Then our validation logic would be duplicated in two different route handlers. So let's just copy the code for now, and then we'll come back and refactor it, to make it better. So copy the few lines and paste it in th
 
 ```javascript
     app.put('/api/courses/:id', (req, res) => {
