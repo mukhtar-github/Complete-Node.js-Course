@@ -378,5 +378,21 @@ For this demo, I'm going to log this result on the console. So, before we go any
   then: [Function: then],
   catch: [Function: catch]
 }
-});
+```
+
+If we send an invalid object *value* will be *null*, and *error* will be set. Let me show you, so, back in *Postman*. Let's remove the *name* property, then send again. Back in the terminal, look, here is the *result* object, this is the *error* property, it's set to an object that has validation error,
+
+```javascript
+{
+  error: Error [ValidationError]: child "name" fails because ["name" is required]
+  {
+    isJoi: true,
+    details: [ [Object] ],
+    _object: {},
+    annotate: [Function]
+  },
+  value: {},
+  then: [Function: then],
+  catch: [Function: catch]
+}
 ```
