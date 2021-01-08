@@ -492,7 +492,7 @@ Alright, now let's see how we can update a *course*. So let's add a new *route h
 
         // Update the course
         // Return the updated course to the client
-    })
+    });
 ```
 
 So *app.put*, we use the *Put* method for updating resources. Now the path should be *'/api/courses/'*. And here, we need a route parameter, because we're dealing with a specific course. So *id*. Now our *route handler function*, *request* and *response* goes to a code block. Alright, now here is the logic we need impliment. First we need to look-up this course with this given *id*. So *look up the course*, if the course doesn't exist, *If not existing*, we need to *return 404*. That means resource not found. Otherwise, we need to validate the *course* to make sure it's in good shape, *if invalid*, we need to return a *400 error*, which means *Bad request*, and if we get here, which means everything is good, so we update the *course*, and *Return the updated course to the client*. This is the logic we need to implement.
@@ -508,7 +508,7 @@ So, we already have some code that we can re-use here. So, I'm not going to type
     })
 ```
 
-The second part is all about validation, for that, I'm going to go to our *Post* end-point. So, here we need to copy the *schema*, as well as the line for validating the *request body* using *Joi*. Now there is a problem with this approach, the problem is, in this case we have a very simple *schema*, what if you're dealing with a complex object, with quite a few properties? Then our validation logic would be duplicated in two different route handlers. So let's just copy the code for now, and then we'll come back and refactor it, to make it better. So copy the few lines and paste in the *route handler function* under *Validation*. So, we're validating, and if it's invalid, we need to return the *400* error
+The second part is all about validation, for that, I'm going to go to our *Post* end-point. So, here we need to copy the *schema*, as well as the line for validating the *request body* using *Joi*. Now there is a problem with this approach, the problem is, in this case we have a very simple *schema*, what if you're dealing with a complex object, with quite a few properties? Then our validation logic would be duplicated in two different route handlers. So let's just copy the code for now, and then we'll come back and refactor it, to make it better. So copy the few lines and paste in the *route handler function* under *Validation*. So, we're validating, and if we have an error in the result, we're going to return the *400* error. So this is our second part, we have the *schema*, we validate and if we have an error, we return a *400* error. We're done with the second part.
 
 ```javascript
     app.put('/api/courses/:id', (req, res) => {
@@ -525,3 +525,16 @@ The second part is all about validation, for that, I'm going to go to our *Post*
     }
     });
 ```
+
+Now the third part. So at this point, we have a *course* object, we can update it's properties. So, *course.name*, we set that to *req.body.name*. And off course, if we have other properties, we'll set them here as well. So we're done with updating the *course*, and finally, we need to *return the updated course to the client*. So, *res.send(course)*. This is how we handle an HTTP *Put* request.
+
+```javascript
+    app.put('/api/courses/:id', (req, res) => {
+        // Update the course
+        course.name = req.body.name;
+        // Return the updated course to the client
+        res.send(course);
+    });
+```
+
+Now, I told you that we have duplicated the validation logic. So, I'm going to extract these few lines into a seperate function that we can reuse, both
