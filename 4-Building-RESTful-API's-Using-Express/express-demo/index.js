@@ -38,7 +38,7 @@ app.post('/api/courses', (req, res) => {
         id: courses.length + 1,
         name: req.body.name
     };
-    
+
     courses.push(courses);
     res.send(course);
 });
@@ -47,17 +47,12 @@ app.post('/api/courses', (req, res) => {
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Listening on port ${port}...`));
 
-// Testing
-app.get('/api/posts/:year/:month', (req, res) => {
-    res.send(req.query);
-});
-
 // PUT Requests
 app.put('/api/courses/:id', (req, res) => {
     const course = courses.find(c => c.id === parseInt(req.params.id));
     if(!course) res.status(404).send('The course with the given ID was not found');
 
-    const { errror } = validateCourse(req.body);
+    const { error } = validateCourse(req.body);
     if(error) {
         res.status(400).send(error.details[0].message);
         return;
@@ -75,3 +70,8 @@ function validateCourse(course) {
 
    return Joi.validate(course, schema);
 }
+
+// Testing
+app.get('/api/posts/:year/:month', (req, res) => {
+    res.send(req.query);
+});

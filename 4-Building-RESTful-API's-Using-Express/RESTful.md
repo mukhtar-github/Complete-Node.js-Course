@@ -627,4 +627,30 @@ app.post('/api/courses', (req, res) => {
 });
 ```
 
-Now finally, let's test our new endpoint for updating a course. So, back in *Postman*, we need to change the type of the HTTP request to *put*. Change the URL, and add a valid course *id*, like *1*. 
+Now finally, let's test our new endpoint for updating a course. So, back in *Postman*, we need to change the type of the HTTP request to *put*. Change the URL, and add a valid course *id*, like *1*,  so, *'http://localhost:3000/api/courses/1'*. In the *Postman*, we have a valid course object, with *name* set to *new course*. So we send, and we get a *Status* of *200* response, which is successful. And here is the updated *course*.
+
+```javascript
+{
+    "id": 1,
+    "name": "new course"
+}
+```
+
+So, if you open a new tab inside the *Postman*, and send an HTTP *get* request to *'http://localhost:3000/api/courses'*, now wu should see the list of our courses. So, our first course, it's name is updated to *new course*.
+
+```javascript
+[
+    {
+        "id": 1,
+        "name": "new course"
+    },
+    {
+        "id": 2,
+        "name": "course2"
+    },
+    {
+        "id": 3,
+        "name": "course3"
+    }
+]
+```
