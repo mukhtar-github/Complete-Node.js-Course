@@ -559,13 +559,14 @@ function validateCourse(course) {
 }
 ```
 
-So, with this new implementation, we have all the validation logic in one place. Now, we can reuse this. So, in our *put* method, we define a constant called *result* and set it to *validateCourse()*, and as an argument we pass *req.body*.
+So, with this new implementation, we have all the validation logic in one place. Now, we can reuse this. So, in our *put* method, we define a constant called *result* and set it to *validateCourse()*, and as an argument we pass *req.body*. Now, we can make this code a little bit cleaner and shorter, by using *object destructuring* feature in modern Javascript. So, look here, we get this *result* object and we're accessing *result.error* property in two different places. Since all we're interested in, is this *error* property, we can get it using *object destructuring*. So, let me duplicate the *result* code line and show you how *object destructuring* works.
 
 ```javascript
 app.put('/api/courses/:id', (req, res) => {
     const course = courses.find(c => c.id === parseInt(req.params.id));
     if(!course) res.status(404).send('The course with the given ID was not found');
 
+    const result = validateCourse(req.body);
     const result = validateCourse(req.body);
     if(result.error) {
         res.status(400).send(result.error.details[0].message);
