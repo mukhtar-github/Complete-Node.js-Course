@@ -26,6 +26,7 @@ app.get('/api/courses/:id', (req, res) => {
     res.send(course);
 });
 
+// Post Endpoint
 app.post('/api/courses', (req, res) => {
     const schema = {
         name: Joi.string().min(3).required()

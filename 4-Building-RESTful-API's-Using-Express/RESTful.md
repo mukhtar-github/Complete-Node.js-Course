@@ -488,7 +488,7 @@ Alright, now let's see how we can update a *course*. So let's add a new *route h
         // If not existing, return 404
 
         // validate
-        ///If invalid, return 400 - Bad request
+        // If invalid, return 400 - Bad request
 
         // Update the course
         // Return the updated course to the client
@@ -497,20 +497,27 @@ Alright, now let's see how we can update a *course*. So let's add a new *route h
 
 So *app.put*, we use the *Put* method for updating resources. Now the path should be *'/api/courses/'*. And here, we need a route parameter, because we're dealing with a specific course. So *id*. Now our *route handler function*, *request* and *response* goes to a code block. Alright, now here is the logic we need impliment. First we need to look-up this course with this given *id*. So *look up the course*, if the course doesn't exist, *If not existing*, we need to *return 404*. That means resource not found. Otherwise, we need to validate the *course* to make sure it's in good shape, *if invalid*, we need to return a *400 error*, which means *Bad request*, and if we get here, which means everything is good, so we update the *course*, and *Return the updated course to the client*. This is the logic we need to implement.
 
-So, we already have some code that we can re-use here. So, I'm not going to type everything by hand. I'm going to copy some code from our other *route handlers*. So, first we want to *look up the course* and *if it doesn't exist*, we want to return a *404* error. For that, I'm going to go for this other route handler, where we get a *single course*. This is the logic we're interested in. So we look up the course and it doesn't exist, we return a *404* error. So, copy the first two lines of the code;
+So, we already have some code that we can re-use here. So, I'm not going to type everything by hand. I'm going to copy some code from our other *route handlers*. So, first we want to *look up the course* and *if it doesn't exist*, we want to return a *404* error. For that, I'm going to go for this other route handler, where we get a *single course*. This is the logic we're interested in. So we look up the course and it doesn't exist, we return a *404* error. So, copy the first two lines of the code, and we're done with the fisrt part.
 
 ```javascript
     app.put('/api/courses/:id', (req, res) => {
         // Look up the course
         // If not existing, return 404
         const course = courses.find(c => c.id === parseInt(req.params.id));
-    if(!course) res.status(404).send('The course with the given ID was not found');
-
-        // validate
-        ///If invalid, return 400 - Bad request
-
-        // Update the course
-        // Return the updated course to the client
+        if(!course) res.status(404).send('The course with the given ID was not found');
     })
 ```
 
+The second part is all about validation, for that, I'm going to go to our *Post* end-point. So, here we need to copy the *schema*, as well as the line for validating the *request body* using *Joi*.
+
+```javascript
+    app.put('/api/courses/:id', (req, res) => {
+        // validate
+        // If invalid, return 400 - Bad request
+        const schema = {
+        name: Joi.string().min(3).required()
+    };
+
+    const result = Joi.validate(req.body, schema);
+    });
+```
