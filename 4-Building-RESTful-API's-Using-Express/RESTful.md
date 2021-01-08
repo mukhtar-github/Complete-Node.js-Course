@@ -547,7 +547,7 @@ Now, I told you that we have duplicated the validation logic.
     const result = Joi.validate(req.body, schema);
 ```
 
-So, I'm going to extract these few lines into a seperate function that we can reuse, both in this *route handler*, for handling our HTTP *Put* request, as well as the other one we wrote in the last lecture for creating a *course*. So, let's define a function, and call it *Validate course*. We give it a *course* object. Now, in this function, we should have the *schema* as well as the line for validating the *course*. So, copy and paste these few lines into the  function. Now, instead of validating *req.body*, we're going to validate the argument that is passed to this method. So that would be the *course* object. Now, finally
+So, I'm going to extract these few lines into a seperate function that we can reuse, both in this *route handler*, for handling our HTTP *Put* request, as well as the other one we wrote in the last lecture for creating a *course*. So, let's define a function, and call it *Validate course*. We give it a *course* object. Now, in this function, we should have the *schema* as well as the line for validating the *course*. So, copy and paste these few lines into the  function. Now, instead of validating *req.body*, we're going to validate the argument that is passed to this method. So that would be the *course* object. Now, finally we can simply return this result to the caller. There is no need to define the constant.
 
 ```javascript
 function validateCourse(course) {
@@ -555,6 +555,24 @@ function validateCourse(course) {
         name: Joi.string().min(3).required()
     };
 
-    const result = Joi.validate(req.body, schema);
+   return Joi.validate(course, schema);
 }
+```
+
+So, with this new implementation, we have all the validation logic in one place. Now, we can reuse this. So, in our *put* method, we define a constant called *result* and set it to *validateCourse()*, and as an argument we pass *req.body*.
+
+```javascript
+app.put('/api/courses/:id', (req, res) => {
+    const course = courses.find(c => c.id === parseInt(req.params.id));
+    if(!course) res.status(404).send('The course with the given ID was not found');
+
+    const result = validateCourse(req.body);
+    if(result.error) {
+        res.status(400).send(result.error.details[0].message);
+        return;
+    }
+
+    course.name = req.body.name;
+    res.send(course);
+});
 ```
