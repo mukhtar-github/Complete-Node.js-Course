@@ -464,4 +464,19 @@ app.post('/api/courses', (req, res) => {
 });
 ```
 
-One simple solution, is to go to the *details array*, get the first element, and then access the *message* property.
+One simple solution, is to go to the *details array*, get the first element, and then access the *message* property. Or instead of using the first element, you may want to access all elements in this array, get their *message* property and concatenate them. That's entirely up to you. So save. One more time, let's send an invalid request, and now we get;
+
+```javascript
+"name" is required
+```
+
+If we go to our request and add the *name* property, but set it to a string that is only one character, now we get a different error message;
+
+```javascript
+"name" length must be at least 3 characters long
+```
+
+So, we can see that *Joi* makes it really easy to validate input and return proper error messsages to the client.
+
+## 12 - Handling HTTP PUT Requests
+
