@@ -750,4 +750,25 @@ And if we go to the second tab, where we have the list of our courses from the H
 
 ### Fixing a Bug
 
-Alright, before we go any further, I realize we have a *bug* or rather *3 bugs* in our
+Alright, before we go any further, I realize we have a *bug* or rather *3 bugs* in our code. So, look at the handler, responding to *put* requests to  this *'/api/courses/:id'* endpoint. If we don't have a course with a given ID, we return a *404* error to the client. But at this point, we should exit the *route handler*, otherwise, the rest of the code will be executed. So the proper way to implement this *route handler* is like this;
+
+```javascript
+app.put('/api/courses/:id', (req, res) => {
+    const course = courses.find(c => c.id === parseInt(req.params.id));
+    // Bug!
+    // if(!course) res.status(404).send('The course with the given ID was not found');
+    // Bug Fixed!
+    if(!course) return res.status(404).send('The course with the given ID was not found');
+
+    const { error } = validateCourse(req.body);
+    if(error) {
+        res.status(400).send(error.details[0].message);
+        return;
+    }
+
+    course.name = req.body.name;
+    res.send(course);
+});
+```
+
+So, if you don't have this course, we *return* the response and then exit the function. Or, a shorter way to write the same code is to put the *return* before the *res.status* method. And then we don't need a code block, so we can put everything in one line.
