@@ -14,19 +14,19 @@ app.get('/', (req, res) => {
     res.send('Hello World!!!');
 });
 
-// Get all courses
+// GET all courses
 app.get('/api/courses', (req, res) => {
     res.send(courses);
 });
 
-// Get a single course
+// GET a single course
 app.get('/api/courses/:id', (req, res) => {
     const course = courses.find(c => c.id === parseInt(req.params.id));
     if(!course) res.status(404).send('The course with the given ID was not found');
     res.send(course);
 });
 
-// Post Endpoint
+// POST Endpoint
 app.post('/api/courses', (req, res) => {
     const { errror } = validateCourse(req.body); // => result.error
     if(error) {
@@ -43,10 +43,6 @@ app.post('/api/courses', (req, res) => {
     res.send(course);
 });
 
-// PORT
-const port = process.env.PORT || 3000;
-app.listen(port, () => console.log(`Listening on port ${port}...`));
-
 // PUT Requests
 app.put('/api/courses/:id', (req, res) => {
     const course = courses.find(c => c.id === parseInt(req.params.id));
@@ -62,6 +58,16 @@ app.put('/api/courses/:id', (req, res) => {
     res.send(course);
 });
 
+// DELETE Request
+app.delete('/api/courses/:id', (req, res) => {
+    const course = courses.find(c => c.id === parseInt(req.params.id));
+    if(!course) res.status(404).send('The course with the given ID was not found');
+
+    // Delete
+
+    // Return  the same course
+});
+
 // Validate Function
 function validateCourse(course) {
     const schema = {
@@ -70,6 +76,10 @@ function validateCourse(course) {
 
    return Joi.validate(course, schema);
 }
+
+// PORT
+const port = process.env.PORT || 3000;
+app.listen(port, () => console.log(`Listening on port ${port}...`));
 
 // Testing
 app.get('/api/posts/:year/:month', (req, res) => {

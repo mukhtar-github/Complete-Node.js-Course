@@ -674,7 +674,7 @@ app.delete('/api/courses/:id', (req, res) => {
 });
 ```
 
-So again, I'm going to borrow some code from our other route handlers. To look up the *course* and return a *404* error. I'm going to go back to our route handler for the HTTP *put* request. So, the first two lines of code are for looking up the *course* and return a *404* error.
+So again, I'm going to borrow some code from our other route handlers. To look up the *course* and return a *404* error. I'm going to go back to our route handler for the HTTP *put* request. So, the first two lines of code are for looking up the *course* and return a *404* error. So copy the two lines and paste in our code. That is our first part.
 
 ```javascript
 app.delete('/api/courses/:id', (req, res) => {
