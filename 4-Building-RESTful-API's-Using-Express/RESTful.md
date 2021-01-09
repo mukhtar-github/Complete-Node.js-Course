@@ -636,7 +636,7 @@ Now finally, let's test our new endpoint for updating a course. So, back in *Pos
 }
 ```
 
-So, if you open a new tab inside the *Postman*, and send an HTTP *get* request to *'http://localhost:3000/api/courses'*, now wu should see the list of our courses. So, our first course, it's name is updated to *new course*.
+So, if you open a new tab inside the *Postman*, and send an HTTP *get* request to *'http://localhost:3000/api/courses'*, now wu should see the list of our courses. So, our first course, it's name is updated to *new course*, perfect.
 
 ```javascript
 [
@@ -654,3 +654,11 @@ So, if you open a new tab inside the *Postman*, and send an HTTP *get* request t
     }
 ]
 ```
+
+Now, let's test the other scenarios. What if we send an invalid *id*? Say, *10*, we get; *The course with the given ID was not found*. And you can see the response is *404*, which means not found.
+
+And finally, what if we send a valid course *id*, with an invalid *course* object. So, I'm going to remove the *name* property, and send. Now, we can see we have a *Bad Request* or *400* error, and here is the error message; *"name" is required*. Next, I'm going to show you how to handle HTTP *Delete* requests.
+
+## 13 - Handling HTTP Delete Requests
+
+
