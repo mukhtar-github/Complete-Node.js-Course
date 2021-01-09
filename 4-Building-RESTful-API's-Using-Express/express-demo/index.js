@@ -28,7 +28,7 @@ app.get('/api/courses/:id', (req, res) => {
 
 // POST Endpoint
 app.post('/api/courses', (req, res) => {
-    const { errror } = validateCourse(req.body); // => result.error
+    const { errror } = validateCourse(req.body);
     if(error) {
         res.status(400).send(error.details[0].message);
         return;
@@ -63,9 +63,10 @@ app.delete('/api/courses/:id', (req, res) => {
     const course = courses.find(c => c.id === parseInt(req.params.id));
     if(!course) res.status(404).send('The course with the given ID was not found');
 
-    // Delete
+    const index = courses.indexOf(course);
+    courses.splice(index, 1);
 
-    // Return  the same course
+    res.send(course);
 });
 
 // Validate Function

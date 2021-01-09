@@ -705,3 +705,49 @@ app.delete('/api/courses/:id', (req, res) => {
     // Return  the same course
 });
 ```
+
+And finally, we need to return the response to the client. So *res.send(course)*.
+
+```javascript
+app.delete('/api/courses/:id', (req, res) => {
+    // Look up the course
+    // Not Existing, return 404
+    const course = courses.find(c => c.id === parseInt(req.params.id));
+    if(!course) res.status(404).send('The course with the given ID was not found');
+
+    // Delete
+    const index = courses.indexOf(course);
+    courses.splice(index, 1);
+
+    // Return  the same course
+    res.send(course);
+});
+```
+
+Now, let's test this. So, back in *Postman*, let's change *put* to *delete*. First, I want to send an invalid course ID, like *10*. Send, so we get a *404* error, *not found*, with the message *The course with the given ID was not found*, perfect. Now, let's delete the first *course*, course with the ID *1*. Send, so we get the same *course* object in the response.
+
+```javascript
+{
+    "id": 1,
+    "name": "course1"
+}
+```
+
+And if we go to the second tab, where we have the list of our courses from the HTTP *get* request for that endpoint. So, let's send that one more time. Ok, you see, we don't have our first *course* anymore, we only have courses with ID *2* and *3*.
+
+```javascript
+[
+    {
+        "id": 2,
+        "name": "course2"
+    },
+    {
+        "id": 3,
+        "name": "course3"
+    }
+]
+```
+
+### Fixing a Bug
+
+Alright, before we go any further, I realize we have a *bug* or rather *3 bugs* in our
