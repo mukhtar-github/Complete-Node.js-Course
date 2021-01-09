@@ -688,3 +688,20 @@ app.delete('/api/courses/:id', (req, res) => {
     // Return  the same course
 });
 ```
+
+Now, to *delete* a *course*, first we need to find the index of this course in our *courses* array. So, *courses.indexOf(course)*. We get the index and store it in a constant *index*, and then we can use the *splice* method to remove an object from our courses array. So, *courses.splice(index, 1)*, we go to this index and remove one object. So, this is the *delete* part.
+
+```javascript
+app.delete('/api/courses/:id', (req, res) => {
+    // Look up the course
+    // Not Existing, return 404
+    const course = courses.find(c => c.id === parseInt(req.params.id));
+    if(!course) res.status(404).send('The course with the given ID was not found');
+
+    // Delete
+    const index = courses.indexOf(course);
+    courses.splice(index, 1);
+
+    // Return  the same course
+});
+```
