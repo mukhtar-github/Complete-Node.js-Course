@@ -661,4 +661,11 @@ And finally, what if we send a valid course *id*, with an invalid *course* objec
 
 ## 13 - Handling HTTP Delete Requests
 
+So out of all the *CRUD* operations, we have implemented *create*, *read*, and *update*. So, in this lecture I'm going to show you how to respond to HTTP *delete* requests. It is very simple and similar to what we have done so far. So, on our *app* object, we call the *delete* method, we give it a path, that is *'/api/courses/'*, and of course we a parameter because we're working with a specific course. Then, a route handler, *(req, res)*, goes to the code block. Now, here we first need to look up the course, the course with the given ID
 
+```javascript
+app.delete('/api/courses/:id', (req, res) => {
+    // Look up the course
+    //
+})
+```
