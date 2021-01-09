@@ -661,11 +661,30 @@ And finally, what if we send a valid course *id*, with an invalid *course* objec
 
 ## 13 - Handling HTTP Delete Requests
 
-So out of all the *CRUD* operations, we have implemented *create*, *read*, and *update*. So, in this lecture I'm going to show you how to respond to HTTP *delete* requests. It is very simple and similar to what we have done so far. So, on our *app* object, we call the *delete* method, we give it a path, that is *'/api/courses/'*, and of course we a parameter because we're working with a specific course. Then, a route handler, *(req, res)*, goes to the code block. Now, here we first need to look up the course, the course with the given ID
+So out of all the *CRUD* operations, we have implemented *create*, *read*, and *update*. So, in this lecture I'm going to show you how to respond to HTTP *delete* requests. It is very simple and similar to what we have done so far. So, on our *app* object, we call the *delete* method, we give it a path, that is *'/api/courses/'*, and of course we a parameter because we're working with a specific course. Then, a route handler, *(req, res)*, goes to the code block. Now, here we first need to look up the course, the course with the given ID. If it doesn't exist, then we need to return *404*. Otherwise, we're going to delete it, and by convention return the same course, the course that was deleted.
 
 ```javascript
 app.delete('/api/courses/:id', (req, res) => {
     // Look up the course
-    //
-})
+    // Not Existing, return 404
+
+    // Delete
+
+    // Return  the same course
+});
+```
+
+So again, I'm going to borrow some code from our other route handlers. To look up the *course* and return a *404* error. I'm going to go back to our route handler for the HTTP *put* request. So, the first two lines of code are for looking up the *course* and return a *404* error.
+
+```javascript
+app.delete('/api/courses/:id', (req, res) => {
+    // Look up the course
+    // Not Existing, return 404
+    const course = courses.find(c => c.id === parseInt(req.params.id));
+    if(!course) res.status(404).send('The course with the given ID was not found');
+
+    // Delete
+
+    // Return  the same course
+});
 ```
