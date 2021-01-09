@@ -827,3 +827,4 @@ app.post('/api/courses', (req, res) => {
 
 ## 14 - Project- Build the Genres API
 
+Alrigth, now its time for an exercise. So from this lecture, we're going to start building the *Backend* services for our *Vidly* application. As I told you before, *Vidly* is an imaginary service for renting out Movies. So throughout this course, we're going to build up the *backend* of *Vidly* bit by bit. Your fisrt task is to create a service *'http://vidly.com/api/genres'* for managing the list of *genres*. So each movie has a *genre* like *action*, *horror*, whatever. We should have an endpoint for getting the list of *genres*, because somewhere
