@@ -778,12 +778,13 @@ So, if you don't have this course, we *return* the response and then exit the fu
 
 Now to make this code cleaner, let's use the same technique in the case where we have an *invalid* request. So, we simply put the *return* before the *res.status*, and we dont need the code block anymore. That's much more elegant.
 
-We have the same issue in the handler of *delete* requests.
+We have the same issue in the handler of the *delete* requests. So, if we don't have a course, we should return immediately.
 
 ```javascript
 app.delete('/api/courses/:id', (req, res) => {
     const course = courses.find(c => c.id === parseInt(req.params.id));
-    if(!course) res.status(404).send('The course with the given ID was not found');
+    //if(!course) res.status(404).send('The course with the given ID was not found');
+    if(!course) return res.status(404).send('The course with the given ID was not found');
 
     const index = courses.indexOf(course);
     courses.splice(index, 1);
@@ -791,4 +792,38 @@ app.delete('/api/courses/:id', (req, res) => {
     res.send(course);
 });
 ```
+
+And the same is true when getting a *single course*. So, if we don't have a *course* with a given ID, you return the *404* error and also, return from that function immediately.
+
+```javascript
+app.get('/api/courses/:id', (req, res) => {
+    const course = courses.find(c => c.id === parseInt(req.params.id));
+    //if(!course) res.status(404).send('The course with the given ID was not found');
+    if(!course) return res.status(404).send('The course with the given ID was not found');
+    res.send(course);
+});
+```
+
+Now finally, let's have a look at the handler for HTTP *post* request. Again I'm going to use the same technique to clean up this code. So, if we have an *error*, we simply *return* and get rid of the extra noise in the code block. That's much better
+
+```javascript
+app.post('/api/courses', (req, res) => {
+    const { errror } = validateCourse(req.body);
+    /*if(error) {
+        res.status(400).send(error.details[0].message);
+        return;
+    }*/
+    if(error)  return res.status(400).send(error.details[0].message);
+
+    const course = {
+        id: courses.length + 1,
+        name: req.body.name
+    };
+
+    courses.push(courses);
+    res.send(course);
+});
+```
+
+## 14 - Project- Build the Genres API
 
