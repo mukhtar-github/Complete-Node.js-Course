@@ -761,10 +761,13 @@ app.put('/api/courses/:id', (req, res) => {
     if(!course) return res.status(404).send('The course with the given ID was not found');
 
     const { error } = validateCourse(req.body);
-    if(error) {
+    /*if(error) {
         res.status(400).send(error.details[0].message);
         return;
-    }
+    }*/
+    //Simplified
+    if(error) return res.status(400).send(error.details[0].message);
+        
 
     course.name = req.body.name;
     res.send(course);
@@ -772,3 +775,20 @@ app.put('/api/courses/:id', (req, res) => {
 ```
 
 So, if you don't have this course, we *return* the response and then exit the function. Or, a shorter way to write the same code is to put the *return* before the *res.status* method. And then we don't need a code block, so we can put everything in one line.
+
+Now to make this code cleaner, let's use the same technique in the case where we have an *invalid* request. So, we simply put the *return* before the *res.status*, and we dont need the code block anymore. That's much more elegant.
+
+We have the same issue in the handler of *delete* requests.
+
+```javascript
+app.delete('/api/courses/:id', (req, res) => {
+    const course = courses.find(c => c.id === parseInt(req.params.id));
+    if(!course) res.status(404).send('The course with the given ID was not found');
+
+    const index = courses.indexOf(course);
+    courses.splice(index, 1);
+
+    res.send(course);
+});
+```
+
