@@ -32,8 +32,10 @@ So *Express* includes a few build-in *Middleware functions*, but we can also cre
 
 ## 3- Creating Custom Middleware
 
-So, now let me show you how to create a custom *Middleware function*. So on line *5* of the *index.js* file, we're adding JSON *Middleware function*. After that we're going to call *app.use*. Once again, we call this method to install a *Middleware function*, in a *Request Processing Pipeline*. So we need to pass a function
+So, now let me show you how to create a custom *Middleware function*. So on line *5* of the *index.js* file, we're adding JSON *Middleware function*. After that we're going to call *app.use*. Once again, we call this method to install a *Middleware function*, in a *Request Processing Pipeline*. So we need to pass a function that takes a *request*, and *response*, and *next*, which is a reference to the next *Middleware function* in the pipeline. We simply pass a function here, now this function, let's a simple *console.log('Logging...')*. Let's imaging this *Middleware function* is for logging every request. So we perform our logging
 
 ```javascript
-app.use();
+app.use(function(req, res, next) {
+    console.log('Logging...');
+});
 ```
