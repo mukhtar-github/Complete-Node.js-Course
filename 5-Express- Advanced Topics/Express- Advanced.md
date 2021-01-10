@@ -72,4 +72,37 @@ Back in *index.js*, so this is how we define a custom *Middleware function* in a
 
 ## 4- Built-in Middleware
 
-So in the last lecture, you learn how to build custom *Middleware*, but as I told you before, in *express* we have a few built-in *Middleware functions*. One of them is the *express.json()* middleware, that now you're familiar with, so it parses the body of the request, and if there is a JSON object it will populate *req.body* property
+So in the last lecture, you learn how to build custom *Middleware*, but as I told you before, in *express* we have a few built-in *Middleware functions*. One of them is the *express.json()* middleware, that now you're familiar with, so it parses the body of the request, and if there is a JSON object it will populate *req.body* property. We have another similar *Middleware function* that is called *urlencoded*.
+
+So let's duplicate *app.use(express.json());* line inside the *index.js* file. So instead, we will have;
+
+```javascript
+app.use(express.urlencoded());
+```
+
+Again, this is a method we call, and what we get in result is a *Middleware function*. This *Middleware function* parses incoming requests with *urlencoded payloads*. That is a request with a body like this *key=value&key=value*. Now this is more of a traditional approach, it's not something that we use that often these days. Basically, if you have an HTML form with input fields and post that form to the server, the body of the request will look like this *key=value&key=value*. So, that's where you have *urlencoded payload* in the body of the request. Now, this middleware parses this body and populate *req.body* like a JSON object.
+
+Let me show you how that works, so, back to *Postman*, let's send a *post* request to local host *'http://localhost:3000/api/courses'*. So previously, we passed a JSON object in the body, so I told you to select *raw*, and then *application JSON*. However, in this demo, we're going to use *form-urlencoded* here. So now we can pass *key=value* pairs in the body of the request. And they will be concatenated when this request is sent to the server.
+
+So the the key I'm going to set is *name*, and the value is *my course*. Send, now we can see, we successfully created a new course on the server.
+
+```javascript
+{
+    "id": 4,
+    "name": "my course"
+}
+```
+
+So our *Middleware function* was able to read our request with *urlencoded payload*. Now, if look in the terminal, you see a warning *body-parser depricated...*. So this warning is telling us that we should pass an object inside the *urlencoded* *Middleware function*, as shown below.
+
+```javascript
+app.use(express.urlencoded({ extended: true }));
+```
+
+With this, we can pass arrays and complex objects using the *urlencoded* format.
+
+Now finally, the last built-in *Middleware function* we have in *express* is *static*, and we use that to serve the static files. So let me show you how that works. We pass an argument, and that's the of a folder, in this case, I'm going to use a folder called *public*.
+
+```javascript
+app.use(express.static('public'));
+```

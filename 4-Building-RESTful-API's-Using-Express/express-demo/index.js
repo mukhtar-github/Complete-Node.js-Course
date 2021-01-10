@@ -1,14 +1,16 @@
 const Joi = require('joi');
 const logger = require('./logger');
-const validate = require('./validate.js');
+const authenticate = require('./authenticate');
 const express = require('express');
 const app = express();
 
-app.use(express.json()); // req.body
+app.use(express.json());
+app.use(express.urlencoded({ extended: true })); // key=value&key=value
+app.use(express.static('public'));
 
 app.use(logger);
 
-app.use(validate);
+app.use(authenticate);
 
 const courses = [
     { id: 1, name: 'course1'},
@@ -34,7 +36,7 @@ app.get('/api/courses/:id', (req, res) => {
 
 // POST Endpoint
 app.post('/api/courses', (req, res) => {
-    const { errror } = validateCourse(req.body);
+    const { error } = validateCourse(req.body);
     if(error)  return res.status(400).send(error.details[0].message);
 
     const course = {
