@@ -4,9 +4,15 @@ const app = express();
 
 app.use(express.json());
 
-// Custom Middleware
+// Custom Middleware - Logging
 app.use(function(req, res, next) {
     console.log('Logging...');
+    next();
+});
+
+// Custom Middleware - Authenticating
+app.use(function(req, res, next) {
+    console.log('Authenticating...');
     next();
 });
 

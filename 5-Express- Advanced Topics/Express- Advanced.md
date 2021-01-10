@@ -43,4 +43,11 @@ app.use(function(req, res, next) {
 
 Let me show you what happens, I'm going to comment out the *next* method, save. Now back in *Postman*, on the address tab, I'm going to send a simple HTTP *get* request for our courses endpoint. So send, and you can see that we're not getting a response, it's *Loading...*. And if we look in the console, we can see our *Logging...* message. So, this indicaes that our *Middleware function* was executed successfully, but because, we did not pass control to another *Middleware function* to terminate the request-response cycle, our request end up hanging there.
 
-So let's uncomment out the *next* method, we can also create another *Middleware function* for performing authentication. So I'm going to select the custom *Middleware function* code we just wrote, duplicate it. And in this second *Middleware function*, I'm going to change
+So let's uncomment out the *next* method. We can also create another *Middleware function* for performing authentication. So I'm going to select the custom *Middleware function* code we just wrote, duplicate it. And in this second *Middleware function*, I'm going to change the *console.log* message to *'Authenticating...'*. Now, back in *Postman*, let's send another request, now look in the terminal
+
+```javascript
+app.use(function(req, res, next) {
+    console.log('Authenticating...');
+    next();
+});
+```
