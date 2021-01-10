@@ -4,6 +4,12 @@ const app = express();
 
 app.use(express.json());
 
+// Custom Middleware
+app.use(function(req, res, next) {
+    console.log('Logging...');
+    //next();
+});
+
 const courses = [
     { id: 1, name: 'course1'},
     { id: 2, name: 'course2'},
