@@ -1,18 +1,14 @@
 const Joi = require('joi');
 const logger = require('./logger');
+const validate = require('./validate.js');
 const express = require('express');
 const app = express();
 
 app.use(express.json());
 
-// Custom Middleware - Logging
 app.use(logger);
 
-// Custom Middleware - Authenticating
-app.use(function(req, res, next) {
-    console.log('Authenticating...');
-    next();
-});
+app.use(validate);
 
 const courses = [
     { id: 1, name: 'course1'},
