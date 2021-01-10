@@ -69,3 +69,7 @@ const logger = require('./logger');
 Now you understand exactly what this *app.use(express.json());* line of code means. So when we call *express.json()*, it returns a function, a *Middleware function* that has three parameters, *request*, *response*, and *next*. That *Middleware function* parses the *request body*, and if there is a JSON object, it will set *req.body*, and then it will pass control to the next *Middleware function*.
 
 Back in *index.js*, so this is how we define a custom *Middleware function* in a separate module, we import it here, and then install it, by calling *app.use*. We could use the same technique for the second *Middleware function*, but I'm going to leave that to you as an exercise.
+
+## 4- Built-in Middleware
+
+So in the last lecture, you learn how to build custom *Middleware*, but as I told you before, in *express* we have a few built-in *Middleware functions*. One of them is the *express.json()* middleware, that now you're familiar with, so it parses the body of the request, and if there is a JSON object it will populate *req.body* property
