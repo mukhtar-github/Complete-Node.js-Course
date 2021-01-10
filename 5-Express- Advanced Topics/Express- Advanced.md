@@ -32,7 +32,7 @@ So *Express* includes a few build-in *Middleware functions*, but we can also cre
 
 ## 3- Creating Custom Middleware
 
-So, now let me show you how to create a custom *Middleware function*. So on line *5* of the *index.js* file, we're adding JSON *Middleware function*. After that we're going to call *app.use*. Once again, we call this method to install a *Middleware function*, in a *Request Processing Pipeline*. So we need to pass a function that takes a *request*, and *response*, and *next*, which is a reference to the next *Middleware function* in the pipeline. We simply pass a function here, now this function, let's a simple *console.log('Logging...')*. Let's imaging this *Middleware function* is for logging every request. So we perform our logging and then we call *next* to pass control to the next *Middleware function* in the pipeline. If you don't do this, because we're not terminating the request-response cycle, our request will end up hanging.
+So, now let me show you how to create a custom *Middleware function*. So on line *5* of the *index.js* file, we're adding JSON *Middleware function*. After that we're going to call *app.use*. Once again, we call this method to install a *Middleware function*, in a *Request Processing Pipeline*. So we need to pass a function that takes a *request*, and *response*, and *next*, which is a reference to the next *Middleware function* in the pipeline. We simply pass a function here, now in this function, let's do a simple *console.log('Logging...')*. Let's imaging this *Middleware function* is for logging every request. So we perform our logging and then we call *next* to pass control to the next *Middleware function* in the pipeline. If you don't do this, because we're not terminating the request-response cycle, our request will end up hanging.
 
 ```javascript
 app.use(function(req, res, next) {
@@ -43,11 +43,25 @@ app.use(function(req, res, next) {
 
 Let me show you what happens, I'm going to comment out the *next* method, save. Now back in *Postman*, on the address tab, I'm going to send a simple HTTP *get* request for our courses endpoint. So send, and you can see that we're not getting a response, it's *Loading...*. And if we look in the console, we can see our *Logging...* message. So, this indicaes that our *Middleware function* was executed successfully, but because, we did not pass control to another *Middleware function* to terminate the request-response cycle, our request end up hanging there.
 
-So let's uncomment out the *next* method. We can also create another *Middleware function* for performing authentication. So I'm going to select the custom *Middleware function* code we just wrote, duplicate it. And in this second *Middleware function*, I'm going to change the *console.log* message to *'Authenticating...'*. Now, back in *Postman*, let's send another request, now look in the terminal
+So let's uncomment out the *next* method. We can also create another *Middleware function* for performing authentication. So I'm going to select the custom *Middleware function* code we just wrote, duplicate it. And in this second *Middleware function*, I'm going to change the *console.log* message to *Authenticating...*. Now, back in *Postman*, let's send another request, now look in the terminal, we have two messages, *Logging...* and *Authenticating...*.
 
 ```javascript
 app.use(function(req, res, next) {
     console.log('Authenticating...');
     next();
 });
+```
+
+So what I want you to pay attention to here is that our *Middleware functions* are called in sequence. First, our login *Middleware function* is called, then, the *Middleware function* for authenticating the user, and finally, the route handler which is another *Middleware function*.
+
+Now in terms of clean coding, when you want to create a custom *Middleware function*, you don't want to write all that code inside *index.js* or *index module*. You should put each *Middleware function* in a separate file or separate module. So, let's create a new file, called *logger.js*. Now, back in the *index.js* file, let's grab the logging *Middleware function*, cut it, and back in *logger.js*, we paste that there. We give the function a name, like *log*, and finally, export it like this;
+
+```javascript
+module.exports = log;
+```
+
+So, this module exports a single function. Now, back in *index.js*, on the top, we load our new module;
+
+```javascript
+const logger = require('./logger');
 ```
