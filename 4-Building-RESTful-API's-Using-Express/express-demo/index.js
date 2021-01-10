@@ -7,7 +7,7 @@ app.use(express.json());
 // Custom Middleware
 app.use(function(req, res, next) {
     console.log('Logging...');
-    //next();
+    next();
 });
 
 const courses = [
