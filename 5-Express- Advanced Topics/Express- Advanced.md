@@ -60,8 +60,12 @@ Now in terms of clean coding, when you want to create a custom *Middleware funct
 module.exports = log;
 ```
 
-So, this module exports a single function. Now, back in *index.js*, on the top, we load our new module;
+So, this module exports a single function. Now, back in *index.js*, on the top, we load our new module. And then we can install it by calling *app.use(logger)* inside the *index.js* file.
 
 ```javascript
 const logger = require('./logger');
 ```
+
+Now you understand exactly what this *app.use(express.json());* line of code means. So when we call *express.json()*, it returns a function, a *Middleware function* that has three parameters, *request*, *response*, and *next*. That *Middleware function* parses the *request body*, and if there is a JSON object, it will set *req.body*, and then it will pass control to the next *Middleware function*.
+
+Back in *index.js*, 
