@@ -114,3 +114,10 @@ So, let's create a new folder called *public*. For now, I'm going to add a simpl
 
 ## 5- Third-party Middleware
 
+In this lecture, I'm going to introduce you to a couple of third-party Middleware we have in *express*. So head over to *expressjs.com*. On the top, under resources, you can find Middleware. So these are all the third-party Middleware that you can use in your applications. But that doesn't mean that you should use every single *Middleware function* here, because every *Middleware function* will impact the performance of your application.
+
+If you don't need the functionality that comes with a *Middleware function*, don't use it. It's just going to slow down your request processing. So spend some time, have a quick look at the documentation, and see what's out there for you in case you need it. Now, in this list, the Middleware that is considered best practice is *helmet*. It helps you secure your application by setting various HTTP headers.
+
+So let's have a quick look here
+
+> Every *Middleware function* will impact the performance of your application. If you don't need the functionality that comes with a *Middleware function*, don't use it.
