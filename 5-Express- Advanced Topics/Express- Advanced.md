@@ -120,6 +120,6 @@ If you don't need the functionality that comes with a *Middleware function*, don
 
 So let's have a quick look here. Basically, all we have to do is load this *helmet* module using our *require* function, what we get here is a function, so we call that, and that returns a *Middleware function*, and then we'll use that. That's all we have to do. If you want to better understand what *helmet* does under the hood, you really need to look at the documentation, because that's beyond the scope of this course.
 
-So back in the terminal, let's install *helmet*
+So back in the terminal, let's install *helmet*. Now, here in our *index* module, on the top we load *helmet*, get the result and store it in a constant called *helmet*. This is a function, so we're going to call that and pass it to *app.use* method.
 
 > Every *Middleware function* will impact the performance of your application. If you don't need the functionality that comes with a *Middleware function*, don't use it.
