@@ -93,7 +93,7 @@ So the the key I'm going to set is *name*, and the value is *my course*. Send, n
 }
 ```
 
-So our *Middleware function* was able to read our request with *urlencoded payload*. Now, if look in the terminal, you see a warning *body-parser depricated...*. So this warning is telling us that we should pass an object inside the *urlencoded* *Middleware function*, as shown below.
+So our *Middleware function* was able to read our request with *urlencoded payload*. Now, if you look in the terminal, you see a warning *body-parser depricated...*. So this warning is telling us that we should pass an object inside the *urlencoded* *Middleware function*, as shown below.
 
 ```javascript
 app.use(express.urlencoded({ extended: true }));
@@ -101,7 +101,7 @@ app.use(express.urlencoded({ extended: true }));
 
 With this, we can pass arrays and complex objects using the *urlencoded* format.
 
-Now finally, the last built-in *Middleware function* we have in *express* is *static*, and we use that to serve the static files. So let me show you how that works. We pass an argument, and that's the of a folder, in this case, I'm going to use a folder called *public*. So we're going to put all our static assets, like *css*, *images* and so on inside this folder.
+Now finally, the last built-in *Middleware function* we have in *express* is *static*, and we use that to serve the static files. So let me show you how that works. We pass an argument, and that's the name of a folder, in this case, I'm going to use a folder called *public*. So we're going to put all our static assets, like *css*, *images* and so on inside this folder.
 
 ```javascript
 app.use(express.static('public'));
@@ -109,6 +109,8 @@ app.use(express.static('public'));
 
 So, let's create a new folder called *public*. For now, I'm going to add a simple text file inside the new folder called
 *readme.txt*, and this is a *readme* file. Now, with this *Middleware function*, we can go back to the browser and head over to *'http://localhost:3000/readme.txt'*. So with this Middleware we can serve static content. And note that here we don't have *public* in the Url. So our *static* contents are served from the root of the site. In the next lecture, we're going to look at third party Middleware.
+
+> So with the *static* Middleware we can serve static contents from the root of the site.
 
 ## 5- Third-party Middleware
 
