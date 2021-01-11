@@ -118,6 +118,6 @@ In this lecture, I'm going to introduce you to a couple of third-party Middlewar
 
 If you don't need the functionality that comes with a *Middleware function*, don't use it. It's just going to slow down your request processing. So spend some time, have a quick look at the documentation, and see what's out there for you in case you need it. Now, in this list, the Middleware that is considered best practice is *helmet*. It helps you secure your application by setting various HTTP headers.
 
-So let's have a quick look here
+So let's have a quick look here. Basically, all we have to do is load this *helmet* module using our *require* function, what we get here is a function, so we call that, and that returns a *Middleware function*, and then we'll use that. That's all we have to do. If you want to better understand what *helmet* does under the hood, you really need to look at the documentation, because that's beyond the scope of this course.
 
 > Every *Middleware function* will impact the performance of your application. If you don't need the functionality that comes with a *Middleware function*, don't use it.
