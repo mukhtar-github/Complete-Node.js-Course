@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true })); // key=value&key=value
 app.use(express.static('public'));
 
-app.use(morgan());
+app.use(morgan('tiny'));
 
 app.use(helmet());
 

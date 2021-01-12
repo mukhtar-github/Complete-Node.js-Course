@@ -122,6 +122,12 @@ So let's have a quick look here. Basically, all we have to do is load this *helm
 
 So back in the terminal, let's install *helmet*. Now, here in our *index* module, on the top we load *helmet*, get the result and store it in a constant called *helmet*. This is a function, so we're going to call that and pass it to *app.use* method.
 
-The other third-party Middleware that you find useful is *morgan*. We use *morgan* to log HTTP requests. Let me show you how that works. So once again, *npm i morgan*. Now here on the top of the file, we load *morgan* using the *require* function, very simple, and then finally, you use it like this *app.use(morgan());*. So *morgan* is a function, now here
+The other third-party Middleware that you find useful is *morgan*. We use *morgan* to log HTTP requests. Let me show you how that works. So once again, *npm i morgan*. Now here on the top of the file, we load *morgan* using the *require* function, very simple, and then finally, you use it like this *app.use(morgan());*. So *morgan* is a function, now here you can specify varous formats. I'm going to use the simplest one, that is *tiny*.
+
+```javascript
+app.use(morgan('tiny'));
+```
+
+Again, you need to look at the documentation to see various options that are available to you. So now, back in the terminal, let's run this application,
 
 > Every *Middleware function* will impact the performance of your application. If you don't need the functionality that comes with a *Middleware function*, don't use it.
