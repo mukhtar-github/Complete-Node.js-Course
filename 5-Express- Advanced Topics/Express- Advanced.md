@@ -136,4 +136,4 @@ So, this is the *tiny* format, you want more details, you set a different format
 
 ## 6- Environments
 
-In a more complex
+In a more complex, or enterprise like application, you need to know what environment your code is running on. Is it a *developement* environment, or a *production* environment? Perhaps, you may want to enable or disable certain features based on current environment. For example, let's
