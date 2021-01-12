@@ -130,6 +130,10 @@ app.use(morgan('tiny'));
 
 Again, you need to look at the documentation to see various options that are available to you. So now, back in the terminal, let's run this application, with *morgan* in place, every time you send a request to the server, it will be logged. So, here I'm going to send a simple *get* request to our courses endpoint. Okay, now at the terminal, *morgan* log our HTTP request, *GET /api/courses 200 79 - 22.179 ms*. And this is the *tiny* format, it's very simple. So we sent an HTTP *get* request to this endpoint, the result was a status code of *200* which means successfull. And the time it took to respond to this request which is *22.179 ms*.
 
-So, this is the *tiny* format, you want more details, you set a different format. And by the way, by default, *morgan* logs the request on the console, but you can also configure it to write to a log file.
-
 > Every *Middleware function* will impact the performance of your application. If you don't need the functionality that comes with a *Middleware function*, don't use it.
+
+So, this is the *tiny* format, you want more details, you set a different format. And by the way, by default, *morgan* logs the request on the console, but you can also configure it to write it to a log file. Again, remember, when you turn on this feature, it will impact your *Request Processing Pipeline*. So perhaps, you may not want to do this in production, or you may want to enable this only in certain situations. For example, you can have a configuration file, when you deploy this application to the production, in certain situations, you can turn this on for a short period of time, and then turn it off. In the next lecture, I'm going to show you how to work with different environments such as *development*, *testing*, and *production*.
+
+## 6- Environments
+
+In a more complex
