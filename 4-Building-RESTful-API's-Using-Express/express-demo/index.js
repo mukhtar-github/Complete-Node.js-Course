@@ -6,7 +6,8 @@ const authenticate = require('./authenticate');
 const express = require('express');
 const app = express();
 
-process.env.NODE_ENV // undefined
+console.log(`NODE_ENV: ${process.env.NODE_ENV}`);
+app.get('env');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true })); // key=value&key=value
