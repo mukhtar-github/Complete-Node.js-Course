@@ -6,6 +6,8 @@ const authenticate = require('./authenticate');
 const express = require('express');
 const app = express();
 
+process.env.NODE_ENV // undefined
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true })); // key=value&key=value
 app.use(express.static('public'));

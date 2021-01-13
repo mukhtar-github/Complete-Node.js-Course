@@ -136,4 +136,10 @@ So, this is the *tiny* format, you want more details, you set a different format
 
 ## 6- Environments
 
-In a more complex, or enterprise like application, you need to know what environment your code is running on. Is it a *developement* environment, or a *production* environment? Perhaps, you may want to enable or disable certain features based on current environment. For example, let's
+In a more complex, or enterprise like application, you need to know what environment your code is running on. Is it a *developement* environment, or a *production* environment? Perhaps, you may want to enable or disable certain features based on current environment. For example, let's imaging we want to enable logging up HTTP requests only in the *developement* environment, on a developement machine, but not in *production*.
+
+So let me show you how to do this. Earlier you learned about the *process* object, this is a global object in *Node* that gives us access to the current process. This *process* object has a property called *env*, which gives us the environment variables. Now, we have a standard environment variable called *NODE_ENV*, and this environment variable returns the environment for this node application. If it's not set, here we're going to get undefined.
+
+```javascript
+process.env.NODE_ENV // undefined
+```
