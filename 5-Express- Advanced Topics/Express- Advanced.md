@@ -136,7 +136,7 @@ So, this is the *tiny* format, you want more details, you set a different format
 
 ## 6- Environments
 
-In a more complex, or enterprise like application, you need to know what environment your code is running on. Is it a *developement* environment, or a *production* environment? Perhaps, you may want to enable or disable certain features based on current environment. For example, let's imaging we want to enable logging up HTTP requests only in the *developement* environment, on a developement machine, but not in *production*.
+In a more complex, or enterprise like application, you need to know what environment your code is running on. Is it a *development* environment, or a *production* environment? Perhaps, you may want to enable or disable certain features based on current environment. For example, let's imaging we want to enable logging up HTTP requests only in the *developement* environment, on a developement machine, but not in *production*.
 
 So let me show you how to do this. Earlier you learned about the *process* object, this is a global object in *Node* that gives us access to the current process. This *process* object has a property called *env*, which gives us the environment variables. Now, we have a standard environment variable called *NODE_ENV*, and this environment variable returns the environment for the node application. If it's not set, we're going to get undefined.
 
@@ -144,10 +144,22 @@ So let me show you how to do this. Earlier you learned about the *process* objec
 process.env.NODE_ENV // If it's not set => undefined
 ```
 
-Alternatively, we can set this from the outside, we can set this to *developement*, to *tesing*, to *staging* or *production*. So, for this demo, let's log this on the console.
+Alternatively, we can set this from the outside, we can set this to *development*, to *tesing*, to *staging* or *production*. So, for this demo, let's log this on the console.
 
 ```javascript
 console.log(`NODE_ENV: ${process.env.NODE_ENV}`);
 ```
 
-We have another way to get the current environment, and that is via the *app* object. So this *app* object has a method called *get* that we use to get various settings about the application. Now, one of the settings is *env*. This method *app.get('env')* internally uses this *process.env.NODE_ENV* environment variable to detect the current environment. However, if this environment variable is not set, *app.get('env')* will return developement by default. Let me show you how that works. So,
+We have another way to get the current environment, and that is via the *app* object. So this *app* object has a method called *get* that we use to get various settings about the application. Now, one of the settings is *env*. This method *app.get('env')* internally uses this *process.env.NODE_ENV* environment variable to detect the current environment. However, if the environment variable is not set, *app.get('env')* will return *development* by default. Let me show you how that works. So,
+
+```javascript
+console.log(`app: ${app.get('env')}`);
+```
+
+Now, back in terminal, look our environment variable is not set, so, that's *undefined*. But *app.get('env')*is returning *development* by default.
+
+```javascript
+NODE_ENV: undefined
+app: development
+```
+
