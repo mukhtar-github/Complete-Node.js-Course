@@ -177,3 +177,5 @@ And for debugging, I want to display something on the console, like *Morgan enab
 We set our *environment variable* using *export* on Mac or Ubuntu, and *set* on windows. So, *export NODE_ENV=production*. Now, let's run the application one more time, so, *nodemon index.js*. Okay look, we only get theis message *Listening on port 3000...*, we don't have *Morgan enabled...*. So the is how you can tell, if your code is running on a *development*, *testing*, *staging*, or *production* machine.
 
 ## 7- Configuration
+
+So, in the last lecture, you learned how to detect the environment in which your application is running. One topic that goes hand-in-hand with environments, is the topic of storing configuration settings for the application, and overriding those settings in each environment. For example,
