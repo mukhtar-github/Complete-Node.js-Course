@@ -172,4 +172,8 @@ if (app.get('env') === 'development') {
 }
 ```
 
-And for debugging, I want to display something on the console, like *Morgan enabled...*. Now, let's delete the *environment variable* and the *app object* lines, we don,t need them anymore.
+And for debugging, I want to display something on the console, like *Morgan enabled...*. Now, let's delete the *environment variable* and the *app object* lines, we don,t need them anymore. Back in the terminal, because this my development machine, you can see Morgan is enabled. Now, let's stop this process, set the *environment variable* to production, run the application again, and then you will see that Morgan will not be enabled.
+
+We set our *environment variable* using *export* on Mac or Ubuntu, and *set* on windows. So, *export NODE_ENV=production*. Now, let's run the application one more time, so, *nodemon index.js*. Okay look, we only get theis message *Listening on port 3000...*, we don't have *Morgan enabled...*. So the is how you can tell, if your code is running on a *development*, *testing*, *staging*, or *production* machine.
+
+## 7- Configuration
