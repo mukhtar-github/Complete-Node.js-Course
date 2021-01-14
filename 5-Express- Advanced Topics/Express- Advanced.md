@@ -172,3 +172,4 @@ if (app.get('env') === 'development') {
 }
 ```
 
+And for debugging, I want to display something on the console, like *Morgan enabled...*. Now, let's delete the *environment variable* and the *app object* lines, we don,t need them anymore.
