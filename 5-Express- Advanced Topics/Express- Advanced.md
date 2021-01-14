@@ -156,10 +156,19 @@ We have another way to get the current environment, and that is via the *app* ob
 console.log(`app: ${app.get('env')}`);
 ```
 
-Now, back in terminal, look our environment variable is not set, so, that's *undefined*. But *app.get('env')*is returning *development* by default.
+Now, back in terminal, look our environment variable is not set, so, that's *undefined*. But *app.get('env')*is returning *development* by default. So this is the difference. Now, which approach you choose is purely your personal preference.
 
 ```javascript
 NODE_ENV: undefined
 app: development
+```
+
+Now, in this demo, we want to enable logging of HTTP requests, *morgan('tiny')* only on the *development* machine. So we write code like this,
+
+```javascript
+if (app.get('env') === 'development') {
+    app.use(morgan('tiny'));
+    console.log('Morgan enabled...');
+}
 ```
 
