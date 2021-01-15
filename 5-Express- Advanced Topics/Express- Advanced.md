@@ -178,4 +178,6 @@ We set our *environment variable* using *export* on Mac or Ubuntu, and *set* on 
 
 ## 7- Configuration
 
-So, in the last lecture, you learned how to detect the environment in which your application is running. One topic that goes hand-in-hand with environments, is the topic of storing configuration settings for the application, and overriding those settings in each environment. For example,
+So, in the last lecture, you learned how to detect the environment in which your application is running. One topic that goes hand-in-hand with environments, is the topic of storing configuration settings for the application, and overriding those settings in each environment. For example, in your development environment you're going to use a different database or Mail server. So, in this lecture, I'm going to show you how to store configuration settings for your application, and override them in each environment. Now, there're various Node packages out there for managing configuration, the most popular one is *rc*. So, if you look up *npm rc*,
+
+> One topic that goes hand-in-hand with environments, is the topic of storing configuration settings for the application, and overriding those settings in each environment.
