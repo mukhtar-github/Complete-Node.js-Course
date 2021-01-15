@@ -182,6 +182,8 @@ So, in the last lecture, you learned how to detect the environment in which your
 
 Now, there're various Node packages out there for managing configuration, the most popular one is *rc*. But my personal preference is another package that is not as popular, but it has a very clean and elegant design, and it's really easy to use. So, look up *npm config*. So, it has a very active community, there are quite a few collaborators in this project, and I find it a better solution to manage the configuraton of your applications.
 
-So, back in the terminal, let's install *config module*. Okay, back in the project, let's ccreate a folder called *config*, in this folder, we can have a default configuration file, so let's add a new file called *default.json*. So, inside the file, we can have a JSON object to define the default configuration settings. For example, let's have a setting in the JSON object called *name*
+So, back in the terminal, let's install *config module*. Okay, back in the project, let's ccreate a folder called *config*, in this folder, we can have a default configuration file, so let's add a new file called *default.json*. So, inside the file, we can have a JSON object to define the default configuration settings. For example, let's have a setting in the JSON object called *name*, just a name of our application *My Express App*.
+
+Now, back in the configuration folder, let's add another file, *development.json*. In this file, we can define the settings specific to the development environment. As part of this, we can override the settings that we defined in *default.json*.
 
 > One topic that goes hand-in-hand with environments, is the topic of storing configuration settings for the application, and overriding those settings in each environment.
