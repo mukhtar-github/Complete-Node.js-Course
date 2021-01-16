@@ -186,6 +186,8 @@ So, back in the terminal, let's install *config module*. Okay, back in the proje
 
 Now, back in the configuration folder, let's add another file, *development.json*. In this file, we can define the settings specific to the development environment. As part of this, we can override the settings that we defined in the *default.json* file, we can also add additonal settings. So, I can change the name, I can override it, saying *My Express App - development*. We can also add additonal properties, and these properties can also be complex objects, for example, we can have a property called *mail*, where we store information about our mail server. So, in the *mail* object, we can have *host* and we can set it to *deve-mail-server*.
 
+> One topic that goes hand-in-hand with environments, is the topic of storing configuration settings for the application, and overriding those settings in each environment.
+
 Similarly, we can create another configuration file called *production.json*. Now, I'm going to go back in *development.json*, copy all the proprties and paste in *production.json*, and then change the name of the application, as well as the address of the mail server. So, with this Node package, we can easily see the default configuration, as well as the configuration for each environment, it's clean, it gives you a very clean structure.
 
 Now, back in our *index.js*, on the top we load the *config* module and store in a constant called *config*, and with this, we can easily get various settings for our application. So, let's look at some few examples.
@@ -217,6 +219,6 @@ So, with this Node package, you can easily store the configuration settings for 
 
 Let me show you how that works. So, back in terminal, let's define an environment variable for storing the password of a mail server. So, *export password=1234*. Now, to prevent this environment variable to clash with another environment variable, it's better to prefix that with the name of our application. Now, in this demo, let's say the name of our application is *app*, so we add *app* as a prefix, *export app_password=1234*.
 
-So in development environment, we manually set this environment variable, and also in production environment, we most likely have a configuration panel for storing our environment variables. So, we store all these passwords and secrets in our environment variables, and then read them using our *config* module.
+So in development environment, we manually set this environment variable, and also in production environment, we most likely have a configuration panel for storing our environment variables. So, we store all these passwords and secrets in our environment variables, and then read them using our *config* module. Now, back in the project, in the configuration folder, we need to add another file called *custom-environment-variables.json*.
 
-> One topic that goes hand-in-hand with environments, is the topic of storing configuration settings for the application, and overriding those settings in each environment.
+Make sure to spell it properly, the name of the file is very important. And in the file, we define the mapping of configuration settings to environment variables. So, I'm going to go in our *development.json* file, copy all that is inside and paste into the new file. Now let's say for the mail property, inside that, we're going to have a property called *password*. So, we want to map this to the environment variable that we created, that was *app_password*.
