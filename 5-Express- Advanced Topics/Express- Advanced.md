@@ -260,3 +260,5 @@ If yes, we enabled *Morgan* to log HTTP requests, and we also logged this messag
 This approach is very tedious, a better way to log messages for the purpose of debugging, is to use the *debug package* in Node. With *debug*, we're going to replace all these *console.log* statements with the call to a debug function, and then we can use an *environment variable* to enable or disable debugging. This way, we don't need to come back to our code and modify the code, we dont have to delete these *console.log* or *debug* statements, we don't have to comment them out, we can control them from the outside, using an *environment variable*.
 
 But more importantly, we can also determine the level of debugging information we want to see. Maybe sometime you're working on a database problem, perhaps we only want to see the debugging information related to the database. So, again we don't have to come back to the code and modify all these *console.log* statements.
+
+So, let me show you how to use the *debug package*. Back in the terminal, let's install *debug*
