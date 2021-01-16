@@ -257,4 +257,4 @@ if (app.get('env') === 'development') {
 
 If yes, we enabled *Morgan* to log HTTP requests, and we also logged this message *Morgan enabled...*, on the console. So this *console.log* is JavaScript programmers oldest friend. We use it all the time for *debugging*. The problem with this approach however, is that sometimes when we are done with them, we delete them or we comment them out. But sometime later, you might need them, so we have to write the code again or remove the comment.
 
-This approach is very tedious, a better way to log messages for the purpose of debugging, is to ise the *debug package*
+This approach is very tedious, a better way to log messages for the purpose of debugging, is to use the *debug package* in Node. With *debug*, we're going to replace all these *console.log* statements with the call to a debug function, and then we can use an *environment variable* to enable or disable debugging. This way, we don't need to come back to our code and
