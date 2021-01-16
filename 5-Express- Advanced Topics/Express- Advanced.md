@@ -245,3 +245,16 @@ Listening on port 3000...
 Again, this *config package* has alot of useful features, and I leave it up to you to read the documentation and learn more about this package.
 
 ## 8- Debugging
+
+Earlier in this section, we wrote this code to see if we're in the *development environment*.
+
+```javascript
+if (app.get('env') === 'development') {
+    app.use(morgan('tiny'));
+    console.log('Morgan enabled...');
+}
+```
+
+If yes, we enabled *Morgan* to log HTTP requests, and we also logged this message *Morgan enabled...*, on the console. So this *console.log* is JavaScript programmers oldest friend. We use it all the time for *debugging*. The problem with this approach however, is that sometimes when we are done with them, we delete them or we comment them out. But sometime later, you might need them, so we have to write the code again or remove the comment.
+
+This approach is very tedious, a better way to log messages for the purpose of debugging, is to ise the *debug package*
