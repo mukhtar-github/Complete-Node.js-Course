@@ -223,4 +223,13 @@ So in development environment, we manually set this environment variable, and al
 
 Make sure to spell it properly, the name of the file is very important. And in the file, we define the mapping of configuration settings to environment variables. So, I'm going to go in our *development.json* file, copy all that is inside and paste into the new file. Now let's say for the mail property, inside that, we're going to have a property called *password*. So, we want to map this to the environment variable that we created, that was *app_password*.
 
-Now, we don't need *host*, because we're not going to map this to an environment variable, the value is defined in one of our configuration files, so we delete it. And for the same reason, we don't need *name*. So, in this file *custom-environment-variables.json*, we only have the mapping. The mapping of our configuration settings *password*, to environment variables, *app_password*. Now, 
+Now, we don't need *host*, because we're not going to map this to an environment variable, the value is defined in one of our configuration files, so we delete it. And for the same reason, we don't need *name*. So, in this file *custom-environment-variables.json*, we only have the mapping. The mapping of our configuration settings *password*, to environment variables, *app_password*.
+
+Now, back in *index.js*, let's set the configuration of the password of the mail server.
+
+```javascript
+// Configuration
+console.log('Mail Password: ' + config.get('mail.password'));
+```
+
+So, the *config* object looks at various sources to find a value for this configuration, *mail.password*. The source can be a configuration file, a JSON file, it can be an environment variable, it can also be a command-line argument. For that, you need to look at the documentation . Now back in terminal, let's run the application
