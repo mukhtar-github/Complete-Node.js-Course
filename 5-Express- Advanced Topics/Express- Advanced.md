@@ -205,6 +205,14 @@ Morgan enabled...
 Listening on port 3000...
 ```
 
-So, you can see, the settings of the appliction name, and that of the mail server are coming from our *development.json* file. Now if we change
+So, you can see, the settings of the appliction name, and that of the mail server are coming from our *development.json* file. Now if we change the environment to production, we're going to see different values. So, *export NODE_ENV=production* and run the application one more time. Look, this time our mail server is *prod-mail-server*.
+
+```javascript
+Application Name: My Express App - Production
+Mail Server: prod-mail-server
+Listening on port 3000...
+```
+
+So, with this Node package, you can easily store the configuration settings for your application. However, you should not store the application secrets in these configuration files, for example you should not store
 
 > One topic that goes hand-in-hand with environments, is the topic of storing configuration settings for the application, and overriding those settings in each environment.
