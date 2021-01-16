@@ -213,6 +213,10 @@ Mail Server: prod-mail-server
 Listening on port 3000...
 ```
 
-So, with this Node package, you can easily store the configuration settings for your application. However, you should not store the application secrets in these configuration files, for example you should not store
+So, with this Node package, you can easily store the configuration settings for your application. However, you should not store the application secrets in these configuration files, for example you should not store the password of your database or your mail server. Because, when you're checking your source code, to a repository, that password or that secret is visible to anyone who has access to that source control repository. In fact one of the famous financial companies in the US was hacked, because someone checked in a password into source control repository. So, the way we deal with these secrets, is by storing them in the environment variables.
+
+Let me show you how that works. So, back in terminal, let's define an environment variable for storing the password of a mail server. So, *export password=1234*. Now, to prevent this environment variable to clash with another environment variable, it's better to prefix that with the name of our application. Now, in this demo, let's say the name of our application is *app*, so we add *app* as a prefix, *export app_password=1234*.
+
+So in development environment, we manually set this environment variable, and also in production environment, we most likely have a configuration panel for storing our environment variables. So, we store all these passwords and secrets in our environment variables, and then read them using our *config* module.
 
 > One topic that goes hand-in-hand with environments, is the topic of storing configuration settings for the application, and overriding those settings in each environment.
