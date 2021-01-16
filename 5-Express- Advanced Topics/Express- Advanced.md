@@ -225,11 +225,23 @@ Make sure to spell it properly, the name of the file is very important. And in t
 
 Now, we don't need *host*, because we're not going to map this to an environment variable, the value is defined in one of our configuration files, so we delete it. And for the same reason, we don't need *name*. So, in this file *custom-environment-variables.json*, we only have the mapping. The mapping of our configuration settings *password*, to environment variables, *app_password*.
 
-Now, back in *index.js*, let's set the configuration of the password of the mail server.
+Now, back in *index.js*, let's display the password of the mail server.
 
 ```javascript
 // Configuration
 console.log('Mail Password: ' + config.get('mail.password'));
 ```
 
-So, the *config* object looks at various sources to find a value for this configuration, *mail.password*. The source can be a configuration file, a JSON file, it can be an environment variable, it can also be a command-line argument. For that, you need to look at the documentation . Now back in terminal, let's run the application
+So, the *config* object looks at various sources to find a value for the configuration of *mail.password*. The source can be a *configuration-file*, a *JSON-file*, it can be an *environment-variable*, it can also be a *command-line* argument. For that, you need to look at the documentation yourself. Now back in terminal, let's run the application, okay look, our Mail Password is *1234* and this was read from an *environment-variable*, not a *configuration-file*.
+
+```javascript
+Application Name: My Express App - Development
+Mail Server: dev-mail-server
+Mail Password: 1234
+Morgan enabled...
+Listening on port 3000...
+```
+
+Again, this *config package* has alot of useful features, and I leave it up to you to read the documentation and learn more about this package.
+
+## 8- Debugging
