@@ -261,4 +261,4 @@ This approach is very tedious, a better way to log messages for the purpose of d
 
 But more importantly, we can also determine the level of debugging information we want to see. Maybe sometime you're working on a database problem, perhaps we only want to see the debugging information related to the database. So, again we don't have to come back to the code and modify all these *console.log* statements.
 
-So, let me show you how to use the *debug package*. Back in the terminal, let's install *debug*
+So, let me show you how to use the *debug package*. Back in the terminal, let's install *debug*, *npm i debug*. Now, back to our *index module*, on the top, let's load the *debug module*. This require function returns a function, so we call this function and give an argument, and this argument is an arbitrary namespace, that we define for debugging.

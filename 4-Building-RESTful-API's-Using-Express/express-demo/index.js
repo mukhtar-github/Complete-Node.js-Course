@@ -1,3 +1,4 @@
+const debug = require('debug')();
 const config = require('config');
 const morgan = require('morgan');
 const helmet = require('helmet');
