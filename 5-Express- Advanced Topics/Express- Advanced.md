@@ -186,6 +186,14 @@ So, back in the terminal, let's install *config module*. Okay, back in the proje
 
 Now, back in the configuration folder, let's add another file, *development.json*. In this file, we can define the settings specific to the development environment. As part of this, we can override the settings that we defined in the *default.json* file, we can also add additonal settings. So, I can change the name, I can override it, saying *My Express App - development*. We can also add additonal properties, and these properties can also be complex objects, for example, we can have a property called *mail*, where we store information about our mail server. So, in the *mail* object, we can have *host* and we can set it to *deve-mail-server*.
 
-Similarly, we can create another configuration file called *production.json*. Now, I'm going to go back in *development.json*, copy all the proprties and paste in *production.json*, and then change the name of the application, as well as the address of the mail server.
+Similarly, we can create another configuration file called *production.json*. Now, I'm going to go back in *development.json*, copy all the proprties and paste in *production.json*, and then change the name of the application, as well as the address of the mail server. So, with this Node package, we can easily see the default configuration, as well as the configuration for each environment, it's clean, it gives you a very clean structure.
+
+Now, back in our *index.js*, on the top we load the *config* module and store in a constant called *config*, and with this, we can easily get various settings for our application. So, let's look at some few examples.
+
+```javascript
+// Configuration
+console.log('Application Name: ' + config.get('name'));
+console.log('Mail Server: ' + config.get('mail.host'));
+```
 
 > One topic that goes hand-in-hand with environments, is the topic of storing configuration settings for the application, and overriding those settings in each environment.
