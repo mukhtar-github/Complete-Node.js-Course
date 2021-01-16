@@ -196,4 +196,15 @@ console.log('Application Name: ' + config.get('name'));
 console.log('Mail Server: ' + config.get('mail.host'));
 ```
 
+Now, back in terminal,I'm going to put this machine in the development environment. So, *export NODE_ENV=development*, and then run our application.
+
+```javascript
+Application Name: My Express App - Development
+Mail Server: dev-mail-server
+Morgan enabled...
+Listening on port 3000...
+```
+
+So, you can see, the settings of the appliction name, and that of the mail server are coming from our *development.json* file. Now if we change
+
 > One topic that goes hand-in-hand with environments, is the topic of storing configuration settings for the application, and overriding those settings in each environment.
