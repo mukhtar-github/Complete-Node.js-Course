@@ -275,4 +275,12 @@ app:startup Morgan enabled... +0ms
 
 Now next time I run this application, maybe I don't want to see any debugging information. So we can reset this *environment variable* to nothing, run the application again, we no longer see the debugging message. Or we may want to see debugging messages for multiple namespaces. So we can set our *environment variable* to *export DEBUG=app:startup,app:db*. With this, we'll see the debugging messages in these two namespaces.
 
-Or if you want to see all the debugging messages for our app namespace, we can use a wild card
+Or if we want to see all the debugging messages for our app namespace, we can use a wild card *(export DEBUG=app:*)*. This way, we don't have to repeat each of them individually. Now when we run the application, we see messages in different namespaces.
+
+```javascript
+app:startup Morgan enabled... +0ms
+app:db Connected to the database... +0ms
+Listening on port 3000...
+```
+
+And the beautiful thing about this *debug module* is that it color codes, the namespace, so we can easily distinguish various debugging messages. Which we don't get with *console.log* Now, there's also a faster way to set the level of debugging we want to see, so we don't have to explicitly set the *environment variable*
