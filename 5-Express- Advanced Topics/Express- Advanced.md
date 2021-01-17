@@ -313,4 +313,8 @@ So when we set this, *express* will internally load this module. So we don't hav
 app.set('views', './views');
 ```
 
-The name of the property is *views*. And the value is the path to where we store the template. So the default value is *./views*. That means, you should put all your views or all your templates inside a inside a folder called *views*, which should be in the root of the application.
+The name of the property is *views*. And the value is the path to where we store the template. So the default value is *./views*. That means, you should put all your views or all your templates inside a folder called *views*, which should be in the root of the application. Again, this is an optional setting, that's the default value, so we don't have to set that.
+
+Now, let's add a new folder, *views*. Inside this folder, let's add a new file, we can call that *index.pug*. With *Pug*, we can define our template using a syntax like this, so we can have an *HTML* element, then inside that, we can have *head*, then we can have the *title* element. And we can set a value for the *title* dynamically using the syntax, so we add an equal sign, and then the name of a variable that we will set at runtime. I will show you how that works later.
+
+Now, in parallel to *head*, we want to have another element called *body*, and inside that, we want to have
