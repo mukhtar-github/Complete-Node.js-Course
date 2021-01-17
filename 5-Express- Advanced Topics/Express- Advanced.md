@@ -293,4 +293,12 @@ app:db Connected to the database... +0ms
 
 So, this is a shortcut to set an *environment variable*, in this case *DEBUG*, and run the application at the same time. And one last thing,in this particular demo, I created two debugging functions, *startup and db* debugger. But in a real -world scenario, you may not necessarily need multiple debugging functions in the same file or in the same module. If that's the case, you can simplify your code by changing the name of the *debugger* function to *debug*.
 
-For example, in this file, let's say we don't have any database work, so I'm going to delete it. We only want to write debugging messages about the application startup, so, let's delete the *dbDebugger* function. Now, we can rename this function, *startupDebugger*  to *debug*.
+For example, in this file, let's say we don't have any database work, so I'm going to delete it. We only want to write debugging messages about the application startup, so, let's delete the *dbDebugger* function. Now, we can rename this function, *startupDebugger*  to *debug*. So, that's shorter than writing *console.log()*. And it gives us alot more power and control over how much of the debugging information we want to see. So, prefer the *debug* module to *console.log()* statements.
+
+## 9- Templating Engines
+
+In all the endpoints we have implemented so far, we return JSON objects in the response. Sometimes however, you need to return HTML markup to the client. And that's where we use a *Templating engine*. There are various *Templating engines* available for *express* applications. The most popular ones are *Pug* which used to be called *Jade*. We also have *Mustache*, and *EJS*.
+
+Each *Templating engine* has a different syntax for gegnerating dynamic HTML and returning it to the client. So, for this demo, I'm going to show you how to use *Pug*to generate a dynamic HTML.
+
+> For *endpoints requests*, we need to sometimes return HTML markup to the client. And that's where we use a *Templating engine*.
