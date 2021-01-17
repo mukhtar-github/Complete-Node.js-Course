@@ -299,6 +299,6 @@ For example, in this file, let's say we don't have any database work, so I'm goi
 
 In all the endpoints we have implemented so far, we return JSON objects in the response. Sometimes however, you need to return HTML markup to the client. And that's where we use a *Templating engine*. There are various *Templating engines* available for *express* applications. The most popular ones are *Pug* which used to be called *Jade*. We also have *Mustache*, and *EJS*.
 
-Each *Templating engine* has a different syntax for gegnerating dynamic HTML and returning it to the client. So, for this demo, I'm going to show you how to use *Pug*to generate a dynamic HTML.
+Each *Templating engine* has a different syntax for gegnerating dynamic HTML and returning it to the client. So, for this demo, I'm going to show you how to use *Pug*to generate a dynamic HTML and return it to the client. So, first let's install *Pug*. Now, back in our *index module*, we need to set the 
 
 > For *endpoints requests*, we need to sometimes return HTML markup to the client. And that's where we use a *Templating engine*.
