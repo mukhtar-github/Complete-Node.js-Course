@@ -283,4 +283,12 @@ app:db Connected to the database... +0ms
 Listening on port 3000...
 ```
 
-And the beautiful thing about this *debug module* is that it color codes, the namespace, so we can easily distinguish various debugging messages. Which we don't get with *console.log* Now, there's also a faster way to set the level of debugging we want to see, so we don't have to explicitly set the *environment variable*
+And the beautiful thing about this *debug module* is that it color codes, the namespace, so we can easily distinguish various debugging messages. Which we don't get with *console.log* Now, there's also a faster way to set the level of debugging we want to see, so we don't have to explicitly set the *environment variable* using the *export* command. We can set the *environment variable* at the time of write our application.
+
+Let's say this time I only want to see debugging messages in *app:db* namespace. So we set *DEBUG=app:db with a space*, then run our application either with *node* or *nodemon index.js*.
+
+```javascript
+app:db Connected to the database... +0ms
+```
+
+So, this is a shortcut to set an *environment variable*, in this case *DEBUG*, and run the application at the same time. And one last thing
