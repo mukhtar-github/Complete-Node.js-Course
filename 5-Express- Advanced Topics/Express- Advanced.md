@@ -265,4 +265,12 @@ So, let me show you how to use the *debug package*. Back in the terminal, let's 
 
 Potentially, we can another debugger for debugging database related messsages. So, once again, we load the debug module. We get a function, we call that function, give it a namespace like *app:db*. And this will return a debugging function. So, we get it and store it in *dbDebugger*.
 
-Now, we're going to replace *console.log('Morgan enabled...')* with a call to *startupDebugger* function. So, *startupDebugger('Morgan enabled...')* like that. Now potentially, somewhere in the application, we can have some database work, and there you need to write some debugging information. So, we can use our other debugger function. So, *dbDebugger('Connected to the database...')*.
+Now, we're going to replace *console.log('Morgan enabled...')* with a call to *startupDebugger* function. So, *startupDebugger('Morgan enabled...')* like that. Now potentially, somewhere in the application, we can have some database work, and there you need to write some debugging information. So, we can use our other debugger function. So, *dbDebugger('Connected to the database...')*, something like that.
+
+Now, we're going back to the terminal and use an *environment variable* to determine what kind of debugging information we want to see in the console. So, we set an *environment variable* called *DEBUG*, like this *export DEBUG=app:startup*. That means with this, we're going to see only the debugging messages that are part of this *app:startup* namespace. Now, if we run the application, we got this.
+
+```javascript
+app:startup Morgan enabled... +0ms
+```
+
+Now next time I run this application, maybe I don't want to see any debugging information. So we can reset this *environment variable*
