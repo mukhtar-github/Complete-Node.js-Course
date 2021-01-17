@@ -1,4 +1,5 @@
 const startupDebugger = require('debug')('app:startup');
+const dbDebugger = require('debug')('app:db');
 const config = require('config');
 const morgan = require('morgan');
 const helmet = require('helmet');
