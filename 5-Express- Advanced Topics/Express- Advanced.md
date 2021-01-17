@@ -299,6 +299,18 @@ For example, in this file, let's say we don't have any database work, so I'm goi
 
 In all the endpoints we have implemented so far, we return JSON objects in the response. Sometimes however, you need to return HTML markup to the client. And that's where we use a *Templating engine*. There are various *Templating engines* available for *express* applications. The most popular ones are *Pug* which used to be called *Jade*. We also have *Mustache*, and *EJS*.
 
-Each *Templating engine* has a different syntax for gegnerating dynamic HTML and returning it to the client. So, for this demo, I'm going to show you how to use *Pug*to generate a dynamic HTML and return it to the client. So, first let's install *Pug*. Now, back in our *index module*, we need to set the 
+Each *Templating engine* has a different syntax for gegnerating dynamic HTML and returning it to the client. So, for this demo, I'm going to show you how to use *Pug*to generate a dynamic HTML and return it to the client. So, first let's install *Pug*. Now, back in our *index module*, we need to set the *view engine* for the applicaction. So, we set it as.
 
 > For *endpoints requests*, we need to sometimes return HTML markup to the client. And that's where we use a *Templating engine*.
+
+```javascript
+app.set('view engine', 'pug');
+```
+
+So when we set this, *express* will internally load this module. So we don't have to *require* it. And there is another setting that is not compulsory, it's optional, only if you want to override the path to your templates. We set it as.
+
+```javascript
+app.set('views', './views');
+```
+
+The name of the property is *views*. And the value is the path to where we store the template. So the default value is *./views*. That means, you should put all your views or all your templates inside a inside a folder called *views*, which should be in the root of the application.

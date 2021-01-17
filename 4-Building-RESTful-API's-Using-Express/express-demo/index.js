@@ -9,6 +9,9 @@ const authenticate = require('./authenticate');
 const express = require('express');
 const app = express();
 
+app.set('view engine', 'pug');
+app.set('views', './views'); // default
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true })); // key=value&key=value
 app.use(express.static('public'));
