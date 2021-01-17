@@ -291,4 +291,6 @@ Let's say this time I only want to see debugging messages in *app:db* namespace.
 app:db Connected to the database... +0ms
 ```
 
-So, this is a shortcut to set an *environment variable*, in this case *DEBUG*, and run the application at the same time. And one last thing
+So, this is a shortcut to set an *environment variable*, in this case *DEBUG*, and run the application at the same time. And one last thing,in this particular demo, I created two debugging functions, *startup and db* debugger. But in a real -world scenario, you may not necessarily need multiple debugging functions in the same file or in the same module. If that's the case, you can simplify your code by changing the name of the *debugger* function to *debug*.
+
+For example, in this file, let's say we don't have any database work, so I'm going to delete it. We only want to write debugging messages about the application startup, so, let's delete the *dbDebugger* function. Now, we can rename this function, *startupDebugger*  to *debug*.
