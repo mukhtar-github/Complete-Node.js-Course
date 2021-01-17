@@ -317,4 +317,4 @@ The name of the property is *views*. And the value is the path to where we store
 
 Now, let's add a new folder, *views*. Inside this folder, let's add a new file, we can call that *index.pug*. With *Pug*, we can define our template using a syntax like this, so we can have an *HTML* element, then inside that, we can have *head*, then we can have the *title* element. And we can set a value for the *title* dynamically using the syntax, so we add an equal sign, and then the name of a variable that we will set at runtime. I will show you how that works later.
 
-Now, in parallel to *head*, we want to have another element called *body*, and inside that, we want to have
+Now, in parallel to *head*, we want to have another element called *body*, and inside that, we want to have an *h1*, and we want to set the value for this dynamically, using a variable called *message*. So you see *Pug* has a cleaner syntax han regular HTML, we don't have those
