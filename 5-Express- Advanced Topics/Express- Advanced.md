@@ -273,4 +273,6 @@ Now, we're going back to the terminal and use an *environment variable* to deter
 app:startup Morgan enabled... +0ms
 ```
 
-Now next time I run this application, maybe I don't want to see any debugging information. So we can reset this *environment variable*
+Now next time I run this application, maybe I don't want to see any debugging information. So we can reset this *environment variable* to nothing, run the application again, we no longer see the debugging message. Or we may want to see debugging messages for multiple namespaces. So we can set our *environment variable* to *export DEBUG=app:startup,app:db*. With this, we'll see the debugging messages in these two namespaces.
+
+Or if you want to see all the debugging messages for our app namespace, we can use a wild card
