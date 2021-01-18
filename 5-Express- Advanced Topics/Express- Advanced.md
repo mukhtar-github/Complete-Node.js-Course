@@ -359,3 +359,7 @@ So now, let's start the application again, and head over to *localhost:3000*. Lo
 So, if you want to return HTML markup to the client, you use a *view engine*. Again, there are various *view engines* available, like *Pug*, *EJS*, *Mustache*, and so on. But when you're building *RESTful* services for the backend of your client applicatons, you don't really need a *view engine* or a *templating engine*. I just covered this topic because I wanted my node course to be comprehensive. Next, I'm going to talk about *Database Integration*.
 
 ## 10- Database Integration
+
+Alright, we got to *Database Integration*. Actually, we have a separate section about this topic, where I will teach you in detail how to work with a *MongoDB* database. But in this lecture, I just want to point out what are the various database integration options available for you when you use *Node* and *Express*. So, on *Express* website, if you go to *guide* and then *Database Integration*, on this page you can see various *Database* drivers that are available for you to use. You can use *Cassandra*, *Couchbase*, *MySQL*, *Mongo*, *Oracle*, *Redis*, *SQL Server*, *ElasticSearch* and so on.
+
+So there are various options available here, for each of these you can see some sample code. So
