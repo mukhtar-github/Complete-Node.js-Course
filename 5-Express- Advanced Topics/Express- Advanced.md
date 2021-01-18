@@ -346,5 +346,12 @@ app.get('/', (req, res) => {
 So now, let's start the application again, and head over to *localhost:3000*. Look, we get our HTML markup. We can verify that by looking at the source of the page
 
 ```html
-<html><head><title>My Express App</title></head><body><h1>Hello</h1></body></html>
+<html>
+    <head>
+        <title>My Express App</title>
+    </head>
+    <body>
+        <h1>Hello</h1>
+    </body>
+</html>
 ```
