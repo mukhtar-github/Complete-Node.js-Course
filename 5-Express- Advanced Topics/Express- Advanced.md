@@ -343,7 +343,7 @@ app.get('/', (req, res) => {
 });
 ```
 
-So now, let's start the application again, and head over to *localhost:3000*. Look, we get our HTML markup. We can verify that by looking at the source of the page, what you see here is our *Pug* template converted to standard HTML. So we have *html*, *head*, *title* of which it's value is inserted dynamically at runtime.
+So now, let's start the application again, and head over to *localhost:3000*. Look, we get our HTML markup. We can verify that by looking at the source of the page, what you see here is our *Pug* template converted to standard HTML. So we have *html*, *head*, *title* of which it's value is inserted dynamically at runtime. And then next to that we have *body*, and inside this, we have the *h1*  element.
 
 ```html
 <html>
@@ -355,3 +355,7 @@ So now, let's start the application again, and head over to *localhost:3000*. Lo
     </body>
 </html>
 ```
+
+So, if you want to return HTML markup to the client, you use a *view engine*. Again, there are various *view engines* available, like *Pug*, *EJS*, *Mustache*, and so on. But when you're building *RESTful* services for the backend of your client applicatons, you don't really need a *view engine* or a *templating engine*. I just covered this topic because I wanted my node course to be comprehensive. Next, I'm going to talk about *Database Integration*.
+
+## 10- Database Integration
