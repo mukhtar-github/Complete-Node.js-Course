@@ -317,7 +317,7 @@ The name of the property is *views*. And the value is the path to where we store
 
 Now, let's add a new folder, *views*. Inside this folder, let's add a new file, we can call that *index.pug*. With *Pug*, we can define our template using a syntax like this, so we can have an *HTML* element, then inside that, we can have *head*, then we can have the *title* element. And we can set a value for the *title* dynamically using the syntax, so we add an equal sign, and then the name of a variable that we will set at runtime. I will show you how that works later.
 
-Now, in parallel to *head*, we want to have another element called *body*, and inside that, we want to have an *h1*, and we want to set the value for this dynamically, using a variable called *message*. So you see *Pug* has a cleaner syntax han regular HTML, we don't have those
+Now, in parallel to *head*, we want to have another element called *body*, and inside that, we want to have an *h1*, and we want to set the value for this dynamically, using a variable called *message*. So you see *Pug* has a cleaner syntax than regular HTML, we don't have those openining and closing elements, ofcourse some people love it, some people hate it.
 
 ```javascript
 html
@@ -326,3 +326,5 @@ html
     body
         h1= message
 ```
+
+But that aside, let's see how we can convert this to regular HTML and return it to the client. So, back in our *index module*, earlier we defined a route for the root of the application, so here we send
