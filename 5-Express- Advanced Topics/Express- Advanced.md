@@ -335,7 +335,7 @@ app.get('/', (req, res) => {
 });
 ```
 
-Now, we are going to replace this with an HTML markup and return it to the client. So, instead of the *send* method, we use the *render* method.
+Now, we are going to replace this with an HTML markup and return it to the client. So, instead of the *send* method, we use the *render* method. As the first argument, we specify the name of our *view*, in that case *index*, because the name of our file is *index.pug*. As a second argument, we pass an object, and this object includes all the values for the parameters that we have defined in our template, like *title* and *message*. So, here I've set two properties, *title* and *message*. That's all we have to do.
 
 ```javascript
 app.get('/', (req, res) => {
@@ -343,4 +343,8 @@ app.get('/', (req, res) => {
 });
 ```
 
-Now, as the first argument, we specify the name of our *view*, in that case *index*, because the name of our file is *index.pug*. As a second argument, we pass an object, and this object includes all the values for the parameters that we have defined in our template, like *title* and *message*.
+So now, let's start the application again, and head over to *localhost:3000*. Look, we get our HTML markup. We can verify that by looking at the source of the page
+
+```html
+<html><head><title>My Express App</title></head><body><h1>Hello</h1></body></html>
+```
