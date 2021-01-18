@@ -343,7 +343,7 @@ app.get('/', (req, res) => {
 });
 ```
 
-So now, let's start the application again, and head over to *localhost:3000*. Look, we get our HTML markup. We can verify that by looking at the source of the page
+So now, let's start the application again, and head over to *localhost:3000*. Look, we get our HTML markup. We can verify that by looking at the source of the page, what you see here is our *Pug* template converted to standard HTML. So we have *html*, *head*, *title* of which it's value is inserted dynamically at runtime.
 
 ```html
 <html>
