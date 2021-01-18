@@ -327,4 +327,20 @@ html
         h1= message
 ```
 
-But that aside, let's see how we can convert this to regular HTML and return it to the client. So, back in our *index module*, earlier we defined a route for the root of the application, so here we send
+But that aside, let's see how we can convert this to regular HTML and return it to the client. So, back in our *index module*, earlier we defined a route for the root of the application, where we send a simple message to the client *Hello World!*.
+
+```javascript
+app.get('/', (req, res) => {
+    res.send('Hello World!');
+});
+```
+
+Now, we are going to replace this with an HTML markup and return it to the client. So, instead of the *send* method, we use the *render* method.
+
+```javascript
+app.get('/', (req, res) => {
+    res.render('index', { title: 'My Express App', message: 'Hello' });
+});
+```
+
+Now, as the first argument, we specify the name of our *view*, in that case *index*, because the name of our file is *index.pug*. As a second argument, we pass an object, and this object includes all the values for the parameters that we have defined in our template, like *title* and *message*.
