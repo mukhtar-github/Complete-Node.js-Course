@@ -362,4 +362,6 @@ So, if you want to return HTML markup to the client, you use a *view engine*. Ag
 
 Alright, we got to *Database Integration*. Actually, we have a separate section about this topic, where I will teach you in detail how to work with a *MongoDB* database. But in this lecture, I just want to point out what are the various database integration options available for you when you use *Node* and *Express*. So, on *Express* website, if you go to *guide* and then *Database Integration*, on this page you can see various *Database* drivers that are available for you to use. You can use *Cassandra*, *Couchbase*, *MySQL*, *Mongo*, *Oracle*, *Redis*, *SQL Server*, *ElasticSearch* and so on.
 
-So there are various options available here, for each of these you can see some sample code. So
+So there are various options available here, for each of these you can see some sample code. So, let's have a look at *MongoDB*. Basically, what you need to do is to install the driver for working with *Mongo*. So, *npm install mongodb*, and then you load that using the *require* function. Then you get a simple API, connect to *Mongo* and then you can access various collections and so on. Working with other databases is the same, you install a driver, and then you get a module with a simple API.
+
+Now, in the case of *Mongo* specifically,
