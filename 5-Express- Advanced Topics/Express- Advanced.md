@@ -394,9 +394,9 @@ module.exports = router;
 Now, we need to load the *courses* module inside *index* module. So, back in *index.js*, let's load the *courses* module. And finally, when we load the module, we need to call *app.use*, and we need to supply two arguments, the first argument is a *path*, and the second argument is our *router* object that we imported, that is *courses*.
 
 ```javascript
-const courses = require('./courses');
+const courses = require('./routes/courses');
 
-app.use('/api/courses', courses);
+app.use('/', courses);
 ```
 
 Basically, we're telling *Express* that for any route that starts with */api/courses*, use the *courses* router. The router that we loaded from the *courses* module. And with this, we can go back to our *courses* module, and make our routes a little bit shorter.
@@ -405,4 +405,10 @@ So, back to the *courses* module, on the top, we can see that every route has th
 
 So, you can see our routes are much simpler now. Now, here is a simple exercise for you. I want you to refactor the route to the homepage and put it in a separate file.
 
-Alright, here's what we need to do, in *routes* folder, I'm going to add a new file, let's call it *home.js*. First, we load *Express*, then we get a *router*. Back in *index.js*, we get the route and paste it in our *home.js* file. And instead of *app*, we attached it to the *router*. And, we export the *router*. Finally, we go back to *index.js* and load the new module.
+Alright, here's what we need to do, in *routes* folder, I'm going to add a new file, let's call it *home.js*. First, we load *Express*, then we get a *router*. Back in *index.js*, we get the route and paste it in our *home.js* file. And instead of *app*, we attached it to the *router*. And, we export the *router*. So, we go back to *index.js* and load the *home* module. Now finally, we add the middleware by calling *app.use*, saying that for any path that starts with *(/)*, use the *home* router.
+
+```javascript
+app.use('/', home);
+```
+
+Alright, if you look at *index.js*
