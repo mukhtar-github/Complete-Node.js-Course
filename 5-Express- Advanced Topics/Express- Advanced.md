@@ -391,8 +391,10 @@ So, the difference is that in *courses* module, instead of working with the *app
 module.exports = router;
 ```
 
-Now, we need to load the *courses* module inside *index* module. So, back in *index.js*, let's load the *courses* module.
+Now, we need to load the *courses* module inside *index* module. So, back in *index.js*, let's load the *courses* module. And finally, when we load the module, we need to call *app.use*, and we need to supply two arguments, the first argument is a *path*, and the second argument is our *router* object that we imported, that is *courses*.
 
 ```javascript
 const courses = require('./courses');
+
+app.use('/api/courses', courses);
 ```

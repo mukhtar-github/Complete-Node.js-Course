@@ -17,6 +17,7 @@ app.use(express.urlencoded({ extended: true })); // key=value&key=value
 app.use(express.static('public'));
 app.use(helmet());
 app.use(logger);
+app.use('/api/courses', courses);
 
 // Configuration
 console.log('Application Name: ' + config.get('name'));
