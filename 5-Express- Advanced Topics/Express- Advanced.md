@@ -364,4 +364,6 @@ Alright, we got to *Database Integration*. Actually, we have a separate section 
 
 So there are various options available here, for each of these you can see some sample code. So, let's have a look at *MongoDB*. Basically, what you need to do is to install the driver for working with *Mongo*. So, *npm install mongodb*, and then you load that using the *require* function. Then you get a simple API, connect to *Mongo* and then you can access various collections and so on. Working with other databases is the same, you install a driver, and then you get a module with a simple API.
 
-Now, in the case of *Mongo* specifically,
+Now, in the case of *Mongo* specifically, there is another package that is called *Mongoose*, which is build on top of *Mongo* client, on top of the *MongoDB Package*. So, instead of using the *Mongo* driver directly, we use *Mongoose* because it gives us a simpler API. Again, later in the course, we're going to have a comprehensive section about working with *Mongo* and *Mongoose*.
+
+## 11- Authentication
