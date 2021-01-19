@@ -12,19 +12,12 @@ router.get('/', (req, res) => {
 });
 
 // GET all courses
-router.get('/api/courses', (req, res) => {
+router.get('/', (req, res) => {
     res.send(courses);
 });
 
-// GET a single course
-router.get('/api/courses/:id', (req, res) => {
-    const course = courses.find(c => c.id === parseInt(req.params.id));
-    if(!course) return res.status(404).send('The course with the given ID was not found');
-    res.send(course);
-});
-
 // POST Endpoint
-router.post('/api/courses', (req, res) => {
+router.post('/', (req, res) => {
     const { error } = validateCourse(req.body);
     if(error)  return res.status(400).send(error.details[0].message);
 
@@ -38,7 +31,7 @@ router.post('/api/courses', (req, res) => {
 });
 
 // PUT Requests
-router.put('/api/courses/:id', (req, res) => {
+router.put('/:id', (req, res) => {
     const course = courses.find(c => c.id === parseInt(req.params.id));
     
     if(!course) return res.status(404).send('The course with the given ID was not found');
@@ -52,13 +45,20 @@ router.put('/api/courses/:id', (req, res) => {
 });
 
 // DELETE Request
-router.delete('/api/courses/:id', (req, res) => {
+router.delete('/:id', (req, res) => {
     const course = courses.find(c => c.id === parseInt(req.params.id));
     if(!course) return res.status(404).send('The course with the given ID was not found');
 
     const index = courses.indexOf(course);
     courses.splice(index, 1);
 
+    res.send(course);
+});
+
+// GET a single course
+router.get('/:id', (req, res) => {
+    const course = courses.find(c => c.id === parseInt(req.params.id));
+    if(!course) return res.status(404).send('The course with the given ID was not found');
     res.send(course);
 });
 

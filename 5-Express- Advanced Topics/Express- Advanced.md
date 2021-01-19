@@ -398,3 +398,7 @@ const courses = require('./courses');
 
 app.use('/api/courses', courses);
 ```
+
+Basically, we're telling *Express* that for any route that starts with */api/courses*, use the *courses* router. The router that we loaded from the *courses* module. And with this, we can go back to our *courses* module, and make our routes a little bit shorter.
+
+So, back to the *courses* module, on the top, we can see that every route has this path, */api/courses*. We don't want to repeat this everywhere, because in *index.js*, we told *Express* that any route that start with */api/courses*, should be handled by the *courses* router. So, we can get rid of all the */api/courses*. For the first route, which is fr getting all the courses, our route will change to just a slash (/). Same for the second route, for the third route, we have a parameter, so we'll only add */:id*. Similarly, for the *delete* route, we only need */:id*. And finally, the same for the last route for getting a single course.
