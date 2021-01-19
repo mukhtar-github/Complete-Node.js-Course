@@ -5,8 +5,8 @@ const morgan = require('morgan');
 const helmet = require('helmet');
 const Joi = require('joi');
 const logger = require('./logger');
-const courses = require('./courses');
-const home = require('./homepage');
+const courses = require('./routes/courses');
+const home = require('./routes/home');
 const express = require('express');
 const app = express();
 

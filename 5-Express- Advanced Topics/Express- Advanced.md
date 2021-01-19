@@ -403,4 +403,6 @@ Basically, we're telling *Express* that for any route that starts with */api/cou
 
 So, back to the *courses* module, on the top, we can see that every route has this path, */api/courses*. We don't want to repeat this everywhere, because in *index.js*, we told *Express* that any route that start with */api/courses*, should be handled by the *courses* router. So, we can get rid of all the */api/courses*. For the first route, which is fr getting all the courses, our route will change to just a slash (/). Same for the second route, for the third route, we have a parameter, so we'll only add */:id*. Similarly, for the *delete* route, we only need */:id*. And finally, the same for the last route for getting a single course.
 
-So, you can see our routes are much simpler now. Now, here is a simple exercise for you. I want you to refactor the route to the homepage and put it in a separate file
+So, you can see our routes are much simpler now. Now, here is a simple exercise for you. I want you to refactor the route to the homepage and put it in a separate file.
+
+Alright, here's what we need to do, in *routes* folder, I'm going to add a new file, let's call it *home.js*. First, we load *Express*, then we get a *router*. Back in *index.js*, we get the route and paste it in our *home.js* file. And instead of *app*, we attached it to the *router*. And, we export the *router*. Finally, we go back to *index.js* and load the new module.
