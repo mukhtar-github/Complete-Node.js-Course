@@ -384,3 +384,15 @@ So, back to *courses.js*. On the top, fisrt we need to load *Express*. Now, in *
 const express = require('express');
 const router = express.Router();
 ```
+
+So, the difference is that in *courses* module, instead of working with the *app* object, we work with the *router* object. Now finally, at the end of the module, we export the *router*. So in summary, we get the *router* on the top, we add *routes* to it, and finally, export the *router* at the end of the module.
+
+```javascript
+module.exports = router;
+```
+
+Now, we need to load the *courses* module inside *index* module. So, back in *index.js*, let's load the *courses* module.
+
+```javascript
+const courses = require('./courses');
+```

@@ -5,6 +5,7 @@ const morgan = require('morgan');
 const helmet = require('helmet');
 const Joi = require('joi');
 const logger = require('./logger');
+const courses = require('./courses');
 const express = require('express');
 const app = express();
 

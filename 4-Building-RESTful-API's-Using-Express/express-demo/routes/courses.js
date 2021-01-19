@@ -70,3 +70,5 @@ function validateCourse(course) {
 
    return Joi.validate(course, schema);
 }
+
+module.exports = router;
