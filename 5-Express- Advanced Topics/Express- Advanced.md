@@ -411,4 +411,6 @@ Alright, here's what we need to do, in *routes* folder, I'm going to add a new f
 app.use('/', home);
 ```
 
-Alright, if you look at *index.js*
+Alright, if you look at *index.js*, all we have is simply the startup code for our application. Now, one last thing before we finish this lecture. So earlier, we created the *logger* middleware, we put it in a separate module, *logger.js*, and we exported the *log* function at the end of the module. Now,in terms of structuring your application, it is possible we might have multiple middleware functions. So, it's better to put them all in a folder called *middleware*. So, in the root of the application we create another folder, *middleware*. And this also means, we should go back to *index.js*, on the top where we load the *middleware*, and change the path to *./middleware/logger*.
+
+## 13- Project- Restructure the App
