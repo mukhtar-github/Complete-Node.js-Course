@@ -367,3 +367,5 @@ So there are various options available here, for each of these you can see some 
 Now, in the case of *Mongo* specifically, there is another package that is called *Mongoose*, which is build on top of *Mongo* client, on top of the *MongoDB Package*. So, instead of using the *Mongo* driver directly, we use *Mongoose* because it gives us a simpler API. Again, later in the course, we're going to have a comprehensive section about working with *Mongo* and *Mongoose*.
 
 ## 11- Authentication
+
+So far, we have covered a lot of ground about *Express*. But what about *Authentication*? Well *Authentication* is outside the scope of *Express*, because *Express* is a minimal light-weight framework, and it doesn't have an opinion about *Authentication*. So, later in the course, we're going to have a comprehensive section about *Authentication* and *Authorization*. So, I will show you how to secure your API endpoints.
