@@ -7,10 +7,6 @@ const courses = [
     { id: 3, name: 'course3'}
 ];
 
-router.get('/', (req, res) => {
-    res.render('index', { title: 'My Express App', message: 'Hello' });
-});
-
 // GET all courses
 router.get('/', (req, res) => {
     res.send(courses);
