@@ -369,3 +369,9 @@ Now, in the case of *Mongo* specifically, there is another package that is calle
 ## 11- Authentication
 
 So far, we have covered a lot of ground about *Express*. But what about *Authentication*? Well *Authentication* is outside the scope of *Express*, because *Express* is a minimal light-weight framework, and it doesn't have an opinion about *Authentication*. So, later in the course, we're going to have a comprehensive section about *Authentication* and *Authorization*. So, I will show you how to secure your API endpoints.
+
+## 12- Structuring Express Applications
+
+So, if you look at the code we have written so far in *index.js* throughout this section, you can see we have a very big file with about hundred lines of code. This is a very simple application. In a real-world application, you don't want to write all that code inside *index.js*. So, in this lecture I'm going to show you how to properly structure your application.
+
+The first thing we want to do is take out all the code for the *courses* API, and put it into a seperate file. In other words, for every logical part of our application for every API endpoint, we want to have a seperate file or a seperate module. So, all the route for working with courses should be in *courses.js*, and all the routes working with 
