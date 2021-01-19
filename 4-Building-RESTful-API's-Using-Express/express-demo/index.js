@@ -6,7 +6,7 @@ const helmet = require('helmet');
 const Joi = require('joi');
 const logger = require('./logger');
 const courses = require('./courses');
-const homepage = require('./homepage');
+const home = require('./homepage');
 const express = require('express');
 const app = express();
 
@@ -19,7 +19,7 @@ app.use(express.static('public'));
 app.use(helmet());
 app.use(logger);
 app.use('/api/courses', courses);
-app.use('/', homepage);
+app.use('/', home);
 
 // Configuration
 console.log('Application Name: ' + config.get('name'));
