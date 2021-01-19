@@ -374,4 +374,13 @@ So far, we have covered a lot of ground about *Express*. But what about *Authent
 
 So, if you look at the code we have written so far in *index.js* throughout this section, you can see we have a very big file with about hundred lines of code. This is a very simple application. In a real-world application, you don't want to write all that code inside *index.js*. So, in this lecture I'm going to show you how to properly structure your application.
 
-The first thing we want to do is take out all the code for the *courses* API, and put it into a seperate file. In other words, for every logical part of our application for every API endpoint, we want to have a seperate file or a seperate module. So, all the route for working with courses should be in *courses.js*, and all the routes working with 
+The first thing we want to do is take out all the code for the *courses* API, and put it into a seperate file. In other words, for every logical part of our application for every API endpoint, we want to have a seperate file or a seperate module. So, all the route for working with *courses* should be in *courses.js*, and all the routes working with, let's say *authors* should be in *authors.js*.
+
+So in the root of the project, let's create a new folder, call it *routes*, in it, we add a new file, *courses.js*. Now, back in *index.js*. Let's select all the code for working with *courses*, cut and paste in *courses.js* file. Back in *index.js*, you can see that, we only have about forty lines of code. But first, let's finish refactoring the *courses* routes.
+
+So, back to *courses.js*. On the top, fisrt we need to load *Express*. Now, in *index.js*, we call *Express* as a function and we got an *app* object, right? But, this approach does not work when you separate the routes in a separate module. So, we need to use a router. So *Express* has a method called *Router*, that returns a router object. Now, I'm going to rename *app* to *router* for clarity, so  select and press *F2* to change all at once.
+
+```javascript
+const express = require('express');
+const router = express.Router();
+```
