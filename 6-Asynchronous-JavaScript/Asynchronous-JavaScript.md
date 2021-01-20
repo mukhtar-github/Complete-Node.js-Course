@@ -27,3 +27,7 @@ Okay, beautiful, we have a new *Node* project, and now let's open this folder in
 console.log('Before');
 console.log('After');
 ```
+
+This is an example of *synchronous* or *blocking* program. In this program, when the first line executes, the program is *blocking*, and the second line has to wait until the first line finishes execution. So that's why we call programs like this *synchronous* or *blocking*. In contrast, we have *Asynchronous* or *non-blocking* program.
+
+Let me show you an example of an *Asynchronous* program.
