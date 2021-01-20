@@ -49,6 +49,13 @@ const genres = [
     if (!genre) return res.status(404).send('The genre with the given ID was not found.');
     res.send(genre);
   });
+
+  function validateGenre(genre) {
+    const schema = {
+      name: Joi.string().min(3).required()
+    };
   
-  module.exports = router;
+    return Joi.validate(genre, schema);
+  }
   
+  module.exports = router; 
