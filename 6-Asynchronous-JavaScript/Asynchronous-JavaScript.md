@@ -30,4 +30,10 @@ console.log('After');
 
 This is an example of *synchronous* or *blocking* program. In this program, when the first line executes, the program is *blocking*, and the second line has to wait until the first line finishes execution. So that's why we call programs like this *synchronous* or *blocking*. In contrast, we have *Asynchronous* or *non-blocking* program.
 
-Let me show you an example of an *Asynchronous* program.
+Let me show you an example of an *Asynchronous* program. So in JavaScript, we have this function that you should be familiar with, *setTimeout*. This takes two arguments, thie first one is a function, so I'm using the *arrow* function syntax, so let's pass *2000* milliseconds or *2* seconds. After *2* seconds, the code inside this function will be executed. So, I'm going to use this to simulate a call to a *database* that is going to take *2* seconds.
+
+```javascript
+setTimeout(() => {
+    console.log('Reading a user from a database...');
+}, 2000);
+```
