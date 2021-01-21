@@ -82,6 +82,29 @@ getUser(1);
 console.log('After');
 ```
 
-So, we have a function for getting a user object from our *database*. Now, to make this even more real, we can pass an argument into our called function, like user with an id say *1*. So, we should have a parameter called *id* in our function. Now in this function, we need to return a user object. So when we read the user from the *database*, right after that, we're going to return an object. Let's say this object has an *id* property, and it also has a *gitHubUsername* property.
+So, we have a function for getting a user object from our *database*. Now, to make this even more real, we can pass an argument into our called function, like user with an id say *1*. So, we should have a parameter called *id* in our function. Now in this function, we need to return a user object. So when we read the user from the *database*, right after that, we're going to return an object. Let's say this object has an *id* property, and it also has a *gitHubUsername* property. We're going to set that to *mukhtar*.
 
-We're going to
+```javascript
+function getUser() {
+    setTimeout((id) => {
+        console.log('Reading a user from a database...');
+        return { id: id, gitHubUsername: 'mukhtar' };
+    }, 2000);  
+}
+```
+
+Now here is the interesting part. Back to *getUser(1)*, we cannot get this user object like this, say *const user = getUser(1);*. This does not work. So, if we do a *console.log(user);*, we're going to get undefined on the console.
+
+```javascript
+console.log('Before');
+const user = getUser(1);
+console.log(user);
+console.log('After');
+
+function getUser(id) {
+    setTimeout(() => {
+        console.log('Reading a user from a database...');
+        return { id: id, gitHubUsername: 'mukhtar' };
+    }, 2000);  
+}
+```
