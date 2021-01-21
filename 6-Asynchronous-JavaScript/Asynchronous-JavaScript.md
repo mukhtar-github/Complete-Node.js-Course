@@ -63,3 +63,13 @@ Earlier in the course, I gave you a metaphor. Remember the imaginary Restaurant?
 What is important here is that we have a single waiter or waitress, this is like a single thread in a program. So, we don't have multiple threads, we don't have concurrency. Now, why do you need to know all of these. Because, in *Node* programs, whenever you're dealing with an operation that involves *disk* or *network* access, you're dealing with *asynchronous* code. So you need to understand how *asynchronous* code behaves, and more importantly, you need to know to write *asynchronous* code in a clean and maintainable way. And that's what you're going to learn in this section.
 
 ## 2- Patterns for Dealing with Asynchronous Code
+
+Alright, now let's make this program a little bit more real. So, I'm going to extract the *setTimeout* function and put it inside a separate function called *getUser*.
+
+```javascript
+function getUser() {
+    setTimeout(() => {
+        console.log('Reading a user from a database...');
+    }, 2000);  
+}
+```
