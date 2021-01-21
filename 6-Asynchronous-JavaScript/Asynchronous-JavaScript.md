@@ -82,4 +82,6 @@ getUser(1);
 console.log('After');
 ```
 
-So we have a function for getting a user object from our *database*. Now, to make this even more real, we can pass an argument into our function, like user with id *1*, and we can have a parameter called *id*.
+So, we have a function for getting a user object from our *database*. Now, to make this even more real, we can pass an argument into our called function, like user with an id say *1*. So, we should have a parameter called *id* in our function. Now in this function, we need to return a user object. So when we read the user from the *database*, right after that, we're going to return an object. Let's say this object has an *id* property, and it also has a *gitHubUsername* property.
+
+We're going to
