@@ -68,8 +68,18 @@ Alright, now let's make this program a little bit more real. So, I'm going to ex
 
 ```javascript
 function getUser() {
-    setTimeout(() => {
+    setTimeout((id) => {
         console.log('Reading a user from a database...');
     }, 2000);  
 }
 ```
+
+And then, we call *getUser* instead
+
+```javascript
+console.log('Before');
+getUser(1);
+console.log('After');
+```
+
+So we have a function for getting a user object from our *database*. Now, to make this even more real, we can pass an argument into our function, like user with id *1*, and we can have a parameter called *id*.
