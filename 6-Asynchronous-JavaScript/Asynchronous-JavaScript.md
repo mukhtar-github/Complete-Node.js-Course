@@ -124,3 +124,7 @@ But that's not what we want. Because when accessing a *database*, the result is 
 
 So, how can we access this *user* object in the main program here *const user = getUser(1);*? Well, there are three patterns to deal with *asynchronous* code. We have *Callbacks*, *Promises*, and *Async and Await*, which is basically some syntactical sugar over *Promises*. Now, chances are you're familiar with some or all of these or maybe none of these. And it doesn't matter. In the next lecture, we're going to look at *Callbacks* and how you can use them to get the result of an
 *asynchronous* operation.
+
+## 3- Callbacks
+
+So, in the last lecture, you learned that this *return { id: id, gitHubUsername: 'mukhtar' };* user object that you're returning here, will not be available
