@@ -122,4 +122,5 @@ The reason for this, is because the function that we passed to *setTimeout* is e
 
 But that's not what we want. Because when accessing a *database*, the result is not available immediately. It may take half a second, it may take one second or two seconds, who knows. So, that's why I've called *setTimeout* to simulate a long running operation. In this case *console.log('Reading a user from a database...');*, we're reading something from the *database*, and at this point *return { id: id, gitHubUsername: 'mukhtar' };*, the result will be ready.
 
-So, how can we access this *user* object in the main program here *const user = getUser(1);*? Well, there are three patterns to deal with *asynchronous* code. We have *Callbacks*, *Promises*, and *Async and Await*, which basically some syntactical sugar
+So, how can we access this *user* object in the main program here *const user = getUser(1);*? Well, there are three patterns to deal with *asynchronous* code. We have *Callbacks*, *Promises*, and *Async and Await*, which is basically some syntactical sugar over *Promises*. Now, chances are you're familiar with some or all of these or maybe none of these. And it doesn't matter. In the next lecture, we're going to look at *Callbacks* and how you can use them to get the result of an
+*asynchronous* operation.
