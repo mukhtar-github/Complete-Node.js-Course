@@ -7,5 +7,7 @@ function getUser(id) {
     setTimeout(() => {
         console.log('Reading a user from a database...');
         return { id: id, gitHubUsername: 'mukhtar' };
-    }, 2000);  
+    }, 2000);
+    
+    return 1;
 }
