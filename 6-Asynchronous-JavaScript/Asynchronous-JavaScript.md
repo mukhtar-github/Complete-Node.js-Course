@@ -118,7 +118,14 @@ After
 Reading a user from a database...
 ```
 
-The reason for this, is because the function that we passed to *setTimeout* is executed two seconds after. So, what we're returning from this function will not be available at the time of calling *getUser()*. Because, in this function, we're just calling *setTimeout* to schedule a task for the future. If you want to return a value from *getUser()*, we have to return it outside *setTimeout* function. So let's say return *1*. In this case, this value that we're returning here, will be available on this line, *const user = getUser(1);*. So, the *user* constant we have here will be *1*.
+The reason for this, is because the function that we passed to *setTimeout* is executed two seconds after. So, what we're returning from this function will not be available at the time of calling *getUser()*. Because, in this function, we're just calling *setTimeout* to schedule a task for the future. If you want to return a value from *getUser()*, we have to return it outside *setTimeout* function. So let's say *return 1*. In this case, this value that we're returning here, will be available on this line, *const user = getUser(1);*. So, the *user* constant we have here will be *1*. So back in the terminal, let's run *node index.js*. So look,
+
+```javascript
+Before
+1
+After
+Reading a user from a database...
+```
 
 But that's not what we want. Because when accessing a *database*, the result is not available immediately. It may take half a second, it may take one second or two seconds, who knows. So, that's why I've called *setTimeout* to simulate a long running operation. In this case *console.log('Reading a user from a database...');*, we're reading something from the *database*, and at this point *return { id: id, gitHubUsername: 'mukhtar' };*, the result will be ready.
 
@@ -127,4 +134,4 @@ So, how can we access this *user* object in the main program here *const user = 
 
 ## 3- Callbacks
 
-So, in the last lecture, you learned that this *return { id: id, gitHubUsername: 'mukhtar' };* user object that you're returning here, will not be available
+So, in the last lecture, you learned that this *return { id: id, gitHubUsername: 'mukhtar' };* user object that you're returning, will not be available as the returned value of this *const user = getUser(1);* function. In this lecture, I'm going to show you how to use a *Callback* to get this *user* object. So first, let's delete the
