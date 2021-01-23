@@ -1,7 +1,7 @@
 console.log('Before');
 console.log('After');
 console.log('Reading a user from a database...');
-getUser(1, function(user) {
+getUser(1, (user) => {
     console.log('User', user);
 });
 

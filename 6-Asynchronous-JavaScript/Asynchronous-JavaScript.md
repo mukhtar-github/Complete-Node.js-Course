@@ -161,7 +161,7 @@ Now, back to this *const user = getUser(1);* line. We're not going to get a retu
 console.log('Before');
 console.log('After');
 console.log('Reading a user from a database...');
-getUser(1, function(user) {
+getUser(1, (user) => {
     console.log('User', user);
 });
 
@@ -181,4 +181,4 @@ Reading a user from a database...
 User { id: 1, gitHubUsername: 'mukhtar' }
 ```
 
-So, this is an example of a *callback* function. When a *result* of an *asynchronous* operation is ready, this function will be called with the *result*. In this case, the *user* object. Also,
+So, this is an example of a *callback* function. When a *result* of an *asynchronous* operation is ready, the *callback* function will be called with the *result*. In this case, the *user* object. And in the *callback* function, we can used the *Arrow* function syntax.
