@@ -137,3 +137,11 @@ So, how can we access this *user* object in the main program here *const user = 
 ## 3- Callbacks
 
 So, in the last lecture, you learned that this *return { id: id, gitHubUsername: 'mukhtar' };* user object that you're returning, will not be available as the returned value of this *const user = getUser(1);* function. In this lecture, I'm going to show you how to use a *Callback* to get this *user* object. So first, let's delete the *return 1* we're returning outside the *setTimeout* function, because we don't really need it.
+
+Now, we need to make a small change to the signature of this *getUser()* function. We need to add another parameter, we call this *callback*.
+
+```javascript
+function getUser(id, callback) {};
+```
+
+A *callback* is a function that we're going to call when the result of an *asynchronous* operation is ready. In this case, at this point *return { id: id, gitHubUsername: 'mukhtar' };*, the result is ready, so we're going to call this *callback* function back with this *{ id: id, gitHubUsername: 'mukhtar' };* result, with this *user* object.
