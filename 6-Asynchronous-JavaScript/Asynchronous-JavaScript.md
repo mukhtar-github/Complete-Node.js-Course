@@ -144,7 +144,7 @@ Now, we need to make a small change to the signature of this *getUser()* functio
 function getUser(id, callback) {};
 ```
 
-A *callback* is a function that we're going to call when the result of an *asynchronous* operation is ready. In this case, at this point *return { id: id, gitHubUsername: 'mukhtar' };*, the result is ready, so we're going to call this *callback* function back with this *{ id: id, gitHubUsername: 'mukhtar' };* *user* object. So, we simply call the *callback* function and give it the *user* object, like this.
+A *callback* is a function that we're going to call when the result of an *asynchronous* operation is ready. In this case, at this point *return { id: id, gitHubUsername: 'mukhtar' };*, the result is ready, so we're going to call this *callback* function back with this *{ id: id, gitHubUsername: 'mukhtar' };*, *user* object. So, we simply call the *callback* function and give it the *user* object, like this.
 
 ```javascript
 function getUser(id, callback) {
@@ -155,4 +155,4 @@ function getUser(id, callback) {
 }
 ```
 
-Now back
+Now back, back to this *const user = getUser(1);* line, we're not going to get a return value from this function, so let's delete this *const user*. So now, our *getUser(1)* function needs a second argument. We need to pass a function that will be called with this *{ id: id, gitHubUsername: 'mukhtar' };*, *user* object argument. So we can pass a function here, this function takes the *user*, because we're passing a *user* object here, *callback({ id: id, gitHubUsername: 'mukhtar' })*. So now we have access to this *user* object that we have read from the *database*. So you can display it on the console.
