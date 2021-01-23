@@ -191,4 +191,6 @@ function getRepositories(username) {
 }
 ```
 
+Now, this is a *Synchronous* function, here we don't have any *Asynchronous* code, we don't have a call to *setTimeout*, or anything that is *asynchronous*.
+
 > When a *result* of an *asynchronous* operation is ready, the *callback* function will be called together with the *result*.
