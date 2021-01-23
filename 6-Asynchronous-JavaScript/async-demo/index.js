@@ -1,6 +1,7 @@
 console.log('Before');
-const user = getUser(1);
-console.log(user);
+getUser(1, function(user) {
+    console.log('User', user);
+});
 console.log('After');
 
 function getUser(id, callback) {

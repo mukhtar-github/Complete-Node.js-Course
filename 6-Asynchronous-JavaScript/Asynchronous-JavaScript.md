@@ -155,4 +155,12 @@ function getUser(id, callback) {
 }
 ```
 
-Now back, back to this *const user = getUser(1);* line, we're not going to get a return value from this function, so let's delete this *const user*. So now, our *getUser(1)* function needs a second argument. We need to pass a function that will be called with this *{ id: id, gitHubUsername: 'mukhtar' };*, *user* object argument. So we can pass a function here, this function takes the *user*, because we're passing a *user* object here, *callback({ id: id, gitHubUsername: 'mukhtar' })*. So now we have access to this *user* object that we have read from the *database*. So you can display it on the console.
+Now back, back to this *const user = getUser(1);* line, we're not going to get a return value from this function, so let's delete this *const user*. So now, our *getUser(1)* function needs a second argument. We need to pass a function that will be called with this *{ id: id, gitHubUsername: 'mukhtar' };*, *user* object argument. So we can pass a function here, this function takes *user* argument, because we're passing a *user* object in this *callback({ id: id, gitHubUsername: 'mukhtar' })*. So now, we have access to the *user* object that we have read from the *database*. So you can display it on the console, like this.
+
+```javascript
+getUser(1, function(user) {
+    console.log('User', user);
+});
+```
+
+Also, we don't need this *console.log(user);* line anymore.Now, let's run this program and see what happens.
