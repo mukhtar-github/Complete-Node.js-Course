@@ -155,7 +155,7 @@ function getUser(id, callback) {
 }
 ```
 
-Now, back to this *const user = getUser(1);* line. We're not going to get a return value from this function, so let's delete this *const user*. So now, our *getUser(1)* function needs a *second argument*. We need to pass a function that will be called with this *{ id: id, gitHubUsername: 'mukhtar' };*, *user* object argument. So, we can pass a function as a *second argument* to our *getUser(1)* function, this function takes a *user* argument, because we're passing a *user* object in this *callback({ id: id, gitHubUsername: 'mukhtar' })*. So now, we have access to the *user* object that we have read from the *database*. So we can display it on the console.
+Now, back to this *const user = getUser(1);* line. We're not going to get a return value from this function, so let's delete this *const user*. So now, our *getUser(1)* function needs a *second argument*. We need to pass a function that will be called with this *{ id: id, gitHubUsername: 'mukhtar' };*, *user* object argument. So, we can pass a function as a *second argument* to our *getUser(1)* function, this function takes a *user* argument, because we're passing a *user* object in this *callback({ id: id, gitHubUsername: 'mukhtar' })*. Now, we have access to the *user* object that we have read from the *database*. So we can display it on the console.
 
 ```javascript
 console.log('Before');
@@ -172,7 +172,7 @@ function getUser(id, callback) {
 }
 ```
 
-Also, we don't need this *console.log(user);* line anymore. Now, let's run this program and see what happens. So, *node index.js*, and we have this,
+Also, we don't need the *console.log(user);* line anymore. Now, let's run this program and see what happens. So, *node index.js*, and we have this,
 
 ```javascript
 Before
@@ -181,4 +181,4 @@ Reading a user from a database...
 User { id: 1, gitHubUsername: 'mukhtar' }
 ```
 
-So, this is an example of a *callback* function. When a result of an *asynchronous* operation is ready, this function will be called in the result. In this case, the *user* object. Also,
+So, this is an example of a *callback* function. When a *result* of an *asynchronous* operation is ready, this function will be called with the *result*. In this case, the *user* object. Also,
