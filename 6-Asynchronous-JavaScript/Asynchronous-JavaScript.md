@@ -105,7 +105,9 @@ function getUser(id) {
     setTimeout(() => {
         console.log('Reading a user from a database...');
         return { id: id, gitHubUsername: 'mukhtar' };
-    }, 2000);  
+    }, 2000);
+
+    // return 1;
 }
 ```
 
@@ -134,4 +136,4 @@ So, how can we access this *user* object in the main program here *const user = 
 
 ## 3- Callbacks
 
-So, in the last lecture, you learned that this *return { id: id, gitHubUsername: 'mukhtar' };* user object that you're returning, will not be available as the returned value of this *const user = getUser(1);* function. In this lecture, I'm going to show you how to use a *Callback* to get this *user* object. So first, let's delete the
+So, in the last lecture, you learned that this *return { id: id, gitHubUsername: 'mukhtar' };* user object that you're returning, will not be available as the returned value of this *const user = getUser(1);* function. In this lecture, I'm going to show you how to use a *Callback* to get this *user* object. So first, let's delete the *return 1* we're returning outside the *setTimeout* function, because we don't really need it.
