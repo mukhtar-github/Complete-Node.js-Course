@@ -1,10 +1,12 @@
 console.log('Before');
 console.log('After');
 console.log('Reading a user from a database...');
-getUser(1, (user) => {
+getUser(1, (user, repo) => {
+    // Get user object
     console.log('User', user);
 
     // Get the repositories
+    console.log('Repositories', repo);
 });
 
 function getUser(id, callback) {
@@ -13,6 +15,8 @@ function getUser(id, callback) {
     }, 2000);
 }
 
-function getRepositories(username) {
-    return ['repo1', 'repo2', 'repo3'];
+function getRepositories(username, callback) {
+    setTimeout(() => {
+        callback({username: 'mukhtar', repo: ['repo1', 'repo2', 'repo3']});
+    }, 2000);
 }

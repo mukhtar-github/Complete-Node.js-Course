@@ -193,4 +193,6 @@ function getRepositories(username) {
 }
 ```
 
-Now, this is a *Synchronous* function, here we don't have any *Asynchronous* code, we don't have a call to *setTimeout*, or anything that is *asynchronous*. Your job is to convert this function to an *asynchronous* function. And then call it inside the *getUser()* function. So once we have the *user* object, we need to get the *repositories*
+Now, this is a *Synchronous* function, here we don't have any *Asynchronous* code, we don't have a call to *setTimeout*, or anything that is *asynchronous*. Your job is to convert this function to an *asynchronous* function. And then call it inside the *getUser()* function. So once we have the *user* object, we need to get the *repositories*.
+
+So as an exercise, convert this function to an *asynchronous* function that takes two seconds to complete, and use a *callback* to get the result, the list of *repositories*. And finally display those *repositories* on the console.
