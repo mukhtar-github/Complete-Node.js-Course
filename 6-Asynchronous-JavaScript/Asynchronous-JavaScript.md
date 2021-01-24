@@ -183,7 +183,9 @@ User { id: 1, gitHubUsername: 'mukhtar' }
 
 So, this is an example of a *callback* function. When a *result* of an *asynchronous* operation is ready, the *callback* function will be called together with the *result*. In this case, the *user* object. And in the *callback* function, we used the *Arrow* function syntax.
 
-Now, here is a small exercise for you. In this program, let's imaging once we read a *user* object from the *database*, then we're going to look at this property *gitHubUsername*, and then we're going to call *github API*, to get the list of repositories for this user. So, we're going to create a function called *getRepositories*. This function takes an argument, which is the *username* of a user on *Github*, and it's going to return an array with a list of repositories.
+> When a *result* of an *asynchronous* operation is ready, the *callback* function will be called together with the *result*.
+
+Now, here is a small exercise for you. In this program, let's imagine once we read a *user* object from the *database*, then we're going to look at this property *gitHubUsername*, and then we're going to call *github API*, to get the list of repositories for this user. So, we're going to create a function called *getRepositories*. This function takes an argument, which is the *username* of a user on *Github*, and it's going to return an array with a list of repositories.
 
 ```javascript
 function getRepositories(username) {
@@ -191,6 +193,4 @@ function getRepositories(username) {
 }
 ```
 
-Now, this is a *Synchronous* function, here we don't have any *Asynchronous* code, we don't have a call to *setTimeout*, or anything that is *asynchronous*.
-
-> When a *result* of an *asynchronous* operation is ready, the *callback* function will be called together with the *result*.
+Now, this is a *Synchronous* function, here we don't have any *Asynchronous* code, we don't have a call to *setTimeout*, or anything that is *asynchronous*. Your job is to convert this function to an *asynchronous* function. And then call it inside the *getUser()* function. So once we have the *user* object, we need to get the *repositories*

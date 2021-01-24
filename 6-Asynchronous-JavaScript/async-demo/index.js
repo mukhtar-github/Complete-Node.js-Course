@@ -3,6 +3,8 @@ console.log('After');
 console.log('Reading a user from a database...');
 getUser(1, (user) => {
     console.log('User', user);
+
+    // Get the repositories
 });
 
 function getUser(id, callback) {
