@@ -1,12 +1,15 @@
 console.log('Before');
 console.log('After');
 console.log('Reading a user from a database...');
-getUser(1, (user, repo) => {
+getUser(1, (user) => {
     // Get user object
     console.log('User', user);
 
     // Get the repositories
-    console.log('Repositories', repo);
+    getRepositories(user.gitHubUsername, (repos) => {
+        
+    });
+
 });
 
 function getUser(id, callback) {

@@ -199,12 +199,15 @@ So as an exercise, convert this function to an *asynchronous* function that take
 
 Alright, to make this function *asynchronous*. Again, I'm going to use the *setTimeout*. Give it the *callback* function, and the timeout of 2 seconds. Now, in this function, we can do a simple *console.log('Calling Github API...')*. This is completely optional, we don't really need this as part of this exercise. Now finally, need to return the array, the list of *repositories*, to the client or consumer of the function.
 
-However, as you learned earlier, we cannot return a value like this in our *setTimeout* function. Instead, we need to use a *callback*. So, we add a second parameter in our *getRepositories* function called *callback*, which is a function. We're going to call this function with the array, the list of *repositories*. So, we're going to replace *return* with a *callback* function.
-
+However, as you learned earlier, we cannot return a value like this in our *setTimeout* function. Instead, we need to use a *callback*. So, we add a second parameter in our *getRepositories* function called *callback*, which is a function. We're going to call this function with the array, the list of *repositories*. So, we're going to replace *return* with a *callback* function. As simple as that.
 
 ```javascript
-setTimeout(() => {
-    console.log('Calling Github API...');
-    return [ 'repo1', 'repo2', 'repo3' ];
-}, 2000);
+function getRepositories(username, callback) {
+    setTimeout(() => {
+        console.log('Calling GitHub API...');
+        callback(['repo1', 'repo2', 'repo3']);
+    }, 2000);
+}
 ```
+
+So, now we have an *asynchronous* function that takes a *callback* to return the result. Now back to our main code, there we have the *user* object. So after that, we're going to get the *repositories* for this user. So we call *getRepositories*, as an argument we pass *user.gitHubUsername*, as a second argument we need to pass *callback* function. This *callback* function takes an argument which is an array of strings. So, let's call this *repos* and goes to a code block.
