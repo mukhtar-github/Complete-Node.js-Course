@@ -7,7 +7,7 @@ getUser(1, (user) => {
 
     // Get the repositories
     getRepositories(user.gitHubUsername, (repos) => {
-        
+        console.log('Repos', repos);
     });
 
 });

@@ -210,4 +210,32 @@ function getRepositories(username, callback) {
 }
 ```
 
-So, now we have an *asynchronous* function that takes a *callback* to return the result. Now back to our main code, there we have the *user* object. So after that, we're going to get the *repositories* for this user. So we call *getRepositories*, as an argument we pass *user.gitHubUsername*, as a second argument we need to pass *callback* function. This *callback* function takes an argument which is an array of strings. So, let's call this *repos* and goes to a code block.
+So, now we have an *asynchronous* function that takes a *callback* to return the result. Now back to our main code, there we have the *user* object. So after that, we're going to get the *repositories* for this user. So we call the *getRepositories* function, as the first argument we pass *user.gitHubUsername*, and as a second argument we need to pass a *callback* function. This *callback* function takes an argument which is an array of strings. So, let's call this array of strings *repos*, and goes to a code block.
+
+Now, here we can display these *repos* on the console. So, this is the end result.
+
+```javascript
+getUser(1, (user) => {
+    // Get user object
+    console.log('User', user);
+
+    // Get the repositories
+    getRepositories(user.gitHubUsername, (repos) => {
+        console.log('Repos', repos);
+    });
+
+});
+```
+
+Now, back in the terminal, let's run *node index.js*
+
+```javascript
+Before
+After
+Reading a user from a database...
+User { id: 1, gitHubUsername: 'mukhtar' }
+Calling GitHub API...
+Repos [ 'repo1', 'repo2', 'repo3' ]
+```
+
+## 4- Callback Hell
