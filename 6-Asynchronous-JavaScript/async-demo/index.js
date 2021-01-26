@@ -17,6 +17,9 @@ function getUser(id, callback) {
 
 function getRepositories(username, callback) {
     setTimeout(() => {
-        callback({username: 'mukhtar', repo: ['repo1', 'repo2', 'repo3']});
+        console.log('Calling GitHub API...');
+        
     }, 2000);
+
+    return [ 'repo1', 'repo2', 'repo3' ];
 }
