@@ -268,4 +268,8 @@ const commits = getCommits(repos[0]);
 console.log('After');
 ```
 
-So I want you to compare these two different implementations. The first implementation is *asynchronous* and the second is *synchronous*. You can see the *synchronous* implementation is far easier to read and understand. With *asynchronous* implementation, because of these *callbacks*, we have these deeply nested structure. And in a real-world application, these can look even worse. So we refer to this as *CALLBACK HELL*. Or some people call it *Christmas Tree Problem*. Because the indentations look like a
+So I want you to compare these two different implementations. The first implementation is *asynchronous* and the second is *synchronous*. You can see the *synchronous* implementation is far easier to read and understand. With *asynchronous* implementation, because of these *callbacks*, we have these deeply nested structure. And in a real-world application, these can look even worse. So we refer to this as *CALLBACK HELL*. Or some people call it *Christmas Tree Problem*. Because the indentations look like a Christmas Tree. So next, I'm going to show you a simple solution to resolve the *callback hell* proplem.
+
+## 5- Named Functions to Rescue
+
+Now, let me show you a simple solution to resolve the *callback hell* proplem. So first let's delete the code that we don't need. I'm going to delete all the code in the *synchronous* section. So, we want to get rid of the *callback hell* issue, the nested structure. The technique that we're going to use is to replace an *Anonymous* function with a *Named* function. What do I meant by that? Well, look at the second argument to the *getCommits* function. So, this is the second argument, *(commits) => {}* right? This is what we call an *anonymous* function, a function that doesn't have a name. Here is another example, as the second argument to *getRepositories* function, we have this 
