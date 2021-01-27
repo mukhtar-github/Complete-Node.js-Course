@@ -227,7 +227,7 @@ getUser(1, (user) => {
 });
 ```
 
-Now, back in the terminal, let's run *node index.js*
+Now, back in the terminal, let's run *node index.js*. So, we got an array of three strings.
 
 ```javascript
 Before
@@ -239,3 +239,5 @@ Repos [ 'repo1', 'repo2', 'repo3' ]
 ```
 
 ## 4- Callback Hell
+
+Alright, so this is what we have so far. What I want you to note in this code is the nested structure, so we have the *getUser()* function, and we're nesting the *getRepositories()* in it. Now in a real-world application, maybe we want to do something after we get the list of repositories for this user. Perhaps, we want to go to the first repository and get all the commits in that repository. With these *callbacks*, our code will end up looking like this. So we can have another function called *getCommits()*, let's say it takes the address of a repository, and here we will have another *callback* function which takes an array of commits. So *commits* goes to a code block.
