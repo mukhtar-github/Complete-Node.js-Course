@@ -245,13 +245,27 @@ Alright, so this is what we have so far. What I want you to note in this code is
 With these *callbacks*, our code will end up looking like what we have below. So we can have another function called *getCommits()*, let's say it takes the address of a repository as the first argument, and then we will have another *callback* function as the second argument, which takes an array of commits. So *commits* goes to a code block.
 
 ```javascript
+// Asynchronous
+console.log('Before');
 getUser(1, (user) => {
     getRepositories(user.gitHubUsername, (repos) => {
         getCommits(repo, (commits) => {
-
+            // CALLBACK HELL
         });
     });
 });
+console.log('After');
 ```
 
-See this nested structure, this is not what we have in *synchronous* code. So, if all these functions were *synchronous*, our code will end up looking like this. Let me show you. So this is the *synchronous* version of the same code. You would have a *console.log* to display *Before*. Then, we would call *getUser* and give it an argument of *1*. We would get a *user* object and we would store it in a constant called *user*. Then we would call *getRepositories* and give it *user.gitHubUsername*. This will return an array of repositories and we would store it in a constant called *repo*. And then we would call *getCommits* and pass maybe the first repository *repos[0]* as the argument, and get all the commits and store it in a constant called *commits*.
+See this nested structure, this is not what we have in *synchronous* code. So, if all these functions were *synchronous*, our code will end up looking like this. Let me show you. So this is the *synchronous* version of the same code. You would have a *console.log* to display *Before*. Then, we would call *getUser* and give it an argument of *1*. We would get a *user* object and we would store it in a constant called *user*. Then we would call *getRepositories* and give it *user.gitHubUsername*. This will return an array of repositories and we would store it in a constant called *repo*. And then we would call *getCommits* and pass maybe the first repository *repos[0]* as the argument, and get all the commits and store them in a constant called *commits*. And finally, we would do a *console.log* of *After*.
+
+```javascript
+// Synchronous
+console.log('Before');
+const user = getUser(1);
+const repo = getRepositories(user.gitHubUsername);
+const commits = getCommits(repos[0]);
+console.log('After');
+```
+
+So I want you to compare these two different implementations. The first implementation is *asynchronous* and the second is *synchronous*. You can see the *synchronous* implementation is far easier to read and understand. With *asynchronous* implementation, because of these *callbacks*, we have these deeply nested structure. And in a real-world application, these can look even worse. So we refer to this as *CALLBACK HELL*. Or some people call it *Christmas Tree Problem*. Because the indentations look like a

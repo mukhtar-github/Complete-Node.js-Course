@@ -18,6 +18,7 @@ console.log('Before');
 const user = getUser(1);
 const repo = getRepositories(user.gitHubUsername);
 const commits = getCommits(repos[0]);
+console.log('After');
 
 
 function getUser(id, callback) {
