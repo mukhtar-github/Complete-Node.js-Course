@@ -2,18 +2,20 @@ console.log('Before');
 console.log('After');
 console.log('Reading a user from a database...');
 getUser(1, (user) => {
-    getCommits(repo, (commits) => {
+    getRepositories(user.gitHubUsername, (repos) => {
+        getCommits(repo, (commits) => {
 
+        });
+        //console.log('Repos', repos);
     });
     // Get user object
     //console.log('User', user);
 
-    // Get the repositories
-    getRepositories(user.gitHubUsername, (repos) => {
-        console.log('Repos', repos);
-    });
-
 });
+
+// Synchronous
+console.log('Before', );
+
 
 function getUser(id, callback) {
     setTimeout(() => {

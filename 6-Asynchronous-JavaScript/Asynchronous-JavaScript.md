@@ -240,4 +240,18 @@ Repos [ 'repo1', 'repo2', 'repo3' ]
 
 ## 4- Callback Hell
 
-Alright, so this is what we have so far. What I want you to note in this code is the nested structure, so we have the *getUser()* function, and we're nesting the *getRepositories()* in it. Now in a real-world application, maybe we want to do something after we get the list of repositories for this user. Perhaps, we want to go to the first repository and get all the commits in that repository. With these *callbacks*, our code will end up looking like this. So we can have another function called *getCommits()*, let's say it takes the address of a repository, and here we will have another *callback* function which takes an array of commits. So *commits* goes to a code block.
+Alright, so this is what we have so far. What I want you to note in this code is the nested structure, so we have the *getUser()* function, and we're nesting the *getRepositories()* in it. Now in a real-world application, maybe we want to do something after we get the list of repositories for this user. Perhaps, we want to go to the first repository and get all the commits in that repository.
+
+With these *callbacks*, our code will end up looking like what we have below. So we can have another function called *getCommits()*, let's say it takes the address of a repository as the first argument, and then we will have another *callback* function as the second argument, which takes an array of commits. So *commits* goes to a code block.
+
+```javascript
+getUser(1, (user) => {
+    getRepositories(user.gitHubUsername, (repos) => {
+        getCommits(repo, (commits) => {
+
+        });
+    });
+});
+```
+
+See this nested structure, this is not what we have in *synchronous* code. So, if all these functions were *synchronous*, our code will end up looking like this. Let me show you. So this is the *synchronous* version of the same code. You would have a *console.log* to display *Before*. Then, we would call *getUser* and give it an argument of *1*. We would get a *user* object
