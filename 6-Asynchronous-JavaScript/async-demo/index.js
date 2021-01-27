@@ -14,7 +14,10 @@ getUser(1, (user) => {
 });
 
 // Synchronous
-console.log('Before', );
+console.log('Before');
+const user = getUser(1);
+const repo = getRepositories(user.gitHubUsername);
+const commits = getCommits(repos[0]);
 
 
 function getUser(id, callback) {

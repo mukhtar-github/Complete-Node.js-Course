@@ -254,4 +254,4 @@ getUser(1, (user) => {
 });
 ```
 
-See this nested structure, this is not what we have in *synchronous* code. So, if all these functions were *synchronous*, our code will end up looking like this. Let me show you. So this is the *synchronous* version of the same code. You would have a *console.log* to display *Before*. Then, we would call *getUser* and give it an argument of *1*. We would get a *user* object
+See this nested structure, this is not what we have in *synchronous* code. So, if all these functions were *synchronous*, our code will end up looking like this. Let me show you. So this is the *synchronous* version of the same code. You would have a *console.log* to display *Before*. Then, we would call *getUser* and give it an argument of *1*. We would get a *user* object and we would store it in a constant called *user*. Then we would call *getRepositories* and give it *user.gitHubUsername*. This will return an array of repositories and we would store it in a constant called *repo*. And then we would call *getCommits* and pass maybe the first repository *repos[0]* as the argument, and get all the commits and store it in a constant called *commits*.
