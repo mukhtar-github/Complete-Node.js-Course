@@ -286,4 +286,12 @@ right? This is what we call an *anonymous* function, a function that doesn't hav
 });
 ```
 
-So, we're going to replace each *anonymous* function with a *named* function. And with this, we can flatten the structure of the code. Let me show you how that works. So we're going to start at the deepest level. Here is our first *anonymous* function. So, I'm going to replace this with a function, now this function gets an array of commits, and let's say here we want to display these commits on the console.  So, I'm going to call this *displayCommits*. It gets an array of commits and simply does a *console.log(commits)*
+So, we're going to replace each *anonymous* function with a *named* function. And with this, we can flatten the structure of the code. Let me show you how that works. So, we're going to start at the deepest level. I'm going to replace the first *anonymous* function with a *named* function, now the function gets an array of *commits*, and let's say we want to display these *commits* on the console. So, I'm going to name the function *displayCommits*. It gets an array of *commits* and simply does a *console.log(commits)*.
+
+```javascript
+function displayCommits(commits) {
+    console.log(commits);
+}
+```
+
+Now, look at the signature of the *named* function. It takes an array of *commits*, and it has a body that does a *console.log(commits)*. This is similar to what we have in the *anonymous* function right? So, we can replace this with a reference to *displayCommits*. Note
