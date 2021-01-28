@@ -294,7 +294,7 @@ function displayCommits(commits) {
 }
 ```
 
-Now, look at the signature of the *named* function. It takes an array of *commits*, and it has a body that does a *console.log(commits)*. This is similar to what we have in the *anonymous* function right? So, we can replace the *anonymous* function with a reference to *displayCommits*.
+Now, look at the signature of the *named* function. It takes an array of *commits*, and it has a body that does a *console.log(commits)*. This is similar to what we have in the *anonymous* function right? So, we can replace the *anonymous* function with a reference to *displayCommits*. Note that in place of the *anonymous* function, I'm not calling the *named* function, I'm just simply passing a reference to the *named* function.
 
 ```javascript
 (repos) => {
@@ -302,4 +302,11 @@ Now, look at the signature of the *named* function. It takes an array of *commit
 });
 ```
 
-Note that in place of the *anonymous* function, I'm not calling the *named* function, I'm just simply passing a reference to the *named* function. Now, I want
+Alright, so on the call to *getRepositories*, we have another *anonymous* function. This *anonymous* function takes an array of repositories *repo* and then get the *commits* for that repositories.
+
+
+```javascript
+getRepositories(user.gitHubUsername, (repos) => {
+        getCommits(repo, displayCommits);
+    });
+```
