@@ -294,4 +294,12 @@ function displayCommits(commits) {
 }
 ```
 
-Now, look at the signature of the *named* function. It takes an array of *commits*, and it has a body that does a *console.log(commits)*. This is similar to what we have in the *anonymous* function right? So, we can replace this with a reference to *displayCommits*. Note
+Now, look at the signature of the *named* function. It takes an array of *commits*, and it has a body that does a *console.log(commits)*. This is similar to what we have in the *anonymous* function right? So, we can replace the *anonymous* function with a reference to *displayCommits*.
+
+```javascript
+(repos) => {
+    getCommits(repo, displayCommits);
+});
+```
+
+Note that in place of the *anonymous* function, I'm not calling the *named* function, I'm just simply passing a reference to the *named* function. Now, I want
