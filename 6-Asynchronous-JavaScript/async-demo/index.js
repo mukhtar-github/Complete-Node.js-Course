@@ -1,5 +1,4 @@
 console.log('Before');
-console.log('After');
 console.log('Reading a user from a database...');
 getUser(1, (user) => {
     getRepositories(user.gitHubUsername, (repos) => {
@@ -12,6 +11,11 @@ getUser(1, (user) => {
     //console.log('User', user);
 
 });
+console.log('After');
+
+function displayCommits(commits) {
+    console.log(commits);
+}
 
 // Synchronous
 console.log('Before');
