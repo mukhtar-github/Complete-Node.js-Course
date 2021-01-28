@@ -272,4 +272,16 @@ So I want you to compare these two different implementations. The first implemen
 
 ## 5- Named Functions to Rescue
 
-Now, let me show you a simple solution to resolve the *callback hell* proplem. So first let's delete the code that we don't need. I'm going to delete all the code in the *synchronous* section. So, we want to get rid of the *callback hell* issue, the nested structure. The technique that we're going to use is to replace an *Anonymous* function with a *Named* function. What do I meant by that? Well, look at the second argument to the *getCommits* function. So, this is the second argument, *(commits) => {}* right? This is what we call an *anonymous* function, a function that doesn't have a name. Here is another example, as the second argument to *getRepositories* function, we have this 
+Now, let me show you a simple solution to resolve the *callback hell* proplem. So first let's delete the code that we don't need. I'm going to delete all the code in the *synchronous* section. So, we want to get rid of the *callback hell* issue, the nested structure. The technique we're going to use is to replace an *Anonymous* function with a *Named* function. What do I meant by that? Well, look at the second argument to the *getCommits* function. So, this is the second argument,
+
+```javascript
+(commits) => {};
+```
+
+right? This is what we call an *anonymous* function, a function that doesn't have a name. Here is another example, as the second argument to *getRepositories* function, we have this *anonymous* function,
+
+```javascript
+(repos) => {
+    getCommits(repo, (commits) => {});
+});
+```
