@@ -347,3 +347,5 @@ function getRepositories(user) {
     getRepositories(user.gitHubUsername, getCommits);
 }
 ```
+
+Now, this may look a little bit confusing at first, because we have a function called *getRepositories* and inside the function we're calling another function which is also called *getRepositories*. But these two functions are different. Because the first one takes a *user* object, whereas the second function takes a string which is the *gitHubUsername* and a *callback* function.
