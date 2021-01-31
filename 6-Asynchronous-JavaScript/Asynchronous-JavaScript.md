@@ -332,10 +332,18 @@ getUser(1, (user) => {
 });
 ```
 
-Now, one more time, here's our last *anonymous* function
+Now, one more time, here's our last *anonymous* function.
 
 ```javascript
 (user) => {
+    getRepositories(user.gitHubUsername, getCommits);
+}
+```
+
+So this *anonymous* function takes a *user* object and then gets the repositories for that user. So, let's create another function called *getRepositories* and it takes a *user* as a parameter. And in the body of this function, we're going to call *getRepositories* with these arguments *(user.gitHubUsername, getCommits)*.
+
+```javascript
+function getRepositories(user) {
     getRepositories(user.gitHubUsername, getCommits);
 }
 ```
