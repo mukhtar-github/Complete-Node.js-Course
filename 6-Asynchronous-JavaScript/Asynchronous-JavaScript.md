@@ -348,4 +348,12 @@ function getRepositories(user) {
 }
 ```
 
-Now, this may look a little bit confusing at first, because we have a function called *getRepositories* and inside the function we're calling another function which is also called *getRepositories*. But these two functions are different. Because the first one takes a *user* object, whereas the second function takes a string which is the *gitHubUsername* and a *callback* function.
+Now, this may look a little bit confusing at first, because we have a function called *getRepositories* and inside the function we're calling another function which is also called *getRepositories*. But these two functions are different. Because the first one takes a *user* object, whereas the second function takes a string, which is the *gitHubUsername* and a *callback* function.
+
+So, now we can replace the *anonymous* function with the reference to *getRepositories*.
+
+```javascript
+getUser(1, getRepositories);
+```
+
+See what happened? We no longer have a deeply nested structure. So, we call *getUser*, when we have the *user*, then we're going to get the *repositories* for that *user*. Now, in the first function, we pass the user-name, *gitHubUsername*. When we have the *repositories*, then we're going to get the *commits* for one of these *repositories*.
