@@ -357,3 +357,5 @@ getUser(1, getRepositories);
 ```
 
 See what happened? We no longer have a deeply nested structure. So, we call *getUser*, when we have the *user*, then we're going to get the *repositories* for that *user*. Now, in the first function, we pass the user-name, *gitHubUsername*. When we have the *repositories*, then we're going to get the *commits* for one of these *repositories*.
+
+And similarly in the second function, when we get the *commits* for one of these *repositories*, then we're going to display those *commits*. So, this is how we read the code. Again, it's not ideal, but its a little bit better than what we had before. Atleast we don't have the *callback hell*. Now, there is a better way to deal with *asynchronous* code, and that's by using *Promises*, which is the topic for the next lecture.
