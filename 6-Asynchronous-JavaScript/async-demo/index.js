@@ -1,10 +1,7 @@
 console.log('Before');
 console.log('Reading a user from a database...');
 getUser(1, (user) => {
-    getRepositories(user.gitHubUsername, (repos) => {
-        getCommits(repo, displayCommits);
-        //console.log('Repos', repos);
-    });
+    getRepositories(user.gitHubUsername, getCommits);
     // Get user object
     //console.log('User', user);
 
@@ -12,7 +9,7 @@ getUser(1, (user) => {
 console.log('After');
 
 function getCommits(repos) {
-    
+    getCommits(repo, displayCommits);
 }
 
 function displayCommits(commits) {

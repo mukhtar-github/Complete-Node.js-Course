@@ -308,4 +308,12 @@ Alright, so on the call to *getRepositories*, we have another *anonymous* functi
 (repos) => {getCommits(repo, displayCommits);}
 ```
 
-So let's create a function, called *getCommits* that takes an array of repositories *repos*
+So let's create a function, called *getCommits* that takes an array of repositories *repos*.
+
+```javascript
+function getCommits(repos) {
+    
+}
+```
+
+So this function has the same signature as the *anonymous* function, right? Now inside this function, this is the code *getCommits(repo, displayCommits);* that we want to execute. So I'm going to cut it and place it inside our *named* function, and then, we can replace the *anonymous* function with the reference to our new *named* function, *getCommits*.
