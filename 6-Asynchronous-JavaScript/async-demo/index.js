@@ -11,6 +11,10 @@ getUser(1, (user) => {
 });
 console.log('After');
 
+function getCommits(repos) {
+    
+}
+
 function displayCommits(commits) {
     console.log(commits);
 }

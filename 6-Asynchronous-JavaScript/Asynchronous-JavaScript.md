@@ -283,7 +283,7 @@ right? This is what we call an *anonymous* function, a function that doesn't hav
 ```javascript
 (repos) => {
     getCommits(repo, (commits) => {});
-});
+}
 ```
 
 So, we're going to replace each *anonymous* function with a *named* function. And with this, we can flatten the structure of the code. Let me show you how that works. So, we're going to start at the deepest level. I'm going to replace the first *anonymous* function with a *named* function, now the function gets an array of *commits*, and let's say we want to display these *commits* on the console. So, I'm going to name the function *displayCommits*. It gets an array of *commits* and simply does a *console.log(commits)*.
@@ -299,14 +299,13 @@ Now, look at the signature of the *named* function. It takes an array of *commit
 ```javascript
 (repos) => {
     getCommits(repo, displayCommits);
-});
+}
 ```
 
-Alright, so on the call to *getRepositories*, we have another *anonymous* function. This *anonymous* function takes an array of repositories *repo* and then get the *commits* for that repositories.
-
+Alright, so on the call to *getRepositories*, we have another *anonymous* function. This *anonymous* function takes an array of repositories *repos* and then get the *commits* for that repositories.
 
 ```javascript
-getRepositories(user.gitHubUsername, (repos) => {
-        getCommits(repo, displayCommits);
-    });
+(repos) => {getCommits(repo, displayCommits);}
 ```
+
+So let's create a function, called *getCommits* that takes an array of repositories *repos*
