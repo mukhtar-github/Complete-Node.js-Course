@@ -359,3 +359,9 @@ getUser(1, getRepositories);
 See what happened? We no longer have a deeply nested structure. So, we call *getUser*, when we have the *user*, then we're going to get the *repositories* for that *user*. Now, in the first function, we pass the user-name, *gitHubUsername*. When we have the *repositories*, then we're going to get the *commits* for one of these *repositories*.
 
 And similarly in the second function, when we get the *commits* for one of these *repositories*, then we're going to display those *commits*. So, this is how we read the code. Again, it's not ideal, but its a little bit better than what we had before. Atleast we don't have the *callback hell*. Now, there is a better way to deal with *asynchronous* code, and that's by using *Promises*, which is the topic for the next lecture.
+
+## 6- Promises
+
+In this lecture, we're going to look at *Javascript Promises*, which are extremely powerful when it comes to dealing with *asynchronous* code. So what is a *Promise*? A *Promise* is an *object* that holds the eventual result of *asynchronous operation*. So an *asynchronous operation* completes, it can either result in a *value* or an *error*. A *Promise* basically promises you that it would give you the of *asynchronous operation*.
+
+This *object* can be in one of the three states. Initially, when we create a *promise object*, it will be in the *Pending* state. At this point, it will kick-up some *asynchronous operation*, when the results are ready, the *Promise* can either be *Fulfilled* or *resolved* which basically means the operation completed successfully. So here we going to have a *value*. Otherwise, if something went wrong during the execution of that *asynchronous operation*,
