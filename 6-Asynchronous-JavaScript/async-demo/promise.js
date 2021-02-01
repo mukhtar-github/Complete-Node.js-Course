@@ -1,1 +1,3 @@
-const p = new Promise((resolve));
+const p = new Promise(function(resolve, reject) {
+    
+});
