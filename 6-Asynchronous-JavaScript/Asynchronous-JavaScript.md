@@ -386,4 +386,6 @@ Now at this point, we're going to kick off some *async* work. You may access a *
 
 > So, when creating a new *Promise*, we should pass a function with two parameters, *resolve and reject*.
 
-The way we do that is by using the *resolve*, or *reject* parameters. Now basically, these two parameters are functions. So we can call *resolve* and pass a *value*  as an argument, let's say *1*. This is the result of our *asynchronous* operation. And we are using *resolve* to send this *value* to the consumers of that *Promise* object.
+The way we do that is by using the *resolve*, or *reject* parameters. Now basically, these two parameters are functions. So we can call *resolve* and pass a *value*  as an argument, let's say *1*. This is the result of our *asynchronous* operation. And we are using *resolve* to send this *value* to the consumers of that *Promise* object. We are going to see that in a second.
+
+Now alternatively, if something goes wrong, we want to return an *error* to the consumer of that *Promise*. In that case, instead of the *resolve()* function, we're going to call *reject()*.
