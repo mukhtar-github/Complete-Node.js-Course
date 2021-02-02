@@ -374,12 +374,14 @@ const p = new Promise(function(resolve, reject) {
 });
 ```
 
-So, when creating a new *Promise*, we should pass a function with two parameters, *resolve and reject*. We can use the *arrow* function syntax and make it a little bit simpler.
+So, when creating a new *Promise*, we should pass a function with two parameters, *resolve and reject*. We can also use the *arrow* function syntax to make it a little bit simpler.
 
 ```javascript
 const p = new Promise((resolve, reject) => {
     
 });
 ```
+
+Now at this point, we're going to kick off some *async* work. You may access a *database* or call up a *web service*, or start a *timer*, or any kind of *asynchronous operation*.
 
 > So, when creating a new *Promise*, we should pass a function with two parameters, *resolve and reject*.
