@@ -382,6 +382,6 @@ const p = new Promise((resolve, reject) => {
 });
 ```
 
-Now at this point, we're going to kick off some *async* work. You may access a *database* or call up a *web service*, or start a *timer*, or any kind of *asynchronous operation*.
+Now at this point, we're going to kick off some *async* work. You may access a *database* or call up a *web service*, or start a *timer*, or any kind of *asynchronous operation*. So here, we're going to have some *async* work. Eventually, when that *async* work completes, we should either have a *value*, or an *error*. If there is a *value*, we want to return that to the consumers of that *Promise*. So somewhere in the code, we're going to consume that *Promise*. Because that *Promise* object
 
 > So, when creating a new *Promise*, we should pass a function with two parameters, *resolve and reject*.
