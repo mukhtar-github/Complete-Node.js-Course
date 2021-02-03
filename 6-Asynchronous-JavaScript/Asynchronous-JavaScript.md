@@ -377,9 +377,7 @@ const p = new Promise(function(resolve, reject) {
 So, when creating a new *Promise*, we should pass a function with two parameters, *resolve and reject*. We can also use the *arrow* function syntax to make it a little bit simpler.
 
 ```javascript
-const p = new Promise((resolve, reject) => {
-    
-});
+const p = new Promise((resolve, reject) => {});
 ```
 
 Now at this point, we're going to kick off some *async* work. You may access a *database* or call up a *web service*, or start a *timer*, or any kind of *asynchronous operation*. So here, we're going to have some *async* work. Eventually, when that *async* work completes, we should either have a *value*, or an *error*. If there is a *value*, we want to return that to the consumers of that *Promise*. So somewhere in the code, we're going to consume that *Promise*. Because that *Promise* object, promises us that it's going to give us the result of an *asynchronous* operation. So we need to send this result to the consumer of that *Promise*.
@@ -392,4 +390,8 @@ Now alternatively, if something goes wrong, we want to return an *error* to the 
 
 Now let me temporarily comment the *error* object out. Let's imagine our *asynchronous* operation completes successfully. I need to produce *1* as the result. In a real-world application, instead of *1*, perhaps we are going to have a *user* object that we read from a *database*. So, that is the result of our *asynchronous* operation. Now, we need to consume that *Promise*. So somewhere else in the code, we get that *Promise* object, and we have two *methods* on that object, we have *catch* for catching any *errors*, and *then* for getting the result of our *asynchronous* operation.
 
-So, we call *then*, and as an argument, we pass a function, that function takes *result*, in this case *result* is that *1* that we're resolving in our code.
+So, we call *then*, and as an argument, we pass a function, that function takes *result*, in this case *result* is that *1* that we're resolving in our code. Now, what do we want to do with this? Let's say we just want to display it on the console, like this;
+
+```javascript
+p.then(result => console.log('Result', result));
+```

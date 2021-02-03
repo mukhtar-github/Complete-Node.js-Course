@@ -5,4 +5,4 @@ const p = new Promise(function(resolve, reject) {
    // reject(new Error('message'));
 });
 
-p.then(result)
+p.then(result => console.log('Result', result));
