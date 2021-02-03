@@ -395,3 +395,13 @@ So, we call *then*, and as an argument, we pass a function, that function takes 
 ```javascript
 p.then(result => console.log('Result', result));
 ```
+
+Now let's go back in the terminal and run *node promise.js*
+
+```javascript
+Result 1
+```
+
+So, we got *1* as the *result*, beautiful. In this implementation, there is really no *asynchronous* work. I'm simply resolving a value immediately. So let's make this a little bit more real life.
+
+So, we can call *setTimeout* and pass a *callback* into it and a *timeout* value, let's *2* seconds to kick off some *async* work.
