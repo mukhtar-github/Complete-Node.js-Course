@@ -404,4 +404,10 @@ Result 1
 
 So, we got *1* as the *result*, beautiful. In this implementation, there is really no *asynchronous* work. I'm simply resolving a value immediately. So let's make this a little bit more real life.
 
-So, we can call *setTimeout* and pass a *callback* into it and a *timeout* value, let's *2* seconds to kick off some *async* work.
+So, we can call *setTimeout* and pass a *callback* function into it and a *timeout* value, let's say *2* seconds, to kick off some *async* work.
+
+```javascript
+setTimeout(() => {}, 2000);
+```
+
+This is getting similar to our *getUser* function right?
