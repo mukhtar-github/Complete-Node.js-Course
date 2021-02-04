@@ -424,4 +424,4 @@ So after *2* seconds, the *asynchronous* operation is going to produce a value o
 Result 1
 ```
 
-Let's say, during the execution of this *asynchronous* operation, something goes wrong, so you want to return an *error* to the consumer of that *Promise*. So, instead of *resolve*, we're going to use *reject*. So we're going to move *reject* line of code inside the *callback*function.
+Let's say, during the execution of this *asynchronous* operation, something goes wrong, so you want to return an *error* to the consumer of that *Promise*. So, instead of *resolve*, we're going to use *reject*. So we're going to move *reject* line of code inside the *callback*function. That *Promise* object as you saw has two methods, *catch* and *then*. So, we have *then* for the success scenario, and we can also chain *catch* in case something goes wrong.
