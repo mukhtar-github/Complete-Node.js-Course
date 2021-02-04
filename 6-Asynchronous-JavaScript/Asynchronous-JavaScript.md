@@ -410,4 +410,12 @@ So, we can call *setTimeout* and pass a *callback* function into it and a *timeo
 setTimeout(() => {}, 2000);
 ```
 
-This is getting similar to our *getUser* function right?
+This is getting similar to our *getUser* function right? So, now we have an *asynchronous* operation. The *callback* function would be called after *2* seconds. Inside the *callback*function we can *resolve* a value, so we're going to move *resolve(1)* inside the *callback*function.
+
+```javascript
+setTimeout(() => {
+      resolve(1);
+   }, 2000);
+```
+
+So after *2* seconds, the *asynchronous* operation is going to
