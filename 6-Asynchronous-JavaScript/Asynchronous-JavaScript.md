@@ -386,7 +386,7 @@ Now at this point, we're going to kick off some *async* work. You may access a *
 
 The way we do that is by using the *resolve*, or *reject* parameters. Now basically, these two parameters are functions. So we can call *resolve* and pass a *value*  as an argument, let's say *1*. This is the result of our *asynchronous* operation. And we are using *resolve* to send this *value* to the consumers of that *Promise* object. We are going to see that in a second.
 
-Now alternatively, if something goes wrong, we want to return an *error* to the consumer of that *Promise*. In that case, instead of the *resolve()* function, we're going to call *reject()*. And here, we can pass an *error* message. As a best practice, it's better to pass an *Error* object instead of simple string like this *reject('error')*. So here we pass *reject(new Error('message'))* and put the message inside the *Error* object.
+Now alternatively, if something goes wrong, we want to return an *error* to the consumer of that *Promise*. In that case, instead of the *resolve()* function, we're going to call the *reject()* function. And here, we can pass an *error* message. As a best practice, it's better to pass an *Error* object instead of a simple string like this; *reject('error')*. And we put the message inside the *Error* object.
 
 ```javascript
 reject(new Error('message'));
@@ -438,4 +438,10 @@ So, we call *catch*, and as an argument, we pass a function, and that function t
 p
 .then(result => console.log('Result', result))
 .catch(err => console.log('Error', err.message));
+```
+
+Now this time, when we run the application, we're going to get an *error* message on the console, because we're rejecting the *Promise*. So back in the terminal, let's run *node promise.js*. So look, instead of *Result 1*, we got this *error* message.
+
+```javascript
+Error message
 ```
