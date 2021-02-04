@@ -374,7 +374,7 @@ const p = new Promise(function(resolve, reject) {
 });
 ```
 
-So, when creating a new *Promise*, we should pass a function with two parameters, *resolve and reject*. We can also use the *arrow* function syntax to make it a little bit simpler.
+So, when creating a new *Promise*, we should pass a function with two parameters, *resolve* and *reject*. We can also use the *arrow* function syntax to make it a little bit simpler.
 
 ```javascript
 const p = new Promise((resolve, reject) => {});
@@ -382,15 +382,19 @@ const p = new Promise((resolve, reject) => {});
 
 Now at this point, we're going to kick off some *async* work. You may access a *database* or call up a *web service*, or start a *timer*, or any kind of *asynchronous operation*. So here, we're going to have some *async* work. Eventually, when that *async* work completes, we should either have a *value*, or an *error*. If there is a *value*, we want to return that to the consumers of that *Promise*. So somewhere in the code, we're going to consume that *Promise*. Because that *Promise* object, promises us that it's going to give us the result of an *asynchronous* operation. So we need to send this result to the consumer of that *Promise*.
 
-> So, when creating a new *Promise*, we should pass a function with two parameters, *resolve and reject*.
+> So, when creating a new *Promise*, we should pass a function with two parameters, *resolve* and *reject*.
 
 The way we do that is by using the *resolve*, or *reject* parameters. Now basically, these two parameters are functions. So we can call *resolve* and pass a *value*  as an argument, let's say *1*. This is the result of our *asynchronous* operation. And we are using *resolve* to send this *value* to the consumers of that *Promise* object. We are going to see that in a second.
 
-Now alternatively, if something goes wrong, we want to return an *error* to the consumer of that *Promise*. In that case, instead of the *resolve()* function, we're going to call *reject()*. And here, we can pass an *error* message. As a best practice, it's better to pass an *error* object instead of simple string like this *reject('error')*. So here we pass *reject(new Error('message'))* and put the message inside the *error* object.
+Now alternatively, if something goes wrong, we want to return an *error* to the consumer of that *Promise*. In that case, instead of the *resolve()* function, we're going to call *reject()*. And here, we can pass an *error* message. As a best practice, it's better to pass an *Error* object instead of simple string like this *reject('error')*. So here we pass *reject(new Error('message'))* and put the message inside the *Error* object.
 
-Now let me temporarily comment the *error* object out. Let's imagine our *asynchronous* operation completes successfully. I need to produce *1* as the result. In a real-world application, instead of *1*, perhaps we are going to have a *user* object that we read from a *database*. So, that is the result of our *asynchronous* operation. Now, we need to consume that *Promise*. So somewhere else in the code, we get that *Promise* object, and we have two *methods* on that object, we have *catch* for catching any *errors*, and *then* for getting the result of our *asynchronous* operation.
+```javascript
+reject(new Error('message'));
+```
 
-So, we call *then*, and as an argument, we pass a function, that function takes *result*, in this case *result* is that *1* that we're resolving in our code. Now, what do we want to do with this? Let's say we just want to display it on the console, like this;
+Now let me temporarily comment the *error* object out. Let's imagine our *asynchronous* operation completes successfully. We need to produce *1* as the result. In a real-world application, instead of *1*, perhaps we are going to have a *user* object that we read from a *database*. So, that is the result of our *asynchronous* operation. Now, we need to consume that *Promise*. So somewhere else in the code, we get that *Promise* object, and we have two *methods* on that object, we have *catch* for catching any *errors*, and *then* for getting the result of our *asynchronous* operation.
+
+So, we call *then*, and as an argument, we pass a function, that function takes *result* as a parameter, in this case *result* is that *1* that we're resolving in our code. Now, what do we want to do with this? Let's say we just want to display it on the console, like this;
 
 ```javascript
 p.then(result => console.log('Result', result));
@@ -424,4 +428,14 @@ So after *2* seconds, the *asynchronous* operation is going to produce a value o
 Result 1
 ```
 
-Let's say, during the execution of this *asynchronous* operation, something goes wrong, so you want to return an *error* to the consumer of that *Promise*. So, instead of *resolve*, we're going to use *reject*. So we're going to move *reject* line of code inside the *callback*function. That *Promise* object as you saw has two methods, *catch* and *then*. So, we have *then* for the success scenario, and we can also chain *catch* in case something goes wrong.
+Let's say, during the execution of this *asynchronous* operation, something goes wrong, so you want to return an *error* to the consumer of that *Promise*. So, instead of *resolve*, we're going to use *reject*. So we're going to move *reject* line of code inside the *callback* function. That *Promise* object as you saw earlier has two methods, *catch* and *then*. So, we have *then* for the success scenario, and we can also chain *catch* in case something goes wrong.
+
+> As a best practice, it's better to pass an *Error* object instead of simple string like this *reject('error')*.
+
+So, we call *catch*, and as an argument, we pass a function, and that function takes *error* as a parameter. So, we can simply display the *error* message on the console. Each *Error* object that we have in *Javascript*, like this *new Error('message')* has a property, so the *error* message that we pass in the *Error* object will be stored in a property called *message*.
+
+```javascript
+p
+.then(result => console.log('Result', result))
+.catch(err => console.log('Error', err.message));
+```
