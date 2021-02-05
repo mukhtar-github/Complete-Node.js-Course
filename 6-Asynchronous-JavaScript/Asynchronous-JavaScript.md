@@ -455,6 +455,8 @@ Now this time, when we run the application, we're going to get an *error* messag
 Error message
 ```
 
-So let's quickly recap, a *Promise* is an object that holds the eventual result of an *asynchronous* operation. Initially, it's in the pending state, when we create the *Promise*. At a point, it kicks off an *asynchronous* operation, that operation can complete successfully or it can fail. If it completes successfully, we say the *Promise* is *resolved* or *fulfilled*.
+So let's quickly recap, a *Promise* is an object that holds the eventual result of an *asynchronous* operation. Initially, it's in the pending state, when we create the *Promise*. At a point, it kicks off an *asynchronous* operation, that operation can complete successfully or it can fail. If it completes successfully, we say the *Promise* is *resolved* or *fulfilled*. The state of the *Promise* changes from *pending* to *resolved*, which is also called *fulfilled*.
+
+Now, if the *asynchronous* operation fails, the state of the *Promise* will go from *pending* to *rejected*.
 
 > A *Promise* is an object that holds the eventual result of an *asynchronous* operation.
