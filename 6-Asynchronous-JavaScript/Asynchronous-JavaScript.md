@@ -445,3 +445,5 @@ Now this time, when we run the application, we're going to get an *error* messag
 ```javascript
 Error message
 ```
+
+So let's quickly recap, a *Promise* is an object that holds the eventual result of an *asynchronous* operation. Initially, it's in the pending state, when we create the *Promise*. At a point, it kicks up an *asynchronous* operation

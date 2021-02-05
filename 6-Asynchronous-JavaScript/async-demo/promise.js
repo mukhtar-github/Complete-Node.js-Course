@@ -1,4 +1,4 @@
-const p = new Promise(function(resolve, reject) {
+const p = new Promise((resolve, reject) => {
    // kick off some async work
    // ...
    setTimeout(() => {
