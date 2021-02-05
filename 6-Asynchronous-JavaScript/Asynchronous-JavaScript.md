@@ -457,6 +457,31 @@ Error message
 
 So let's quickly recap, a *Promise* is an object that holds the eventual result of an *asynchronous* operation. Initially, it's in the pending state, when we create the *Promise*. At a point, it kicks off an *asynchronous* operation, that operation can complete successfully or it can fail. If it completes successfully, we say the *Promise* is *resolved* or *fulfilled*. The state of the *Promise* changes from *pending* to *resolved*, which is also called *fulfilled*.
 
-Now, if the *asynchronous* operation fails, the state of the *Promise* will go from *pending* to *rejected*.
+Now, if the *asynchronous* operation fails, the state of the *Promise* will go from *pending* to *rejected*. So, we use the *reject* function to return an *error* to the consumer of that *Promise*.
+
+So, this is how we create a *Promise*,
+
+```javascript
+const p = new Promise((resolve, reject) => {
+   // kick off some async work
+   // ...
+   setTimeout(() => {
+      resolve(1); // pending => resolved, fulfilled
+      reject(new Error('message')); // pending => rejected
+   }, 2000);
+});
+```
+
+And this is how we consume it,
+
+```javascript
+p
+.then(result => console.log('Result', result))
+.catch(err => console.log('Error', err.message));
+```
+
+We call *then*, to get the *result*, and *catch* to get the *error*. Now here's what you need to take away from this lecture: *anywhere you have an asynchronous function that takes a callback, you should modify that function to return a Promise*, and that's what I'm going to show you in the next lecture.
 
 > A *Promise* is an object that holds the eventual result of an *asynchronous* operation.
+
+## 7- Replacing Callbacks with Promises
