@@ -432,12 +432,21 @@ Let's say, during the execution of this *asynchronous* operation, something goes
 
 > As a best practice, it's better to pass an *Error* object instead of simple string like this *reject('error')*.
 
-So, we call *catch*, and as an argument, we pass a function, and that function takes *error* as a parameter. So, we can simply display the *error* message on the console. Each *Error* object that we have in *Javascript*, like this *new Error('message')* has a property, so the *error* message that we pass in the *Error* object will be stored in a property called *message*.
+So, we call *catch*, and as an argument, we pass a function, and that function takes *error* as a parameter. So, we can simply display the *error* message on the console.
 
 ```javascript
 p
 .then(result => console.log('Result', result))
 .catch(err => console.log('Error', err.message));
+```
+
+Each *Error* object that we have in *Javascript*, like this *new Error('message')* has a property, so the *error* message that we pass in the *Error* object will be stored in a property called *message*.
+
+```javascript
+setTimeout(() => {
+      // resolve(1);
+      reject(new Error('message'));
+   }, 2000);
 ```
 
 Now this time, when we run the application, we're going to get an *error* message on the console, because we're rejecting the *Promise*. So back in the terminal, let's run *node promise.js*. So look, instead of *Result 1*, we got this *error* message.
@@ -446,6 +455,6 @@ Now this time, when we run the application, we're going to get an *error* messag
 Error message
 ```
 
-So let's quickly recap, a *Promise* is an object that holds the eventual result of an *asynchronous* operation. Initially, it's in the pending state, when we create the *Promise*. At a point, it kicks up an *asynchronous* operation, that operation can complete successfully or it can fail. If it completes successfully, we say the *Promise* is *resolved* or *fulfilled*
+So let's quickly recap, a *Promise* is an object that holds the eventual result of an *asynchronous* operation. Initially, it's in the pending state, when we create the *Promise*. At a point, it kicks off an *asynchronous* operation, that operation can complete successfully or it can fail. If it completes successfully, we say the *Promise* is *resolved* or *fulfilled*.
 
 > A *Promise* is an object that holds the eventual result of an *asynchronous* operation.
