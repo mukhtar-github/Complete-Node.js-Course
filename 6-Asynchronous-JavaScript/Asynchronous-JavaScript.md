@@ -486,8 +486,6 @@ We call *then*, to get the *result*, and *catch* to get the *error*. Now here's 
 
 ## 7- Replacing Callbacks with Promises
 
-Alright, this is the code that we wrote earlier,
-
 ```javascript
 console.log('Before');
 getUser(1, (user) => {
@@ -506,3 +504,5 @@ function getUser(id, callback) {
     }, 2000);
 }
 ```
+
+Alright, this is the code that we wrote earlier, that has the *callback hell* proplem
