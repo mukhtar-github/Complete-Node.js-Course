@@ -485,3 +485,24 @@ We call *then*, to get the *result*, and *catch* to get the *error*. Now here's 
 > A *Promise* is an object that holds the eventual result of an *asynchronous* operation.
 
 ## 7- Replacing Callbacks with Promises
+
+Alright, this is the code that we wrote earlier,
+
+```javascript
+console.log('Before');
+getUser(1, (user) => {
+    getRepositories(user.gitHubUsername, (repos) => {
+        getCommits(repo[0], (commits) => {
+            console.log(commits);
+        })
+    })
+});
+console.log('After');
+
+function getUser(id, callback) {
+    setTimeout(() => {
+        console.log('Reading a user from a database...');
+        callback({ id: id, gitHubUsername: 'mukhtar' });
+    }, 2000);
+}
+```
