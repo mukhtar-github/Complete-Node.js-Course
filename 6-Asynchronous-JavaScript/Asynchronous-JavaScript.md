@@ -507,4 +507,4 @@ function getUser(id, callback) {
 
 Alright, this is the code that we wrote earlier, that has the *callback hell* proplem. If you want to code along with me, I've attached this code to this lecture, so download it and you can code along with me. Now, in order to resolve the *callback hell* proplem, we should modify our *asynchronous* function to return a *Promise*.
 
-So, I'm going to modify one of these functions and then I'm going to leave the other two for you as an exercise. So the *getUser*
+So, I'm going to modify one of these functions and then I'm going to leave the other two for you as an exercise. So, the *getUser* function should *return* a *Promise*. We *return* a *new* *Promise*
