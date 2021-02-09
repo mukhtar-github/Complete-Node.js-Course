@@ -29,7 +29,7 @@ function getUser(id) {
     // Kick off some async work
     setTimeout(() => {
       console.log('Reading a user from a database...');
-      callback({ id: id, gitHubUsername: 'mosh' });
+      resolve({ id: id, gitHubUsername: 'mosh' });
     }, 2000);
   });
    
