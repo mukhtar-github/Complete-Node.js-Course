@@ -24,7 +24,7 @@ getUser(1, (user) => {
 });
 console.log('After');
 
-function getUser(id, callback) {
+function getUser(id) {
   return new Promise((resolve, reject) => {
     // Kick off some async work
     setTimeout(() => {
