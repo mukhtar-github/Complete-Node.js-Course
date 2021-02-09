@@ -507,8 +507,8 @@ function getUser(id, callback) {
 
 Alright, this is the code that we wrote earlier, that has the *callback hell* proplem. If you want to code along with me, I've attached this code to this lecture, so download it and you can code along with me. Now, in order to resolve the *callback hell* proplem, we should modify our *asynchronous* function to return a *Promise*.
 
-So, I'm going to modify one of these functions and then I'm going to leave the other two for you as an exercise. So, the *getUser* function should *return* a *Promise*. We *return* a *new* *Promise*, in the last lecture, you learned that this *Promise* constructor function takes an argument, which is basically a function with two parameters, *resolve* and *reject*. And we use these parameters to signal the result of an *asynchronous* operation or an *error*.
+So, I'm going to modify one of these functions and then I'm going to leave the other two for you as an exercise. So, the *getUser* function should *return* a *Promise*. We *return* a *new Promise*, in the last lecture, you learned that this *Promise* constructor function takes an argument, which is basically a function with two parameters, *resolve* and *reject*. And we use these parameters to signal the result of an *asynchronous* operation or an *error*.
 
-So, we add a code block to our *callback* function, and I earlier told you that we *kickoff* some *async* work inside the code block.
+So, we add a code block to our *callback* function, and I earlier told you that we *kickoff some async work* inside the code block. In this case, our *async work* is *setting the timer*. So, we're going to cut the *SetTimeout* code and paste it inside of the *Promise* constructor function.
 
 > A *Promise* constructor function takes an argument, which is basically a function, a *callback* used to initialize the *Promise*. This *callback* is passed two arguments: a *resolve callback* used to resolve the promise with a value or the result of another promise, and a *reject callback* used to reject the promise with a provided reason or error.

@@ -25,13 +25,14 @@ getUser(1, (user) => {
 console.log('After');
 
 function getUser(id, callback) {
-   return new Promise((resolve, reject) => {
-      
-   });
-  setTimeout(() => {
-    console.log('Reading a user from a database...');
-    callback({ id: id, gitHubUsername: 'mosh' });
-  }, 2000);
+  return new Promise((resolve, reject) => {
+    // Kick off some async work
+    setTimeout(() => {
+      console.log('Reading a user from a database...');
+      callback({ id: id, gitHubUsername: 'mosh' });
+    }, 2000);
+  });
+   
 }
 
 function getRepositories(username, callback) {
