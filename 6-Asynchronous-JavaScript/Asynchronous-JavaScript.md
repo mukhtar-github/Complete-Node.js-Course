@@ -511,6 +511,23 @@ So, I'm going to modify one of these functions and then I'm going to leave the o
 
 So, we add a code block to our *callback* function, and I earlier told you that we *kickoff some async work* inside the code block. In this case, our *async work* is *setting the timer*. So, we're going to cut the *SetTimeout* code and paste it inside of the *Promise* constructor function. Now finally, we want to get rid of the *callback* parameter of the *getUser* function. So we delete that, and in order to return the *{ id: id, gitHubUsername: 'mosh' }* *user* object to the consumer of the *Promise*, we're going to call the *resolve* function instead of the *callback* function. So, we call *resolve* and give it the *user* object, as simple as that.
 
+```javascript
+function getUser(id) {
+  return new Promise((resolve, reject) => {
+    // Kick off some async work
+    setTimeout(() => {
+      console.log('Reading a user from a database...');
+      resolve({ id: id, gitHubUsername: 'mosh' });
+    }, 2000);
+  });
+   
+}
+```
+
 So, we modified our *getUser* function, to return a *Promise* and remove the *callback* parameter of the *getUser* function. Now, I want you to use the same technique and modify the remaining two other functions, *getRepositories* and *getCommits*
+
+So, in both the *getRepositories* and *getCommits* functions, we're going to modify these functions to return a *Promise*, and remove the *callback* parameters of both functions.
+
+Now, nonne of our *asynchronous* functions here take a *callback*
 
 > A *Promise* constructor function takes an argument, which is basically a function, a *callback* used to initialize the *Promise*. This *callback* is passed two arguments: a *resolve callback* used to resolve the promise with a value or the result of another promise, and a *reject callback* used to reject the promise with a provided reason or error.
