@@ -526,8 +526,22 @@ function getUser(id) {
 
 So, we modified our *getUser* function, to return a *Promise* and remove the *callback* parameter of the *getUser* function. Now, I want you to use the same technique and modify the remaining two other functions, *getRepositories* and *getCommits*
 
-So, in both the *getRepositories* and *getCommits* functions, we're going to modify these functions to return a *Promise*, and remove the *callback* parameters of both functions.
+So, in both the *getRepositories* and *getCommits* functions, we're going to modify the functions to return a *Promise*, and remove the *callback* parameters of both functions.
 
-Now, nonne of our *asynchronous* functions here take a *callback*
+Now, none of our *asynchronous* functions here take a *callback*. Instead they return a *Promise*. In the next lecture, I'm going to show you how to consume those *Promises*.
 
 > A *Promise* constructor function takes an argument, which is basically a function, a *callback* used to initialize the *Promise*. This *callback* is passed two arguments: a *resolve callback* used to resolve the promise with a value or the result of another promise, and a *reject callback* used to reject the promise with a provided reason or error.
+
+## 8- Consuming Promises
+
+```javascript
+getUser(1, (user) => {
+  getRepositories(user.gitHubUsername, (repos) => {
+    getCommits(repos[0], (commits) => {
+      console.log(commits);
+    })
+  })
+});
+```
+
+So, we have this above *asynchronous* code, that uses the *callback* approach. In this lecture I'm going to show you how to rewrite that using *Promises*. So, I'm going to put this side by side so you can see the difference
