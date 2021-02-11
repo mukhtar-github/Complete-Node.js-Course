@@ -15,19 +15,19 @@ p
 // Replacing Callbacks with Promises
 
 console.log('Before');
-getUser(1, (user) => {
-  getRepositories(user.gitHubUsername, (repos) => {
-    getCommits(repos[0], (commits) => {
-      console.log(commits);
-    })
-  })
-});
+// getUser(1, (user) => {
+//   getRepositories(user.gitHubUsername, (repos) => {
+//     getCommits(repos[0], (commits) => {
+//       console.log(commits);
+//     })
+//   })
+// });
 
 const p = getUser(1);
 
 p
-.then(user => console.log('User', user))
-.catch(err => console.log('Error', err.message));
+.then(user => console.log('User', user));
+//.catch(err => console.log('Error', err.message));
 
 
 console.log('After');

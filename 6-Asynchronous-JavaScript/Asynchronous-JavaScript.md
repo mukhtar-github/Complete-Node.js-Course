@@ -552,4 +552,4 @@ So, we can call *then*, at this point, what is the result of our *asynchronous* 
 resolve({ id: id, gitHubUsername: 'mosh' });
 ```
 
-So, as an argument to *then*, we pass a function, that function takes a *user* as a parameter. Now, we can do something with that *user* parameter, we can simply display it in the console
+So, as an argument to *then*, we pass a function, that function takes a *user* as a parameter. Now, we can do something with that *user* parameter, we can simply display it in the console. Let's run the application up to this point and make sure everthing works. So, I'm going to temporarily comment-out the *asynchronous* code above, that uses the *callback* approach. Back in the terminal, let's run *node promise.js*
