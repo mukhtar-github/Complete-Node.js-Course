@@ -544,4 +544,4 @@ getUser(1, (user) => {
 });
 ```
 
-So, we have this *asynchronous* code above, that uses the *callback* approach. In this lecture, I'm going to show you how to rewrite that using *Promises*. So, I'm going to put this side by side so you can see the difference. We call *getUser* and give it *1* as an argument, now this *getUser* returns a *Promise*. So, we can get the *Promise* and store it in a constant *p*.
+So, we have this *asynchronous* code above, that uses the *callback* approach. In this lecture, I'm going to show you how to rewrite that using *Promises*. So, I'm going to put this side by side so you can see the difference. We call *getUser* and give it *1* as an argument, now this *getUser* returns a *Promise*. So, we can get the *Promise* and store it in a constant *p*. In the last lecture, you learned that every *Promise* object has two methods, *catch* and *then*. We use *catch* to catch *errors* and *then* to get the result of an *asynchronous* operation.

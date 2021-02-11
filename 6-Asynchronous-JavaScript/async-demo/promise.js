@@ -25,6 +25,10 @@ getUser(1, (user) => {
 
 const p = getUser(1);
 
+p
+.then(result => console.log('Result', result))
+.catch(err => console.log('Error', err.message));
+
 
 console.log('After');
 
