@@ -22,6 +22,10 @@ getUser(1, (user) => {
     })
   })
 });
+
+const p = getUser(1);
+
+
 console.log('After');
 
 function getUser(id) {
