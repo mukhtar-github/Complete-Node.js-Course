@@ -26,7 +26,7 @@ getUser(1, (user) => {
 const p = getUser(1);
 
 p
-.then(result => console.log('Result', result))
+.then(user => console.log('User', user))
 .catch(err => console.log('Error', err.message));
 
 

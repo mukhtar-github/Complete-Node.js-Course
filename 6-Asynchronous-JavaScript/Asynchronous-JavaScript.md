@@ -545,3 +545,11 @@ getUser(1, (user) => {
 ```
 
 So, we have this *asynchronous* code above, that uses the *callback* approach. In this lecture, I'm going to show you how to rewrite that using *Promises*. So, I'm going to put this side by side so you can see the difference. We call *getUser* and give it *1* as an argument, now this *getUser* returns a *Promise*. So, we can get the *Promise* and store it in a constant *p*. In the last lecture, you learned that every *Promise* object has two methods, *catch* and *then*. We use *catch* to catch *errors* and *then* to get the result of an *asynchronous* operation.
+
+So, we can call *then*, at this point, what is the result of our *asynchronous* operation? The result is a *user* object. Because in the *getUser* function, we are *resolving* the *Promise* with a *user* object.
+
+```javascript
+resolve({ id: id, gitHubUsername: 'mosh' });
+```
+
+So, as an argument to *then*, we pass a function, that function takes a *user* as a parameter. Now, we can do something with that *user* parameter, we can simply display it in the console
