@@ -23,10 +23,8 @@ console.log('Before');
 //   })
 // });
 
-const p = getUser(1);
+getUser(1).then(user => console.log('User', user));
 
-p
-.then(user => console.log('User', user));
 //.catch(err => console.log('Error', err.message));
 
 
