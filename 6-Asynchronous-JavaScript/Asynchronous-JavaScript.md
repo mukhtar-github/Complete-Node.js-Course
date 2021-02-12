@@ -560,8 +560,10 @@ Reading a user from a database...
 User { id: 1, gitHubUsername: 'mosh' }
 ```
 
-Now, we can simply the code, we can get rid of the constant, and chain *then* to what we get from *getUser* function. So, we delete *const p*, and chain *then* to the result from the *getUser* function.
+Now, we can simplify the code, we can get rid of the constant *p*, and chain *then* to what we get from *getUser* function. So, we delete *const p*, and chain *then* to the result from the *getUser* function. So *getUser*, *then*, we have a *user* object and we can display it on the console.
 
 ```javascript
 getUser(1).then(user => console.log('User', user));
 ```
+
+Now, in our previous implimentation, once we got a *user*, then we got a repositories for that *user*. So let's modify the code. Instaed of calling *console.log*, we're going to call *getRepositories*, and as an argument, we pass *user.gitHubUsername*,
