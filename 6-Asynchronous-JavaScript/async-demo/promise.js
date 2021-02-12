@@ -23,7 +23,9 @@ console.log('Before');
 //   })
 // });
 
-getUser(1).then(user => getRepositories(user.gitHubUsername));
+getUser(1)
+.then(user => getRepositories(user.gitHubUsername))
+.then(repos )
 
 //.catch(err => console.log('Error', err.message));
 
