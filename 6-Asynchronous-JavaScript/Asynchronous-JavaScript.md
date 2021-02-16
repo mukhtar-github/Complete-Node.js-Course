@@ -592,4 +592,12 @@ We have *Before* and *After*, two seconds later we read the user from database, 
 
 Now, let's look at the two different implementations. Let's remove the comment in the first implementation. So, in the first implementation, we use *callacks*, and that's why we ended up with the nested structure, the *callback hell* proplem. In the second implementation, we use *Promises* and we got this flat structure. So this is the beauty of using *Promises*. Because *Promises* expose *then* method, we can chain them to implement a complex *asynchronous operation*. But wait a second, we're not done yet, we can take this to the next level. Later in this section, I'm going to show you how to make this code even simpler.
 
-Now finally, before we finish this lecture, as a best practice, when ever we're working with *Promises*, we should make sure to *catch* any errors. So finally, at the end of our code, we call *catch*
+Now finally, before we finish this lecture, as a best practice, when ever we're working with *Promises*, we should make sure to *catch* any errors. So finally, at the end of our code, we call *catch*, get an *error*, and for now just display that *error* on the console. So *Error*, we display *err.message*.
+
+```javascript
+catch(err => console.log('Error', err.message));
+```
+
+Now, with this implementation, if an *error* occurs during any of these *asynchronous operations*, the *error* function will be called. So, we have the single *error handler* to handle the *errors* that come from any of the *asynchronous operations*.
+
+## 9- Creating Settled Promises
