@@ -588,4 +588,6 @@ Calling GitHub API...
 Commits [ 'commit' ]
 ```
 
-We have *Before* and *After*, two seconds later we read the user from database, two seconds later, we call *GitHub API*, and call it again to get the list of *commits*, and here is the array of *commits*, beautiful. Now, look at these two different implementations
+We have *Before* and *After*, two seconds later we read the user from database, two seconds later, we call *GitHub API*, and call it again to get the list of *commits*, and here is the array of *commits*, beautiful.
+
+Now, let's look at the two different implementations. Let's remove the comment in the first implementation. So, in the first implementation, we use *callacks*, and that's why we ended up with the nested structure, the *callback hell* proplem. In the second implementation, we use *Promises* and we got this flat structure. So this is the beauty of using *Promises*. Because *Promises* expose *then* method, we can chain them to implement the complex
