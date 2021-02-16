@@ -590,4 +590,6 @@ Commits [ 'commit' ]
 
 We have *Before* and *After*, two seconds later we read the user from database, two seconds later, we call *GitHub API*, and call it again to get the list of *commits*, and here is the array of *commits*, beautiful.
 
-Now, let's look at the two different implementations. Let's remove the comment in the first implementation. So, in the first implementation, we use *callacks*, and that's why we ended up with the nested structure, the *callback hell* proplem. In the second implementation, we use *Promises* and we got this flat structure. So this is the beauty of using *Promises*. Because *Promises* expose *then* method, we can chain them to implement the complex
+Now, let's look at the two different implementations. Let's remove the comment in the first implementation. So, in the first implementation, we use *callacks*, and that's why we ended up with the nested structure, the *callback hell* proplem. In the second implementation, we use *Promises* and we got this flat structure. So this is the beauty of using *Promises*. Because *Promises* expose *then* method, we can chain them to implement a complex *asynchronous operation*. But wait a second, we're not done yet, we can take this to the next level. Later in this section, I'm going to show you how to make this code even simpler.
+
+Now finally, before we finish this lecture, as a best practice, when ever we're working with *Promises*, we should make sure to *catch* any errors. So finally, at the end of our code, we call *catch*

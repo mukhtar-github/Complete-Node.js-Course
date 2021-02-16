@@ -26,10 +26,8 @@ console.log('Before');
 getUser(1)
 .then(user => getRepositories(user.gitHubUsername))
 .then(repos => getCommits(repos[0]))
-.then(commits => console.log('Commits', commits));
-
-//.catch(err => console.log('Error', err.message));
-
+.then(commits => console.log('Commits', commits))
+.catch(err => console.log('Error', err.message));
 
 console.log('After');
 
@@ -39,6 +37,7 @@ function getUser(id) {
     setTimeout(() => {
       console.log('Reading a user from a database...');
       resolve({ id: id, gitHubUsername: 'mosh' });
+      reject(new Error('message'));
     }, 2000);
   });
    
@@ -50,6 +49,7 @@ function getRepositories(username) {
     setTimeout(() => {
       console.log('Calling GitHub API...');
       resolve(['repo1', 'repo2', 'repo3']);
+      reject(new Error('message'));
     }, 2000);
   });
 }
@@ -60,6 +60,7 @@ function getCommits(repo) {
     setTimeout(() => {
       console.log('Calling GitHub API...');
       resolve(['commit']);
+      reject(new Error('message'));
     }, 2000);
   });
 }
