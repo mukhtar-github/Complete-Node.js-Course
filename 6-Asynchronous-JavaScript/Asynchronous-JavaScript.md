@@ -624,9 +624,11 @@ const p = Promise.reject(new Error('reason for rejection...'));
 p.catch(error => console.log(error));
 ```
 
-Let's run this one more time. So *node promise-api.js*. So here is our *error*, this is the reason for rejection, and the *callstack* that comes with every *error* message in *JavaScript*.
+Let's run this one more time. So *node promise-api.js*. So here is our *error*, this is the reason for rejection, and the *callstack* that comes with every *error* object in *JavaScript*. So this is reason I said, as a best practice, when ever you want to reject a *Promise*, it's better to use a native *error* object, because it will include the callstack.
 
 ```javascript
 Error: reason for rejection...
     at Object.<anonymous> (...
 ```
+
+ If I pass a simple string like, *'reason for rejection...'*, we are not going to see that callstack. Let me show you. So let's run this one more time.

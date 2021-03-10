@@ -5,5 +5,12 @@
 
 //Rejected Promise for Error Objects
 
-const p = Promise.reject(new Error('reason for rejection...'));
-p.catch(error => console.log(error));
+// const p = Promise.reject(new Error('reason for rejection...'));
+// p.catch(error => {
+//     return console.log(error);
+// });
+
+const p = Promise.reject('reason for rejection...');
+p.catch(error => {
+    return console.log(error);
+});
