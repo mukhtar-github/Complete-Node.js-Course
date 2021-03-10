@@ -1,2 +1,2 @@
 
-Promise.resolve({ id: 1 });
+const p = Promise.resolve({ id: 1 });
