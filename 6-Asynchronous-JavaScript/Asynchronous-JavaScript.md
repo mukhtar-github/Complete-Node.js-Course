@@ -624,7 +624,7 @@ const p = Promise.reject(new Error('reason for rejection...'));
 p.catch(error => console.log(error));
 ```
 
-Let's run this one more time. So *node promise-api.js*. So
+Let's run this one more time. So *node promise-api.js*. So here is our *error*, this is the reason for rejection, and the *callstack* that comes with every *error* message in *JavaScript*.
 
 ```javascript
 Error: reason for rejection...
