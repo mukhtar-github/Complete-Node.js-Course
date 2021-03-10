@@ -602,13 +602,31 @@ Now, with this implementation, if an *error* occurs during any of these *asynchr
 
 ## 9- Creating Settled Promises
 
-So you have seen a taste of *Promises* throughout this section. In this lecture, we're going to explore the *API* of *Promise* object in *JavaScript* in more detail. So, in our project, let's create a new file, called *promise-api.js*, again this is going to be another playground file.Sometimes you want to create a *Promise* that is already resolved. This is particularly useful when writing unit tests. So you want to simulate a scenario where an *asynchronous* operation like calling a web service competes successfully.
+So you have seen a taste of *Promises* throughout this section. In this lecture, we're going to explore the *API* of *Promise* object in *JavaScript* in more detail. So, in our project, let's create a new file, called *promise-api.js*, again this is going to be another playground file. Sometimes you want to create a *Promise* that is already resolved. This is particularly useful when writing unit tests. So you want to simulate a scenario where an *asynchronous* operation like calling a web service competes successfully.
 
-In your unit test, you want to create a *Promise* that is already resolved. So, if that's what you need, you can call *Promise*, this is the *Promise* class in *JavaScript*, it has a static method called *resolve*, and this will return a *Promise* that is already resolved. Now here we can optionaly pass a value like *1*, or, a user object, and we get the *Promise*, this *Promise* is already resolved. So, we can call *p.then*, get the result and display it on the console. Let's run this program
+In your unit test, you want to create a *Promise* that is already resolved. So, if that's what you need, you can call *Promise*, this is the *Promise* class in *JavaScript*, it has a static method called *resolve*, and this will return a *Promise* that is already resolved. Now here we can optionaly pass a value like *1*, or, a *user* object, and we get the *Promise*, this *Promise* is already resolved. So, we can call *p.then*, get the result and display it on the console. Let's run this program.
 
 ```javascript
 const p = Promise.resolve({ id: 1 });
 p.then(result => console.log(result));
 ```
 
- 
+So, back in the terminal, *node promise-api.js*. So, this is the *user* object that our *Promise* holds.
+
+```javascript
+{ id: 1 }
+```
+
+Now similarly, sometimes you want to create a *Promise* that is already rejected. So, if that's the case, instead of calling the *resolve* method, call *reject*. And here, you pass an *error* object. That is the meaning of rejection. Why something failed. So now that our *Promise* is rejected, we need to call *catch* to get the *error*. So, I'm going to rename the *result* to *error*.
+
+```javascript
+const p = Promise.reject(new Error('reason for rejection...'));
+p.catch(error => console.log(error));
+```
+
+Let's run this one more time. So *node promise-api.js*. So
+
+```javascript
+Error: reason for rejection...
+    at Object.<anonymous> (...
+```
