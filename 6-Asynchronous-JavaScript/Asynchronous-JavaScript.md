@@ -631,4 +631,5 @@ Error: reason for rejection...
     at Object.<anonymous> (...
 ```
 
- If I pass a simple string like, *'reason for rejection...'*, we are not going to see that callstack. Let me show you. So let's run this one more time.
+ If we pass a simple string like, *'reason for rejection...'*, we are not going to see that callstack. Let me show you. So let's run this one more time.
+ 
