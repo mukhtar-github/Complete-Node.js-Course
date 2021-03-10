@@ -601,3 +601,5 @@ catch(err => console.log('Error', err.message));
 Now, with this implementation, if an *error* occurs during any of these *asynchronous operations*, the *error* function will be called. So, we have the single *error handler* to handle the *errors* that come from any of the *asynchronous operations*.
 
 ## 9- Creating Settled Promises
+
+So you have seen a taste of *Promises* throughout this section. In this lecture, we're going to explore the *API* of *Promise* object in *JavaScript* in more detail. So, in our project, let's create a new file, called *promise-api.js*, again this is going to be another playground file.Sometimes you want to create a *Promise* that is already resolved. This is particularly useful when writing unit tests.
