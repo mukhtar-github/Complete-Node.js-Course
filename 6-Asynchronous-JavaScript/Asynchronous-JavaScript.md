@@ -611,7 +611,7 @@ const p = Promise.resolve({ id: 1 });
 p.then(result => console.log(result));
 ```
 
-So, back in the terminal, *node promise-api.js*. So, this is the *user* object that our *Promise* holds.
+So, back in the terminal, *node promise-api.js*. And this is the *user* object that our *Promise* holds.
 
 ```javascript
 { id: 1 }
@@ -624,12 +624,22 @@ const p = Promise.reject(new Error('reason for rejection...'));
 p.catch(error => console.log(error));
 ```
 
-Let's run this one more time. So *node promise-api.js*. So here is our *error*, this is the reason for rejection, and the *callstack* that comes with every *error* object in *JavaScript*. So this is reason I said, as a best practice, when ever you want to reject a *Promise*, it's better to use a native *error* object, because it will include the callstack.
+Let's run this one more time. So *node promise-api.js*. And here is our *error*, this is the reason for rejection, and the *callstack* that comes with every *error* object in *JavaScript*. So this is reason I said, as a best practice, when ever you want to reject a *Promise*, it's better to use a native *error* object, because it will include the callstack.
 
 ```javascript
 Error: reason for rejection...
     at Object.<anonymous> (...
 ```
 
- If we pass a simple string like, *'reason for rejection...'*, we are not going to see that callstack. Let me show you. So let's run this one more time.
- 
+ If we pass a simple string like, *'reason for rejection...'*, we are not going to see that callstack.
+
+```javascript
+const p = Promise.reject('reason for rejection...');
+p.catch(error => console.log(error));
+```
+
+Let me show you. So let's run this one more time. Look, we only get *'reason for rejection...'*, we don't have the callstack. So,when rejecting *Promises*, always use an *error* object.
+
+## 10- Running Promises in Parallel
+
+Now, sometimes you want to run a few *asynchronous* operations in parallel, and when they all complete, you want to do something after. For example, you may call
