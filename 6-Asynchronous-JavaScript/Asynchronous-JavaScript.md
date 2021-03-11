@@ -642,4 +642,4 @@ Let me show you. So let's run this one more time. Look, we only get *'reason for
 
 ## 10- Running Promises in Parallel
 
-Now, sometimes you want to run a few *asynchronous* operations in parallel, and when they all complete, you want to do something after. For example, you may call
+Now, sometimes you want to run a few *asynchronous* operations in parallel, and when they all complete, you want to do something after. For example, you may call different *API's*, like Facebook *API* and Twitter *API*, and the result
