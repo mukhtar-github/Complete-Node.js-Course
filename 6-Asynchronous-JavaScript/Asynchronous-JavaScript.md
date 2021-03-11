@@ -642,4 +642,15 @@ Let me show you. So let's run this one more time. Look, we only get *'reason for
 
 ## 10- Running Promises in Parallel
 
-Now, sometimes you want to run a few *asynchronous* operations in parallel, and when they all complete, you want to do something after. For example, you may call different *API's*, like Facebook *API* and Twitter *API*, and the result
+Now, sometimes you want to run a few *asynchronous* operations in parallel, and when they all complete, you want to do something after. For example, you may call different *API's*, like Facebook *API* and Twitter *API*, and when the result of both these *asynchronous* operations are ready, then you want to return something to the client. So let's simulate this.
+
+So I'm going to create two *Promises* here, *promise 1*. In this particular implimentation, because we don't want to reject the promise, we're going to exclude the reject parameter. Because, result is the only parameter that we need in this code. So we call *setTimeout* to start an asynchronous operation, we give it a callback function, and a timeout value, 2-seconds. So, let's do a simple *console.log* of *'Async operation 1...'* And we're going to resolve the *Promise* with the value f one. So this is our first *Promise*.
+
+```javascript
+const p1 = new Promise((resolve) => {
+   setTimeout(() => {
+       console.log('Async operation 1...');
+       resolve(1);
+   }, 2000);
+});
+```
