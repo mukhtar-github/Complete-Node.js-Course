@@ -681,4 +681,4 @@ Async operation 2...
 Result [ 1, 2 ]
 ```
 
-So, a few things I need to clarify here, first of all, here we don't have real concurrency, we don't have multi threading, we're still dealing with one thread, but that single thread is kicking off multiple asynchronous operations almost at the same time.
+So, a few things I need to clarify here, first of all, here we don't have real concurrency, we don't have multi threading, we're still dealing with one thread, but that single thread is kicking off multiple asynchronous operations almost at the same time, it's not exactly at the same time, first it starts this *Async operation 1...*, the thread is released, so, immediately after it starts
