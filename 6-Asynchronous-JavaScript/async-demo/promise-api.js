@@ -31,3 +31,4 @@ const p2 = new Promise((resolve) => {
  });
 
  Promise.all([p1, p2])
+ .then(result => console.log('Result', result));
