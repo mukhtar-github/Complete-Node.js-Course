@@ -29,3 +29,5 @@ const p2 = new Promise((resolve) => {
         resolve(2);
     }, 2000);
  });
+
+ Promise.all([p1, p2])

@@ -665,3 +665,5 @@ const p2 = new Promise((resolve) => {
     }, 2000);
  });
 ```
+
+Now, we want to kick off both these asynchronous operations, and when they both complete, we want to do something else after. So, we call *Promise.all*. Again this is another method that is available on the *Promise* class instead of a *Promise* object. We give it an array of *Promises*. So I give it an array with *p1* & *p2*. And tis method will return will return a new *Promise* that will be resolved when all the *Promises* in the array are resolved. So, we can get that *Promise* and call 
