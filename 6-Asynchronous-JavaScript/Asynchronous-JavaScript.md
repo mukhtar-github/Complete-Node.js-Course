@@ -672,3 +672,13 @@ Now, we want to kick off both these asynchronous operations, and when they both 
 Promise.all([p1, p2])
  .then(result => console.log('Result', result));
 ```
+
+Let's see what happens when we run the application. So, 2-seconds delay, then both these asynchronous operations 1 and 2, they're kicked off almost at the same time, and then eventually we get the result, which is an array of two numbers.
+
+```javascript
+Async operation 1...
+Async operation 2...
+Result [ 1, 2 ]
+```
+
+So, a few things I need to clarify here, first of all, here we don't have real concurrency, we don't have multi threading, we're still dealing with one thread, but that single thread is kicking off multiple asynchronous operations almost at the same time.
