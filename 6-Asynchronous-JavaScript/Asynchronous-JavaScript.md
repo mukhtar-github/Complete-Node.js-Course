@@ -683,12 +683,12 @@ Result [ 1, 2 ]
 
 So, a few things I need to clarify here, first of all, here we don't have real concurrency, we don't have multi-threading, we're still dealing with one thread. But that single thread is kicking off multiple asynchronous operations almost at the same time. It's not exactly at the same time, first it starts the *Async operation 1...*, the thread is released, so immediately after, it starts the *Async operation 2...*. We are not waiting for the result of the first asynchronous operation to be ready in order to kick off the second asynchronous operation. This is the situation we had in our previous example, where we got the user object, then we got the repositories, then we got the commits for the first repository. So each asynchronous operation started after the previous asynchronous operation completed, that was different. In this implementation, both these asynchronous operations are started almost at the same time. So that's the first thing I wanted to clarify.
 
-The second thing is that when we get the result, the result will be available as an array. So in this case, each *Promise* is resolved with a value, in ths case, *1*, and *2*, so our result array would have two values, *1* and *2*. Now, what if one of these *Promises* fails? So let's change one of the *Promises* by adding the *reject* parameter. And instead of resolving it let's reject it with an *error*.
+The second thing is that when we get the result, the result will be available as an array. So in this case, each *Promise* is resolved with a value, in this case, *1*, and *2*, so our result array would have two values, *1* and *2*. Now, what if one of these *Promises* fails? So let's change the first *Promise* by adding the *reject* parameter. And instead of resolving it let's reject it with an *error*.
 
 ```javascript
-const p2 = new Promise((resolve, reject) => {
+const p1 = new Promise((resolve, reject) => {
     setTimeout(() => {
-        console.log('Async operation 2...');
+        console.log('Async operation 1...');
         reject(new Error('Because something failed.'));
     }, 2000);
  });
@@ -706,12 +706,12 @@ So, here is our *error*.
 
 ```javascript
 Async operation 1...
-Async operation 2...
 Error Because something failed.
+Async operation 2...
 ```
 
-What I want you to note here, is that if any of our *Promises* is rejected, that final *Promise* that is returned from *Promise.all* is considered rejected.
+What I want you to note here, is that if any of our *Promises* is rejected, one of the *Promises* that is returned from *Promise.all* is considered rejected.
 
-And one last thing before we finish this lecture. So, let's go back to our *Promise*, we don't need *reject* anymore, let's just *resolve* it with a value of *1*.
+And one last thing before we finish this lecture. So, let's go back to our first *Promise*, we don't need *reject* anymore, let's just *resolve* it with the value of *1*.
 
 Sometimes, you may want to kick off multiple asynchronous operations, but you want to do something as soon as one of these asynchronous operations completes. So, you don't want to wait for all of them to complete, you just want to do something as soon as the first operation completes. If that's the case, instead of *Promise.all*, you use *Promise.race*. So again, we pass
