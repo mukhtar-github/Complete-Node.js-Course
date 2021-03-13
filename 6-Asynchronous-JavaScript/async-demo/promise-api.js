@@ -16,17 +16,24 @@
 
 // Running Promises in Parallel
 
-const p1 = new Promise((resolve) => {
+// const p1 = new Promise((resolve) => {
+//     setTimeout(() => {
+//         console.log('Async operation 1...');
+//         resolve(1);
+//     }, 2000);
+//  });
+
+ const p1 = new Promise((resolve, reject) => {
     setTimeout(() => {
         console.log('Async operation 1...');
-        resolve(1);
+        reject(new Error('Because something failed.'));
     }, 2000);
  });
 
-const p2 = new Promise((resolve, reject) => {
+const p2 = new Promise((resolve) => {
     setTimeout(() => {
         console.log('Async operation 2...');
-        reject(new Error('Because something failed.'));
+        resolve(2);
     }, 2000);
  });
 
