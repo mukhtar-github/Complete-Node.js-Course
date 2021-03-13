@@ -24,7 +24,7 @@ const p1 = new Promise((resolve) => {
  });
 
  // If a Promise Fails we reject it with an error
- 
+
 //  const p1 = new Promise((resolve, reject) => {
 //     setTimeout(() => {
 //         console.log('Async operation 1...');
@@ -39,6 +39,14 @@ const p2 = new Promise((resolve) => {
     }, 2000);
  });
 
- Promise.all([p1, p2])
+// The Use of Promise.all
+
+//  Promise.all([p1, p2])
+//  .then(result => console.log('Result', result))
+//  .catch(err => console.log('Error', err.message));
+
+// The Use of Promise.race
+
+Promise.race([p1, p2])
  .then(result => console.log('Result', result))
  .catch(err => console.log('Error', err.message));
