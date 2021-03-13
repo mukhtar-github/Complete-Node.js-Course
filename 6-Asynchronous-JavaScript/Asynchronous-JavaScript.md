@@ -710,4 +710,8 @@ Async operation 2...
 Error Because something failed.
 ```
 
-What I want you to note here, is that if any of our *Promises* is rejected, that final *Promise* that is returned from *Promise.all* is considered rejected. And one last thing before we finish this lecture. So, let's go back to our first promise, we don't need *reject* anymore, let's just *resolve* it with a value of *1*.
+What I want you to note here, is that if any of our *Promises* is rejected, that final *Promise* that is returned from *Promise.all* is considered rejected.
+
+And one last thing before we finish this lecture. So, let's go back to our *Promise*, we don't need *reject* anymore, let's just *resolve* it with a value of *1*.
+
+Sometimes, you may want to kick off multiple asynchronous operations, but you want to do something as soon as one of these asynchronous operations completes. So, you don't want to wait for all of them to complete, you just want to do something as soon as the first operation completes. If that's the case, instead of *Promise.all*, you use *Promise.race*. So again, we pass
