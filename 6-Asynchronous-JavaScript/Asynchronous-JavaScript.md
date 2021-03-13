@@ -694,10 +694,20 @@ const p1 = new Promise((resolve, reject) => {
 });
 ```
 
-Now, we need to add *catch*, to get the *error* if one of our *Promises* is rejected. Let''s run the application
+Now, we need to add *catch*, to get the *error* if one of our *Promises* is rejected. Let's run the application.
 
 ```javascript
 Promise.all([p1, p2])
  .then(result => console.log('Result', result))
  .catch(err => console.log('Error', err.message));
 ```
+
+So, here is our *error*.
+
+```javascript
+Async operation 1...
+Async operation 2...
+Error Because something failed.
+```
+
+What I want you to note here, is that if any of our *Promises* is rejected, that final *Promise* that is returned from *Promise.all* is considered rejected. One last thing I want you to
