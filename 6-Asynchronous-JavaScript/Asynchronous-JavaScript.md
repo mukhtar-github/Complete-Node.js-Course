@@ -693,3 +693,11 @@ const p1 = new Promise((resolve, reject) => {
    }, 2000);
 });
 ```
+
+Now, we need to add *catch*, to get the *error* if one of our *Promises* is rejected. Let''s run the application
+
+```javascript
+Promise.all([p1, p2])
+ .then(result => console.log('Result', result))
+ .catch(err => console.log('Error', err.message));
+```
