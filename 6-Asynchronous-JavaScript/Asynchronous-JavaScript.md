@@ -714,4 +714,16 @@ What I want you to note here, is that if any of our *Promises* is rejected, one 
 
 And one last thing before we finish this lecture. So, let's go back to our first *Promise*, we don't need *reject* anymore, let's just *resolve* it with the value of *1*.
 
-Sometimes, you may want to kick off multiple asynchronous operations, but you want to do something as soon as one of these asynchronous operations completes. So, you don't want to wait for all of them to complete, you just want to do something as soon as the first operation completes. If that's the case, instead of *Promise.all*, you use *Promise.race*. So again, we pass an array of promises, as soon as one promise in this array is fulfilled, the promise that is returned from the *race* method will be considered fulfilled. So let's see what happens when we run the application
+Sometimes, you may want to kick off multiple asynchronous operations, but you want to do something as soon as one of these asynchronous operations completes. So, you don't want to wait for all of them to complete, you just want to do something as soon as the first operation completes. If that's the case, instead of *Promise.all*, you use *Promise.race*. So again, we pass an array of promises, as soon as one promise in this array is fulfilled, the promise that is returned from the *race* method will be considered fulfilled. So let's see what happens when we run the application.
+
+```javascript
+Async operation 1...
+Result 1
+Async operation 2...
+```
+
+So both our asynchronous operations were started, but our promise was resolved as soon as the first asynchronous operation completed. In this case the result we have is not an array, it's the value of the first fulfilled promise.
+
+## 11- Async and Await
+
+So back in our *index.js*, earlier you saw how we could rewrite the asynchronous code.
