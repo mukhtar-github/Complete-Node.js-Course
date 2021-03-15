@@ -726,4 +726,4 @@ So both our asynchronous operations were started, but our promise was resolved a
 
 ## 11- Async and Await
 
-So back in our *promise.js*, earlier you saw how we could rewrite the asynchronous code that used the callback based approach, we rewrote it using *Promises*. And then
+So back in our *promise.js*, earlier you saw how we could rewrite the asynchronous code that used the callback based approach, we rewrote it using *Promises*. And there I told you that we can make this c even simpler. So, now in JavaScript we have a new feature called *async and wait*.
