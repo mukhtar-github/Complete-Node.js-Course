@@ -15,6 +15,7 @@ p
 // Replacing Callbacks with Promises
 
 console.log('Before');
+// Callback-based approach
 // getUser(1, (user) => {
 //   getRepositories(user.gitHubUsername, (repos) => {
 //     getCommits(repos[0], (commits) => {
@@ -23,6 +24,7 @@ console.log('Before');
 //   })
 // });
 
+// Promise-based approach
 getUser(1)
 .then(user => getRepositories(user.gitHubUsername))
 .then(repos => getCommits(repos[0]))
