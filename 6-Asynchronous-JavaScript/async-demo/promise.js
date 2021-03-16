@@ -39,8 +39,7 @@ getUser(1)
 const user = await getUser(1);
 const repos = await getRepositories(user.gitHubUsername);
 const commits = await getCommits(repos[0]);
-.then(commits => console.log('Commits', commits))
-.catch(err => console.log('Error', err.message));
+console.log('Commits', commits);
 
 console.log('After');
 
