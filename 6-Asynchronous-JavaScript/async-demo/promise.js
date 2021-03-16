@@ -36,8 +36,8 @@ getUser(1)
 
 // async and wait approach
 
-const user = await getUser(1)
-.then(user => getRepositories(user.gitHubUsername))
+const user = await getUser(1);
+const repos = await getRepositories(user.gitHubUsername);
 .then(repos => getCommits(repos[0]))
 .then(commits => console.log('Commits', commits))
 .catch(err => console.log('Error', err.message));
