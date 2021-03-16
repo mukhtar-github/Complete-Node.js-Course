@@ -34,7 +34,13 @@ getUser(1)
 .then(commits => console.log('Commits', commits))
 .catch(err => console.log('Error', err.message));
 
-// async and wait
+// async and wait approach
+
+getUser(1)
+.then(user => getRepositories(user.gitHubUsername))
+.then(repos => getCommits(repos[0]))
+.then(commits => console.log('Commits', commits))
+.catch(err => console.log('Error', err.message));
 
 console.log('After');
 
