@@ -36,7 +36,7 @@ getUser(1)
 
 // async and wait approach
 
-getUser(1)
+const user = await getUser(1)
 .then(user => getRepositories(user.gitHubUsername))
 .then(repos => getCommits(repos[0]))
 .then(commits => console.log('Commits', commits))

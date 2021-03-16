@@ -726,4 +726,14 @@ So both our asynchronous operations were started, but our promise was resolved a
 
 ## 11- Async and Await
 
-So back in our *promise.js*, earlier you saw how we could rewrite the asynchronous code that used the callback based approach, we rewrote it using *Promises*. And there I told you that we can make this c even simpler. So, now in JavaScript we have a new feature called *async and wait*. If you are familiar with C#, there we also have the same feature *async and wait*, it's exactly the same thing. So *async and wait* helps you write asynchronous code like synchronous code. Let me show you what I meant by that. So,
+So back in our *promise.js*, earlier you saw how we could rewrite the asynchronous code that used the callback based approach, we rewrote it using *Promises*. And there I told you that we can make this c even simpler. So, now in JavaScript we have a new feature called *async and wait*. If you are familiar with C#, there we also have the same feature *async and wait*, it's exactly the same thing. So *async and wait* helps you write asynchronous code like synchronous code. Let me show you what I meant by that. So, I'm going to rewrite the few lines where we're using a promise, I'm going to rewrite these using *async and wait*.
+
+```javascript
+getUser(1)
+.then(user => getRepositories(user.gitHubUsername))
+.then(repos => getCommits(repos[0]))
+.then(commits => console.log('Commits', commits))
+.catch(err => console.log('Error', err.message));
+```
+
+So, we call *getUser(1)*, now this *getUser(1)* function returns a *Promise*. Now, anytime we're calling a function that returns a *Promise* we can *await* the result of that function, and then get the actual result just like calling asynchronous function. So, here we can get the result and store it in a constant called *user*
