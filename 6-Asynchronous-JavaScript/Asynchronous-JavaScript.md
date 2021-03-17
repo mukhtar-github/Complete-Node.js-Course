@@ -750,4 +750,16 @@ console.log('Commits', commits);
 
 So, we can see with this *await* operator, we can write asynchronous code that looks like synchronous code. This is much easier to read and understand than *Callbacks* or even *Promises*. We don't have to go through a chain of calls to the *then* method. So this is *await*. But where is *async*. Well, whenever you use the *await* operator in the function, you need to decorate that function with the *async* modifier. In this particular example, we have written this line *const user = await getUser(1);* in *promise.js* outside of the function. Now, this is the requirement by JavaScrpt engines that whenever yuo use *await*, you should have a function that is decorated with *async*, and you will find out why in a second.
 
-So, I'm going to define a function in our *async & await* code, let's call it *displayCommits*, because eventually after all these asynchronous operations, we're displaying the commits for this user. So, we're going to move all the *async & await* lines of code inside the *displayCommits* function. Now, you're using *await* inside of a function, so we should decorate that function with *async*, and finally, we call the function. Now, look at the return type of this function, it's returning a Promise of void. That means a Promise that once fulfilled doesn't result in a value.
+So, I'm going to define a function in our *async & await* code, let's call it *displayCommits*, because eventually after all these asynchronous operations, we're displaying the commits for this user. So, we're going to move all the *async & await* lines of code inside the *displayCommits* function. Now, you're using *await* inside of a function, so we should decorate that function with *async*, and finally, we call the function.
+
+```javascript
+async function displayCommits() {
+  const user = await getUser(1);
+  const repos = await getRepositories(user.gitHubUsername);
+  const commits = await getCommits(repos[0]);
+  console.log('Commits', commits);
+}
+displayCommits();
+```
+
+Now, look at the return type of this function, it's returning a Promise of void. That means a Promise that once fulfilled doesn't result in a value. It's void, so basically this is telling us that *async & await* are build on top of Promises, they are syntactical sugars in the language that allow us to write asynchronous code that looks synchronous. Internally, when the javascript engine executes this code, it's going to convert the code into something like this *.then(user => getRepositories(user.gitHubUsername))*, so, even though our code looks synchronous, it doesn't executes synchronously. In other words, when we're awaiting the result of this function, we are not really waiting or blocking in a synchronous fashion.

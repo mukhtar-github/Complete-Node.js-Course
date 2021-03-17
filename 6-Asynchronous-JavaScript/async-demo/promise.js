@@ -42,7 +42,6 @@ async function displayCommits() {
   const commits = await getCommits(repos[0]);
   console.log('Commits', commits);
 }
-
 displayCommits();
 
 
