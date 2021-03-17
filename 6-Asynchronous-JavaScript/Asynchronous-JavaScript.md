@@ -748,4 +748,4 @@ const commits = await getCommits(repos[0]);
 console.log('Commits', commits);
 ```
 
-So, we can see with this *await* operator, we can write asynchronous code, that looks like synchronous code. This is much easier to read and understand than *Callbacks* or even *Promises*. We don't have to go through a chain of calls to the *then* method. So this is *await*. But where is *async*. Well, whenever you use the *await* operator in the function, 
+So, we can see with this *await* operator, we can write asynchronous code, that looks like synchronous code. This is much easier to read and understand than *Callbacks* or even *Promises*. We don't have to go through a chain of calls to the *then* method. So this is *await*. But where is *async*. Well, whenever you use the *await* operator in the function,
