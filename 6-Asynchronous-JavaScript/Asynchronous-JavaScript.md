@@ -749,3 +749,5 @@ console.log('Commits', commits);
 ```
 
 So, we can see with this *await* operator, we can write asynchronous code that looks like synchronous code. This is much easier to read and understand than *Callbacks* or even *Promises*. We don't have to go through a chain of calls to the *then* method. So this is *await*. But where is *async*. Well, whenever you use the *await* operator in the function, you need to decorate that function with the *async* modifier. In this particular example, we have written this line *const user = await getUser(1);* in *promise.js* outside of the function. Now, this is the requirement by JavaScrpt engines that whenever yuo use *await*, you should have a function that is decorated with *async*, and you will find out why in a second.
+
+So, I'm going to define a function in our *async & await* code, let's call it *displayCommits*, because eventually after all these asynchronous operations, we're displaying the commits for this user. So, we're going to move all the *async & await* codes into the *displayCommits* function.
