@@ -777,4 +777,20 @@ Commits [ 'commit' ]
 
 So, we have *Before & After*, two seconds later, we *read something from a database...*, then we *call GitHub API...*, then again, and finally, we have the *[ 'commit' ]*.
 
-Okay, one last thing before we finish this lecture. In our promise base approach, we use this catch method *catch(err => console.log('Error', err.message))* to get any errors. When using *async & await*, we don't have this catch method. The awy we get the errors is using a *try catch* block. So in this function, we wrap our asynchronous code inside of a *try* block. And then we have the *catch* block that gets an error object. So, we *try* to execute our asynchronous code, and if anything goes wrong. Then the *catch* block is executed.
+Okay, one last thing before we finish this lecture. In our promise base approach, we use this catch method *catch(err => console.log('Error', err.message))* to get any errors. When using *async & await*, we don't have this catch method. The awy we get the errors is using a *try catch* block. So in this function, we wrap our asynchronous code inside of a *try* block. And then we have the *catch* block that gets an error object. So, we *try* to execute our asynchronous code, and if anything goes wrong. Then the *catch* block is executed. So inside the *catch* block we get an *error* object, and we can display the *Error* on the console.
+
+```javascript
+async function displayCommits() {
+  try {
+    const user = await getUser(1);
+    const repos = await getRepositories(user.gitHubUsername);
+    const commits = await getCommits(repos[0]);
+    console.log('Commits', commits);
+  }
+  catch (err) {
+    console.log('Error', err.message);
+  }
+}
+```
+
+So now let's simulate an *error*. So, back to our *getRepositories(username)* function. Inside the function, I'm going to *reject* the promise. So instead of *resolving* it,
