@@ -793,4 +793,16 @@ async function displayCommits() {
 }
 ```
 
-So now let's simulate an *error*. So, back to our *getRepositories(username)* function. Inside the function, I'm going to *reject* the promise. So instead of *resolving* it,
+So now let's simulate an *error*. So, back to our *getRepositories(username)* function. Inside the function, I'm going to *reject* the promise. So instead of *resolving* it, I'm going to *reject* with an *error*, saying *Could not get the repos.*. Okay, now back in the terminal, let's run this one more time.
+
+```javascript
+Before
+After
+Reading a user from a database...
+Calling GitHub API...
+Error Could not get the repos.
+```
+
+So, *Before & After*, two seconds later, we *read something from a database...*, then we *call GitHub API...*, but something failed, so we got this *Error Could not get the repos.* So when using *async & await*, you need to wrap your code inside of a *try catch* block.
+
+## 12- Exercise

@@ -70,7 +70,7 @@ function getRepositories(username) {
     setTimeout(() => {
       console.log('Calling GitHub API...');
       //resolve(['repo1', 'repo2', 'repo3']);
-      reject(new Error('message'));
+      reject(new Error('Could not get the repos.'));
     }, 2000);
   });
 }
