@@ -806,3 +806,5 @@ Error Could not get the repos.
 So, *Before & After*, two seconds later, we *read something from a database...*, then we *call GitHub API...*, but something failed, so we got this *Error Could not get the repos.* So when using *async & await*, you need to wrap your code inside of a *try catch* block.
 
 ## 12- Exercise
+
+Alright, now is time for an exercise.  So, download the file I've attached to this lecture, that's exercise
