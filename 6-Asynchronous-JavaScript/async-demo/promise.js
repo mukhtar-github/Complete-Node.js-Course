@@ -28,11 +28,11 @@ console.log('Before');
 
 // Promise-based approach
 
-getUser(1)
-.then(user => getRepositories(user.gitHubUsername))
-.then(repos => getCommits(repos[0]))
-.then(commits => console.log('Commits', commits))
-.catch(err => console.log('Error', err.message));
+// getUser(1)
+//   .then(user => getRepositories(user.gitHubUsername))
+//   .then(repos => getCommits(repos[0]))
+//   .then(commits => console.log('Commits', commits))
+//   .catch(err => console.log('Error', err.message));
 
 // async and wait approach
 
