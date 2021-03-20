@@ -807,4 +807,4 @@ So, *Before & After*, two seconds later, we *read something from a database...*,
 
 ## 12- Exercise
 
-Alright, now is time for an exercise.  So, download the file I've attached to this lecture, that's *exercise.js*. Let's see what happening here.
+Alright, now is time for an exercise.  So, download the file I've attached to this lecture, that's *exercise.js*. Let's see what happening inside the file. Inside the file, we have some code that is written based on callback based approach. So we have this function *getCustomer*, gets and *id*, and
