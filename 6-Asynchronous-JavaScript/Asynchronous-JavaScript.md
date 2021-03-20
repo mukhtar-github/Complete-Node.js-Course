@@ -807,4 +807,4 @@ So, *Before & After*, two seconds later, we *read something from a database...*,
 
 ## 12- Exercise
 
-Alright, now is time for an exercise.  So, download the file I've attached to this lecture, that's exercise
+Alright, now is time for an exercise.  So, download the file I've attached to this lecture, that's *exercise.js*. Let's see what happening here.
