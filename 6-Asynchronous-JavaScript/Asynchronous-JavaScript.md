@@ -807,4 +807,4 @@ So, *Before & After*, two seconds later, we *read something from a database...*,
 
 ## 12- Exercise
 
-Alright, now is time for an exercise.  So, download the file I've attached to this lecture, that's *exercise.js*. Let's see what happening inside the file. Inside the file, we have some code that is written based on callback based approach. So we have this function *getCustomer*, gets and *id*, and
+Alright, now is time for an exercise.  So, download the file I've attached to this lecture, that's *exercise.js*. Let's see what happening inside the file. Inside the file, we have some code that is written based on callback based approach. So we have this function *getCustomer*, gets and *id*, and in the callback function, we get a customer object. We do a simple *console.log*, now if the customer is *gold*, we're going to get top movies, and here have another callback function
