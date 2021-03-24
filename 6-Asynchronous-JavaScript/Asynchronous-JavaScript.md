@@ -726,7 +726,7 @@ So both our asynchronous operations were started, but our promise was resolved a
 
 ## 11- Async and Await
 
-So back in our *promise.js*, earlier you saw how we could rewrite the asynchronous code that used the callback based approach, we rewrote it using *Promises*. And there I told you that we can make this c even simpler. So, now in JavaScript we have a new feature called *async and wait*. If you are familiar with C#, there we also have the same feature *async and wait*, it's exactly the same thing. So *async and wait* helps you write asynchronous code like synchronous code. Let me show you what I meant by that. So, I'm going to rewrite the few lines where we're using a promise, I'm going to rewrite these using *async and wait*.
+So back in our *promise.js*, earlier you saw how we could rewrite the asynchronous code that used the callback based approach, we rewrote it using *Promises*. And there I told you that we can make this code even simpler. So, now in JavaScript we have a new feature called *async and wait*. If you are familiar with C#, there we also have the same feature *async and wait*, it's exactly the same thing. So *async and wait* helps you write asynchronous code like synchronous code. Let me show you what I meant by that. So, I'm going to rewrite the few lines where we're using a promise, I'm going to rewrite these using *async and wait*.
 
 ```javascript
 getUser(1)
@@ -738,7 +738,7 @@ getUser(1)
 
 So, we call *getUser(1)*, now this *getUser(1)* function returns a *Promise*. Now, anytime we're calling a function that returns a *Promise* we can *await* the result of that function, and then get the actual result just like calling asynchronous function. So, here we can get the result and store it in a constant called *user* object. Similarly, now that we have a *user* object, we can call *getRepositories*, to get the repositories for this user. So, we pass *user.gitHubUsername*.
 
-Now again this function returns a *Promise*, so we can *await* the result and then get the repositories and store them. And finally, now that we the repositories, we can call *getCommits*, we pass the first repository *repos[0]*, and again because this function returns a *Promise*, we can *await* it and get the *commits* and store it in a constant.
+Now again this function returns a *Promise*, so we can *await* the result and then get the repositories and store them. And finally, now that we have the repositories, we can call *getCommits*, we pass the first repository *repos[0]*, and again because this function returns a *Promise*, we can *await* it and get the *commits* and store it in a constant.
 Finally,we can do a console.log of commits.
 
 ```javascript
@@ -748,7 +748,7 @@ const commits = await getCommits(repos[0]);
 console.log('Commits', commits);
 ```
 
-So, we can see with this *await* operator, we can write asynchronous code that looks like synchronous code. This is much easier to read and understand than *Callbacks* or even *Promises*. We don't have to go through a chain of calls to the *then* method. So this is *await*. But where is *async*. Well, whenever you use the *await* operator in the function, you need to decorate that function with the *async* modifier. In this particular example, we have written this line *const user = await getUser(1);* in *promise.js* outside of the function. Now, this is the requirement by JavaScrpt engines that whenever yuo use *await*, you should have a function that is decorated with *async*, and you will find out why in a second.
+So, we can see with this *await* operator, we can write asynchronous code that looks like synchronous code. This is much easier to read and understand than *Callbacks* or even *Promises*. We don't have to go through a chain of calls to the *then* method. So this is *await*. But where is *async*. Well, whenever you use the *await* operator in the function, you need to decorate that function with the *async* modifier. In this particular example, we have written this line *const user = await getUser(1);* in *promise.js* outside of the function. Now, this is the requirement by JavaScrpt engines that whenever you use *await*, you should have a function that is decorated with *async*, and you will find out why in a second.
 
 So, I'm going to define a function in our *async & await* code, let's call it *displayCommits*, because eventually after all these asynchronous operations, we're displaying the commits for this user. So, we're going to move all the *async & await* lines of code inside the *displayCommits* function. Now, you're using *await* inside of a function, so we should decorate that function with *async*, and finally, we call the function.
 
