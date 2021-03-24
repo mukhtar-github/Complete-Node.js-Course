@@ -21,8 +21,16 @@
 // async and wait approach
 
 async function notifyCustomer() {
-    const customer = await getCustomer(1);
+  const customer = await getCustomer(1);
+  console.log('Customer: ', customer);
+  if (customer.isGold) {
+    const movies = await getTopMovies();
+    console.log('Top movies: ', movies);
+    await sendEmail(customer.email, movies);
+    console.log('Email sent...');
+  }
 }
+notifyCustomer();
 
 function getCustomer(id, callback) {
   setTimeout(() => {
