@@ -807,7 +807,23 @@ So, *Before & After*, two seconds later, we *read something from a database...*,
 
 ## 12- Exercise
 
-Alright, now is time for an exercise.  So, download the file I've attached to this lecture, that's *exercise.js*. Let's see what happening inside the file. Inside the file, we have some code that is written based on callback based approach. So we have this function *getCustomer*, gets and *id*, and in the callback function, we get a customer object. We do a simple *console.log*, now if the customer is *gold*, we're going to get top movies, and here have another callback function, the argument here is the list of top movies. At this point, we do another console.log. And then finally we send an email to this customer with the list of top movies. And when we're done here we have another callback function, in this function we have a simple console.log statement. So let's run this application and see what happens. So *node exercise.js*.
+Alright, now is time for an exercise.  So, download the file I've attached to this lecture, that's *exercise.js*. Let's see what happening inside the file. Inside the file, we have some code that is written based on callback based approach. So we have this function *getCustomer*, gets and *id*, and in the callback function, we get a customer object. We do a simple *console.log*, now if the customer is *gold*, we're going to get top movies, and here have another callback function, the argument here is the list of top movies. At this point, we do another console.log. And then finally we send an email to this customer with the list of top movies. And when we're done here we have another callback function, in this function we have a simple console.log statement.
+
+```javascript
+getCustomer(1, (customer) => {
+  console.log('Customer: ', customer);
+  if (customer.isGold) {
+    getTopMovies((movies) => {
+      console.log('Top movies: ', movies);
+      sendEmail(customer.email, movies, () => {
+        console.log('Email sent...')
+      });
+    });
+  }
+});
+```
+
+So let's run this application and see what happens. So *node exercise.js*.
 
 ```javascript
 Customer:  { id: 1, name: 'Mosh Hamedani', isGold: true, email: 'email' }
@@ -815,5 +831,4 @@ Top movies:  [ 'movie1', 'movie2' ]
 Email sent...
 ```
 
-So, it takes about 4 seconds to get a customer, I changed the timeout so you can see more clearly. Here's our customer object, then we get the top movies, and finally, we send an email to this customer with the top movies.
-So here's what I want to do. I want you to rewrite this code using *async & await*.
+So, it takes about 4 seconds to get a customer, I changed the timeout so you can see more clearly. Here's our customer object, then we get the top movies, and finally, we send an email to this customer with the top movies. So here's what I want to do. I want you to rewrite this code using *async & await*. So, do the exercise and when you're done
