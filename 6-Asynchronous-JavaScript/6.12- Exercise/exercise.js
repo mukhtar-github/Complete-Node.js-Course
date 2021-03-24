@@ -38,7 +38,7 @@ notifyCustomer();
 function getCustomer(id) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      callback({ 
+      resolve({ 
         id: 1, 
         name: 'Mosh Hamedani', 
         isGold: true, 
@@ -51,7 +51,7 @@ function getCustomer(id) {
 function getTopMovies() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      callback(['movie1', 'movie2']);
+      resolve(['movie1', 'movie2']);
     }, 4000);
   });
 }
@@ -59,7 +59,7 @@ function getTopMovies() {
 function sendEmail(email, movies) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      callback();
+      resolve();
     }, 4000);
   });
 }
