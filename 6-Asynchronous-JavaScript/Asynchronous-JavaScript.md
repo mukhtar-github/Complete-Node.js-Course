@@ -861,3 +861,5 @@ function getTopMovies() {
   });
 }
 ```
+
+And one last time. For *sendEmail(email, movies, callback)* function, again we remove the *callback*,
