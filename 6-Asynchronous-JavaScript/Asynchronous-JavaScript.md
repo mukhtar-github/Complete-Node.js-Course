@@ -831,4 +831,6 @@ Top movies:  [ 'movie1', 'movie2' ]
 Email sent...
 ```
 
-So, it takes about 4 seconds to get a customer, I changed the timeout so you can see more clearly. Here's our customer object, then we get the top movies, and finally, we send an email to this customer with the top movies. So here's what I want to do. I want you to rewrite this code using *async & await*. So, do the exercise and when you're done
+So, it takes about 4 seconds to get a customer, I changed the timeout so you can see more clearly. Here's our customer object, then we get the top movies, and finally, we send an email to this customer with the top movies. So here's what I want to do. I want you to rewrite this code using *async & await*. So do the exercise.
+
+Alright, in order to use as *async & await*, we need to modify our function here like *getCustomer(id, callback)*, *getTopMovies(callback)*, and *sendEmail(email, movies, callback)* to return a *Promise*. Once a function returns a *Promise*, then we can *await* it. So, starting with the *getCustomer(id, callback)* function, first I'm going to remove the *callback*, then I'm going to returns a *new Promise*
