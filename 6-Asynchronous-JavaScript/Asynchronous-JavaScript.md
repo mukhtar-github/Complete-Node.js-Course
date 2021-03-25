@@ -833,6 +833,21 @@ Email sent...
 
 So, it takes about 4 seconds to get a customer, I changed the timeout so you can see more clearly. Here's our customer object, then we get the top movies, and finally, we send an email to this customer with the top movies. So here's what I want to do. I want you to rewrite this code using *async & await*. So do the exercise.
 
-Alright, in order to use as *async & await*, we need to modify our functions like *getCustomer(id, callback)*, *getTopMovies(callback)*, and *sendEmail(email, movies, callback)* to return a *Promise*. Once a function returns a *Promise*, then we can *await* it. So, starting with the *getCustomer(id, callback)* function, first I'm going to remove the *callback*, then I'm going to returns a *new Promise*, we pass this *(resolve, reject) => {}* callback function which we call *executor*. So, this function that has two arguments *resolve* and *reject*, we call it *executor*.
+Alright, in order to use as *async & await*, we need to modify our functions like *getCustomer(id, callback)*, *getTopMovies(callback)*, and *sendEmail(email, movies, callback)* to return a *Promise*. Once a function returns a *Promise*, then we can *await* it. So, starting with the *getCustomer(id, callback)* function, first I'm going to remove the *callback*, then I'm going to returns a *new Promise*, we pass this *(resolve, reject) => {}* callback function which we call *executor*. So, this function that has two arguments *resolve* and *reject*, we call it *executor*. Now, in this *Promise*, we're going to add our *async* code, *setTimeout*, and finally instead of calling the *callback* function, we're going to call *resolve*. Very simple.
 
-Now, in this *Promise*, we're going to add our *async* code, *setTimeout*, and finally instead of calling
+```javascript
+function getCustomer(id) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve({ 
+        id: 1, 
+        name: 'Mosh Hamedani', 
+        isGold: true, 
+        email: 'email' 
+      });
+    }, 4000);
+  });
+}
+```
+
+Now one more time.
