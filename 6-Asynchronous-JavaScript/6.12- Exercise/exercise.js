@@ -1,23 +1,20 @@
 // Callback-based approach 
 
-// getCustomer(1, (customer) => {
-//   console.log('Customer: ', customer);
-//   if (customer.isGold) {
-//     getTopMovies((movies) => {
-//       console.log('Top movies: ', movies);
-//       sendEmail(customer.email, movies, () => {
-//         console.log('Email sent...')
-//       });
-//     });
-//   }
-// });
+getCustomer(1, (customer) => {
+  console.log('Customer: ', customer);
+  if (customer.isGold) {
+    getTopMovies((movies) => {
+      console.log('Top movies: ', movies);
+      sendEmail(customer.email, movies, () => {
+        console.log('Email sent...')
+      });
+    });
+  }
+});
 
-// Promise-based approach (To be continued!)
 
-// getCustomer(1)
-//   .then(customer => console.log('Customer', customer))
-//   .then(movies => if (customer.isGold) getTopMovies('Movies', movies)
-//   .then()
+await getCustomer(1)
+
 
 // async and wait approach
 
