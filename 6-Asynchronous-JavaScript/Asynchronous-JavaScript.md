@@ -862,4 +862,14 @@ function getTopMovies() {
 }
 ```
 
-And one last time. For *sendEmail(email, movies, callback)* function, again we remove the *callback*,
+And one last time. For *sendEmail(email, movies, callback)* function, again we remove the *callback*, and return a *new Promise* with *(resolve, reject)* and then, put our *setTimeout* function inside the *Promise* function. And finally, just *resolve*.
+
+```javascript
+function sendEmail(email, movies) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve();
+    }, 4000);
+  });
+}
+```
