@@ -873,3 +873,5 @@ function sendEmail(email, movies) {
   });
 }
 ```
+
+Note that here we are not returning any values to the colorof this function, we're simply *resolving*. This is like a void function that doesn't return a value.
