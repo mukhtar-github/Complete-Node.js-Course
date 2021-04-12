@@ -892,4 +892,4 @@ async function notifyCustomer() {
 notifyCustomer();
 ```
 
-So now, let's compare the new code and the old code
+So now, let's compare the new code and the old code side by side. We can see the new code is much easier to read and understand. So, let's comment out the old code, run the program, make sure everything works as we expect.
