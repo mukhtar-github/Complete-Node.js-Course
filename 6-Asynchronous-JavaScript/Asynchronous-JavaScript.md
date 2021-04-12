@@ -892,4 +892,10 @@ async function notifyCustomer() {
 notifyCustomer();
 ```
 
-So now, let's compare the new code and the old code side by side. We can see the new code is much easier to read and understand. So, let's comment out the old code, run the program, make sure everything works as we expect.
+So now, let's compare the new code and the old code side by side. We can see the new code is much easier to read and understand. So, let's comment out the old code, run the program, make sure everything works as we expect. So, *node exercise.js*. It takes about 4 seconds, then we should get our *customer*, beautiful, and then we should get the *top movies*, here it is, perfect. And finally, we should send an *email*, done.
+
+```javascript
+Customer:  { id: 1, name: 'Mosh Hamedani', isGold: true, email: 'email' }
+Top movies:  [ 'movie1', 'movie2' ]
+Email sent...
+```
