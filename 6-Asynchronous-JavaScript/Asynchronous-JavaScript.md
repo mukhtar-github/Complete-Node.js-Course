@@ -876,4 +876,4 @@ function sendEmail(email, movies) {
 
 Note that, here we are not returning any values to the color of this function, we're simply *resolving*. This is like a void function that doesn't return a value.
 
-So, we have modified our functions to return a *Promise*, now let's go back to our main code. I'm going to rewrite this here, so you can see both the new code and the old code side by side. So, first we need to call *getCustomer* with *1*. This returns a *Promise*, so we can *await* it
+So, we have modified our functions to return a *Promise*, now let's go back to our main code. I'm going to rewrite this here, so you can see both the new code and the old code side by side. So, first we need to call *getCustomer* with *1*. This returns a *Promise*, so we can *await* it, and then get a *customer* and store it in the constant. Next we need to do a *console.log*, so

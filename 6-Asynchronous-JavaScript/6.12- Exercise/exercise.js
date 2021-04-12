@@ -12,10 +12,6 @@ getCustomer(1, (customer) => {
   }
 });
 
-
-await getCustomer(1)
-
-
 // async and wait approach
 
 async function notifyCustomer() {
