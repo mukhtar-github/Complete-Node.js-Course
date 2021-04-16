@@ -21,3 +21,5 @@ So in *MongoDB* we don't have the concept of *tables*, *schemas*, *views*, *reco
 So here we have, an array of *genres*, you can simply store all the objects in this array in a collection in *MongoDB*, as simple as that. This also means when querying our data, we get *JSON* objects out of *MongoDB* and we can simply return those objects back to the client, so there is no transformation. Alright, that's enough introduction about *MongoDB*. Next, I'm going to show you how to install it on your machine.
 
 ## 2- Installing MongoDB on Mac
+
+## 3- Installing MongoDB on Windows
