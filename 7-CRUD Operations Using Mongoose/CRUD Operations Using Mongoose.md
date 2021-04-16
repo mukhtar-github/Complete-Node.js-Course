@@ -23,3 +23,5 @@ So here we have, an array of *genres*, you can simply store all the objects in t
 ## 2- Installing MongoDB on Mac
 
 ## 3- Installing MongoDB on Windows
+
+## 4- Connecting to MongoDB
