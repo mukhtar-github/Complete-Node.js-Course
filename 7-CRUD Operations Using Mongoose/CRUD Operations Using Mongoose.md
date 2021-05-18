@@ -25,3 +25,5 @@ So here we have, an array of *genres*, you can simply store all the objects in t
 ## 3- Installing MongoDB on Windows
 
 ## 4- Connecting to MongoDB
+
+Alright, now let's create a new project for this section. So I'm going to create a new folder called *mongo-demo*. Let's go
