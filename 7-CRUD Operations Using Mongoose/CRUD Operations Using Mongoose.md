@@ -51,4 +51,8 @@ Now, let's run this application. So back in the terminal, *nodemon index.js*.
 Connected to MongoDB...
 ```
 
-So, we can see we successfully connected to *MongoDB*.
+So, we can see that we've successfully connected to *MongoDB* database.
+
+## 5- Schemas
+
+So, we've connected to our *MongoDB* database. Now, the next thing we need to do is to create a *Schema*. We use a *Schema* to define the shape of documents within a collection in *MongoDB*. What do I mean by that? Well, let's go back to our *MongoDB compass*. I've created this *playground* database here, and in this database we have this collection called *courses*.
