@@ -44,4 +44,11 @@ mongoose.connect('mongodb://localhost/playground')
 .catch(err => console.error('Could not connect to MongoDB...', err));
 ```
 
-Now, let's run this application. Back in the terminal,
+Now, let's run this application. So back in the terminal, *nodemon index.js*.
+
+```javascript
+[nodemon] starting `node index.js`
+Connected to MongoDB...
+```
+
+So, we can see we successfully connected to *MongoDB*.
