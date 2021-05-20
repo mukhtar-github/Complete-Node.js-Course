@@ -34,7 +34,7 @@ Earlier in this section about *Express*, I told you how to manage various config
 
 Okay, so this is how we connect to a *MongoDB* database. Now this *connect* method returns a *Promise*. So, we can call *then*, when this *Promise* is fulfilled, that means we have connected to a *MongoDB* database. So here wecan do a simple *console.log('Connected to MongoDB')*. And by the way, here I'm using *console.log* for simplicity, as I told you in the section about *Express*, in the real application it's better to use the *debug* module, because with that you have more control over how much of this debugging messages you want to see in the console window. But in this section, we don't want to get distracted with too much complexity, we just want to focus on *MongoDB*.
 
-So, this is for a scenario where we are successfully connected to a *MongoDB* database. But what if something goes wrong? We want to *catch* that *error*. Here we get an *error* object and then display it on the console. So, *console.error('Could not connect to MongoDB...'))*, and then we add the *error* object.
+So, this is for a scenario where we are successfully connected to a *MongoDB* database. But what if something goes wrong? We want to *catch* that *error*. Here we get an *error* object and then display it on the console. So, *console.error('Could not connect to MongoDB...')*, and then we add the *error* object.
 
 ```javascript
 const mongoose = require('mongoose');
@@ -58,3 +58,5 @@ So, we can see that we've successfully connected to *MongoDB* database.
 So, we've connected to our *MongoDB* database. Now, the next thing we need to do is to create a *Schema*. We use a *Schema* to define the shape of documents within a collection in *MongoDB*. What do I mean by that? Well, let's go back to our *MongoDB compass*. I've created this *playground* database here, and in this database we have this collection called *courses*. A *collection* in *MongoDB* is like a table ina relational database. Now in this *courses* *collection*, we have three *3* documents. The *document* in *MongoDB* is kind of similar to a *row* in a relational database. So, in relational databases, we have *tables and rows*, in *MongoDB*, we have *collections and documents*.
 
 Now, let's take a look at this *collection*. So here is an exampple of a *document*, each *document* is a container of *key value* pairs. So here we have *_id* which is a unique identifier for each *document*. We have *tags*, which is an array of *key value* pairs, we have *date*, *name*, *author*, *isPublished*, and *version*. Don't worry about how I created these, you're going to learn that over the next few lectures.
+
+Now, in *Mongoose* we have this concept called *Schema*. This is just specific to *Mongoose*, it's not part of *MongoDB*. We use a *schema* in *Mongoose* to define the shape of *documents* in a *MongoDB* collection.
