@@ -61,4 +61,4 @@ Now, let's take a look at this *collection*. So here is an exampple of a *docume
 
 Now, in *Mongoose* we have this concept called *Schema*. This is just specific to *Mongoose*, it's not part of *MongoDB*. We use a *schema* in *Mongoose* to define the shape of *documents* in a *MongoDB* collection. So we use that to define what are the properties we have in this *document*.
 
-Now let me show you how to create a *schema*. So back in *vs code*, let's define a constant, called it *courseSchema*. A *Schema* defines the shape of *course* documents in a *MongoDB* database. So, we set this to a *new mongoose.Schema()*.
+Now let me show you how to create a *schema*. So back in *vs code*, let's define a constant, called it *courseSchema*. A *Schema* defines the shape of *course* documents in a *MongoDB* database. So, we set this to a *new mongoose.Schema()* class. Here, when creating an instance of this class, we pass an object, and in this object we specify *key value* pairs that we should have in *course* documents. So, we want each *course* to have to have a *name* property, and the type of this property should be a string.
