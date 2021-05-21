@@ -65,4 +65,18 @@ Now let me show you how to create a *schema*. So back in *vs code*, let's define
 
 Now also, I want each *course* to have a *date* property of type *Date*. We can also give this a default value. So, we can change this from *Date* to an *Object*. This *Object* has a type property that we set to *Date*. And also has a property called *default*, and we set it to *Date.now*. With this, we don't have to specify a date when creating a *course* object. *Date.now* will be used as the default value for this property. And finally, I want each *course* to have a property called *isPublished* which shoulb be a *boolean*.
 
-So here is the list of types we can use when creating a *Schema*.
+So here is the list of types we can use when creating a *Schema*. We have *String*, *Number*, *Date*, *Buffer* which we use for storing binary data, *Boolean*, *objectID* which is use for assigning unit identifiers, and *Array*. Next I'm going to show you how to create and save a *document* based on the *course schema*.
+
+## 6- Models
+
+So here is our *course schema* that defines the shape of *course* documents in our *MongoDB* database.
+
+```javascript
+const courseSchema = new mongoose.Schema({
+    name: String,
+    author: String,
+    tags: [ Strings ],
+    date: { type: Date, default: Date.now, },
+    isPublished: Boolean
+});
+```
