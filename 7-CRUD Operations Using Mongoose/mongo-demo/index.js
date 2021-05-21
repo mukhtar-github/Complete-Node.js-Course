@@ -8,5 +8,6 @@ const courseSchema = new mongoose.Schema({
     name: String,
     author: String,
     tags: [ Strings ],
-    date: { type: Date, default: Date.now, }
+    date: { type: Date, default: Date.now, },
+    isPublished: Boolean
 });
