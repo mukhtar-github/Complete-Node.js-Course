@@ -80,3 +80,5 @@ const courseSchema = new mongoose.Schema({
     isPublished: Boolean
 });
 ```
+
+Now we need to compile this into a model. What is a model? Well earlier in the course, I talked about the concepts of *Classes* and *Objects*. So as an example, I told you we can have a class called *Human*, and we can have an object like *John*. So an object is an instance of a class. A class is just a blueprint, but an object is an instance of that blueprint. Now in this application, we want to have a class called *Course*, and then we should be able to create instances of that class, like *nodeCourse*, and then we can save *nodeCourse*
