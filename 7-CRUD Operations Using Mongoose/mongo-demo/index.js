@@ -12,5 +12,4 @@ const courseSchema = new mongoose.Schema({
     isPublished: Boolean
 });
 
-
-// Classes, Objects
+mongoose.model();
