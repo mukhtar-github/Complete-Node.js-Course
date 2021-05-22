@@ -87,4 +87,18 @@ So, to create a class like *Course*, we need to compile the *schema* into a *mod
 
 Now we can create an object based on this class. So, let's create a *course* object, and here I'm using camel case notation, because the first letter of the first word in this case *course*, is lowercase. So, we use camel case to name our objects, and pascal case to name our classes. So, we set this *course* to a *new Course*. And, in this constructor function we pass an object, to initialize our *course* object. So, let's set the property of this *course*. I'm going to set the *name* to *Node.Js course*. Set the *author* to *Mukhtar*, set the *tags* to an array of two strings, so we can have *node* and let's say *backend*.
 
-Now, this is one interesting thing about *Mongo* or *NoSQL* databases in general. You can see that a document in *MongoDB* can be a complex object. So here, this *tags* property is an array of strings. We don't have something like that in the relational databases. In other words, a *row* in a relational database has simple attributes. If you want to *model* this structure in a relational database, you need three *tables*, *courses*, *tags*, and an intermediary table called *tags*. Because here, we have many to many relationship between *courses* and *tags*. In *MongoDB* or in *NoSQL* database in general, we don't have this structure, we don't have to define these *tables*, we don't have to script them. We simply create our objects and store them in the database.
+Now, this is one interesting thing about *Mongo* or *NoSQL* databases in general. You can see that a document in *MongoDB* can be a complex object. So here, this *tags* property is an array of strings. We don't have something like that in the relational databases. In other words, a *row* in a relational database has simple attributes. If you want to *model* this structure in a relational database, you need three *tables*, *courses*, *tags*, and an intermediary table called *tags*. Because here, we have many to many relationship between *courses* and *tags*. In *MongoDB* or in *NoSQL* database in general, we don't have this structure, we don't have to define these *tables*, we don't have to script them. We simply create our objects and store them in the database. That's why we call them *schema less*, they don't have *schema*.
+
+So here's our *tags* property. Now, the other property we have is *date*. But earlier I defined this to have a default value, so I'm not going to set this here. And the last property is *isPublished*, I'm going to set this to *true*.
+
+```javascript
+const Course = mongoose.model('Course', courseSchema);
+const course = new Course({
+    name: 'Node.js Course',
+    author: 'Mukhtar',
+    tags: ['node', 'backend'],
+    isPublished: true
+});
+```
+
+So, let's quickly recap. Once we have a *schema*, we need to compile that into a *model*, which gives us a *class*, next we can create an object based on that class, and this object *maps* to a document in the *MongoDB* database. Next, I'm going to show you how to save this document in our database.

@@ -13,10 +13,9 @@ const courseSchema = new mongoose.Schema({
 });
 
 const Course = mongoose.model('Course', courseSchema);
-
 const course = new Course({
     name: 'Node.js Course',
     author: 'Mukhtar',
     tags: ['node', 'backend'],
-    
+    isPublished: true
 });
