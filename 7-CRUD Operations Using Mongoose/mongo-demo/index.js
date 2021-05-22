@@ -13,4 +13,7 @@ const courseSchema = new mongoose.Schema({
 });
 
 const Course = mongoose.model('Course', courseSchema);
-const course = 
+
+const course = new Course({
+    name: 'Node.js Course',
+});
