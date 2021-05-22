@@ -19,3 +19,5 @@ const course = new Course({
     tags: ['node', 'backend'],
     isPublished: true
 });
+
+const result = await course.save();

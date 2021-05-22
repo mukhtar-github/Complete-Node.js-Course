@@ -102,3 +102,7 @@ const course = new Course({
 ```
 
 So, let's quickly recap. Once we have a *schema*, we need to compile that into a *model*, which gives us a *class*, next we can create an object based on that class, and this object *maps* to a document in the *MongoDB* database. Next, I'm going to show you how to save this document in our database.
+
+## 7- Saving a Document
+
+Alright, so here's our *course* object that *maps* to a *course* document in *MongoDB*. Now, let's save this to our database. So, this *course* object has a method called *save*. Here, we're dealing with an asynchronous operation, because it's going to take some time to *save* this course to the database, because we are going to access the file system, that's why, we are dealing with an asynchronous operation. The result of this operation will be ready in the future. So this method returns a *Promise*. We can *await* it and get the result. Now this result is the actual *course* object that is saved in the database. So when we
