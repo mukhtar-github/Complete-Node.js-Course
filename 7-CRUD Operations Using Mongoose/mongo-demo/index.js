@@ -12,4 +12,4 @@ const courseSchema = new mongoose.Schema({
     isPublished: Boolean
 });
 
-mongoose.model('Course', courseSchema);
+const Course = mongoose.model('Course', courseSchema);
