@@ -160,4 +160,4 @@ So here's our second document, and if you look at *MongoDB compass*, let's refre
 
 ## 8- Querying Documents
 
-Alright, now let me show you how to retrieve the
+Alright, now let me show you how to retrieve documents from a *MongoDB* database. So I'm going to create another function, *async* function *getCourses*.
