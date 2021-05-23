@@ -124,4 +124,19 @@ async function createCourse() {
 createCourse();
 ```
 
-Now back in terminal, in this section, I'm going to run this application using *node* instead of *nodemon*, because I don't want every time I make a simple change in the code, that will result in creating a new document in our *MongoDB* database. So, *node index.js*
+Now back in terminal, in this section, I'm going to run this application using *node* instead of *nodemon*, because I don't want every time I make a simple change in the code, that will result in creating a new document in our *MongoDB* database. So, *node index.js*. Okay. beautiful, our *course* was saved in the database, and here is the document that is actually stored in our *MongoDB*.
+
+```javascript
+Connected to MongoDB...
+{
+  tags: [ 'node', 'backend' ],
+  _id: 60aa01577aba5b2298ef0f2b,
+  name: 'Node.js Course',
+  author: 'Mukhtar',
+  isPublished: true,
+  date: 2021-05-23T07:16:39.781Z,
+  __v: 0
+}
+```
+
+Look, *MongoDB* assigned the *_id* property, and is set to this unique identifier *60aa01577aba5b2298ef0f2b*. Now, let's go back to *MongoDB compass*, so let's refresh it, here's our *playground* database, we have the *courses* collection and in this collection we have one document, alright. So this is the beauty
