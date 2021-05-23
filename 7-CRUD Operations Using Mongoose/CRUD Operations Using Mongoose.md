@@ -107,4 +107,21 @@ So, let's quickly recap. Once we have a *schema*, we need to compile that into a
 
 Alright, so here's our *course* object that *maps* to a *course* document in *MongoDB*. Now, let's save this to our database. So, this *course* object has a method called *save*. Here, we're dealing with an asynchronous operation, because it's going to take some time to *save* this course to the database, because we are going to access the file system, that's why, we are dealing with an asynchronous operation. The result of this operation will be ready in the future. So this method returns a *Promise*. We can *await* it and get the result.
 
-Now this result is the actual *course* object that is saved in the database. So when we save this *course* in *MongoDB*, *MongoDB* is going to assign a unique identifier to this *course* object, to this *course* document. Now, with this, we can see the *id* that is assigned by *MongoDB*. So, let's log it on the console, *console.log(result)*. As I told you before, whenever you use *await*, your code should be inside an *async* function. So, I'm going to define a function, *async*, function, *createCourse*. Then put all the *course* object code inside the *createCourse* function.
+Now this result is the actual *course* object that is saved in the database. So when we save this *course* in *MongoDB*, *MongoDB* is going to assign a unique identifier to this *course* object, to this *course* document. Now, with this, we can see the *id* that is assigned by *MongoDB*. So, let's log it on the console, *console.log(result)*. As I told you before, whenever you use *await*, your code should be inside an *async* function. So, I'm going to define a function, *async*, function, *createCourse*. Then put all the *course* object code inside the *createCourse*. So we create a *course* object, save it. And then display the result on the console. And finally, we call *createCourse()* and save.
+
+```javascript
+async function createCourse() {
+    const course = new Course({
+        name: 'Node.js Course',
+        author: 'Mukhtar',
+        tags: ['node', 'backend'],
+        isPublished: true
+    });
+    
+    const result = await course.save();
+    console.log(result);
+}
+createCourse();
+```
+
+Now back in terminal, in this section, I'm going to run this application using *node* instead of *nodemon*, because I don't want every time I make a simple change in the code, that will result in creating a new document in our *MongoDB* database. So, *node index.js*
