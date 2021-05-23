@@ -31,7 +31,7 @@ async function getCourses() {
     .find({ author: 'Mukhtar', isPublished: true })
     .limit(10)
     .sort( { name: 1, })
-    .select();
+    .select( {name: 1, tags: 1});
     console.log(courses);
 }
 
