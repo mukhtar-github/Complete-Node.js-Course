@@ -21,3 +21,4 @@ const course = new Course({
 });
 
 const result = await course.save();
+console.log(result);
