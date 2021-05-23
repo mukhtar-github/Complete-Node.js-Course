@@ -30,7 +30,8 @@ async function getCourses() {
     const courses = await Course
     .find({ author: 'Mukhtar', isPublished: true })
     .limit(10)
-    .sort();
+    .sort( { name: 1, })
+    .select();
     console.log(courses);
 }
 
