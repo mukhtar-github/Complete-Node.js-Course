@@ -160,4 +160,6 @@ So here's our second document, and if you look at *MongoDB compass*, let's refre
 
 ## 8- Querying Documents
 
-Alright, now let me show you how to retrieve documents from a *MongoDB* database. So I'm going to create another function, *async* function *getCourses*. And then I'm going to replace the call to *createCourse* with *getCourses*. Now, let's implement this function. So, the *Course* class that we defined earlier has a bunch of methods for querying documents. We have *find* to get a list of documents, we have *findById* which is pretty self explanatory, and we have *findOne* which returns a single document.
+Alright, now let me show you how to retrieve documents from a *MongoDB* database. So I'm going to create another function, *async* function *getCourses*. And then I'm going to replace the call to *createCourse* with *getCourses*. Now, let's implement this function. So, the *Course* class that we defined earlier has a bunch of methods for querying documents. We have *find* to get a list of documents, we have *findById* which is pretty self explanatory, and we have *findOne* which returns a single document. Now we have a few more *find* methods but don't worry about them, we use them to find a document and then remove or update it. We're going to look at them later in the section.
+
+So, let's look at *find* method, as you can see, this method returns a *DocumentQuery* object.
