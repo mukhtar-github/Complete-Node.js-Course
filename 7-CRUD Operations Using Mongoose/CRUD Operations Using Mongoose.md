@@ -130,15 +130,34 @@ Now back in terminal, in this section, I'm going to run this application using *
 Connected to MongoDB...
 {
   tags: [ 'node', 'backend' ],
-  _id: 60aa01577aba5b2298ef0f2b,
+  _id: 60aa1f90de378737292fe8de,
   name: 'Node.js Course',
   author: 'Mukhtar',
   isPublished: true,
-  date: 2021-05-23T07:16:39.781Z,
+  date: 2021-05-23T09:25:36.111Z,
   __v: 0
 }
 ```
 
 Look, *MongoDB* assigned the *_id* property, and is set to this unique identifier *60aa01577aba5b2298ef0f2b*. Now, let's go back to *MongoDB compass*, so let's refresh it, here's our *playground* database, we have the *courses* collection and in this collection we have one document, alright. So this is the beauty of *MongoDB* or *NoSQL* databases. Unlike relational databases, we didn't have to create a *table*, we didn't have to script that *table*, simply created a document, and store it in a *MongoDB* database.
 
-So back in the code, let's modify these values and create another document, because in the next lecture, I'm going to show you how to query documents. So, let's change course *name* to *Angular* course. And we add two *tags*, *angular* and *frontend*.
+So back in the code, let's modify these values and create another document, because in the next lecture, I'm going to show you how to query documents. So, let's change course *name* to *Angular* course. And we add two *tags*, *angular* and *frontend*, save. Back in the terminal, let's stop the first process and run the application again.
+
+```javascript
+Connected to MongoDB...
+{
+  tags: [ 'angular', 'frontend' ],
+  _id: 60aa1fefb3dde037671a9075,
+  name: 'Angular Course',
+  author: 'Mukhtar',
+  isPublished: true,
+  date: 2021-05-23T09:27:11.564Z,
+  __v: 0
+}
+```
+
+So here's our second document, and if you look at *MongoDB compass*, let's refresh the result, look we have two documents in our courses collection, beautiful. So next I'm going to show you how to query documents.
+
+## 8- Querying Documents
+
+Alright, now let me show you how to retrieve the
