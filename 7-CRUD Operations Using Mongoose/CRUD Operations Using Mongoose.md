@@ -188,4 +188,4 @@ Connected to MongoDB...
 ]
 ```
 
-So look we get an array of two objects.
+So look we get an array with two objects. Here's our first course, that's the *Node* course, and here's the second course, that's the *Angular* course, beautiful. Now we can also pass a filter here, so as the first argument to the *find* method, we pass an object, and in this object we add one or more *key value* pairs for filtering. So let's say we want to get only the courses for Mukhtar. So we set *author* to *Mukhtar*. We can pass another property, another filter, *isPublished* and set it to *true*. So with this filter

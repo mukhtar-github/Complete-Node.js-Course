@@ -27,7 +27,7 @@ async function createCourse() {
 }
 
 async function getCourses() {
-    const courses = await Course.find();
+    const courses = await Course.find({ author: 'Mukhtar', isPublished: true });
     console.log(courses);
 }
 
