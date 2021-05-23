@@ -27,7 +27,7 @@ async function createCourse() {
 }
 
 async function getCourses() {
-    
+    Course.find()
 }
 
-createCourse();
+getCourses();
