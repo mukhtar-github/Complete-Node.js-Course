@@ -139,4 +139,6 @@ Connected to MongoDB...
 }
 ```
 
-Look, *MongoDB* assigned the *_id* property, and is set to this unique identifier *60aa01577aba5b2298ef0f2b*. Now, let's go back to *MongoDB compass*, so let's refresh it, here's our *playground* database, we have the *courses* collection and in this collection we have one document, alright. So this is the beauty
+Look, *MongoDB* assigned the *_id* property, and is set to this unique identifier *60aa01577aba5b2298ef0f2b*. Now, let's go back to *MongoDB compass*, so let's refresh it, here's our *playground* database, we have the *courses* collection and in this collection we have one document, alright. So this is the beauty of *MongoDB* or *NoSQL* databases. Unlike relational databases, we didn't have to create a *table*, we didn't have to script that *table*, simply created a document, and store it in a *MongoDB* database.
+
+So back in the code, let's modify these values and create another document, because in the next lecture, I'm going to show you how to query documents. So, let's change course *name* to *Angular* course. And we add two *tags*, *angular* and *frontend*.

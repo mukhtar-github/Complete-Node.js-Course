@@ -16,9 +16,9 @@ const Course = mongoose.model('Course', courseSchema);
 
 async function createCourse() {
     const course = new Course({
-        name: 'Node.js Course',
+        name: 'Angular Course',
         author: 'Mukhtar',
-        tags: ['node', 'backend'],
+        tags: ['angular', 'frontend'],
         isPublished: true
     });
     
