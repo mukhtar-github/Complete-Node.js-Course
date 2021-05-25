@@ -37,7 +37,7 @@ async function getCourses() {
     // Starts with Mukhtar
     // .find({ author: /^Mukhtar/ })
     // Ends with Hamedani
-    .find({ author: /Hamedani$/ })
+    .find({ author: /Hamedani$/i })
     .limit(10)
     .sort( { name: 1, })
     .select( {name: 1, tags: 1});
