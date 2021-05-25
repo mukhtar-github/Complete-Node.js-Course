@@ -42,7 +42,7 @@ async function getCourses() {
     // .find({ author: /Hamedani$/i })
 
     //Contains Mosh
-.find({ author: /.*Mosh.*/ })
+.find({ author: /.*Mosh.*/i })
 
     .sort( { name: 1, })
     .select( {name: 1, tags: 1});

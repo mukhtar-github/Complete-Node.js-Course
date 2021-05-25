@@ -281,7 +281,9 @@ Now, what if you want to look for *courses* who's author ends with a giveng stri
 And finally, let's look at the last example. What if you want to look for *courses* who's author contains the word *Mosh*? So *Mosh* can be at the beginning, it can be in the middle, or it can be at the end. Let me show you how to write this query. So we call *find*, pass an object, author, regular expression. Here's our pattern.
 
 ```javascript
-.find({ author: /.*Mosh.*/ })
+.find({ author: /.*Mosh.*/i })
 ```
 
-So .* in a regular expression means we can have 0 or more characters, we don't care what those characters are. So,
+So .* in a regular expression means we can have 0 or more characters, we don't care what those characters are. So, with this pattern, with this regular expression, we have 0 or more characters before or after Mosh. And once again, if you want to make this case insensitive, you put an i at the end. Of course you can use more complex regular expressions. The explanation of JavaScript regular expressions is beyond the scope of this course. So if you want to learn more about regular expressions, just read a tutorial about JavaScript regular expressions.
+
+## 12- Counting
