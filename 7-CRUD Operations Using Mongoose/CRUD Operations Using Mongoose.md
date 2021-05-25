@@ -221,4 +221,4 @@ Now, for the purpose of this lecture, let's imagine our *courses* have a prize p
 
 Well, we know that in JavaScript, an object is basically a collection of *key value* pairs. So here, our *key* is *price*, and our *value* is *10*. With this simple value, we cannot express the concept of *more than* or *greater than 10*. So in order to express the concept of *greater than 10*, we need to pass an object in the place of the value *10*. This object is again a container for *key value* pairs. So here, I can use one of those operators as a *key*. So, I can use *greater than* operator as a *key*, so we use a doller sign *$* to indicate that this is an operator *gt*, that is *greater than*, and we set the value to *10*. So see what I did? I replaced a simple value like *10* with an object to express a concept, the concept of *greater than 10*.
 
-
+Now we can change this operator to *greater than or equal to*, if we want the *courses* that are *ten dollers* in the result as well. Now, let's take this to the next level. What if we want to get the *courses* that are between *10* and *20* dollers? Again, we can use another operator.
