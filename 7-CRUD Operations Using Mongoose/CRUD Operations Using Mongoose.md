@@ -223,4 +223,4 @@ Well, we know that in JavaScript, an object is basically a collection of *key va
 
 Now we can change this operator to *greater than or equal to*, if we want the *courses* that are *ten dollars* in the result as well. Now, let's take this to the next level. What if we want to get the *courses* that are between *10* and *20* dollars? Again, we can use another operator. So, *less than or equal to 20* dollars. So this is how we can use these comparison operators to query documents.
 
-Now let's look at another example. Let's imagine we want to get *courses* that are *10* dollars
+Now let's look at another example. Let's imagine we want to get *courses* that are *10* dollars, or *15* dollars, or *20* dollars. So, I'm going to comment the second *find* method out, let's start from scratch. So we call *find*, pass an object for filtering, set the prize
