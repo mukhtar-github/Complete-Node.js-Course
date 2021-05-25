@@ -273,3 +273,5 @@ So this is the syntax, for representing a *regular expression*. Now, in *regular
 ```
 
 So, this *regular expression*, represent a string that starts with *Mukhtar*. So, as long as the the *author* starts with *Mukhtar*, it doesn't matter what we have after. Those *courses* will be returned.
+
+Now, what if you want to look for *courses* who's author ends with a giveng string. Let's say *Ends with Hamedani*. So this is how we write this query, *find*, pass an object, we see the *author* to a *regular expression*. And the pattern we use here is *Hamedani$*. So dollar sign in *regular expressions* indicates the end of a string.
