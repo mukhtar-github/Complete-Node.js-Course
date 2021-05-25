@@ -32,7 +32,7 @@ async function getCourses() {
     // .find( { prize: { $gt: 10, $lte: 20 } })
     // .find( { price: { $in: [10, 25, 20]}})
     .find()
-    .or([{}, {}])
+    .or([{ author: 'Muktar' }, { isPublished: true }])
     .limit(10)
     .sort( { name: 1, })
     .select( {name: 1, tags: 1});
