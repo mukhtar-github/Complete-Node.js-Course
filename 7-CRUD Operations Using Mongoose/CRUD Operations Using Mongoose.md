@@ -226,3 +226,13 @@ Now we can change this operator to *greater than or equal to*, if we want the *c
 Now let's look at another example. Let's imagine we want to get *courses* that are *10* dollars, or *15* dollars, or *20* dollars. So, I'm going to comment the second *find* method out, let's start from scratch. So we call *find*, pass an object for filtering, set the prize, again if I use *10*, I can only compare equality to *10*. We don't want that. We want *courses* that are either *10* dollars or *15* dollars, or *20* dollars. So we place an object to express our query. Now, we use an operator that is *$in*. So, what should we use for the value? We want to express a query where *courses* are either *10* dollars or *15* dollars, or *20* dollars. So, we are dealing with three values here.
 
 What JavaScript construct do we use to express multiple values? We use an *array*, right? So *[10, 15, 20]*. See what I've done so far? I haven't memorized anything. I just tried to logically think, how can we use JavaScript constructs to express a concept, to express a query. So these are the *Comparison operators*. In the next lecture, we're going to look at the *Logical operators*.
+
+## 10- Logical Query Operators
+
+In this lecture, I'm going to show you how to use the *Logical query operators*. So here is our original query for getting all the *courses* that match this criteria.
+
+```javascript
+find({ author: 'Mukhtar', isPublished: true })
+```
+
+They are *authored* by *Mukhtar* and they are *published*. What if we want to get the *courses* that are published by *Mukhtar* or the *courses* that are *published*. So we can have *courses* that are
