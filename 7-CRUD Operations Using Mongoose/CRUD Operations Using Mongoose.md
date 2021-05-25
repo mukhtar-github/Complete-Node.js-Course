@@ -266,4 +266,4 @@ So back to our original query. In this example, we're getting *courses* who's au
 .find({ author: /pattern/})
 ```
 
-So
+So this is the syntax, for representing a *regular expression*. Now, in *regular expressions*, you can use the caret *^* character to represent a string that starts with something.

@@ -34,7 +34,7 @@ async function getCourses() {
     // .find()
     // .or([{ author: 'Muktar' }, { isPublished: true }])
     // .and([])
-    .find({ author: /pattern/})
+    .find({ author: /^/})
     .limit(10)
     .sort( { name: 1, })
     .select( {name: 1, tags: 1});
