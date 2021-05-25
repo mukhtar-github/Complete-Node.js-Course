@@ -34,12 +34,16 @@ async function getCourses() {
     // .find()
     // .or([{ author: 'Muktar' }, { isPublished: true }])
     // .and([])
+
     // Starts with Mukhtar
     // .find({ author: /^Mukhtar/ })
+
     // Ends with Hamedani
     // .find({ author: /Hamedani$/i })
+
     //Contains Mosh
-    .find({ author: /pattern/})
+.find({ author: /.*Mosh.*/ })
+
     .sort( { name: 1, })
     .select( {name: 1, tags: 1});
     console.log(courses);
