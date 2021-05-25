@@ -266,4 +266,10 @@ So back to our original query. In this example, we're getting *courses* who's au
 .find({ author: /pattern/})
 ```
 
-So this is the syntax, for representing a *regular expression*. Now, in *regular expressions*, you can use the caret *^* character to represent a string that starts with something.
+So this is the syntax, for representing a *regular expression*. Now, in *regular expressions*, you can use the caret *^* character to represent a string that starts with something. I can add *Mukhtar*.
+
+```javascript
+/^Mukhtar/)
+```
+
+So, this *regular expression*, represent a string that starts with *Mukhtar*. So, as long as the the *author* starts with *Mukhtar*, it doesn't matter what we have after. Those *courses* will be returned.
