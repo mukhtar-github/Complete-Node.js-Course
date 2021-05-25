@@ -221,11 +221,23 @@ Now, for the purpose of this lecture, let's imagine our *courses* have a prize p
 
 Well, we know that in JavaScript, an object is basically a collection of *key value* pairs. So here, our *key* is *price*, and our *value* is *10*. With this simple value, we cannot express the concept of *more than* or *greater than 10*. So in order to express the concept of *greater than 10*, we need to pass an object in the place of the value *10*. This object is again a container for *key value* pairs. So here, I can use one of those operators as a *key*. So, I can use *greater than* operator as a *key*, so we use a dollar sign *$* to indicate that this is an operator *gt*, that is *greater than*, and we set the value to *10*. So see what I did? I replaced a simple value like *10* with an object to express a concept, the concept of *greater than 10*.
 
-Now we can change this operator to *greater than or equal to*, if we want the *courses* that are *ten dollars* in the result as well. Now, let's take this to the next level. What if we want to get the *courses* that are between *10* and *20* dollars? Again, we can use another operator. So, *less than or equal to 20* dollars. So this is how we can use these comparison operators to query documents.
+Now we can change this operator to *greater than or equal to*, if we want the *courses* that are *ten dollars* in the result as well. Now, let's take this to the next level. What if we want to get the *courses* that are between *10* and *20* dollars? Again, we can use another operator. So, *less than or equal to 20* dollars.
+
+```javascript
+find( { prize: { $gt: 10, $lte: 20 } })
+```
+
+So this is how we can use these comparison operators to query documents.
 
 Now let's look at another example. Let's imagine we want to get *courses* that are *10* dollars, or *15* dollars, or *20* dollars. So, I'm going to comment the second *find* method out, let's start from scratch. So we call *find*, pass an object for filtering, set the prize, again if I use *10*, I can only compare equality to *10*. We don't want that. We want *courses* that are either *10* dollars or *15* dollars, or *20* dollars. So we place an object to express our query. Now, we use an operator that is *$in*. So, what should we use for the value? We want to express a query where *courses* are either *10* dollars or *15* dollars, or *20* dollars. So, we are dealing with three values here.
 
-What JavaScript construct do we use to express multiple values? We use an *array*, right? So *[10, 15, 20]*. See what I've done so far? I haven't memorized anything. I just tried to logically think, how can we use JavaScript constructs to express a concept, to express a query. So these are the *Comparison operators*. In the next lecture, we're going to look at the *Logical operators*.
+What JavaScript construct do we use to express multiple values? We use an *array*, right? So *[10, 15, 20]*.
+
+```javascript
+find( { price: { $in: [10, 25, 20]}})
+```
+
+See what I've done so far? I haven't memorized anything. I just tried to logically think, how can we use JavaScript constructs to express a concept, to express a query. So these are the *Comparison operators*. In the next lecture, we're going to look at the *Logical operators*.
 
 ## 10- Logical Query Operators
 
@@ -239,8 +251,13 @@ They are authored by *Mukhtar* and they are *published*. What if we want to get 
 
 Now here's a question for you. What JavaScript construct do we use to store multiple values? We use an *array*, right? So we need to pass an array into the *or* method, and in this array we add two objects, each object is a filter, just like the filter object that we pass to the *find* method. So, in the first filter object, we add *author*, we set that to *Mukhtar*, in the second, we add *isPublished* and we set that to *true*.
 
+```javascript
+find()
+.or([{ author: 'Muktar' }, { isPublished: true }])
+```
+
 Now with this, we'll get *courses* that are authored by *Mukhtar* or *courses* that are *published*. The *and* logical operator is exactly the same. So, instead of using the *or* method, we use the *and* method. And with these, we pass an *array* of filter objects. And this is technically similar to passing a filter object to the *find* method. But sometimes in more complex queries, you may find a place for using the *and* method. Next, we're going to look at *regular expressions*.
 
 ## 11- Regular Expressions
 
-So back to our original query. In this example, we're getting *courses* who's author is exactly this string *Mukhtar*. If we have a *course*, with author set to *Mosh*, or *Hamedani*, those *courses* will not be returned. So, if you want to have more control over filtering strings, you need to use a *regular expression*. Let me show you how that works. So
+So back to our original query. In this example, we're getting *courses* who's author is exactly this string *Mukhtar*. If we have a *course*, with author set to *Mosh*, or *Hamedani*, those *courses* will not be returned. So, if you want to have more control over filtering strings, you need to use a *regular expression*. Let me show you how that works. So, let's say we want to get *courses* who's author starts with *Mosh*. This is how we write this query
