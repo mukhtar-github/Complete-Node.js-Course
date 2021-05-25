@@ -235,4 +235,6 @@ In this lecture, I'm going to show you how to use the *Logical query operators*.
 find({ author: 'Mukhtar', isPublished: true })
 ```
 
-They are *authored* by *Mukhtar* and they are *published*. What if we want to get the *courses* that are published by *Mukhtar* or the *courses* that are *published*. So we can have *courses* that are
+They are authored by *Mukhtar* and they are *published*. What if we want to get the *courses* that are published by *Mukhtar* or the *courses* that are *published*. So we can have *courses* that are *published* but they are not authored by *Mukhtar*. That's where we need the *or* operator. So, here are the *logical operators* we have. We have *or* and *and*. Let's see how we can use these operators. So, I'm going to comment out the first *find* method. Instead,we're going to call the *find* method without any filters. After that, we call the *or* method.
+
+Now here's a question for you. What JavaScript construct do we use to store multiple values? We use an *array*, right? So we need to pass an array into the *or* method, and in this array we add two objects, each object
