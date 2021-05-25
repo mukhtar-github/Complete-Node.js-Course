@@ -224,7 +224,7 @@ Well, we know that in JavaScript, an object is basically a collection of *key va
 Now we can change this operator to *greater than or equal to*, if we want the *courses* that are *ten dollars* in the result as well. Now, let's take this to the next level. What if we want to get the *courses* that are between *10* and *20* dollars? Again, we can use another operator. So, *less than or equal to 20* dollars.
 
 ```javascript
-find( { prize: { $gt: 10, $lte: 20 } })
+.find( { prize: { $gt: 10, $lte: 20 } })
 ```
 
 So this is how we can use these comparison operators to query documents.
@@ -234,7 +234,7 @@ Now let's look at another example. Let's imagine we want to get *courses* that a
 What JavaScript construct do we use to express multiple values? We use an *array*, right? So *[10, 15, 20]*.
 
 ```javascript
-find( { price: { $in: [10, 25, 20]}})
+.find( { price: { $in: [10, 25, 20]}})
 ```
 
 See what I've done so far? I haven't memorized anything. I just tried to logically think, how can we use JavaScript constructs to express a concept, to express a query. So these are the *Comparison operators*. In the next lecture, we're going to look at the *Logical operators*.
@@ -244,7 +244,7 @@ See what I've done so far? I haven't memorized anything. I just tried to logical
 In this lecture, I'm going to show you how to use the *Logical query operators*. So here is our original query for getting all the *courses* that match this criteria.
 
 ```javascript
-find({ author: 'Mukhtar', isPublished: true })
+.find({ author: 'Mukhtar', isPublished: true })
 ```
 
 They are authored by *Mukhtar* and they are *published*. What if we want to get the *courses* that are published by *Mukhtar* or the *courses* that are *published*. So we can have *courses* that are *published* but they are not authored by *Mukhtar*. That's where we need the *or* operator. So, here are the *logical operators* we have. We have *or* and *and*. Let's see how we can use these operators. So, I'm going to comment out the first *find* method. Instead,we're going to call the *find* method without any filters. After that, we call the *or* method.
@@ -252,7 +252,7 @@ They are authored by *Mukhtar* and they are *published*. What if we want to get 
 Now here's a question for you. What JavaScript construct do we use to store multiple values? We use an *array*, right? So we need to pass an array into the *or* method, and in this array we add two objects, each object is a filter, just like the filter object that we pass to the *find* method. So, in the first filter object, we add *author*, we set that to *Mukhtar*, in the second, we add *isPublished* and we set that to *true*.
 
 ```javascript
-find()
+.find()
 .or([{ author: 'Muktar' }, { isPublished: true }])
 ```
 
@@ -260,4 +260,10 @@ Now with this, we'll get *courses* that are authored by *Mukhtar* or *courses* t
 
 ## 11- Regular Expressions
 
-So back to our original query. In this example, we're getting *courses* who's author is exactly this string *Mukhtar*. If we have a *course*, with author set to *Mosh*, or *Hamedani*, those *courses* will not be returned. So, if you want to have more control over filtering strings, you need to use a *regular expression*. Let me show you how that works. So, let's say we want to get *courses* who's author starts with *Mosh*. This is how we write this query
+So back to our original query. In this example, we're getting *courses* who's author is exactly this string *Mukhtar*. If we have a *course*, with author set to *Mosh*, or *Hamedani*, those *courses* will not be returned. So, if you want to have more control over filtering strings, you need to use a *regular expression*. Let me show you how that works. So, let's say we want to get *courses* who's author starts with *Mosh*. This is how we write this query. So *find*, we pass an object, set the *author* as the key, now instead of passing a string as the value, we pass a *regular expression*, so we add a slash (/), then we add a pattern that we're going to modify in a second, and another slash.
+
+```javascript
+.find({ author: /pattern/})
+```
+
+So
