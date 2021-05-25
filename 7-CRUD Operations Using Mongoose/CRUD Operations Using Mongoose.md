@@ -278,4 +278,4 @@ Now, what if you want to look for *courses* who's author ends with a giveng stri
 .find({ author: /Hamedani$/i })
 ```
 
-And finally, let's look at the last example
+And finally, let's look at the last example. What if you want to look for *courses* who's author contains the word *Mosh*? So *Mosh* can be at the beginning
