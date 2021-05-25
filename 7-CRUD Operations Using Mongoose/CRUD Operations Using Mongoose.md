@@ -213,4 +213,4 @@ So look, now the *course* objects that we get, they only have three properties, 
 
 ## 9- Comparison Query Operators
 
-So, in the last lecture, you learned how to use the *find* method to filter documents. Over the next few lectures, I'm going to show you how to build more complex queries. Now, if you have never worked with *MongoDB* before, you may find this syntax we use to build queries, a little bit unfamiliar or strange. I totally understand that, because I've been there before.
+So, in the last lecture, you learned how to use the *find* method to filter documents. Over the next few lectures, I'm going to show you how to build more complex queries. Now, if you have never worked with *MongoDB* before, you may find this syntax we use to build queries, a little bit unfamiliar or strange. And I totally understand that, because I've been there before. But in this lecture, I'm going to show you a technique to remember the syntax and then you will realize it's actually very easy.
