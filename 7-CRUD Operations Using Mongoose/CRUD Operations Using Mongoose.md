@@ -198,6 +198,7 @@ So let's say we want to *sort* these documents by their *name*. We set *name* to
 async function getCourses() {
   const courses = await Course
   .find({ author: 'Mukhtar', isPublished: true })
+  .limit(10)
   .sort( { name: 1, })
   .select( {name: 1, tags: 1});
   console.log(courses);
@@ -353,4 +354,4 @@ Look, we have two documents that matches our filter.
 
 ## 13- Pagination
 
-So, earlier you learned about the *limit* method
+So, earlier we learned about the *limit* method. A method that goes hand in hand with *limit* method is the *skip* method. And we use this to impliment *pagination*. Let me show you how this works. So, let's define a constant, called *pageNumber*, this can be *1, 2, 3* whatever. So, let'set this to two. We have another constant called *pageSize* set to *10*. So I've hardcoded this
