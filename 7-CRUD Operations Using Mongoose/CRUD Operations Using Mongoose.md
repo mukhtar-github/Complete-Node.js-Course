@@ -329,4 +329,28 @@ So in the above query, we're filtering our *courses* and picking only their *nam
 ]
 ```
 
- This is what we get, an array of two *courses*, and each *course* has these three properties, *tags, _id, and name*. Sometimes we just want to get the number of documents, instead of the actual documents. So, if That's the case, we don't need to use the *select* method, instead we call *count*. And this returns the count of documents that matches the *find* method criteria. So, back in terminal
+ This is what we get, an array of two *courses*, and each *course* has these three properties, *tags, _id, and name*. Sometimes we just want to get the number of documents, instead of the actual documents. So, if That's the case, we don't need to use the *select* method, instead we call the *count* method.
+
+ ```javascript
+async function getCourses() {
+    const courses = await Course
+    .find({ author: 'Mukhtar', isPublished: true })
+    .sort( { name: 1, })
+    .count();
+    console.log(courses);
+  }
+  getCourses();
+ ```
+
+And this returns the count of documents that matches the *find* method criteria. So, back in terminal, let's run the application again.
+
+```javascript
+Connected to MongoDB...
+2
+```
+
+Look, we have two documents that matches our filter.
+
+## 13- Pagination
+
+
