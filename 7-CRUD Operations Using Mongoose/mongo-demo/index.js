@@ -29,7 +29,7 @@ async function createCourse() {
 async function getCourses() {
     const courses = await Course
     // .find({ author: 'Mukhtar', isPublished: true })
-    // .find( { prize: { $gt: 10, $lte: 20 } })
+    // .find( { price: { $gt: 10, $lte: 20 } })
     // .find( { price: { $in: [10, 25, 20]}})
     // .find()
     // .or([{ author: 'Muktar' }, { isPublished: true }])

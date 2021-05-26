@@ -224,7 +224,7 @@ Well, we know that in JavaScript, an object is basically a collection of *key va
 Now we can change this operator to *greater than or equal to*, if we want the *courses* that are *ten dollars* in the result as well. Now, let's take this to the next level. What if we want to get the *courses* that are between *10* and *20* dollars? Again, we can use another operator. So, *less than or equal to 20* dollars.
 
 ```javascript
-.find( { prize: { $gt: 10, $lte: 20 } })
+.find( { price: { $gt: 10, $lte: 20 } })
 ```
 
 So this is how we can use these comparison operators to query documents.
@@ -287,3 +287,16 @@ And finally, let's look at the last example. What if you want to look for *cours
 So .* in a regular expression means we can have 0 or more characters, we don't care what those characters are. So, with this pattern, with this regular expression, we have 0 or more characters before or after Mosh. And once again, if you want to make this case insensitive, you put an i at the end. Of course you can use more complex regular expressions. The explanation of JavaScript regular expressions is beyond the scope of this course. So if you want to learn more about regular expressions, just read a tutorial about JavaScript regular expressions.
 
 ## 12- Counting
+
+```javascript
+async function getCourses() {
+    const courses = await Course
+.find({ author: 'Mukhtar', isPublished: true })
+.sort( { name: 1, })
+.select( {name: 1, tags: 1});
+console.log(courses);
+}
+getCourses();
+```
+
+So in the above query, we're filtering our *courses* and picking only their name
