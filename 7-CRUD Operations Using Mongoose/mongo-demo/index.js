@@ -54,12 +54,14 @@ async function createCourse() {
 async function getCourses() {
     const pageNumber = 2;
     const pageSize = 10;
+    // /api/courses?
+
     const courses = await Course
-    .find({ author: 'Mukhtar', isPublished: true })
-    .limit(10)
-    .skip()
-    .sort( { name: 1, })
-    .count();
+        .find({ author: 'Mukhtar', isPublished: true })
+        .limit(10)
+        .skip()
+        .sort( { name: 1, })
+        .count();
     console.log(courses);
 }
 getCourses();

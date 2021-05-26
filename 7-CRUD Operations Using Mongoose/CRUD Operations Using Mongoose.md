@@ -354,4 +354,4 @@ Look, we have two documents that matches our filter.
 
 ## 13- Pagination
 
-So, earlier we learned about the *limit* method. A method that goes hand in hand with *limit* method is the *skip* method. And we use this to impliment *pagination*. Let me show you how this works. So, let's define a constant, called *pageNumber*, this can be *1, 2, 3* whatever. So, let'set this to two. We have another constant called *pageSize* set to *10*. So I've hardcoded this
+So, earlier we learned about the *limit* method. A method that goes hand in hand with *limit* method is the *skip* method. And we use this to impliment *pagination*. Let me show you how this works. So, let's define a constant, called *pageNumber*, this can be *1, 2, 3* whatever. So, let'set this to two. We have another constant called *pageSize* set to *10*. So I've hardcoded these numbers here as purely for simplicity, but in a real world application, we pass these values as query strings parameters to our *RESTful API's*. So, you might have an *API* to get the list of courses, this endpoint
