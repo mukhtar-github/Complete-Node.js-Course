@@ -59,7 +59,7 @@ async function getCourses() {
     const courses = await Course
         .find({ author: 'Mukhtar', isPublished: true })
         .limit(10)
-        .skip()
+        .skip((pageNumber - 1) * pageSize)
         .sort( { name: 1, })
         .count();
     console.log(courses);
