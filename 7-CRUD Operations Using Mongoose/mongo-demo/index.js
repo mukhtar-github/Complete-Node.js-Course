@@ -55,11 +55,10 @@ async function getCourses() {
     const pageNumber = 2;
     const pageSize = 10;
     // /api/courses?pageNumber=2&pageSize=10
-
     const courses = await Course
         .find({ author: 'Mukhtar', isPublished: true })
-        .limit(10)
         .skip((pageNumber - 1) * pageSize)
+        .limit(pageSize)
         .sort( { name: 1, })
         .count();
     console.log(courses);

@@ -362,4 +362,22 @@ So, you might have an *API* to get the list of courses, this endpoint can get qu
 .skip((pageNumber - 1) * pageSize)
 ```
 
-So here I'm assuming that *pageNumber* starts from *1*. So more accurately this *pageNumber*, not
+So here I'm assuming that *pageNumber* starts from *1*. So more accurately this is page number, not page index. And then, we change *limit* to *pageSize* instead of number *10*, and with this we can get the documents in a given page.
+
+```javascript
+async function getCourses() {
+    const pageNumber = 2;
+    const pageSize = 10;
+    // /api/courses?pageNumber=2&pageSize=10
+    const courses = await Course
+        .find({ author: 'Mukhtar', isPublished: true })
+        .skip((pageNumber - 1) * pageSize)
+        .limit(pageSize)
+        .sort( { name: 1, })
+        .count();
+    console.log(courses);
+}
+getCourses();
+```
+
+## 14- Exercise 1
