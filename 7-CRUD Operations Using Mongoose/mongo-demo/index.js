@@ -26,27 +26,37 @@ async function createCourse() {
     console.log(result);
 }
 
+// async function getCourses() {
+//     const courses = await Course
+//     // .find({ author: 'Mukhtar', isPublished: true })
+//     // .find( { price: { $gt: 10, $lte: 20 } })
+//     // .find( { price: { $in: [10, 25, 20]}})
+//     // .find()
+//     // .or([{ author: 'Muktar' }, { isPublished: true }])
+//     // .and([])
+
+//     // Starts with Mukhtar
+//     // .find({ author: /^Mukhtar/ })
+
+//     // Ends with Hamedani
+//     // .find({ author: /Hamedani$/i })
+
+//     //Contains Mosh
+// .find({ author: /.*Mosh.*/i })
+
+//     .sort( { name: 1, })
+//     .count();
+//     // .select( {name: 1, tags: 1});
+//     console.log(courses);
+// }
+
+// getCourses();
+
 async function getCourses() {
     const courses = await Course
-    // .find({ author: 'Mukhtar', isPublished: true })
-    // .find( { price: { $gt: 10, $lte: 20 } })
-    // .find( { price: { $in: [10, 25, 20]}})
-    // .find()
-    // .or([{ author: 'Muktar' }, { isPublished: true }])
-    // .and([])
-
-    // Starts with Mukhtar
-    // .find({ author: /^Mukhtar/ })
-
-    // Ends with Hamedani
-    // .find({ author: /Hamedani$/i })
-
-    //Contains Mosh
-.find({ author: /.*Mosh.*/i })
-
+    .find({ author: 'Mukhtar', isPublished: true })
     .sort( { name: 1, })
-    .select( {name: 1, tags: 1});
+    .count();
     console.log(courses);
-}
-
-getCourses();
+  }
+  getCourses();

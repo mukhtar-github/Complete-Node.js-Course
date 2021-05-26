@@ -329,4 +329,4 @@ So in the above query, we're filtering our *courses* and picking only their *nam
 ]
 ```
 
- This is what we get, an array of two *courses*, and each *course* has these three properties, *tags, _id, and name*. Sometimes we just want to get the number of documents, instead of the actual documents.
+ This is what we get, an array of two *courses*, and each *course* has these three properties, *tags, _id, and name*. Sometimes we just want to get the number of documents, instead of the actual documents. So, if That's the case, we don't need to use the *select* method, instead we call *count*. And this returns the count of documents that matches the *find* method criteria. So, back in terminal
