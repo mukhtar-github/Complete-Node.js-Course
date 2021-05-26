@@ -353,4 +353,4 @@ Look, we have two documents that matches our filter.
 
 ## 13- Pagination
 
-
+So, earlier you learned about the *limit* method

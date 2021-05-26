@@ -45,8 +45,7 @@ async function createCourse() {
 // .find({ author: /.*Mosh.*/i })
 
 //     .sort( { name: 1, })
-//     .count();
-//     // .select( {name: 1, tags: 1});
+//     .select( {name: 1, tags: 1});
 //     console.log(courses);
 // }
 
