@@ -192,7 +192,20 @@ So look we get an array with two objects. Here's our first course, that's the *N
 
 But we can also, sort our documents, we can set a limit on the number of documents that are returned, we also select specific properties in the documents. Let's say our *course* documents, they have *50* properties, maybe we don't want to return all these properties to the client. Perhaps we want to return only their name. So, let me show you how to build a more complex query. Earlier you saw that this *find* method returns a *DocumentQuery* object. So, we can customize the query. We can apply a *limit*, let's say *10*, we can *sort* the documents, we can pass an object in the *sort* method, and in this object, we add one or more *key value* pairs for sorting.
 
-So let's say we want to *sort* these documents by their *name*. We set *name* to *1*. One indicates ascending order. If you want to *sort* these documents in a descending order, you use *-1*. Now as I told you, you can have multiple *key value* pairs. We also have another method *select*, and with this, we can select the properties that we want to be returned, for example, let'say we only want to get the *name* and the *tags* properties of each *course* document. So, we set *name* to *1*, and *tags* to *1* as well. Now let's run this application, so back in terminal *node index.js*. So
+So let's say we want to *sort* these documents by their *name*. We set *name* to *1*. One indicates ascending order. If you want to *sort* these documents in a descending order, you use *-1*. Now as I told you, you can have multiple *key value* pairs. We also have another method *select*, and with this, we can select the properties that we want to be returned, for example, let'say we only want to get the *name* and the *tags* properties of each *course* document. So, we set *name* to *1*, and *tags* to *1* as well.
+
+```javascript
+async function getCourses() {
+  const courses = await Course
+  .find({ author: 'Mukhtar', isPublished: true })
+  .sort( { name: 1, })
+  .select( {name: 1, tags: 1});
+  console.log(courses);
+}
+getCourses();
+```
+
+Now let's run this application, so back in terminal *node index.js*.
 
 ```javascript
 [
@@ -290,13 +303,30 @@ So .* in a regular expression means we can have 0 or more characters, we don't c
 
 ```javascript
 async function getCourses() {
-    const courses = await Course
-.find({ author: 'Mukhtar', isPublished: true })
-.sort( { name: 1, })
-.select( {name: 1, tags: 1});
-console.log(courses);
+  const courses = await Course
+  .find({ author: 'Mukhtar', isPublished: true })
+  .sort( { name: 1, })
+  .select( {name: 1, tags: 1});
+  console.log(courses);
 }
 getCourses();
 ```
 
-So in the above query, we're filtering our *courses* and picking only their name
+So in the above query, we're filtering our *courses* and picking only their *name* and *tags* properties. So, if we run this application, *node index.js*.
+
+```javascript
+[
+  {
+    tags: [ 'angular', 'frontend' ],
+    _id: 60aa1fefb3dde037671a9075,
+    name: 'Angular Course'
+  },
+  {
+    tags: [ 'node', 'backend' ],
+    _id: 60aa1f90de378737292fe8de,
+    name: 'Node.js Course'
+  }
+]
+```
+
+ This is what we get, an array of two *courses*, and each *course* has these three properties, *tags, _id, and name*. Sometimes we just want to get the number of documents, instead of the actual documents.
