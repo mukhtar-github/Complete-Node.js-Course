@@ -381,3 +381,5 @@ getCourses();
 ```
 
 ## 14- Exercise 1
+
+Alright, now it's time for an exercise. So you should download the zip file attached to this lecture. When you open the zip file, you're going to see two files. *Exercise-data.json*, this is a *JSON* file with a bunch of *course* objects that we're going to import into our database.
