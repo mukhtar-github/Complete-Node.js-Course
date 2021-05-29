@@ -386,4 +386,12 @@ Alright, now it's time for an exercise. So you should download the zip file atta
 
 So back in terminal, let's run *mongoimport*, we use this command to import data into a *MongoDB* database. Now here we need to supply a few flags. The first one is *--db*. Where we specify the name of our database. I want you to use a separate database for these exercises. So *mongo-exercises*. The next flag is *--collection*. We set this to *courses*, after that, we have another flag that is *--file*. And here we pass *exercise-data.json*.
 
-So I'm running this command from this folder where I have this *JSON* file. And finally, the last flag is *--jsonArray*, we need this flag because the data that we have in this *JSON*file is represented using an array. So let's run this command,
+So I'm running this command from this folder where I have this *JSON* file. And finally, the last flag is *--jsonArray*, we need this flag because the data that we have in this *JSON*file is represented using an array. So let's run this command.
+
+```javascript
+2021-05-29T14:40:33.650+0100    connected to: mongodb://localhost/
+2021-05-29T14:40:33.660+0100    dropping: mongo-exercises.courses
+2021-05-29T14:40:34.166+0100    7 document(s) imported successfully. 0 document(s) failed to import.
+```
+
+ Imported 7 documents. Now let's open up *MongoDB* compass, and refresh. So here's our new database *mongo exercises*,
