@@ -384,4 +384,4 @@ getCourses();
 
 Alright, now it's time for an exercise. So you should download the zip file attached to this lecture. When you open the zip file, you're going to see two files. *Exercise-data.json*, this is a *JSON* file with a bunch of *course* objects that we're going to import into our database. The other file is an *exercise.txt*, and this is a command that we're going to run in terminal to import that *JSON* file into a new database, you can simply copy paste this into terminal, or you can type it by hand as I'm going to show you in a second.
 
-So back in terminal, let's run
+So back in terminal, let's run *mongoimport*, we use this command to import data into a *MongoDB* database. Now here we need to supply a few flags. The first one is *--db*. Where we specify the name of our database. I want you to use a separate database for these exercises. So *mongo-exercises*. The next flag is *--collection*
