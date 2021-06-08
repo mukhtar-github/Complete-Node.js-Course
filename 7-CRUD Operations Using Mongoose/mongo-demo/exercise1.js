@@ -13,3 +13,4 @@ const courseSchema = new mongoose.Schema({
     price: Number
 });
 
+const Course = mongoose.model('Course', courseSchema);
