@@ -12,3 +12,4 @@ const courseSchema = new mongoose.Schema({
     isPublished: Boolean,
     price: Number
 });
+
