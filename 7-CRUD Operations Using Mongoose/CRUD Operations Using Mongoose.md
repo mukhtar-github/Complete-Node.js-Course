@@ -394,4 +394,4 @@ So I'm running this command from this folder where I have this *JSON* file. And 
 2021-05-29T14:40:34.166+0100    7 document(s) imported successfully. 0 document(s) failed to import.
 ```
 
- Imported 7 documents. Now let's open up *MongoDB* compass, and refresh. So here's our new database *mongo exercises*,
+ Imported 7 documents. Now let's open up *MongoDB* compass, and refresh. So here's our new database *mongo exercises*, our *courses* collection, and we have 7 documents inside as you can see. Beuatiful. So here is your first exercice
