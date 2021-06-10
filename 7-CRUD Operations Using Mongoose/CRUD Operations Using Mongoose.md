@@ -398,9 +398,34 @@ Imported 7 documents. Now let's open up *MongoDB* compass, and refresh. So here'
 
 > So here is your first exercice. I want you to write a program, and get all the published backend courses in our new database, sort them by their name, and pick only their *name* and *author* properties. So that means you should start from scratch. You need to load the *Mongoose* module, you need to connect to our new *MongoDB* database, you need to create a schema to define the shape of documents in our *courses* collection, and eventually write a query. So pause the video, do this exercise, and then come back and continue watching.
 
-Alright, I'm going to create a new file. Let's call this *solution1.js*. Here we load *mongoose* and store it in this object, *mongoose*. Now we need to connect to our new *MongoDB* database. So *mongoose.connect*, we pass the connection string which is *mongodb://localhost/mongo-exercises*. Next we need to create a *schema* to define the shape of documents in our courses collection. So *const courseSchema*, we set this to *new mongoose.Schema()*. Here I pass an object inside the schema, the properties we need to add inside the object are based on the shape of our course documents.
+Alright, I'm going to create a new file. Let's call this *solution1.js*. Here we load *mongoose* and store it in this object, *mongoose*. Now we need to connect to our new *MongoDB* database. So *mongoose.connect*, we pass the connection string which is *mongodb://localhost/mongo-exercises*.
 
-So we have *name*, which should be a string, *author* which is also a string, *tags* which is an array of strings, we have *date* which is a date object, we have *isPublished* which is boolean. And finally *price* which is a number. So here's our *schema*, next we to create a *model*. So *const Course* we set this to *mongoose.model()*, we specify the name of our collection inside the model, which is *Course*, and note that this should be singular, and then followed by our *courseSchema* object.
+```javascript
+const mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost/mongo-exercises')
+.then(() => console.log(' Connected to MongoDB...'))
+.catch(err => console.error('Coulld not connect to MongoDB..', err));
+```
+
+Next we need to create a *schema* to define the shape of documents in our courses collection. So *const courseSchema*, we set this to *new mongoose.Schema()*. Here I pass an object inside the schema, the properties we need to add inside the object are based on the shape of our course documents. So we have *name*, which should be a string, *author* which is also a string, *tags* which is an array of strings, we have *date* which is a date object, we have *isPublished* which is boolean. And finally *price* which is a number. So here's our *schema*.
+
+```javascript
+const courseSchema = new mongoose.Schema({
+    name: String,
+    author: String,
+    tags: [ String ],
+    date: Date,
+    isPublished: Boolean,
+    price: Number
+});
+```
+
+Next we to create a *model*. So *const Course* we set this to *mongoose.model()*, we specify the name of our collection inside the model, which is *Course*, and note that this should be singular, and then followed by our *courseSchema* object.
+
+```javascript
+const Course = mongoose.model('Course', courseSchema);
+```
 
 So now that we have a *model*, we can use this to query our courses. So, we call *Course.find()*, we want to get all the published backend courses. So we pass a filter object with two properties inside the *find* method. *isPublished* should be true, and you want to have the *backend tag* in these documents. We need to *sort* these courses by their *name*. So, *sort*, we pass an object and set *name* to 1. And there is also a different way to use this method, instead of using an object, we pass a string and pass the name of the property we want to use for sorting. So for ascending, we use *name*, for descending we use *-name*.
 
