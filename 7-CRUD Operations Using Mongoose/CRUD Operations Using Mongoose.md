@@ -431,8 +431,25 @@ So now that we have a *model*, we can use this to query our courses. So, we call
 
 And finally, we need to pick only *name* and *author* properties. So, *select()* and pass an object with two properties, *name* we set this to 1, and *author* sets to 1 as well. Again here, we can also use a string, so, we pass a string with two properties, *name* and *author*. Which ever approach you choose is purely your personal preference. So now we need to *await* this, get the result and store it in *courses*. Now because we used *await* here we should create an *async function*, so, *async function getCourses({})* and move the *courses* code into the *async function*.
 
+```javascript
+async function getCourses() {
+    return await Course
+    .find({ isPublished: true, tags: 'backend' })
+    .sort({ name: 1 })
+    .select({ name: 1, author: 1 });
+}
+```
+
 Now we can do a *console.log* inside the *async function*, but a better solution is to do it outside the *async function*, because we expect this *async function getCourses({})* to return an array of *courses*. So, we can simply return *courses* at the end of the code, or we can make this code shorter, so we don't have to define *const courses*, we can simply return the result of the whole expression *return await Course*.
 
-So finally, we can call the *getCourses()* function, so as I told you before, that when we decorate a function with *async*, our JavaScript engine automatically wraps the result in a *Promise*. So, look *function getCourses(): Promise<any[]>* here we can see *getCourses* returns a *promise* of any array. This means a *promise* that when resolved, will give us an array of objects. So we *await getCourses*, and store the result in *const courses*. Again, because we have used the *await* operator here, we need to wrap this line of code inside an *async function*.
+So finally, we can call the *getCourses()* function, so as I told you before, that when we decorate a function with *async*, our JavaScript engine automatically wraps the result in a *Promise*. So, look *function getCourses(): Promise<any[]>* here we can see *getCourses* returns a *promise* of any array. This means a *promise* that when resolved, will give us an array of objects. So we *await getCourses*, and store the result in *const courses*. Again, because we have used the *await* operator here, we need to wrap this line of code inside an *async function*. So we can call this async function *run()*, this is to run our program, we put our line of code inside *async function run()*. And inside the *async function run()* we display the *courses* in the console. And finally, we call the *run()* function at the end.
 
-So we can call this *async function* *run()*, this is to run our program, we put our line of code inside *async function run()*. And inside the *async function run()* we display the *courses* in the console. And finally, we call the *run()* function at the end. So this is one way to solve this problem, you don't necessarily need the *run()* function, this is just how I prefer to structure this program. Because *getCourses* is supposed to give us the list of courses. Displaying the courses is not the responsibility of this function. So, let's run this program and make sure everything works. So *node solution1.js*.
+```javascript
+async function run() {
+    const courses = await getCourses();
+    console.log(courses);
+} 
+run();
+```
+
+So this is one way to solve this problem, you don't necessarily need the *run()* function, this is just how I prefer to structure this program. Because *getCourses* is supposed to give us the list of courses. Displaying the courses is not the responsibility of this function. So, let's run this program and make sure everything works. So *node solution1.js*.
