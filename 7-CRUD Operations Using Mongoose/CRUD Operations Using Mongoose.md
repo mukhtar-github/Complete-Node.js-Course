@@ -398,7 +398,7 @@ Imported 7 documents. Now let's open up *MongoDB* compass, and refresh. So here'
 
 > So here is your first exercice. I want you to write a program, and get all the published backend courses in our new database, sort them by their name, and pick only their *name* and *author* properties. So that means you should start from scratch. You need to load the *Mongoose* module, you need to connect to our new *MongoDB* database, you need to create a schema to define the shape of documents in our *courses* collection, and eventually write a query. So pause the video, do this exercise, and then come back and continue watching.
 
-Alright, I'm going to create a new file. Let's call this *solution1.js*. Here we load *mongoose* and store it in this object, *mongoose*. Now we need to connect to our new *MongoDB* database. So *mongoose.connect*, we pass the connection string which is *mongodb://localhost/mongo-exercises*.
+Alright, I'm going to create a new file. Let's call this *exercise1.js*. Here we load *mongoose* and store it in this object, *mongoose*. Now we need to connect to our new *MongoDB* database. So *mongoose.connect*, we pass the connection string which is *mongodb://localhost/mongo-exercises*.
 
 ```javascript
 const mongoose = require('mongoose');
@@ -452,4 +452,31 @@ async function run() {
 run();
 ```
 
-So this is one way to solve this problem, you don't necessarily need the *run()* function, this is just how I prefer to structure this program. Because *getCourses* is supposed to give us the list of courses. Displaying the courses is not the responsibility of this function. So, let's run this program and make sure everything works. So *node solution1.js*.
+So this is one way to solve this problem, you don't necessarily need the *run()* function, this is just how I prefer to structure this program. Because *getCourses* is supposed to give us the list of courses. Displaying the courses is not the responsibility of this function. So, let's run this program and make sure everything works. So *node exercise.js*.
+
+```javascript
+Connected to MongoDB...
+[
+  {
+    _id: 5a68fde3f09ad7646ddec17e,
+    name: 'ASP.NET MVC Course',
+    author: 'Mosh'
+  },
+  {
+    _id: 5a68fdc3615eda645bc6bdec,
+    name: 'Express.js Course',
+    author: 'Mosh'
+  },
+  {
+    _id: 5a68fdd7bee8ea64649c2777,
+    name: 'Node.js Course',
+    author: 'Mosh'
+  },
+  {
+    _id: 5a68fe2142ae6a6482c4c9cb,
+    name: 'Node.js Course by Jack',
+    author: 'Jack'
+  }
+]
+```
+
