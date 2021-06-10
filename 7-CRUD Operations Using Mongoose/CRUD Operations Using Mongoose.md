@@ -452,7 +452,7 @@ async function run() {
 run();
 ```
 
-So this is one way to solve this problem, you don't necessarily need the *run()* function, this is just how I prefer to structure this program. Because *getCourses* is supposed to give us the list of courses. Displaying the courses is not the responsibility of this function. So, let's run this program and make sure everything works. So *node exercise.js*.
+So this is one way to solve this problem, you don't necessarily need the *run()* function, this is just how I prefer to structure this program. Because *getCourses* is supposed to give us the list of courses. Displaying the courses is not the responsibility of this function. So, let's run this program and make sure everything works. So *node exercise1.js*.
 
 ```javascript
 Connected to MongoDB...
