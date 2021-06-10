@@ -394,9 +394,9 @@ So I'm running this command from this folder where I have this *JSON* file. And 
 2021-05-29T14:40:34.166+0100    7 document(s) imported successfully. 0 document(s) failed to import.
 ```
 
- Imported 7 documents. Now let's open up *MongoDB* compass, and refresh. So here's our new database *mongo exercises*, our *courses* collection, and we have 7 documents inside as you can see. Beuatiful.
+Imported 7 documents. Now let's open up *MongoDB* compass, and refresh. So here's our new database *mongo exercises*, our *courses* collection, and we have 7 documents inside as you can see. Beuatiful.
 
-So here is your first exercice. I want you to write a program, and get all the published backend courses in our new database, sort them by their name, and pick only their *name* and *author* properties. So that means you should start from scratch. You need to load the *Mongoose* module, you need to connect to our new *MongoDB* database, you need to create a schema to define the shape of documents in our *courses* collection, and eventually write a query. So pause the video, do this exercise, and then come back and continue watching.
+> So here is your first exercice. I want you to write a program, and get all the published backend courses in our new database, sort them by their name, and pick only their *name* and *author* properties. So that means you should start from scratch. You need to load the *Mongoose* module, you need to connect to our new *MongoDB* database, you need to create a schema to define the shape of documents in our *courses* collection, and eventually write a query. So pause the video, do this exercise, and then come back and continue watching.
 
 Alright, I'm going to create a new file. Let's call this *solution1.js*. Here we load *mongoose* and store it in this object, *mongoose*. Now we need to connect to our new *MongoDB* database. So *mongoose.connect*, we pass the connection string which is *mongodb://localhost/mongo-exercises*. Next we need to create a *schema* to define the shape of documents in our courses collection. So *const courseSchema*, we set this to *new mongoose.Schema()*. Here I pass an object inside the schema, the properties we need to add inside the object are based on the shape of our course documents.
 
