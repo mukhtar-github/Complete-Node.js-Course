@@ -5,3 +5,7 @@ sudo systemctl status mongod
 sudo systemctl stop mongod
 
 mongoimport --db mongo-exercises --collection courses --drop --file exercise-data.json --jsonArray
+
+** MongoDB Lessons (Importing and Exporting Data).
+1 -  export bson file
+* mongodump --uri "mongodb+srv://m001-student:m001-mongodb-basics@cluster0.mongodb.net/sample_supplies"
