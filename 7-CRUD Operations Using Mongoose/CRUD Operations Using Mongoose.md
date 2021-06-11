@@ -487,4 +487,4 @@ This is what we should get. So we have 4 courses, the first one is *ASP.NET MVC 
 Alright, here's the second exercise.
 > Get all the published frontend and backend courses, sort the by their price in descendind order, from most expensive to least expensive, pick only their name and author, and display them on the console.
 
-So I'm going to create a new file 
+So I'm going to create a new file, let's call it *solution2.js*. Now to save time, I'm going to copy some code from our previous solution. So let's go to *exercise1.js*, copy everything, and plce it in our new file. Now, we only need to modify the query.
