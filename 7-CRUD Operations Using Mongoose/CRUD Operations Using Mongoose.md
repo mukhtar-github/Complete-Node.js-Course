@@ -483,3 +483,8 @@ Connected to MongoDB...
 This is what we should get. So we have 4 courses, the first one is *ASP.NET MVC Course*, the second is *Express.js Course*, the third is *Node.js Course*, and the last one is *Node.js Course by Jack*.
 
 ## 15- Exercise 2
+
+Alright, here's the second exercise.
+> Get all the published frontend and backend courses, sort the by their price in descendind order, from most expensive to least expensive, pick only their name and author, and display them on the console.
+
+So I'm going to create a new file 
