@@ -529,4 +529,4 @@ Connected to MongoDB...
 ]
 ```
 
-So you should get 5 courses. We have *Node and ASP.NET* which are *backend* courses, we have *Angular*, which is a *frontend* course, and again we have a *Node* course by *Jack*, and *Express.js* which are both *backend* courses.
+So you should get 5 courses. We have *Node and ASP.NET* which are *backend* courses, we have *Angular*, which is a *frontend* course, and again we have a *Node* course by *Jack*, and *Express.js* which are both *backend* courses. Now to make sure that our sorting is done properly, I would like to display the *price* of these courses as well. So, I'm going to modify our *select* method to add the *price*. Now let's run this one more time.
