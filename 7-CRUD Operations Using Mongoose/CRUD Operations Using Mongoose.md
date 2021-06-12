@@ -494,4 +494,4 @@ find({ isPublished: true, tags: 'backend' })
 ```
 
 If I set *tags* to an array of two strings, *['backend', 'frontend']*, this will not work. Because, this will return courses that have both backend and frontend *tags*. So here, the logical *and* operator will be applied. So we need to modify this and use the *in* operator that I explained in the lecture about comparison operators. So let's remove the array
-in the *tags*. We set the *tags* property to an object. In this object we're going to have *key value* pairs
+in the *tags*. We set the *tags* property to an object. In this object we're going to have *key value* pairs. Our *keys* are *mongoDB* operators, in this case *$in*. Now, what JavaScript construct can we use to represent multiple values? We use an *array*, right? So we set this to an array of two strings
