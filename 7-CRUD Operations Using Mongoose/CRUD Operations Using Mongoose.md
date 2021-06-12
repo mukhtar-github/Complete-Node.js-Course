@@ -487,11 +487,11 @@ This is what we should get. So we have 4 courses, the first one is *ASP.NET MVC 
 Alright, here's the second exercise.
 > Get all the published frontend and backend courses, sort the by their price in descendind order, from most expensive to least expensive, pick only their name and author, and display them on the console.
 
-So I'm going to create a new file, let's call it *solution2.js*. Now to save time, I'm going to copy some code from our previous solution. So let's go to *exercise1.js*, copy everything, and plce it in our new file. Now, we only need to modify the query. So we want to get all the published frontend and backend courses. In our *find* method, we have *isPublished* set to true, that's perfectly, however, our *tags* is currently set to *backend*.
+So I'm going to create a new file, let's call it *exercise2.js*. Now to save time, I'm going to copy some code from our previous solution. So let's go to *exercise1.js*, copy everything, and plce it in our new file. Now, we only need to modify the query. So we want to get all the published frontend and backend courses. In our *find* method, we have *isPublished* set to true, that's perfectly, however, our *tags* is currently set to *backend*.
 
 ```javascript
 find({ isPublished: true, tags: 'backend' })
 ```
 
 If I set *tags* to an array of two strings, *['backend', 'frontend']*, this will not work. Because, this will return courses that have both backend and frontend *tags*. So here, the logical *and* operator will be applied. So we need to modify this and use the *in* operator that I explained in the lecture about comparison operators. So let's remove the array
-in the *tags*. We set the *tags* property to 
+in the *tags*. We set the *tags* property to an object. In this object we're going to have *key value* pairs
