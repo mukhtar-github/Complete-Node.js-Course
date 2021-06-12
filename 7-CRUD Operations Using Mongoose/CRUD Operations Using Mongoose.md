@@ -530,3 +530,41 @@ Connected to MongoDB...
 ```
 
 So you should get 5 courses. We have *Node and ASP.NET* which are *backend* courses, we have *Angular*, which is a *frontend* course, and again we have a *Node* course by *Jack*, and *Express.js* which are both *backend* courses. Now to make sure that our sorting is done properly, I would like to display the *price* of these courses as well. So, I'm going to modify our *select* method to add the *price*. Now let's run this one more time.
+
+```javascript
+Connected to MongoDB...
+[
+  {
+    _id: 5a68fdd7bee8ea64649c2777,
+    name: 'Node.js Course',
+    author: 'Mosh',
+    price: 20
+  },
+  {
+    _id: 5a6900fff467be65019a9001,
+    name: 'Angular Course',
+    author: 'Mosh',
+    price: 15
+  },
+  {
+    _id: 5a68fde3f09ad7646ddec17e,
+    name: 'ASP.NET MVC Course',
+    author: 'Mosh',
+    price: 15
+  },
+  {
+    _id: 5a68fe2142ae6a6482c4c9cb,
+    name: 'Node.js Course by Jack',
+    author: 'Jack',
+    price: 12
+  },
+  {
+    _id: 5a68fdc3615eda645bc6bdec,
+    name: 'Express.js Course',
+    author: 'Mosh',
+    price: 10
+  }
+]
+```
+
+Alright, you can see the most expensive course comes first, and the least expensive course comes last. Beautiful. I told you that there is another way to write this query.
