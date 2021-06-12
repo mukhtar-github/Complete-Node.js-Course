@@ -496,4 +496,37 @@ find({ isPublished: true, tags: 'backend' })
 If I set *tags* to an array of two strings, *['backend', 'frontend']*, this will not work. Because, this will return courses that have both backend and frontend *tags*. So here, the logical *and* operator will be applied. So we need to modify this and use the *in* operator that I explained in the lecture about comparison operators. So let's remove the array
 in the *tags*. We set the *tags* property to an object. In this object we're going to have *key value* pairs. Our *keys* are *mongoDB* operators, in this case *$in*. Now, what JavaScript construct can we use to represent multiple values? We use an *array*, right? So we set this to an array of two strings, backend and frontend.
 
-Now, there is another way to write this query, we can use the logical *or* operator, and I'm going to show you that in a second. So let's finish the first solution. So, we need to *sort* them by their *price* in descending order, so we set the price to *-1*, or as I told you before, you can pass a string, and set it to *('-price')*. Either way, that's perfectly fine. For this solution, I'm going to use this *sort('-price')* syntax. And finally, we need to pick the *name* and *author* of these courses. So, I'm going to set *select* to a string like this *('name author')*. Let's run this and make sure our application is working.
+Now, there is another way to write this query, we can use the logical *or* operator, and I'm going to show you that in a second. So let's finish the first solution. So, we need to *sort* them by their *price* in descending order, so we set the price to *-1*, or as I told you before, you can pass a string, and set it to *('-price')*. Either way, that's perfectly fine. For this solution, I'm going to use this *sort('-price')* syntax. And finally, we need to pick the *name* and *author* of these courses. So, I'm going to set *select* to a string like this *('name author')*. Let's run this and make sure our application is working. So, *node exercise2.js*.
+
+```javascript
+Connected to MongoDB...
+[
+  {
+    _id: 5a68fdd7bee8ea64649c2777,
+    name: 'Node.js Course',
+    author: 'Mosh'
+  },
+  {
+    _id: 5a6900fff467be65019a9001,
+    name: 'Angular Course',
+    author: 'Mosh'
+  },
+  {
+    _id: 5a68fde3f09ad7646ddec17e,
+    name: 'ASP.NET MVC Course',
+    author: 'Mosh'
+  },
+  {
+    _id: 5a68fe2142ae6a6482c4c9cb,
+    name: 'Node.js Course by Jack',
+    author: 'Jack'
+  },
+  {
+    _id: 5a68fdc3615eda645bc6bdec,
+    name: 'Express.js Course',
+    author: 'Mosh'
+  }
+]
+```
+
+So you should get 5 courses. We have *Node and ASP.NET* which are *backend* courses, we have *Angular*, which is a *frontend* course, and again we have a *Node* course by *Jack*, and *Express.js* which are both *backend* courses.
