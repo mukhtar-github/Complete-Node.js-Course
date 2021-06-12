@@ -493,4 +493,5 @@ So I'm going to create a new file, let's call it *solution2.js*. Now to save tim
 find({ isPublished: true, tags: 'backend' })
 ```
 
-If I set *tags* to an array of two strings, *['backend', 'frontend']*, this will not work. Because, this will return courses that have both *['backend', 'frontend']* tags. So here, the logical *and* operator will be applied.
+If I set *tags* to an array of two strings, *['backend', 'frontend']*, this will not work. Because, this will return courses that have both backend and frontend *tags*. So here, the logical *and* operator will be applied. So we need to modify this and use the *in* operator that I explained in the lecture about comparison operators. So let's remove the array
+in the *tags*. We set the *tags* property to 
