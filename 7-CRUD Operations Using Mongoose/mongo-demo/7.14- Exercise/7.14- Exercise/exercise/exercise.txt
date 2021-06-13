@@ -14,7 +14,7 @@ mongoimport --db mongo-exercises --collection courses --drop --file exercise-dat
 JSON - Importing (mongoimport), Exporting (mongoexport).
 BSON - Importing (mongorestore), Exporting (mongodump).
 
-Example 1 -  Exporting BSON file.
+Example 1a -  Exporting BSON file.
 
 * mongodump allows us to get the data we looking for in BSON form.
 
@@ -43,7 +43,7 @@ mukhtar@mukhtar-Aspire-ES1-431:~/dump/sample_supplies$ ls
 sales.bson  sales.metadata.json
 mukhtar@mukhtar-Aspire-ES1-431:~/dump/sample_supplies$
 
-2 - Exporting JSON file.
+Example 1b - Exporting JSON file.
 
 * mongoexport stores the JSON format of the same data.
 
@@ -51,6 +51,4 @@ mukhtar@mukhtar-Aspire-ES1-431:~/dump/sample_supplies$
               --collection=<collection name>
               --out=<filename>.json - Exports data in JSON.
 
-* mongoexport --uri="mongodb+srv://m001-student:m001-mongodb-basics@cluster0.dkemg.mongodb.net/sample_supplies"
-              --collection=sales 
-              --out=sales.json
+* mongoexport --uri="mongodb+srv://m001-student:m001-mongodb-basics@cluster0.dkemg.mongodb.net/sample_supplies" --collection=sales --out=sales.json
