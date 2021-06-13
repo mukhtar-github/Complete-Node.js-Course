@@ -7,18 +7,23 @@ sudo systemctl stop mongod
 mongoimport --db mongo-exercises --collection courses --drop --file exercise-data.json --jsonArray
 
 
+
+
 *** MongoDB Lessons (Importing and Exporting Data).
 
 JSON - Importing (mongoimport), Exporting (mongoexport).
 BSON - Importing (mongorestore), Exporting (mongodump).
 
-Example 1 -  Exporting bson file.
+Example 1 -  Exporting BSON file.
 
-* mongodump allows us to get the data we looking for in BSON form, while mongoexport stores the JSON format of the same data.
+* mongodump allows us to get the data we looking for in BSON form.
+
+* mongodump --uri "<Atlas Cluster URI>" - Exports data in BSON.
 
 * mongodump --uri "mongodb+srv://m001-student:m001-mongodb-basics@cluster0.dkemg.mongodb.net/sample_supplies"
 
-mukhtar@mukhtar-Aspire-ES1-431:~$ mongodump --uri "mongodb+srv://m001-student:m001-mongodb-basics@cluster0.dkemg.mongodb.net/sample_supplies"
+
+** mukhtar@mukhtar-Aspire-ES1-431:~$ mongodump --uri "mongodb+srv://m001-student:m001-mongodb-basics@cluster0.dkemg.mongodb.net/sample_supplies"
 2021-06-13T13:56:51.445+0100	WARNING: On some systems, a password provided directly in a connection string or using --uri may be visible to system status programs such as `ps` that may be invoked by other users. Consider omitting the password to provide it via stdin, or using the --config option to specify a configuration file with the password.
 2021-06-13T13:56:57.149+0100	writing sample_supplies.sales to dump/sample_supplies/sales.bson
 2021-06-13T13:56:57.450+0100	[........................]  sample_supplies.sales  0/5000  (0.0%)
@@ -38,5 +43,14 @@ mukhtar@mukhtar-Aspire-ES1-431:~/dump/sample_supplies$ ls
 sales.bson  sales.metadata.json
 mukhtar@mukhtar-Aspire-ES1-431:~/dump/sample_supplies$
 
-2 - 
-* mongoexport --uri="mongodb+srv://m001-student:m001-mongodb-basics@cluster0.dkemg.mongodb.net/sample_supplies" --collection=sales --out=sales.json
+2 - Exporting JSON file.
+
+* mongoexport stores the JSON format of the same data.
+
+* mongoexport --uri "<Atlas Cluster URI>"
+              --collection=<collection name>
+              --out=<filename>.json - Exports data in JSON.
+
+* mongoexport --uri="mongodb+srv://m001-student:m001-mongodb-basics@cluster0.dkemg.mongodb.net/sample_supplies"
+              --collection=sales 
+              --out=sales.json
