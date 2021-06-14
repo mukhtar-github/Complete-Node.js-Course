@@ -496,6 +496,10 @@ find({ isPublished: true, tags: 'backend' })
 If I set *tags* to an array of two strings, *['backend', 'frontend']*, this will not work. Because, this will return courses that have both backend and frontend *tags*. So here, the logical *and* operator will be applied. So we need to modify this and use the *in* operator that I explained in the lecture about comparison operators. So let's remove the array
 in the *tags*. We set the *tags* property to an object. In this object we're going to have *key value* pairs. Our *keys* are *mongoDB* operators, in this case *$in*. Now, what JavaScript construct can we use to represent multiple values? We use an *array*, right? So we set this to an array of two strings, backend and frontend.
 
+```javascript
+find({ isPublished: true, tags: { $in: [ 'frontend', 'backend'] } })
+```
+
 Now, there is another way to write this query, we can use the logical *or* operator, and I'm going to show you that in a second. So let's finish the first solution. So, we need to *sort* them by their *price* in descending order, so we set the price to *-1*, or as I told you before, you can pass a string, and set it to *('-price')*. Either way, that's perfectly fine. For this solution, I'm going to use this *sort('-price')* syntax. And finally, we need to pick the *name* and *author* of these courses. So, I'm going to set *select* to a string like this *('name author')*. Let's run this and make sure our application is working. So, *node exercise2.js*.
 
 ```javascript
@@ -567,4 +571,6 @@ Connected to MongoDB...
 ]
 ```
 
-Alright, you can see the most expensive course comes first, and the least expensive course comes last. Beautiful. I told you that there is another way to write the query. So instead of the *in* operator, we can use the *or* operator. So we want all these courses to be published. So *isPublished* is the required part. Now, for *tags*, they should either be *frontend* or *backend*. So I'm going to break this into two parts, for the first part, we're only going to have the *isPublished* criteria. After that, we use the *or* method. Now what JavaScript construct can we use to store multiple values. multiple Objects? We use an *array*, right? So we
+Alright, you can see the most expensive course comes first, and the least expensive course comes last. Beautiful. I told you that there is another way to write the query. So instead of the *in* operator, we can use the *or* operator. So we want all these courses to be published. So *isPublished* is the required part. Now, for *tags*, they should either be *frontend* or *backend*.
+
+So I'm going to break this into two parts, for the first part, we're only going to have the *isPublished* criteria. After that, we use the *or* method. Now what JavaScript construct can we use to store multiple values. multiple Objects? We use an *array*. And for an *or* operator, we need multiple operants right? So we pass an array, in this array we need two objects, two filtering objects. So, here's the first one, we set *tags* to *frontend*, and another similar object, we set *tags* to *backend*.
