@@ -573,4 +573,42 @@ Connected to MongoDB...
 
 Alright, you can see the most expensive course comes first, and the least expensive course comes last. Beautiful. I told you that there is another way to write the query. So instead of the *in* operator, we can use the *or* operator. So we want all these courses to be published. So *isPublished* is the required part. Now, for *tags*, they should either be *frontend* or *backend*.
 
-So I'm going to break this into two parts, for the first part, we're only going to have the *isPublished* criteria. After that, we use the *or* method. Now what JavaScript construct can we use to store multiple values. multiple Objects? We use an *array*. And for an *or* operator, we need multiple operants right? So we pass an array, in this array we need two objects, two filtering objects. So, here's the first one, we set *tags* to *frontend*, and another similar object, we set *tags* to *backend*. This approach is also perfectly fine. Now, back in terminal, let's run the application one last time.
+So I'm going to break this into two parts, for the first part, we're only going to have the *isPublished* criteria. After that, we use the *or* method. Now what JavaScript construct can we use to store multiple values. multiple Objects? We use an *array*. And for an *or* operator, we need multiple operants right? So we pass an array, in this array we need two objects, two filtering objects. So, here's the first one, we set *tags* to *frontend*, and another similar object, we set *tags* to *backend*. This approach is also perfectly fine. Now, back in terminal, let's run the application one last time.And we get the exact same result. Beautiful.
+
+```javascript
+Connected to MongoDB...
+[
+  {
+    _id: 5a68fdd7bee8ea64649c2777,
+    name: 'Node.js Course',
+    author: 'Mosh',
+    price: 20
+  },
+  {
+    _id: 5a6900fff467be65019a9001,
+    name: 'Angular Course',
+    author: 'Mosh',
+    price: 15
+  },
+  {
+    _id: 5a68fde3f09ad7646ddec17e,
+    name: 'ASP.NET MVC Course',
+    author: 'Mosh',
+    price: 15
+  },
+  {
+    _id: 5a68fe2142ae6a6482c4c9cb,
+    name: 'Node.js Course by Jack',
+    author: 'Jack',
+    price: 12
+  },
+  {
+    _id: 5a68fdc3615eda645bc6bdec,
+    name: 'Express.js Course',
+    author: 'Mosh',
+    price: 10
+  }
+]
+```
+
+
