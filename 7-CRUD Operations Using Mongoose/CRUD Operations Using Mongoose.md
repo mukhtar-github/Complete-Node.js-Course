@@ -567,4 +567,4 @@ Connected to MongoDB...
 ]
 ```
 
-Alright, you can see the most expensive course comes first, and the least expensive course comes last. Beautiful. I told you that there is another way to write the query. So instead of the *in* operator, we can use the *or* operator. So we want all these courses to be published. So *isPublished* is the required part. Now, for *tags*, they should either be *frontend* or *backend*.
+Alright, you can see the most expensive course comes first, and the least expensive course comes last. Beautiful. I told you that there is another way to write the query. So instead of the *in* operator, we can use the *or* operator. So we want all these courses to be published. So *isPublished* is the required part. Now, for *tags*, they should either be *frontend* or *backend*. So I'm going to break this into two parts, for the first part, we're only going to have the *isPublished* criteria. After that, we use the *or* method. Now what JavaScript construct can we use to store multiple values. multiple Objects? We use an *array*, right? So we
