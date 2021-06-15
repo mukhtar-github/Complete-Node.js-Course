@@ -84,4 +84,20 @@ Example 2a -  Importing BSON file.
 2021-06-15T06:12:09.393+0100	preparing collections to restore from
 2021-06-15T06:12:09.422+0100	reading metadata for sample_supplies.sales from dump/sample_supplies/sales.metadata.json
 2021-06-15T06:12:10.730+0100	finished restoring sample_supplies.sales (5000 documents, 0 failures)
-2021-06-15T06:12:10.730+0100	5000 document(s) restored successfully. 9 document(s) failed to restore.
+2021-06-15T06:12:10.730+0100	5000 document(s) restored successfully.
+
+** mukhtar@mukhtar-Aspire-ES1-431:~$ mongorestore  --drop dump/
+2021-06-15T06:28:10.648+0100	preparing collections to restore from
+2021-06-15T06:28:10.915+0100	reading metadata for playground.courses from dump/playground/courses.metadata.json
+2021-06-15T06:28:11.114+0100	reading metadata for mongo-exercises.courses from dump/mongo-exercises/courses.metadata.json
+2021-06-15T06:28:11.136+0100	reading metadata for sample_supplies.sales from dump/sample_supplies/sales.metadata.json
+2021-06-15T06:28:11.237+0100	restoring playground.courses from dump/playground/courses.bson
+2021-06-15T06:28:11.271+0100	no indexes to restore
+2021-06-15T06:28:11.271+0100	finished restoring playground.courses (2 documents, 0 failures)
+2021-06-15T06:28:11.537+0100	restoring mongo-exercises.courses from dump/mongo-exercises/courses.bson
+2021-06-15T06:28:11.550+0100	no indexes to restore
+2021-06-15T06:28:11.550+0100	finished restoring mongo-exercises.courses (7 documents, 0 failures)
+2021-06-15T06:28:11.636+0100	restoring sample_supplies.sales from dump/sample_supplies/sales.bson
+2021-06-15T06:28:12.143+0100	no indexes to restore
+2021-06-15T06:28:12.143+0100	finished restoring sample_supplies.sales (5000 documents, 0 failures)
+2021-06-15T06:28:12.143+0100	5009 document(s) restored successfully. 0 document(s) failed to restore.
