@@ -611,4 +611,10 @@ Connected to MongoDB...
 ]
 ```
 
+## 16- Exercise 3
 
+And here is our third exercise.
+
+> Get all the published courses that are 15 dollars or more, or have the word 'by' in their title.
+
+Alright, let's get started. So a new file, I'm going to call this *exercise3.js*
