@@ -76,7 +76,7 @@ Example 2a -  Importing BSON file.
 
 * mongorestore --uri "<Atlas Cluster URI>" --drop dump - Imports data in BSON dump.
 
-* mongorestore --uri "mongodb+srv://m001-student:m001-mongodb-basics@cluster0.-----.mongodb.net/sample_supplies" --drop dump
+* mongorestore --uri "mongodb+srv://m001-student:m001-mongodb-basics@cluster0.dkemg.mongodb.net/sample_supplies" --drop dump
 
 * mongorestore  dump/
 
@@ -101,3 +101,24 @@ Example 2a -  Importing BSON file.
 2021-06-15T06:28:12.143+0100	no indexes to restore
 2021-06-15T06:28:12.143+0100	finished restoring sample_supplies.sales (5000 documents, 0 failures)
 2021-06-15T06:28:12.143+0100	5009 document(s) restored successfully. 0 document(s) failed to restore.
+
+
+Example 2b -  Importing JSON file.
+
+* This command allows us to import a database into a MongoDB instance, which in our case is an Atlas Cluster.
+
+* mongoimport --uri "<Atlas Cluster URI>" --drop=<filename>.json - Imports data in JSON.
+
+* mongoimport --uri="mongodb+srv://m001-student:m001-mongodb-basics@cluster0.dkemg.mongodb.net/sample_supplies" --drop sales.json
+
+** mukhtar@mukhtar-Aspire-ES1-431:~$ mongoimport --uri="mongodb+srv://m001-student:m001-mongodb-basics@cluster0.dkemg.mongodb.net/sample_supplies" --drop sales.json
+2021-06-15T06:42:41.906+0100	no collection specified
+2021-06-15T06:42:41.906+0100	using filename 'sales' as collection
+2021-06-15T06:42:45.441+0100	connected to: mongodb+srv://[**REDACTED**]@cluster0.dkemg.mongodb.net/sample_supplies
+2021-06-15T06:42:45.781+0100	dropping: sample_supplies.sales
+2021-06-15T06:42:48.442+0100	[####....................] sample_supplies.sales	848KB/4.01MB (20.7%)
+2021-06-15T06:42:51.442+0100	[#########...............] sample_supplies.sales	1.63MB/4.01MB (40.6%)
+2021-06-15T06:42:54.442+0100	[##############..........] sample_supplies.sales	2.44MB/4.01MB (60.9%)
+2021-06-15T06:42:57.442+0100	[########################] sample_supplies.sales	4.01MB/4.01MB (100.0%)
+2021-06-15T06:42:57.727+0100	[########################] sample_supplies.sales	4.01MB/4.01MB (100.0%)
+2021-06-15T06:42:57.727+0100	5000 document(s) imported successfully. 0 document(s) failed to import.
