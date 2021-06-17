@@ -617,4 +617,6 @@ And here is our third exercise.
 
 > Get all the published courses that are 15 dollars or more, or have the word 'by' in their title.
 
-Alright, let's get started. So a new file, I'm going to call this *exercise3.js*. And again to save time, I'm going to go to our previous solution, copy all the code and paste it in the new file. Now I'm going to get all the published courses that are 15 dollars or more, or have the word 'by' in their title. So, our first criteria should stay as it is. Because we want to get only the published courses.
+Alright, let's get started. So a new file, I'm going to call this *exercise3.js*. And again to save time, I'm going to go to our previous solution, copy all the code and paste it in the new file. Now I'm going to get all the published courses that are 15 dollars or more, or have the word 'by' in their title. So, our first criteria should stay as it is. Because we want to get only the published courses. Then, we need the *or* method, because we want to get the course that are 15 dollars or more, or have the word 'by' in their title. So, we just need to modify our filtering objects.
+
+So, let's delete the two *tags* objects. 
