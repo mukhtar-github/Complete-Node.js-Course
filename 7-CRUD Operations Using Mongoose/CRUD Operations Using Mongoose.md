@@ -617,4 +617,4 @@ And here is our third exercise.
 
 > Get all the published courses that are 15 dollars or more, or have the word 'by' in their title.
 
-Alright, let's get started. So a new file, I'm going to call this *exercise3.js*
+Alright, let's get started. So a new file, I'm going to call this *exercise3.js*. And again to save time, I'm going to go to our previous solution, copy all the code and paste it in the new file.
