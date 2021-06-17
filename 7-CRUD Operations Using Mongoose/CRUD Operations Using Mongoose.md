@@ -699,4 +699,8 @@ Connected to MongoDB...
 ]
 ```
 
-So, you should get 4 courses. The first 3 courses, you can see their price is greater than or equal to 15 dollars. So here we have a 20 dollar course, a 15 dollar course, and another 15 dollar course. But the last course is not 15 dollars, however here we have the word 'by' in the name of this course.
+So, you should get 4 courses. The first 3 courses, you can see their price is greater than or equal to 15 dollars. So here we have a 20 dollar course, a 15 dollar course, and another 15 dollar course. But the last course is not 15 dollars, however, here we have the word 'by' in the name of this course.
+
+## 17- Updating a Document- Query First
+
+So, we learned a lot about querying documents. In this lecture I'm going to show you how to uodate documents in a MongoDB database. So, let's create a new
