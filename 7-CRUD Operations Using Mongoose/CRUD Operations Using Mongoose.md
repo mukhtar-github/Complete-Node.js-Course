@@ -705,4 +705,4 @@ So, you should get 4 courses. The first 3 courses, you can see their price is gr
 
 ## 17- Updating a Document- Query First
 
-So, we learned a lot about querying documents. In this lecture I'm going to show you how to uodate documents in a MongoDB database. So, let's create a new
+So, we learned a lot about querying documents. In this lecture I'm going to show you how to uodate documents in a MongoDB database. So, let's create a new function in our index.js file, *async function updateCourse()*. Now, this function should takean id, that's the id of the course,

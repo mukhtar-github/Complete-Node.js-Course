@@ -63,4 +63,9 @@ async function getCourses() {
         .count();
     console.log(courses);
 }
+
+async function updateCourse() {
+    
+}
+
 getCourses();
