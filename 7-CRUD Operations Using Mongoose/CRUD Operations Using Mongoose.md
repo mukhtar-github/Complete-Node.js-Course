@@ -619,4 +619,4 @@ And here is our third exercise.
 
 Alright, let's get started. So a new file, I'm going to call this *exercise3.js*. And again to save time, I'm going to go to our previous solution, copy all the code and paste it in the new file. Now I'm going to get all the published courses that are 15 dollars or more, or have the word 'by' in their title. So, our first criteria should stay as it is. Because we want to get only the published courses. Then, we need the *or* method, because we want to get the course that are 15 dollars or more, or have the word 'by' in their title. So, we just need to modify our filtering objects.
 
-So, let's delete the two *tags* objects. 
+So, let's delete the two *tags* objects. First we want to get courses that are 15 dollars or more. So we set *price*. Now, I cannot set price to 15 dollars, because this will return only the courses that are 15 dollars. As I told you before, with a simple value, we cannot express a concept like *15 dollars or more*. So we need to replace the value with an object. In this object we have *Key Value* pairs. Our keys are *MongoDB operators*. So, we use *gte*, which is short for *greater than or equal to*.

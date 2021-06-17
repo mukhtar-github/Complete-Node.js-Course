@@ -19,7 +19,7 @@ async function getCourses() {
     return await Course
     .find({ isPublished: true})
     .or([
-        
+        { price: { $gte: 15} }
     ])
     .sort('-price')
     .select('name author price');
