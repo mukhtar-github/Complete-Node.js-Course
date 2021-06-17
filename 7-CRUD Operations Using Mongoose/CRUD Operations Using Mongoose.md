@@ -500,7 +500,18 @@ in the *tags*. We set the *tags* property to an object. In this object we're goi
 find({ isPublished: true, tags: { $in: [ 'frontend', 'backend'] } })
 ```
 
-Now, there is another way to write this query, we can use the logical *or* operator, and I'm going to show you that in a second. So let's finish the first solution. So, we need to *sort* them by their *price* in descending order, so we set the price to *-1*, or as I told you before, you can pass a string, and set it to *('-price')*. Either way, that's perfectly fine. For this solution, I'm going to use this *sort('-price')* syntax. And finally, we need to pick the *name* and *author* of these courses. So, I'm going to set *select* to a string like this *('name author')*. Let's run this and make sure our application is working. So, *node exercise2.js*.
+Now, there is another way to write this query, we can use the logical *or* operator, and I'm going to show you that in a second. So let's finish the first solution. So, we need to *sort* them by their *price* in descending order, so we set the price to *-1*, or as I told you before, you can pass a string, and set it to *('-price')*. Either way, that's perfectly fine. For this solution, I'm going to use this *sort('-price')* syntax. And finally, we need to pick the *name* and *author* of these courses. So, I'm going to set *select* to a string like this *('name author')*.
+
+```javascript
+async function getCourses() {
+    return await Course
+    .find({ isPublished: true, tags: { $in: [ 'frontend', 'backend'] } })
+    .sort('-price')
+    .select('name author');
+}
+```
+
+Let's run this and make sure our application is working. So, *node exercise2.js*.
 
 ```javascript
 Connected to MongoDB...
@@ -533,7 +544,13 @@ Connected to MongoDB...
 ]
 ```
 
-So you should get 5 courses. We have *Node and ASP.NET* which are *backend* courses, we have *Angular*, which is a *frontend* course, and again we have a *Node* course by *Jack*, and *Express.js* which are both *backend* courses. Now to make sure that our sorting is done properly, I would like to display the *price* of these courses as well. So, I'm going to modify our *select* method to add the *price*. Now let's run this one more time.
+So you should get 5 courses. We have *Node and ASP.NET* which are *backend* courses, we have *Angular*, which is a *frontend* course, and again we have a *Node* course by *Jack*, and *Express.js* which are both *backend* courses. Now to make sure that our sorting is done properly, I would like to display the *price* of these courses as well. So, I'm going to modify our *select* method to add the *price*.
+
+```javascript
+.select('name author price');
+```
+
+Now let's run this one more time.
 
 ```javascript
 Connected to MongoDB...
@@ -573,7 +590,19 @@ Connected to MongoDB...
 
 Alright, you can see the most expensive course comes first, and the least expensive course comes last. Beautiful. I told you that there is another way to write the query. So instead of the *in* operator, we can use the *or* operator. So we want all these courses to be published. So *isPublished* is the required part. Now, for *tags*, they should either be *frontend* or *backend*.
 
-So I'm going to break this into two parts, for the first part, we're only going to have the *isPublished* criteria. After that, we use the *or* method. Now what JavaScript construct can we use to store multiple values. multiple Objects? We use an *array*. And for an *or* operator, we need multiple operants right? So we pass an array, in this array we need two objects, two filtering objects. So, here's the first one, we set *tags* to *frontend*, and another similar object, we set *tags* to *backend*. This approach is also perfectly fine. Now, back in terminal, let's run the application one last time.And we get the exact same result. Beautiful.
+So I'm going to break this into two parts, for the first part, we're only going to have the *isPublished* criteria. After that, we use the *or* method. Now what JavaScript construct can we use to store multiple values. multiple Objects? We use an *array*. And for an *or* operator, we need multiple operants right? So we pass an array, in this array we need two objects, two filtering objects. So, here's the first one, we set *tags* to *frontend*, and another similar object, we set *tags* to *backend*. This approach is also perfectly fine.
+
+```javascript
+async function getCourses() {
+    return await Course
+    .find({ isPublished: true})
+    .or([ { tags: 'frontend' }, { tags: 'backend' }])
+    .sort('-price')
+    .select('name author price');
+}
+```
+
+Now, back in terminal, let's run the application one last time.
 
 ```javascript
 Connected to MongoDB...
@@ -611,6 +640,8 @@ Connected to MongoDB...
 ]
 ```
 
+And we get the exact same result. Beautiful.
+
 ## 16- Exercise 3
 
 And here is our third exercise.
@@ -622,3 +653,50 @@ Alright, let's get started. So a new file, I'm going to call this *exercise3.js*
 So, let's delete the two *tags* objects. First we want to get courses that are 15 dollars or more. So we set *price*. Now, I cannot set price to 15 dollars, because this will return only the courses that are 15 dollars. As I told you before, with a simple value, we cannot express a concept like *15 dollars or more*. So we need to replace the value with an object. In this object we have *Key Value* pairs. Our keys are *MongoDB operators*. So, we use *gte*, which is short for *greater than or equal to*. And we set this to 15. So with this, we get all the courses that are 15 dollars or more.
 
 Now, our second filter. We want to get the courses that have the word 'by' in their title. So, we add another object, and set *name*, again we could not set this to 'by', because this will return courses who's title is exactly 'by'. So, we should replace the string 'by' with a regular expression */pattern/*. Now, we want to have the word *by* anywhere in the tittle. So we can have 0 or more characters before or after *by*. So, in regular expressions we use period '.' to represent the character. And we use '*' to represent 0 or more. Now, here we have 'by', and then again we repeat period '.*'. So 0 more characters, before or after. And also, I want to make sure that our search is case insensitive, so we need to put an *i* in the end.
+
+```javascript
+async function getCourses() {
+    return await Course
+    .find({ isPublished: true})
+    .or([
+        { price: { $gte: 15 } },
+        { name: /.*by.*/i }
+    ])
+    .sort('-price')
+    .select('name author price');
+}
+```
+
+Now let's run the application.
+
+```javascript
+Connected to MongoDB...
+[
+  {
+    _id: 5a68fdd7bee8ea64649c2777,
+    name: 'Node.js Course',
+    author: 'Mosh',
+    price: 20
+  },
+  {
+    _id: 5a6900fff467be65019a9001,
+    name: 'Angular Course',
+    author: 'Mosh',
+    price: 15
+  },
+  {
+    _id: 5a68fde3f09ad7646ddec17e,
+    name: 'ASP.NET MVC Course',
+    author: 'Mosh',
+    price: 15
+  },
+  {
+    _id: 5a68fe2142ae6a6482c4c9cb,
+    name: 'Node.js Course by Jack',
+    author: 'Jack',
+    price: 12
+  }
+]
+```
+
+So, you should get 4 courses. The first 3 courses, you can see their price is greater than or equal to 15 dollars. So here we have a 20 dollar course, a 15 dollar course, and another 15 dollar course. But the last course is not 15 dollars, however here we have the word 'by' in the name of this course.
