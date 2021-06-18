@@ -4,8 +4,8 @@
 
 ## Chapter 2: Importing, Exporting, and Querying Data
 
-### JSON - Importing (mongoimport), Exporting (mongoexport).
-### BSON - Importing (mongorestore), Exporting (mongodump).
+> JSON - Importing (mongoimport), Exporting (mongoexport).
+> BSON - Importing (mongorestore), Exporting (mongodump).
 
 ### Example 1a -  Exporting BSON file.
 
