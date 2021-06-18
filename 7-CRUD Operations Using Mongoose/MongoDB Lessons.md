@@ -121,3 +121,5 @@ mukhtar@mukhtar-Aspire-ES1-431:~$ mongoimport --uri="mongodb+srv://m001-student:
 ```
 
 ### MongoDB Lessons (Importing Exporting and Querying Data)
+
+** Find Command
