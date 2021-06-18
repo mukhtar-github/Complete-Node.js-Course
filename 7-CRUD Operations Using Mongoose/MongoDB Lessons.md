@@ -186,3 +186,6 @@ MongoDB Enterprise atlas-ty4m6s-shard-0:PRIMARY> db.zips.find({"state": "NY"})
 { "_id" : ObjectId("5c8eccc1caa187d17ca72fa1"), "city" : "NEW YORK", "zip" : "10016", "loc" : { "y" : 40.744281, "x" : 73.978134 }, "pop" : 51561, "state" : "NY" }
 Type "it" for more
 ```
+
+> To view the next 20 documents with 'state New York', type 'it', which stands for iterate. This command allows us to
+iterate through the 'cursor', which is an object that the 'find' command returns.
