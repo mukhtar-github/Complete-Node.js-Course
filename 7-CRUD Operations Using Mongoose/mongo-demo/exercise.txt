@@ -122,3 +122,27 @@ Example 2b -  Importing JSON file.
 2021-06-15T06:42:57.442+0100	[########################] sample_supplies.sales	4.01MB/4.01MB (100.0%)
 2021-06-15T06:42:57.727+0100	[########################] sample_supplies.sales	4.01MB/4.01MB (100.0%)
 2021-06-15T06:42:57.727+0100	5000 document(s) imported successfully. 0 document(s) failed to import.
+
+
+
+*** MongoDB Lessons (Importing Exporting and Querying Data)
+
+** Find Command
+* show database - shows the list of databases that are in the cluster.
+** MongoDB Enterprise atlas-ty4m6s-shard-0:PRIMARY> show dbs
+admin               0.000GB
+local               5.732GB
+sample_airbnb       0.051GB
+sample_analytics    0.009GB
+sample_geospatial   0.001GB
+sample_mflix        0.041GB
+sample_restaurants  0.006GB
+sample_supplies     0.001GB
+sample_training     0.045GB
+sample_weatherdata  0.002GB
+
+* To indicate that we will now be working with the 'sample_training' database, we issue the 'use sample_training' command.
+** MongoDB Enterprise atlas-ty4m6s-shard-0:PRIMARY> use sample_training
+switched to db sample_training
+
+* To view the 'collections' in the database, 
