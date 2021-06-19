@@ -207,3 +207,85 @@ MongoDB Enterprise atlas-ty4m6s-shard-0:PRIMARY> db.zips.find({"state": "NY", "c
 > We added the city of Albany criteria to the query, and kept the count option in place.
 
 > To view the data in a nice, more readable way, and to see the structure of each document, and preferably each 'field value' pair should be placed on a separate line. To achieve that, we can use the 'pretty()' directive.
+
+```javascript
+MongoDB Enterprise atlas-ty4m6s-shard-0:PRIMARY> db.zips.find({"state": "NY", "city": "ALBANY"}).pretty()
+{
+	"_id" : ObjectId("5c8eccc1caa187d17ca731d0"),
+	"city" : "ALBANY",
+	"zip" : "12204",
+	"loc" : {
+		"y" : 42.684667,
+		"x" : 73.735364
+	},
+	"pop" : 6927,
+	"state" : "NY"
+}
+{
+	"_id" : ObjectId("5c8eccc1caa187d17ca731d4"),
+	"city" : "ALBANY",
+	"zip" : "12206",
+	"loc" : {
+		"y" : 42.668326,
+		"x" : 73.774406
+	},
+	"pop" : 17230,
+	"state" : "NY"
+}
+{
+	"_id" : ObjectId("5c8eccc1caa187d17ca731d5"),
+	"city" : "ALBANY",
+	"zip" : "12207",
+	"loc" : {
+		"y" : 42.658133,
+		"x" : 73.752327
+	},
+	"pop" : 2709,
+	"state" : "NY"
+}
+{
+	"_id" : ObjectId("5c8eccc1caa187d17ca731d6"),
+	"city" : "ALBANY",
+	"zip" : "12208",
+	"loc" : {
+		"y" : 42.655989,
+		"x" : 73.796357
+	},
+	"pop" : 22041,
+	"state" : "NY"
+}
+{
+	"_id" : ObjectId("5c8eccc1caa187d17ca731d7"),
+	"city" : "ALBANY",
+	"zip" : "12209",
+	"loc" : {
+		"y" : 42.641665,
+		"x" : 73.785385
+	},
+	"pop" : 10008,
+	"state" : "NY"
+}
+{
+	"_id" : ObjectId("5c8eccc1caa187d17ca731db"),
+	"city" : "ALBANY",
+	"zip" : "12202",
+	"loc" : {
+		"y" : 42.641314,
+		"x" : 73.764071
+	},
+	"pop" : 11097,
+	"state" : "NY"
+}
+{
+	"_id" : ObjectId("5c8eccc1caa187d17ca731de"),
+	"city" : "ALBANY",
+	"zip" : "12210",
+	"loc" : {
+		"y" : 42.65677,
+		"x" : 73.76052
+	},
+	"pop" : 9374,
+	"state" : "NY"
+}
+
+```
