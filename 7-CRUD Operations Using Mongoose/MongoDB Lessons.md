@@ -188,4 +188,6 @@ Type "it" for more
 ```
 
 > To view the next 20 documents with 'state New York', type 'it', which stands for iterate. This command allows us to
-iterate through the 'cursor', which is an object that the 'find' command returns.
+iterate through the 'cursor', which is an object that the 'find' command returns. Formerly, a 'cursor' is a pointer to the result set of a query. A 'pointer' is a direct address to the memory location.
+
+> To find how many 'zip code' are there in New York, we add a 'count' operation at the end of the 'find' command, like this 'db.zips.find({"state": "NY"}).count()'.
