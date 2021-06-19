@@ -65,7 +65,7 @@ async function getCourses() {
 }
 
 async function updateCourse(id) {
-    
+    // Approach: Query first
 }
 
 updateCourses();
