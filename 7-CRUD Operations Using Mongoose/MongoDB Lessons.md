@@ -317,3 +317,5 @@ Type "it" for more
 ```
 
 ## Chapter 3: Creating and Manipulating Documents
+
+### Inserting New Documents - ObjectId
