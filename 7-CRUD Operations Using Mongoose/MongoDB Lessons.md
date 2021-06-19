@@ -205,4 +205,5 @@ MongoDB Enterprise atlas-ty4m6s-shard-0:PRIMARY> db.zips.find({"state": "NY", "c
 ```
 
 > We added the city of Albany criteria to the query, and kept the count option in place.
+
 > To view the data in a nice, more readable way, and to see the structure of each document, and preferably each 'field value' pair should be placed on a separate line. To achieve that, we can use the 'pretty()' directive.
