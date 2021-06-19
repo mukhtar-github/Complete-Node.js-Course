@@ -287,5 +287,33 @@ MongoDB Enterprise atlas-ty4m6s-shard-0:PRIMARY> db.zips.find({"state": "NY", "c
 	"pop" : 9374,
 	"state" : "NY"
 }
-
 ```
+
+> If you issue the 'find' command without a query like so 'db.zips.find( {} )'. The first 20 documents of the collection will present themselves to you.
+
+```javascript
+MongoDB Enterprise atlas-ty4m6s-shard-0:PRIMARY> db.zips.find( {} )
+{ "_id" : ObjectId("5c8eccc1caa187d17ca6ed16"), "city" : "ALPINE", "zip" : "35014", "loc" : { "y" : 33.331165, "x" : 86.208934 }, "pop" : 3062, "state" : "AL" }
+{ "_id" : ObjectId("5c8eccc1caa187d17ca6ed17"), "city" : "BESSEMER", "zip" : "35020", "loc" : { "y" : 33.409002, "x" : 86.947547 }, "pop" : 40549, "state" : "AL" }
+{ "_id" : ObjectId("5c8eccc1caa187d17ca6ed18"), "city" : "ACMAR", "zip" : "35004", "loc" : { "y" : 33.584132, "x" : 86.51557 }, "pop" : 6055, "state" : "AL" }
+{ "_id" : ObjectId("5c8eccc1caa187d17ca6ed19"), "city" : "BAILEYTON", "zip" : "35019", "loc" : { "y" : 34.268298, "x" : 86.621299 }, "pop" : 1781, "state" : "AL" }
+{ "_id" : ObjectId("5c8eccc1caa187d17ca6ed1a"), "city" : "HUEYTOWN", "zip" : "35023", "loc" : { "y" : 33.414625, "x" : 86.999607 }, "pop" : 39677, "state" : "AL" }
+{ "_id" : ObjectId("5c8eccc1caa187d17ca6ed1b"), "city" : "BLOUNTSVILLE", "zip" : "35031", "loc" : { "y" : 34.092937, "x" : 86.568628 }, "pop" : 9058, "state" : "AL" }
+{ "_id" : ObjectId("5c8eccc1caa187d17ca6ed1c"), "city" : "BRIERFIELD", "zip" : "35035", "loc" : { "y" : 33.042747, "x" : 86.951672 }, "pop" : 1282, "state" : "AL" }
+{ "_id" : ObjectId("5c8eccc1caa187d17ca6ed1d"), "city" : "BREMEN", "zip" : "35033", "loc" : { "y" : 33.973664, "x" : 87.004281 }, "pop" : 3448, "state" : "AL" }
+{ "_id" : ObjectId("5c8eccc1caa187d17ca6ed1e"), "city" : "ADGER", "zip" : "35006", "loc" : { "y" : 33.434277, "x" : 87.167455 }, "pop" : 3205, "state" : "AL" }
+{ "_id" : ObjectId("5c8eccc1caa187d17ca6ed1f"), "city" : "ADAMSVILLE", "zip" : "35005", "loc" : { "y" : 33.588437, "x" : 86.959727 }, "pop" : 10616, "state" : "AL" }
+{ "_id" : ObjectId("5c8eccc1caa187d17ca6ed20"), "city" : "CENTREVILLE", "zip" : "35042", "loc" : { "y" : 32.950324, "x" : 87.11924 }, "pop" : 4902, "state" : "AL" }
+{ "_id" : ObjectId("5c8eccc1caa187d17ca6ed21"), "city" : "CALERA", "zip" : "35040", "loc" : { "y" : 33.1098, "x" : 86.755987 }, "pop" : 4675, "state" : "AL" }
+{ "_id" : ObjectId("5c8eccc1caa187d17ca6ed22"), "city" : "CHELSEA", "zip" : "35043", "loc" : { "y" : 33.371582, "x" : 86.614132 }, "pop" : 4781, "state" : "AL" }
+{ "_id" : ObjectId("5c8eccc1caa187d17ca6ed23"), "city" : "ARAB", "zip" : "35016", "loc" : { "y" : 34.328339, "x" : 86.489638 }, "pop" : 13650, "state" : "AL" }
+{ "_id" : ObjectId("5c8eccc1caa187d17ca6ed24"), "city" : "KEYSTONE", "zip" : "35007", "loc" : { "y" : 33.236868, "x" : 86.812861 }, "pop" : 14218, "state" : "AL" }
+{ "_id" : ObjectId("5c8eccc1caa187d17ca6ed25"), "city" : "NEW SITE", "zip" : "35010", "loc" : { "y" : 32.941445, "x" : 85.951086 }, "pop" : 19942, "state" : "AL" }
+{ "_id" : ObjectId("5c8eccc1caa187d17ca6ed26"), "city" : "BRENT", "zip" : "35034", "loc" : { "y" : 32.93567, "x" : 87.211387 }, "pop" : 3791, "state" : "AL" }
+{ "_id" : ObjectId("5c8eccc1caa187d17ca6ed27"), "city" : "COOSA PINES", "zip" : "35044", "loc" : { "y" : 33.266928, "x" : 86.337622 }, "pop" : 7985, "state" : "AL" }
+{ "_id" : ObjectId("5c8eccc1caa187d17ca6ed28"), "city" : "CLANTON", "zip" : "35045", "loc" : { "y" : 32.835532, "x" : 86.642472 }, "pop" : 13990, "state" : "AL" }
+{ "_id" : ObjectId("5c8eccc1caa187d17ca6ed29"), "city" : "CLEVELAND", "zip" : "35049", "loc" : { "y" : 33.992106, "x" : 86.559355 }, "pop" : 2369, "state" : "AL" }
+Type "it" for more
+```
+
+## Chapter 3: Creating and Manipulating Documents
