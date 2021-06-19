@@ -72,7 +72,7 @@ async function updateCourse(id) {
 
     // Approach: update first
     // Update directly
-    
+    // Optionally: get the updated document
 }
 
 updateCourses();
