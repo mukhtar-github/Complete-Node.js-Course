@@ -69,6 +69,10 @@ async function updateCourse(id) {
     // using findById()
     // Modify it's properties
     // save()
+
+    // Approach: update first
+    // Update directly
+    
 }
 
 updateCourses();
