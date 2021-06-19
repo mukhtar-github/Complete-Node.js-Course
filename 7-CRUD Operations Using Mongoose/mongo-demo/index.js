@@ -66,6 +66,9 @@ async function getCourses() {
 
 async function updateCourse(id) {
     const course = await Course.findById();
+    if (!course) return;
+    course.isPublished = true;
+
 }
 
 updateCourses();
