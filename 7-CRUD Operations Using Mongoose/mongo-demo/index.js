@@ -66,6 +66,9 @@ async function getCourses() {
 
 async function updateCourse(id) {
     // Approach: Query first
+    // using findById()
+    // Modify it's properties
+    // save()
 }
 
 updateCourses();
