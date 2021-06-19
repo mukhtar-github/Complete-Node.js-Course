@@ -711,4 +711,13 @@ There are basically two ways to update a document in MongoDB. One of the approac
 
 We can optionally get the updated document as well. So in this lecture, I'm going to show you the first approach, and we will look at the other approach in the next video. So, in our *updateCourse(id)* function, we want to get the course with a given *id*. So we call *Course.findById(id)*, and pass the *id*. Now, this returns a promise, so we *await* it, get the result and store it in *course*.
 
-Now chances are there is no course with the given *id*. So, we need to check for that. So, if we don't have a course *if (!course)*, we're going to *return* immediately. Otherwise, we're going to update the properties of this course. So we can set *course.isPublished*, to *true*.
+Now chances are there is no course with the given *id*. So, we need to check for that. So, if we don't have a course *if (!course)*, we're going to *return* immediately. Otherwise, we're going to update the properties of this course. So we can set *course.isPublished*, to *true*. And also set *course.author* to *Another Author*. Now, there's another approach, instead of setting multiple properties, we can call the *set* method like this;
+
+```javascript
+course.set({
+        isPublished: true,
+        author: 'Another Author'
+    });
+```
+
+So, basically, these two approaches are identical, which one you choose is purely your personal preference. In this damo, I'm going to use the first approach.
