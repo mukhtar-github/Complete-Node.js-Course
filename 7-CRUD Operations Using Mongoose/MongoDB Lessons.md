@@ -191,3 +191,18 @@ Type "it" for more
 iterate through the 'cursor', which is an object that the 'find' command returns. Formerly, a 'cursor' is a pointer to the result set of a query. A 'pointer' is a direct address to the memory location.
 
 > To find how many 'zip code' are there in New York, we add a 'count' operation at the end of the 'find' command, like this 'db.zips.find({"state": "NY"}).count()'.
+
+```javascript
+MongoDB Enterprise atlas-ty4m6s-shard-0:PRIMARY> db.zips.find({"state": "NY"}).count()
+1596
+```
+
+> What about the documents that are in New York, but also in the city of Albany?
+
+```javascript
+MongoDB Enterprise atlas-ty4m6s-shard-0:PRIMARY> db.zips.find({"state": "NY", "city": "ALBANY"}).count()
+7
+```
+
+> We added the city of Albany criteria to the query, and kept the count option in place.
+> To view the data in a nice, more readable way, and to see the structure of each document, and preferably each 'field value' pair should be placed on a separate line. To achieve that, we can use the 'pretty()' directive.
