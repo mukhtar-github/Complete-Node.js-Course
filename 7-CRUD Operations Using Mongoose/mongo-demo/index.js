@@ -80,4 +80,4 @@ async function updateCourse(id) {
 
 }
 
-updateCourses();
+updateCourses('5a68fde3f09ad7646ddec17e');
