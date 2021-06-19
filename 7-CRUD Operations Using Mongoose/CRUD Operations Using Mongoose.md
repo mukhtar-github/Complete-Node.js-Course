@@ -720,4 +720,6 @@ course.set({
     });
 ```
 
-So, basically, these two approaches are identical, which one you choose is purely your personal preference. In this damo, I'm going to use the first approach.
+So, basically, these two approaches are identical, which one you choose is purely your personal preference. In this damo, I'm going to use the first approach. Now finally, we call the *save()* method. This is the same method that we used earlier to create a new course. So it returns a promise, we can *await* it, get the result and display it on the console. So, *console.log(result)*.
+
+
