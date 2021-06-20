@@ -64,32 +64,9 @@ async function getCourses() {
     console.log(courses);
 }
 
-async function updateCourse(id) {
-    const course = await Course.findById(id);
-    if (!course) return;
-
-    if (course.isPublished) return;
-
-    course.isPublished = true;
-    course.author = 'Another Author';
-    // course.set({
-    //     isPublished: true,
-    //     author: 'Another Author'
-    // });
-    
-    const result = await course.save();
-    console.log(result);
-
-}
-
-updateCourse('5a68fde3f09ad7646ddec17e');
-
-
 // async function updateCourse(id) {
-//     const course = await Course.updateOne({});
+//     const course = await Course.findById(id);
 //     if (!course) return;
-
-//     if (course.isPublished) return;
 
 //     course.isPublished = true;
 //     course.author = 'Another Author';
@@ -104,3 +81,18 @@ updateCourse('5a68fde3f09ad7646ddec17e');
 // }
 
 // updateCourse('5a68fde3f09ad7646ddec17e');
+
+
+async function updateCourse(id) {
+    const course = await Course.updateOne({});
+    if (!course) return;
+
+    course.isPublished = true;
+    course.author = 'Another Author';
+    
+    const result = await course.save();
+    console.log(result);
+
+}
+
+updateCourse('5a68fde3f09ad7646ddec17e');
