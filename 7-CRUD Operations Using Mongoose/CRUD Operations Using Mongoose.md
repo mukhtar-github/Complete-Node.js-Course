@@ -757,7 +757,9 @@ So here's the course that we updated, look, *author* is set to *another author. 
 
 ## 18- Updating a Document- Update First
 
-So, in the last lecture, you learned about the *query first* approach to update a document. This approach is useful, if you recieve an input from the client, and you want to make sure that the update is a valid operation. For example, here we can have a business rule, so if the course is published, maybe we should not be allowed to change it's author. To implement this business rule, we need to retrieve the course first, and then we need to write some logic like this, *if(course.isPublished)*, we want to *return*
+So, in the last lecture, you learned about the *query first* approach to update a document. This approach is useful, if you recieve an input from the client, and you want to make sure that the update is a valid operation. For example, here we can have a business rule, so if the course is published, maybe we should not be allowed to change it's author. To implement this business rule, we need to retrieve the course first, and then we need to write some logic like this, *if(course.isPublished)*, we want to *return*. We don't want to update this course. So That's when we use the *query first* approach.
+
+But sometimes you know what you are doing, you're not recieving an input from the client, you just want to update a document, or perhaps multiple documents directly in the database. And that's what I'm going to show you in this lecture. So, instead of using the *findById()* method, we use the *update* method. Now, the first argument here
 
 ```javascript
 
