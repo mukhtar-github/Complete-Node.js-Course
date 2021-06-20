@@ -74,10 +74,10 @@ async function updateCourse(id) {
     //     isPublished: true,
     //     author: 'Another Author'
     // });
-
+    
     const result = await course.save();
     console.log(result);
-
+    
 }
 
 updateCourse('5a68fde3f09ad7646ddec17e');
