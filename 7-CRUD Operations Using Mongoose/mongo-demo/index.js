@@ -68,6 +68,8 @@ async function updateCourse(id) {
     const course = await Course.findById();
     if (!course) return;
 
+    if (course.isPublished) return;
+
     course.isPublished = true;
     course.author = 'Another Author';
     // course.set({

@@ -722,6 +722,24 @@ course.set({
 
 So, basically, these two approaches are identical, which one you choose is purely your personal preference. In this damo, I'm going to use the first approach. Now finally, we call the *save()* method. This is the same method that we used earlier to create a new course. So it returns a promise, we can *await* it, get the result and display it on the console. So, *console.log(result)*.
 
+```javascript
+async function updateCourse(id) {
+    const course = await Course.findById();
+    if (!course) return;
+
+    if (course.isPublished) 
+
+    course.isPublished = true;
+    course.author = 'Another Author';
+    
+    const result = await course.save();
+    console.log(result);
+
+}
+
+updateCourse('5a68fde3f09ad7646ddec17e');
+```
+
 Now, I'm going to back in *compass* and get a valid *course id*. Alright, so here in our *courses* collection, I'm going to grab a course id *'5a68fde3f09ad7646ddec17e'* and paste it in *updateCourses*. Now, back in the terminal, let's run this program.
 
 ```javascript
@@ -736,5 +754,11 @@ __v: 0 }
 ```
 
 So here's the course that we updated, look, *author* is set to *another author. In  the next lecture, I'm going to show you how to update a document directly in the database without retrieving first.
-*
+
 ## 18- Updating a Document- Update First
+
+So, in the last lecture, you learned about the *query first* approach to update a document. This approach is useful, if you recieve an input from the client, and you want to make sure that the update is a valid operation. For example, here we can have a business rule, so if the course is published, maybe we should not be allowed to change it's author. To implement this business rule, we need to retrieve the course first, and then we need to write some logic like this, *if(course.isPublished)*, we want to *return*
+
+```javascript
+
+```
