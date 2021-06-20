@@ -763,7 +763,9 @@ So, in the last lecture, you learned about the *query first* approach to update 
 if (course.isPublished) return;
 ```
 
-But sometimes you know what you are doing, you're not recieving an input from the client, you just want to update a document, or perhaps multiple documents directly in the database. And that's what I'm going to show you in this lecture. So, instead of using the *findById()* method, we use the *updateOne* method. Now, the first argument here is a query or a filter object, so we can get the course with this
+But sometimes you know what you are doing, you're not recieving an input from the client, you just want to update a document, or perhaps multiple documents directly in the database. And that's what I'm going to show you in this lecture. So, instead of using the *findById()* method, we use the *updateOne()* method. Now, the first argument here is a query or a filter object, so we can get the course with this *{ _id: id }*. Or we can pass something more generic. We can get all the courses that are not published like this *{ isPublished: false }*. So with this, we can update multiple documents in one go. Now in this demo, we want to update a course with a particular id. So I'm going to use *{ _id: id }*.
+
+Now the second the second argument to the *updateOne()* method, is the *update* object.
 
 ```javascript
 
