@@ -59,7 +59,7 @@ async function getCourses() {
         .find({ author: 'Mukhtar', isPublished: true })
         .skip((pageNumber - 1) * pageSize)
         .limit(pageSize)
-        .sort( { name: 1, })
+        .sort({ name: 1, })
         .count();
     console.log(courses);
 }
@@ -77,7 +77,7 @@ async function updateCourse(id) {
     
     const result = await course.save();
     console.log(result);
-    
+
 }
 
 updateCourse('5a68fde3f09ad7646ddec17e');

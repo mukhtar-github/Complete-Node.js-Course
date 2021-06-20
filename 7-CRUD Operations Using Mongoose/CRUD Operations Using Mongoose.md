@@ -722,4 +722,19 @@ course.set({
 
 So, basically, these two approaches are identical, which one you choose is purely your personal preference. In this damo, I'm going to use the first approach. Now finally, we call the *save()* method. This is the same method that we used earlier to create a new course. So it returns a promise, we can *await* it, get the result and display it on the console. So, *console.log(result)*.
 
-Now, I'm going to back in *compass* and get a vald *course id*. Alright, so here in our *courses* collection, I'm going to grab a course id *'5a68fde3f09ad7646ddec17e'* and paste it as the argument to *updateCourses*. Now, back in the terminal, let's run this program.
+Now, I'm going to back in *compass* and get a valid *course id*. Alright, so here in our *courses* collection, I'm going to grab a course id *'5a68fde3f09ad7646ddec17e'* and paste it in *updateCourses*. Now, back in the terminal, let's run this program.
+
+```javascript
+{ tags: [ "aspnet", "backend" ],
+date: "2018-01-24T21:42:59.605Z",
+_id: "5a68fde3f09ad7646ddec17e"
+name: "ASP.NET MVC Course"
+author: "Another Author",
+isPublished: true,
+price: 15
+__v: 0 }
+```
+
+So here's the course that we updated, look, *author* is set to *another author. In  the next lecture, I'm going to show you how to update a document directly in the database without retrieving first.
+*
+## 18- Updating a Document- Update First
