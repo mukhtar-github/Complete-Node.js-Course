@@ -769,7 +769,9 @@ Now the second argument to the *updateOne()* method, is the *update* object. Now
 
 We have *inc or increment*, this is very powerful. With this, we can increment the value of a field by the specified amount. Imagine you want to build an application like *Facebook*. So when the user likes a post, you want to increment the number of likes. With this operator, you can increment the number of likes directly in the database, you don't have to retrieve the post first, then increment the number of likes. You can also pass a negative value, to decrement the value of a field.
 
-We have *min* which is useful to update a field
+We have *min* which is useful if you want to update a field, if the specified value is less than the existing field value. We have another similar operator, and with this, we can update a field, if the specified value is greater than the existing field value. We have *mul or multiply* which is kind of similar to *increment*, but with this we can multiply the value of a field by the specified amount. We *rename* to rename a field.
+
+We have *set* which I'm going to show you in this lecture, and with this we can set the value of a field. And similar to this, we have *unset* which we can use to remove the specified field from a document.
 
 ```javascript
 
