@@ -84,7 +84,7 @@ async function getCourses() {
 
 
 async function updateCourse(id) {
-    const course = await Course.updateOne({ _id: id }, {
+    const result = await Course.updateOne({ _id: id }, {
         $set: {
             author: 'Mukhtar',
             isPublished: false
