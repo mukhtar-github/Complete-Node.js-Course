@@ -90,11 +90,6 @@ async function updateCourse(id) {
             isPublished: false
         }
     });
-
-    if (!course) return;
-
-    course.isPublished = true;
-    course.author = 'Another Author';
     
     const result = await course.save();
     console.log(result);
