@@ -783,3 +783,10 @@ We don't have to update the properties.
 course.isPublished = true;
 course.author = 'Another Author';
 ```
+
+And we don't have to save it explicitly.
+
+```javascript
+const result = await course.save();
+```
+
