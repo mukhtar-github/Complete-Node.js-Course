@@ -771,7 +771,7 @@ We have *inc or increment*, this is very powerful. With this, we can increment t
 
 We have *min* which is useful if you want to update a field, if the specified value is less than the existing field value. We have another similar operator, and with this, we can update a field, if the specified value is greater than the existing field value. We have *mul or multiply* which is kind of similar to *increment*, but with this we can multiply the value of a field by the specified amount. We *rename* to rename a field. We have *set* which I'm going to show you in this lecture, and with this we can set the value of a field. And similar to this, we have *unset* which we can use to remove the specified field from a document.
 
-So back in our *update* object. I'm going to use the *set* operator. We set this to an object. And in this object, we add one or more *key value* pairs. So, let's say we want to update
+So back in our *update* object. I'm going to use the *set* operator, we set it to an object. And in this object, we add one or more *key value* pairs. So, let's say we want to update the *author* property, set it to *Mukhtar*, and we want to set *isPublished* to false. So, 
 
 ```javascript
 
