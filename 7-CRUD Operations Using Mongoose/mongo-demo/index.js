@@ -86,11 +86,11 @@ async function getCourses() {
 async function updateCourse(id) {
     const result = await Course.updateOne({ _id: id }, {
         $set: {
-            author: 'Mukhtar',
+            author: 'Mosh',
             isPublished: false
         }
     });
-    
+
     console.log(result);
 
 }

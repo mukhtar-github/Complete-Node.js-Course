@@ -790,3 +790,4 @@ And we don't have to save it explicitly.
 const result = await course.save();
 ```
 
+Okay, very simple. So, let's get back in the terminal, and run our application again.
