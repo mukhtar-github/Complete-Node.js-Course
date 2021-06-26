@@ -83,16 +83,16 @@ const Course = mongoose.model('Course', courseSchema);
 // updateCourse('5a68fde3f09ad7646ddec17e');
 
 
-async function updateCourse(id) {
-    const result = await Course.updateOne({ _id: id }, {
-        $set: {
-            author: 'Mosh',
-            isPublished: false
-        }
-    });
+// async function updateCourse(id) {
+//     const result = await Course.updateOne({ _id: id }, {
+//         $set: {
+//             author: 'Mosh',
+//             isPublished: false
+//         }
+//     });
 
-    console.log(result);
+//     console.log(result);
 
-}
+// }
 
-updateCourse('5a68fde3f09ad7646ddec17e');
+// updateCourse('5a68fde3f09ad7646ddec17e');
