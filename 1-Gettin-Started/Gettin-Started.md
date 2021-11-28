@@ -8,8 +8,7 @@
 
 ```javascript
 function sayHello(name) {
-    console.log('Hello ' + name);
+    console.log('Hello ' + name)
 }
-
-sayHello('Mukhtar');
+sayHello('Mukhtar') // Hello Mukhtar
 ```
