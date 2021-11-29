@@ -172,7 +172,7 @@ logger.log('message');
 
 ## 13 - HTTP Module
 
-One of the powerful building blocks of *Node* is the *HTTP module* that we use for creating network applications. For example, we can create a *web server* that listensfor http request on a given port. And with this, we can easily create a backend service for our client applications. We can call http.createServer. And with this, we can have a *web server*. What is interesting is that this server is an EventEmitter. It has all the capabilities of the EventEmitter.
+One of the powerful building blocks of *Node* is the *HTTP module* that we use for creating network applications. For example, we can create a *web server* that listens for http request on a given port. And with this, we can easily create a backend service for our client applications. We can call http.createServer. And with this, we can have a *web server*. What is interesting is that this server is an EventEmitter. It has all the capabilities of the EventEmitter.
 
 So, that's why I said a bunch of Node's core functionality is based on EventEmitter. So, back to our server object, we can now call server.listen and give in a port of say 3000. As I told you before, everytime there's a new connection or request, the server raises an event. So we can use the ON method to handle that event. So, before listening, we have to register a *listener or a handler*. In real world applications, we're not going to respond to the connection event to build an http service. This is very low level.
 
